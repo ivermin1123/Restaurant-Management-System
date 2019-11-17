@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
-    public partial class TinhTien : UserControl
+    public partial class ManHinhChaoMung : UserControl
     {
-        public TinhTien()
+        public ManHinhChaoMung()
         {
             InitializeComponent();
-        }
-
-        private void BtThuTien_Click(object sender, EventArgs e)
-        {
-            fThuTien f = new fThuTien();
-            f.ShowDialog();
         }
     }
 }

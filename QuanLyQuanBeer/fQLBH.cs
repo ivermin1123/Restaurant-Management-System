@@ -16,6 +16,7 @@ namespace QuanLyQuanBeer
         public fQLBH()
         {
             InitializeComponent();
+            USCchaoMung.Visible = true;
         }
 
 
@@ -36,6 +37,7 @@ namespace QuanLyQuanBeer
         private void BtOrderBlue_Click(object sender, EventArgs e)
         {
             btQuayLai.Visible = false;
+            USCchaoMung.Visible = false;
             btOrderwhite.Visible = true;
             btSoDoblue.Visible = true;
             btSoDowhite.Visible = false;
@@ -65,6 +67,7 @@ namespace QuanLyQuanBeer
             btTinhTien.Visible = true;
             USCnewOrder.Visible = true;
             USCorder.Visible = false;
+            USCchaoMung.Visible = false;
             USCsoDo.Visible = false;
             USCmenu.Visible = false;
         }
@@ -89,6 +92,7 @@ namespace QuanLyQuanBeer
             btTinhTien.Visible = false;
             USCnewOrder.Visible = false;
             USCorder.Visible = true;
+            USCchaoMung.Visible = false;
             USCsoDo.Visible = false;
             USCtinhTien.Visible = false;
             USCmenu.Visible = false;
@@ -106,6 +110,7 @@ namespace QuanLyQuanBeer
             USCsoDo.Visible = true;
             USCmenu.Visible = false;
             USCtinhTien.Visible = false;
+            USCchaoMung.Visible = false;
         }
 
         private void BtSoDowhite_Click(object sender, EventArgs e)
@@ -116,6 +121,7 @@ namespace QuanLyQuanBeer
             USCsoDo.Visible = true;
             USCnewOrder.Visible = false;
             USCorder.Visible = false;
+            USCchaoMung.Visible = false;
             USCmenu.Visible = false;
         }
 
@@ -165,6 +171,7 @@ namespace QuanLyQuanBeer
             USCsoDo.Visible = false;
             USCmenu.Visible = false;
             USCtinhTien.Visible = false;
+            USCchaoMung.Visible = false;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -178,6 +185,23 @@ namespace QuanLyQuanBeer
             timer1.Start();
             lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy"); ;
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void BtHome_Click(object sender, EventArgs e)
+        {
+            USCchaoMung.Visible = true;
+            USCchaoMung.BringToFront();
+            btQuayLai.Visible = false;
+            btTinhTien.Visible = false;
+            btSoDoblue.Visible = true;
+            btSoDowhite.Visible = false;
+            btOrderwhite.Visible = false;
+            btOrderBlue.Visible = true;
+            USCnewOrder.Visible = false;
+            USCorder.Visible = false;
+            USCsoDo.Visible = false;
+            USCmenu.Visible = false;
+            USCtinhTien.Visible = false;
         }
 
         // this.WindowState = FormWindowState.Maximized;

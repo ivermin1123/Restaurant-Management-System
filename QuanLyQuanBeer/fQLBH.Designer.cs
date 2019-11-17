@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLBH));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbGio = new System.Windows.Forms.Label();
             this.btRestore = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btSoDowhite = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -42,19 +45,17 @@
             this.btSoDoblue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btOrderBlue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btHome = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lbNgay = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btQuayLai = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTinhTien = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lbGio = new System.Windows.Forms.Label();
-            this.lbNgay = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.USCtinhTien = new QuanLyQuanBeer.TinhTien();
             this.USCmenu = new QuanLyQuanBeer.Menu();
             this.USCnewOrder = new QuanLyQuanBeer.NewOrder();
             this.USCsoDo = new QuanLyQuanBeer.SoDo();
             this.USCorder = new QuanLyQuanBeer.Order();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.USCchaoMung = new QuanLyQuanBeer.ManHinhChaoMung();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
@@ -89,6 +90,45 @@
             this.panel1.Size = new System.Drawing.Size(1302, 52);
             this.panel1.TabIndex = 1;
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseClick);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(494, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 30);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Thời gian:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(699, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 30);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "-";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbGio
+            // 
+            this.lbGio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbGio.AutoSize = true;
+            this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGio.ForeColor = System.Drawing.Color.White;
+            this.lbGio.Location = new System.Drawing.Point(714, 13);
+            this.lbGio.Name = "lbGio";
+            this.lbGio.Size = new System.Drawing.Size(66, 30);
+            this.lbGio.TabIndex = 15;
+            this.lbGio.Text = "00:00";
+            this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btRestore
             // 
@@ -362,16 +402,31 @@
             this.btHome.TabIndex = 0;
             this.btHome.TabStop = false;
             this.btHome.Zoom = 10;
+            this.btHome.Click += new System.EventHandler(this.BtHome_Click);
+            // 
+            // lbNgay
+            // 
+            this.lbNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbNgay.AutoSize = true;
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.ForeColor = System.Drawing.Color.White;
+            this.lbNgay.Location = new System.Drawing.Point(597, 13);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(127, 30);
+            this.lbNgay.TabIndex = 14;
+            this.lbNgay.Text = "00/00/0000";
+            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btTinhTien);
             this.panel2.Controls.Add(this.btQuayLai);
             this.panel2.Controls.Add(this.USCtinhTien);
-            this.panel2.Controls.Add(this.btTinhTien);
             this.panel2.Controls.Add(this.USCmenu);
             this.panel2.Controls.Add(this.USCnewOrder);
             this.panel2.Controls.Add(this.USCsoDo);
             this.panel2.Controls.Add(this.USCorder);
+            this.panel2.Controls.Add(this.USCchaoMung);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 52);
             this.panel2.Name = "panel2";
@@ -440,7 +495,7 @@
             this.btTinhTien.IconVisible = true;
             this.btTinhTien.IconZoom = 70D;
             this.btTinhTien.IsTab = false;
-            this.btTinhTien.Location = new System.Drawing.Point(1155, 664);
+            this.btTinhTien.Location = new System.Drawing.Point(1155, 663);
             this.btTinhTien.Name = "btTinhTien";
             this.btTinhTien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
             this.btTinhTien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
@@ -454,32 +509,6 @@
             this.btTinhTien.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btTinhTien.Visible = false;
             this.btTinhTien.Click += new System.EventHandler(this.BtTinhTien_Click);
-            // 
-            // lbGio
-            // 
-            this.lbGio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbGio.AutoSize = true;
-            this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGio.ForeColor = System.Drawing.Color.White;
-            this.lbGio.Location = new System.Drawing.Point(714, 13);
-            this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(66, 30);
-            this.lbGio.TabIndex = 15;
-            this.lbGio.Text = "00:00";
-            this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNgay
-            // 
-            this.lbNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbNgay.AutoSize = true;
-            this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgay.ForeColor = System.Drawing.Color.White;
-            this.lbNgay.Location = new System.Drawing.Point(597, 13);
-            this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(127, 30);
-            this.lbNgay.TabIndex = 14;
-            this.lbNgay.Text = "00/00/0000";
-            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -532,31 +561,15 @@
             this.USCorder.TabIndex = 1;
             this.USCorder.Visible = false;
             // 
-            // label1
+            // USCchaoMung
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(699, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 30);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "-";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(494, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 30);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Thời gian:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.USCchaoMung.BackColor = System.Drawing.Color.White;
+            this.USCchaoMung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.USCchaoMung.Location = new System.Drawing.Point(0, 0);
+            this.USCchaoMung.Name = "USCchaoMung";
+            this.USCchaoMung.Size = new System.Drawing.Size(1302, 726);
+            this.USCchaoMung.TabIndex = 7;
+            this.USCchaoMung.Visible = false;
             // 
             // fQLBH
             // 
@@ -611,5 +624,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private ManHinhChaoMung USCchaoMung;
     }
 }

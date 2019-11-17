@@ -42,7 +42,7 @@
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btThuTien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTachHD = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -235,7 +235,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.bunifuFlatButton5);
+            this.panel3.Controls.Add(this.btThuTien);
             this.panel3.Controls.Add(this.bunifuFlatButton4);
             this.panel3.Controls.Add(this.bunifuFlatButton3);
             this.panel3.Controls.Add(this.btTachHD);
@@ -246,41 +246,42 @@
             this.panel3.Size = new System.Drawing.Size(805, 72);
             this.panel3.TabIndex = 1;
             // 
-            // bunifuFlatButton5
+            // btThuTien
             // 
-            this.bunifuFlatButton5.Active = false;
-            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
-            this.bunifuFlatButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
-            this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton5.BorderRadius = 0;
-            this.bunifuFlatButton5.ButtonText = "  THU TIỀN";
-            this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton5.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton5.Iconimage")));
-            this.bunifuFlatButton5.Iconimage_right = null;
-            this.bunifuFlatButton5.Iconimage_right_Selected = null;
-            this.bunifuFlatButton5.Iconimage_Selected = null;
-            this.bunifuFlatButton5.IconMarginLeft = 0;
-            this.bunifuFlatButton5.IconMarginRight = 0;
-            this.bunifuFlatButton5.IconRightVisible = true;
-            this.bunifuFlatButton5.IconRightZoom = 0D;
-            this.bunifuFlatButton5.IconVisible = true;
-            this.bunifuFlatButton5.IconZoom = 70D;
-            this.bunifuFlatButton5.IsTab = false;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(650, 13);
-            this.bunifuFlatButton5.Name = "bunifuFlatButton5";
-            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
-            this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
-            this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton5.selected = false;
-            this.bunifuFlatButton5.Size = new System.Drawing.Size(142, 47);
-            this.bunifuFlatButton5.TabIndex = 4;
-            this.bunifuFlatButton5.Text = "  THU TIỀN";
-            this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThuTien.Active = false;
+            this.btThuTien.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
+            this.btThuTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btThuTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
+            this.btThuTien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btThuTien.BorderRadius = 0;
+            this.btThuTien.ButtonText = "  THU TIỀN";
+            this.btThuTien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThuTien.DisabledColor = System.Drawing.Color.Gray;
+            this.btThuTien.Iconcolor = System.Drawing.Color.Transparent;
+            this.btThuTien.Iconimage = ((System.Drawing.Image)(resources.GetObject("btThuTien.Iconimage")));
+            this.btThuTien.Iconimage_right = null;
+            this.btThuTien.Iconimage_right_Selected = null;
+            this.btThuTien.Iconimage_Selected = null;
+            this.btThuTien.IconMarginLeft = 0;
+            this.btThuTien.IconMarginRight = 0;
+            this.btThuTien.IconRightVisible = true;
+            this.btThuTien.IconRightZoom = 0D;
+            this.btThuTien.IconVisible = true;
+            this.btThuTien.IconZoom = 70D;
+            this.btThuTien.IsTab = false;
+            this.btThuTien.Location = new System.Drawing.Point(650, 13);
+            this.btThuTien.Name = "btThuTien";
+            this.btThuTien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
+            this.btThuTien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
+            this.btThuTien.OnHoverTextColor = System.Drawing.Color.White;
+            this.btThuTien.selected = false;
+            this.btThuTien.Size = new System.Drawing.Size(142, 47);
+            this.btThuTien.TabIndex = 4;
+            this.btThuTien.Text = "  THU TIỀN";
+            this.btThuTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btThuTien.Textcolor = System.Drawing.Color.White;
+            this.btThuTien.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThuTien.Click += new System.EventHandler(this.BtThuTien_Click);
             // 
             // bunifuFlatButton4
             // 
@@ -479,7 +480,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton btTachHD;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
+        private Bunifu.Framework.UI.BunifuFlatButton btThuTien;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.VScrollBar vScrollBar1;
     }
