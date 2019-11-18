@@ -54,8 +54,10 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
-            this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
+            this.uscSanPham = new QuanLyQuanBeer.USC.USCSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
+            this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
+            this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -82,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1213, 59);
+            this.panel1.Size = new System.Drawing.Size(1228, 59);
             this.panel1.TabIndex = 0;
             // 
             // btMaximize
@@ -90,7 +92,7 @@
             this.btMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btMaximize.Image")));
             this.btMaximize.ImageActive = null;
-            this.btMaximize.Location = new System.Drawing.Point(1108, 9);
+            this.btMaximize.Location = new System.Drawing.Point(1123, 9);
             this.btMaximize.Name = "btMaximize";
             this.btMaximize.Size = new System.Drawing.Size(49, 44);
             this.btMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +106,7 @@
             this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
             this.btExit.ImageActive = null;
-            this.btExit.Location = new System.Drawing.Point(1163, 9);
+            this.btExit.Location = new System.Drawing.Point(1178, 9);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(49, 44);
             this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -118,7 +120,7 @@
             this.btMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btMinimize.Image")));
             this.btMinimize.ImageActive = null;
-            this.btMinimize.Location = new System.Drawing.Point(1051, 8);
+            this.btMinimize.Location = new System.Drawing.Point(1066, 8);
             this.btMinimize.Name = "btMinimize";
             this.btMinimize.Size = new System.Drawing.Size(49, 44);
             this.btMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -132,7 +134,7 @@
             this.btRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btRestore.Image = ((System.Drawing.Image)(resources.GetObject("btRestore.Image")));
             this.btRestore.ImageActive = null;
-            this.btRestore.Location = new System.Drawing.Point(1108, 9);
+            this.btRestore.Location = new System.Drawing.Point(1123, 9);
             this.btRestore.Name = "btRestore";
             this.btRestore.Size = new System.Drawing.Size(49, 44);
             this.btRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,7 +149,7 @@
             this.btUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btUser.Image = ((System.Drawing.Image)(resources.GetObject("btUser.Image")));
             this.btUser.ImageActive = null;
-            this.btUser.Location = new System.Drawing.Point(996, 8);
+            this.btUser.Location = new System.Drawing.Point(1011, 8);
             this.btUser.Name = "btUser";
             this.btUser.Size = new System.Drawing.Size(49, 44);
             this.btUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -537,37 +539,57 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.uscLoaiSanPham);
+            this.pnNoiDung.Controls.Add(this.uscSanPham);
             this.pnNoiDung.Controls.Add(this.uscNhanVien);
             this.pnNoiDung.Controls.Add(this.USCTaiKhoan);
             this.pnNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnNoiDung.Location = new System.Drawing.Point(270, 59);
             this.pnNoiDung.Name = "pnNoiDung";
-            this.pnNoiDung.Size = new System.Drawing.Size(943, 607);
+            this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
             // 
-            // USCTaiKhoan
+            // uscSanPham
             // 
-            this.USCTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.USCTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.USCTaiKhoan.Name = "USCTaiKhoan";
-            this.USCTaiKhoan.Size = new System.Drawing.Size(943, 607);
-            this.USCTaiKhoan.TabIndex = 0;
-            this.USCTaiKhoan.Visible = false;
+            this.uscSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscSanPham.Location = new System.Drawing.Point(0, 0);
+            this.uscSanPham.Name = "uscSanPham";
+            this.uscSanPham.Size = new System.Drawing.Size(958, 607);
+            this.uscSanPham.TabIndex = 2;
+            this.uscSanPham.Visible = false;
             // 
             // uscNhanVien
             // 
             this.uscNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscNhanVien.Location = new System.Drawing.Point(0, 0);
             this.uscNhanVien.Name = "uscNhanVien";
-            this.uscNhanVien.Size = new System.Drawing.Size(943, 607);
+            this.uscNhanVien.Size = new System.Drawing.Size(958, 607);
             this.uscNhanVien.TabIndex = 1;
             this.uscNhanVien.Visible = false;
+            // 
+            // USCTaiKhoan
+            // 
+            this.USCTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.USCTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.USCTaiKhoan.Name = "USCTaiKhoan";
+            this.USCTaiKhoan.Size = new System.Drawing.Size(958, 607);
+            this.USCTaiKhoan.TabIndex = 0;
+            this.USCTaiKhoan.Visible = false;
+            // 
+            // uscLoaiSanPham
+            // 
+            this.uscLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscLoaiSanPham.Location = new System.Drawing.Point(0, 0);
+            this.uscLoaiSanPham.Name = "uscLoaiSanPham";
+            this.uscLoaiSanPham.Size = new System.Drawing.Size(958, 607);
+            this.uscLoaiSanPham.TabIndex = 3;
+            this.uscLoaiSanPham.Visible = false;
             // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 666);
+            this.ClientSize = new System.Drawing.Size(1228, 666);
             this.Controls.Add(this.pnNoiDung);
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.panel1);
@@ -619,5 +641,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btMinimize;
         private USCTaiKhoan USCTaiKhoan;
         private USC.USCNhanVien uscNhanVien;
+        private USC.USCSanPham uscSanPham;
+        private USC.USCLoaiSanPham uscLoaiSanPham;
     }
 }

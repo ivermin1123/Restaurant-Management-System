@@ -1,4 +1,5 @@
 ﻿using QuanLyQuanBeer.ADO;
+using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,18 @@ namespace QuanLyQuanBeer.DAO
         }
 
         private ThongTinTaiKhoanDAO() { }
+
+        public string layGioiTinh(string tenDN)
+        {
+            string query = "Select * From ThongTinTaiKhoan where TenDangNhap = N'" + tenDN + "' ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                ThongTinTaiKhoan acc = new ThongTinTaiKhoan(item);
+                return acc.GioiTinh;
+            }
+            return "";
+        }
 
         public DataTable GetListNhanVien()
         {

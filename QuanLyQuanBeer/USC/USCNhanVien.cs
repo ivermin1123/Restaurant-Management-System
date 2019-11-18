@@ -25,7 +25,20 @@ namespace QuanLyQuanBeer.USC
         {
             dtgvNhanVien.DataSource = listNhanVien;
             listNhanVien.DataSource = ThongTinTaiKhoanDAO.Instance.GetListNhanVien();
-
+            dtgvNhanVien.Columns[0].HeaderText = "ID";
+            dtgvNhanVien.Columns[0].FillWeight = 30;
+            dtgvNhanVien.Columns[1].HeaderText = "Họ Tên";
+            dtgvNhanVien.Columns[1].FillWeight = 120;
+            dtgvNhanVien.Columns[2].HeaderText = "SĐT";
+            dtgvNhanVien.Columns[2].FillWeight = 80;
+            dtgvNhanVien.Columns[3].HeaderText = "Địa chỉ";
+            dtgvNhanVien.Columns[4].HeaderText = "Số CMND";
+            dtgvNhanVien.Columns[4].FillWeight = 80;
+            dtgvNhanVien.Columns[5].HeaderText = "Tuổi";
+            dtgvNhanVien.Columns[5].FillWeight = 35;
+            dtgvNhanVien.Columns[6].HeaderText = "Giới tính";
+            dtgvNhanVien.Columns[6].FillWeight = 66;
+            dtgvNhanVien.Columns[7].HeaderText = "Tên đăng nhập";
         }
 
         void binding()
@@ -69,6 +82,34 @@ namespace QuanLyQuanBeer.USC
                 else
                     MessageBox.Show("Cập nhật không thành công!", "Cập nhật tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void bdRDBT()
+        {
+            string tenDN = txbTenDN.Text;
+            if (ThongTinTaiKhoanDAO.Instance.layGioiTinh(tenDN) == "Nam")
+            {
+                rdbtNam.Checked = true;
+            }
+            else
+            {
+                rdbtNu.Checked = true;
+            }
+        }
+
+        private void TxbTenDN_TextChanged(object sender, EventArgs e)
+        {
+            bdRDBT();
+        }
+
+        private void BtSuaTK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtLamMoi_Click(object sender, EventArgs e)
+        {
+            LoadAccount();
         }
     }
 }

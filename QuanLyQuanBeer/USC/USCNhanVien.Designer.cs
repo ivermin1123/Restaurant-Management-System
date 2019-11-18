@@ -59,7 +59,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvNhanVien = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btXoaTK = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btThemTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSuaNV = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -138,6 +141,7 @@
             this.txbTenDN.ReadOnly = true;
             this.txbTenDN.Size = new System.Drawing.Size(182, 29);
             this.txbTenDN.TabIndex = 59;
+            this.txbTenDN.TextChanged += new System.EventHandler(this.TxbTenDN_TextChanged);
             // 
             // lbTenDN1
             // 
@@ -336,14 +340,14 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgvNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvNhanVien.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtgvNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtgvNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -352,7 +356,7 @@
             this.dtgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -376,20 +380,99 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgvNhanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dtgvNhanVien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvNhanVien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.dtgvNhanVien.Size = new System.Drawing.Size(838, 173);
             this.dtgvNhanVien.TabIndex = 1;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btLamMoi);
+            this.panel5.Controls.Add(this.btXoaTK);
+            this.panel5.Controls.Add(this.btThemTK);
             this.panel5.Controls.Add(this.btSuaNV);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(838, 40);
             this.panel5.TabIndex = 2;
+            // 
+            // btXoaTK
+            // 
+            this.btXoaTK.Active = false;
+            this.btXoaTK.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btXoaTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btXoaTK.BackColor = System.Drawing.Color.Transparent;
+            this.btXoaTK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btXoaTK.BorderRadius = 0;
+            this.btXoaTK.ButtonText = "   Xóa";
+            this.btXoaTK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btXoaTK.DisabledColor = System.Drawing.Color.Transparent;
+            this.btXoaTK.Enabled = false;
+            this.btXoaTK.ForeColor = System.Drawing.Color.Gray;
+            this.btXoaTK.Iconcolor = System.Drawing.Color.Transparent;
+            this.btXoaTK.Iconimage = ((System.Drawing.Image)(resources.GetObject("btXoaTK.Iconimage")));
+            this.btXoaTK.Iconimage_right = null;
+            this.btXoaTK.Iconimage_right_Selected = null;
+            this.btXoaTK.Iconimage_Selected = null;
+            this.btXoaTK.IconMarginLeft = 0;
+            this.btXoaTK.IconMarginRight = 0;
+            this.btXoaTK.IconRightVisible = true;
+            this.btXoaTK.IconRightZoom = 0D;
+            this.btXoaTK.IconVisible = true;
+            this.btXoaTK.IconZoom = 50D;
+            this.btXoaTK.IsTab = false;
+            this.btXoaTK.Location = new System.Drawing.Point(592, -2);
+            this.btXoaTK.Name = "btXoaTK";
+            this.btXoaTK.Normalcolor = System.Drawing.Color.Transparent;
+            this.btXoaTK.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btXoaTK.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btXoaTK.selected = false;
+            this.btXoaTK.Size = new System.Drawing.Size(103, 36);
+            this.btXoaTK.TabIndex = 61;
+            this.btXoaTK.Text = "   Xóa";
+            this.btXoaTK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btXoaTK.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btXoaTK.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btThemTK
+            // 
+            this.btThemTK.Active = false;
+            this.btThemTK.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btThemTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btThemTK.BackColor = System.Drawing.Color.Transparent;
+            this.btThemTK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btThemTK.BorderRadius = 0;
+            this.btThemTK.ButtonText = "   Thêm";
+            this.btThemTK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btThemTK.DisabledColor = System.Drawing.Color.Transparent;
+            this.btThemTK.Enabled = false;
+            this.btThemTK.ForeColor = System.Drawing.Color.Gray;
+            this.btThemTK.Iconcolor = System.Drawing.Color.Transparent;
+            this.btThemTK.Iconimage = ((System.Drawing.Image)(resources.GetObject("btThemTK.Iconimage")));
+            this.btThemTK.Iconimage_right = null;
+            this.btThemTK.Iconimage_right_Selected = null;
+            this.btThemTK.Iconimage_Selected = null;
+            this.btThemTK.IconMarginLeft = 0;
+            this.btThemTK.IconMarginRight = 0;
+            this.btThemTK.IconRightVisible = true;
+            this.btThemTK.IconRightZoom = 0D;
+            this.btThemTK.IconVisible = true;
+            this.btThemTK.IconZoom = 50D;
+            this.btThemTK.IsTab = false;
+            this.btThemTK.Location = new System.Drawing.Point(237, -2);
+            this.btThemTK.Name = "btThemTK";
+            this.btThemTK.Normalcolor = System.Drawing.Color.Transparent;
+            this.btThemTK.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btThemTK.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btThemTK.selected = false;
+            this.btThemTK.Size = new System.Drawing.Size(103, 36);
+            this.btThemTK.TabIndex = 59;
+            this.btThemTK.Text = "   Thêm";
+            this.btThemTK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btThemTK.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btThemTK.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btSuaNV
             // 
@@ -414,7 +497,7 @@
             this.btSuaNV.IconVisible = true;
             this.btSuaNV.IconZoom = 50D;
             this.btSuaNV.IsTab = false;
-            this.btSuaNV.Location = new System.Drawing.Point(384, 2);
+            this.btSuaNV.Location = new System.Drawing.Point(349, -2);
             this.btSuaNV.Name = "btSuaNV";
             this.btSuaNV.Normalcolor = System.Drawing.Color.Transparent;
             this.btSuaNV.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -427,6 +510,43 @@
             this.btSuaNV.Textcolor = System.Drawing.Color.Black;
             this.btSuaNV.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSuaNV.Click += new System.EventHandler(this.BtSuaNV_Click);
+            // 
+            // btLamMoi
+            // 
+            this.btLamMoi.Active = false;
+            this.btLamMoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLamMoi.BorderRadius = 0;
+            this.btLamMoi.ButtonText = "   Làm mới";
+            this.btLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLamMoi.DisabledColor = System.Drawing.Color.Gray;
+            this.btLamMoi.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLamMoi.Iconimage")));
+            this.btLamMoi.Iconimage_right = null;
+            this.btLamMoi.Iconimage_right_Selected = null;
+            this.btLamMoi.Iconimage_Selected = null;
+            this.btLamMoi.IconMarginLeft = 0;
+            this.btLamMoi.IconMarginRight = 0;
+            this.btLamMoi.IconRightVisible = true;
+            this.btLamMoi.IconRightZoom = 0D;
+            this.btLamMoi.IconVisible = true;
+            this.btLamMoi.IconZoom = 50D;
+            this.btLamMoi.IsTab = false;
+            this.btLamMoi.Location = new System.Drawing.Point(461, -1);
+            this.btLamMoi.Name = "btLamMoi";
+            this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btLamMoi.selected = false;
+            this.btLamMoi.Size = new System.Drawing.Size(135, 36);
+            this.btLamMoi.TabIndex = 62;
+            this.btLamMoi.Text = "   Làm mới";
+            this.btLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLamMoi.Textcolor = System.Drawing.Color.Black;
+            this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
             // 
             // USCNhanVien
             // 
@@ -479,5 +599,8 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dtgvNhanVien;
         private System.Windows.Forms.Panel panel5;
         private Bunifu.Framework.UI.BunifuFlatButton btSuaNV;
+        private Bunifu.Framework.UI.BunifuFlatButton btXoaTK;
+        private Bunifu.Framework.UI.BunifuFlatButton btThemTK;
+        private Bunifu.Framework.UI.BunifuFlatButton btLamMoi;
     }
 }

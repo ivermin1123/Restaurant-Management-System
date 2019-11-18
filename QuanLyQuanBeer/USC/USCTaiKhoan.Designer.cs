@@ -53,6 +53,7 @@
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.grbLoaiTK.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).BeginInit();
@@ -162,7 +163,7 @@
             this.btResetTK.IconVisible = true;
             this.btResetTK.IconZoom = 50D;
             this.btResetTK.IsTab = false;
-            this.btResetTK.Location = new System.Drawing.Point(597, 0);
+            this.btResetTK.Location = new System.Drawing.Point(659, 3);
             this.btResetTK.Name = "btResetTK";
             this.btResetTK.Normalcolor = System.Drawing.Color.Transparent;
             this.btResetTK.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -199,7 +200,7 @@
             this.btXoaTK.IconVisible = true;
             this.btXoaTK.IconZoom = 50D;
             this.btXoaTK.IsTab = false;
-            this.btXoaTK.Location = new System.Drawing.Point(488, 0);
+            this.btXoaTK.Location = new System.Drawing.Point(417, 3);
             this.btXoaTK.Name = "btXoaTK";
             this.btXoaTK.Normalcolor = System.Drawing.Color.Transparent;
             this.btXoaTK.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -236,7 +237,7 @@
             this.btSuaTK.IconVisible = true;
             this.btSuaTK.IconZoom = 50D;
             this.btSuaTK.IsTab = false;
-            this.btSuaTK.Location = new System.Drawing.Point(379, 0);
+            this.btSuaTK.Location = new System.Drawing.Point(308, 3);
             this.btSuaTK.Name = "btSuaTK";
             this.btSuaTK.Normalcolor = System.Drawing.Color.Transparent;
             this.btSuaTK.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -273,7 +274,7 @@
             this.btThemTK.IconVisible = true;
             this.btThemTK.IconZoom = 50D;
             this.btThemTK.IsTab = false;
-            this.btThemTK.Location = new System.Drawing.Point(270, 0);
+            this.btThemTK.Location = new System.Drawing.Point(199, 3);
             this.btThemTK.Name = "btThemTK";
             this.btThemTK.Normalcolor = System.Drawing.Color.Transparent;
             this.btThemTK.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -291,9 +292,9 @@
             // 
             this.panel4.Controls.Add(this.dtgvTaiKhoan);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 36);
+            this.panel4.Location = new System.Drawing.Point(0, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1005, 479);
+            this.panel4.Size = new System.Drawing.Size(1005, 473);
             this.panel4.TabIndex = 3;
             // 
             // dtgvTaiKhoan
@@ -345,14 +346,17 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgvTaiKhoan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvTaiKhoan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvTaiKhoan.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvTaiKhoan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 479);
+            this.dtgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 473);
             this.dtgvTaiKhoan.TabIndex = 1;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btLamMoi);
             this.panel5.Controls.Add(this.btResetTK);
             this.panel5.Controls.Add(this.btXoaTK);
             this.panel5.Controls.Add(this.btSuaTK);
@@ -360,7 +364,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1005, 36);
+            this.panel5.Size = new System.Drawing.Size(1005, 42);
             this.panel5.TabIndex = 2;
             // 
             // panel3
@@ -422,6 +426,43 @@
             this.panel1.Size = new System.Drawing.Size(1005, 50);
             this.panel1.TabIndex = 4;
             // 
+            // btLamMoi
+            // 
+            this.btLamMoi.Active = false;
+            this.btLamMoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLamMoi.BorderRadius = 0;
+            this.btLamMoi.ButtonText = "   Làm mới";
+            this.btLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLamMoi.DisabledColor = System.Drawing.Color.Gray;
+            this.btLamMoi.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLamMoi.Iconimage")));
+            this.btLamMoi.Iconimage_right = null;
+            this.btLamMoi.Iconimage_right_Selected = null;
+            this.btLamMoi.Iconimage_Selected = null;
+            this.btLamMoi.IconMarginLeft = 0;
+            this.btLamMoi.IconMarginRight = 0;
+            this.btLamMoi.IconRightVisible = true;
+            this.btLamMoi.IconRightZoom = 0D;
+            this.btLamMoi.IconVisible = true;
+            this.btLamMoi.IconZoom = 50D;
+            this.btLamMoi.IsTab = false;
+            this.btLamMoi.Location = new System.Drawing.Point(518, 3);
+            this.btLamMoi.Name = "btLamMoi";
+            this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btLamMoi.selected = false;
+            this.btLamMoi.Size = new System.Drawing.Size(135, 36);
+            this.btLamMoi.TabIndex = 59;
+            this.btLamMoi.Text = "   Làm mới";
+            this.btLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLamMoi.Textcolor = System.Drawing.Color.Black;
+            this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
+            // 
             // USCTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,5 +507,6 @@
         private System.Windows.Forms.TextBox txbTenTaiKhoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuFlatButton btLamMoi;
     }
 }

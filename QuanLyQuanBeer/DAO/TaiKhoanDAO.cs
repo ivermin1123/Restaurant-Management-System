@@ -21,10 +21,19 @@ namespace QuanLyQuanBeer.DAO
 
         private TaiKhoanDAO() { }
 
-        public DataTable layDSTaiKhoan()
+        public List<TaiKhoan> layDSTaiKhoan()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM TaiKhoan");
+            List<TaiKhoan> danhSach = new List<TaiKhoan>();
+            string query = "SELECT * FROM TaiKhoan";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                danhSach.Add(new TaiKhoan(item));
+            }
+            return danhSach;
         }
+
 
         public string layTenDangNhap(string tenDangNhap)
         {

@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BanDAO.cs" />
+    <Compile Include="DAO\LoaiSanPhamDAO.cs" />
+    <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="USC\USCDanhSachHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +115,12 @@
     </Compile>
     <Compile Include="Form\fTinhTien.Designer.cs">
       <DependentUpon>fTinhTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USC\USCLoaiSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCLoaiSanPham.Designer.cs">
+      <DependentUpon>USCLoaiSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="USC\USCManHinhChaoMung.cs">
       <SubType>UserControl</SubType>
@@ -187,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fTinhTien.resx">
       <DependentUpon>fTinhTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCLoaiSanPham.resx">
+      <DependentUpon>USCLoaiSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCManHinhChaoMung.resx">
       <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>

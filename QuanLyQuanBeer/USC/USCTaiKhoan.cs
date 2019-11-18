@@ -19,12 +19,16 @@ namespace QuanLyQuanBeer
             InitializeComponent();
             LoadAccount();
             binding();
+            dtgvTaiKhoan.DataSource = accountList;
         }
 
         void LoadAccount()
         {
             dtgvTaiKhoan.DataSource = accountList;
             accountList.DataSource = TaiKhoanDAO.Instance.layDSTaiKhoan();
+            dtgvTaiKhoan.Columns[0].HeaderText = "Tên đăng nhập";
+            dtgvTaiKhoan.Columns[1].HeaderText = "Mật khẩu";
+            dtgvTaiKhoan.Columns[2].HeaderText = "Loại tài khoản";
         }
 
         private void bdRDBT()
@@ -148,6 +152,11 @@ namespace QuanLyQuanBeer
             }
             else
                 MessageBox.Show("Đặt lại không thành công!", "Đặt lại tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void BtLamMoi_Click(object sender, EventArgs e)
+        {
+            LoadAccount();
         }
     }
 }
