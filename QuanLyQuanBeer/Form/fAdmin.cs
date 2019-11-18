@@ -21,6 +21,7 @@ namespace QuanLyQuanBeer
 
         private void BtBaoCao_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
             uscSanPham.Visible = false;
             uscNhanVien.Visible = false;
@@ -36,6 +37,7 @@ namespace QuanLyQuanBeer
 
         private void BtTaiKhoan_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
             uscSanPham.Visible = false;
             USCTaiKhoan.Visible = true;
@@ -51,6 +53,7 @@ namespace QuanLyQuanBeer
 
         private void BtSanPham_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
             uscSanPham.Visible = true;
             uscNhanVien.Visible = false;
@@ -66,6 +69,7 @@ namespace QuanLyQuanBeer
 
         private void BtDanhMuc_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = false;
             uscLoaiSanPham.Visible = true;
             uscSanPham.Visible = false;
             uscNhanVien.Visible = false;
@@ -81,6 +85,7 @@ namespace QuanLyQuanBeer
 
         private void BtNhanVien_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
             uscSanPham.Visible = false;
             uscNhanVien.Visible = true;
@@ -96,6 +101,7 @@ namespace QuanLyQuanBeer
 
         private void BtThietLapHeThong_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = true;
             uscLoaiSanPham.Visible = false;
             uscSanPham.Visible = false;
             uscNhanVien.Visible = false;
@@ -111,6 +117,7 @@ namespace QuanLyQuanBeer
 
         private void BtHelp_Click(object sender, EventArgs e)
         {
+            uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
             uscSanPham.Visible = false;
             uscNhanVien.Visible = false;

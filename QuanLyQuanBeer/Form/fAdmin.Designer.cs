@@ -54,10 +54,11 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
+            this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.uscSanPham = new QuanLyQuanBeer.USC.USCSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
-            this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
+            this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -313,7 +314,7 @@
             this.btThietLapHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btThietLapHeThong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btThietLapHeThong.BorderRadius = 0;
-            this.btThietLapHeThong.ButtonText = "       Thiết lập hệ thống";
+            this.btThietLapHeThong.ButtonText = "       Bàn";
             this.btThietLapHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btThietLapHeThong.DisabledColor = System.Drawing.Color.Gray;
             this.btThietLapHeThong.Dock = System.Windows.Forms.DockStyle.Top;
@@ -337,7 +338,7 @@
             this.btThietLapHeThong.selected = false;
             this.btThietLapHeThong.Size = new System.Drawing.Size(270, 48);
             this.btThietLapHeThong.TabIndex = 7;
-            this.btThietLapHeThong.Text = "       Thiết lập hệ thống";
+            this.btThietLapHeThong.Text = "       Bàn";
             this.btThietLapHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btThietLapHeThong.Textcolor = System.Drawing.Color.White;
             this.btThietLapHeThong.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -539,6 +540,7 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.uscBan);
             this.pnNoiDung.Controls.Add(this.uscLoaiSanPham);
             this.pnNoiDung.Controls.Add(this.uscSanPham);
             this.pnNoiDung.Controls.Add(this.uscNhanVien);
@@ -548,6 +550,15 @@
             this.pnNoiDung.Name = "pnNoiDung";
             this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
+            // 
+            // uscLoaiSanPham
+            // 
+            this.uscLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscLoaiSanPham.Location = new System.Drawing.Point(0, 0);
+            this.uscLoaiSanPham.Name = "uscLoaiSanPham";
+            this.uscLoaiSanPham.Size = new System.Drawing.Size(958, 607);
+            this.uscLoaiSanPham.TabIndex = 3;
+            this.uscLoaiSanPham.Visible = false;
             // 
             // uscSanPham
             // 
@@ -576,14 +587,14 @@
             this.USCTaiKhoan.TabIndex = 0;
             this.USCTaiKhoan.Visible = false;
             // 
-            // uscLoaiSanPham
+            // uscBan
             // 
-            this.uscLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscLoaiSanPham.Location = new System.Drawing.Point(0, 0);
-            this.uscLoaiSanPham.Name = "uscLoaiSanPham";
-            this.uscLoaiSanPham.Size = new System.Drawing.Size(958, 607);
-            this.uscLoaiSanPham.TabIndex = 3;
-            this.uscLoaiSanPham.Visible = false;
+            this.uscBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscBan.Location = new System.Drawing.Point(0, 0);
+            this.uscBan.Name = "uscBan";
+            this.uscBan.Size = new System.Drawing.Size(958, 607);
+            this.uscBan.TabIndex = 4;
+            this.uscBan.Visible = false;
             // 
             // fAdmin
             // 
@@ -643,5 +654,6 @@
         private USC.USCNhanVien uscNhanVien;
         private USC.USCSanPham uscSanPham;
         private USC.USCLoaiSanPham uscLoaiSanPham;
+        private USC.USCBan uscBan;
     }
 }

@@ -88,6 +88,7 @@ CREATE TABLE SanPham
 	HinhAnh image null
 
 	FOREIGN KEY (idLoai) REFERENCES dbo.LoaiSanPham(id)
+	ON DELETE CASCADE
 )
 GO
 
@@ -135,6 +136,7 @@ CREATE TABLE ThongTinHoaDon
 
 	FOREIGN KEY (idHoaDon) REFERENCES dbo.HoaDon(id),
 	FOREIGN KEY (idSanPham) REFERENCES dbo.SanPham(id)
+	ON DELETE CASCADE
 )
 GO
 
@@ -166,6 +168,61 @@ BEGIN
 END
 GO
 
+
+CREATE proc dbo.USP_InsertDrink
+@TenSanPham nvarchar(100),@DonVi nvarchar(100), @Gia float, @idLoai int
+as  
+begin
+	Insert into dbo.SanPham
+	(TenSanPham,DonVi,Gia,idLoai)
+	VALUES
+	(@TenSanPham,@DonVi, @Gia, @idLoai )
+end
+GO
+
+CREATE PROC themLoaiSanPham
+@tenLoaiSanPham nvarchar(100)
+AS
+BEGIN
+	INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham)
+	VALUES(@tenLoaiSanPham )
+END
+GO
+
+CREATE PROC themBan
+@tenBan nvarchar(100)
+AS
+BEGIN
+	INSERT INTO dbo.Ban(TenBan,TrangThai)
+	VALUES(@tenBan,N'Trống')
+END
+GO
+
+CREATE PROC XoaBan
+@tenBan NVARCHAR(100)
+as
+BEGIN
+	DELETE dbo.Ban WHERE TenBan = 11
+END
+GO
+
+
+
+CREATE PROC XoaSp
+@TenSanPham NVARCHAR(100)
+as
+BEGIN
+	DELETE dbo.SanPham WHERE TenSanPham = @TenSanPham
+END
+GO
+
+CREATE PROC USP_GetTableList
+AS
+BEGIN
+	SELECT * FROM Ban
+END
+GO
+
 CREATE PROC XoaTK
 @tenDn VARCHAR(100)
 AS
@@ -174,8 +231,6 @@ BEGIN
 	DELETE dbo.TaiKhoan WHERE TenDangNhap = @tenDn 
 END
 GO
-
-
 
 CREATE PROC themTaiKhoan
 @ten varchar(100), @matKhau nvarchar(100), @loai nvarchar(10)

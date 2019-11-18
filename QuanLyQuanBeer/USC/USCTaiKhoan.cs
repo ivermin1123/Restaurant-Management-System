@@ -130,6 +130,8 @@ namespace QuanLyQuanBeer
                 loai = "Quản lý";
             if (passWord == "")
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thêm tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (TaiKhoanDAO.Instance.layTenDangNhap(userName) == userName)
+                MessageBox.Show("Đã có tài khoản này", "Thêm tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (TaiKhoanDAO.Instance.capNhatTK(passWord, loai, userName))

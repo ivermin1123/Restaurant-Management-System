@@ -76,11 +76,11 @@ namespace QuanLyQuanBeer.USC
                 int _tuoi = int.Parse(txbTuoi.Text);
                 if (ThongTinTaiKhoanDAO.Instance.capNhat(hoTen, _sDT, diaChi, CMND, _tuoi, gioiTinh, tenDN))
                 {
-                    MessageBox.Show("Cập nhật thành công!", "Cập nhật tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật thành công!", "Cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();
                 }
                 else
-                    MessageBox.Show("Cập nhật không thành công!", "Cập nhật tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Cập nhật không thành công!", "Cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

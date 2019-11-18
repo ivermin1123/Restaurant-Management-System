@@ -31,6 +31,7 @@ namespace QuanLyQuanBeer.USC
             dtgvSanPham.Columns[0].HeaderText = "ID";
             dtgvSanPham.Columns[0].FillWeight = 30;
             dtgvSanPham.Columns[1].HeaderText = "Tên sản phẩm";
+            dtgvSanPham.Columns[1].FillWeight = 130;
             dtgvSanPham.Columns[2].HeaderText = "Đơn vị";
             dtgvSanPham.Columns[3].HeaderText = "Giá tiền";
             dtgvSanPham.Columns[4].HeaderText = "Loại sản phẩm";
@@ -84,6 +85,8 @@ namespace QuanLyQuanBeer.USC
             int MaSP = int.Parse(txbMaSP1.Text);
             if (txbTenSP1.Text == "" || txbGia.Text == "")
                 MessageBox.Show("Bạn phải nhập đủ!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (SanPhamDAO.Instance.GetTenSP(TenSanPham) == TenSanPham)
+                MessageBox.Show("Đã có sản phẩm này", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, IDLoai, MaSP))

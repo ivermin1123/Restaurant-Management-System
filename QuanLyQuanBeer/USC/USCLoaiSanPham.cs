@@ -41,7 +41,7 @@ namespace QuanLyQuanBeer.USC
                 MessageBox.Show("Bạn phải nhập đủ thông tin!", "Thêm loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 if (LoaiSanPhamDAO.Instance.GetLoaiSP(LoaiSP) == LoaiSP)
-                MessageBox.Show("Đã có loại sản phẩm này !!", "Thêm loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Đã có loại sản phẩm này !!", "Thêm loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                     if (LoaiSanPhamDAO.Instance.ThemLSP(LoaiSP))
             {
@@ -58,6 +58,8 @@ namespace QuanLyQuanBeer.USC
             string LoaiSP = txbLoaiSP.Text;
             if (LoaiSP == "")
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Cập nhật loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (LoaiSanPhamDAO.Instance.GetLoaiSP(LoaiSP) == LoaiSP)
+                MessageBox.Show("Đã có loại sản phẩm này !!", "Thêm loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (LoaiSanPhamDAO.Instance.capNhatLSP(LoaiSP, MaLSP))

@@ -45,10 +45,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvLoaiSanPham = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btXoaLSP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSuaLSP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btThemLSP = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -91,11 +91,12 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(979, 50);
+            this.panel2.Size = new System.Drawing.Size(979, 54);
             this.panel2.TabIndex = 7;
             // 
             // txbLoaiSP
             // 
+            this.txbLoaiSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbLoaiSP.Location = new System.Drawing.Point(676, 11);
             this.txbLoaiSP.Name = "txbLoaiSP";
@@ -104,6 +105,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(530, 13);
@@ -114,6 +116,7 @@
             // 
             // txbMaLSP
             // 
+            this.txbMaLSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbMaLSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMaLSP.Location = new System.Drawing.Point(279, 11);
             this.txbMaLSP.Name = "txbMaLSP";
@@ -123,6 +126,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(104, 13);
@@ -136,9 +140,9 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 100);
+            this.panel3.Location = new System.Drawing.Point(0, 104);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(979, 492);
+            this.panel3.Size = new System.Drawing.Size(979, 488);
             this.panel3.TabIndex = 8;
             // 
             // panel4
@@ -147,7 +151,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 48);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(979, 444);
+            this.panel4.Size = new System.Drawing.Size(979, 440);
             this.panel4.TabIndex = 3;
             // 
             // dtgvLoaiSanPham
@@ -202,7 +206,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvLoaiSanPham.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvLoaiSanPham.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvLoaiSanPham.Size = new System.Drawing.Size(979, 444);
+            this.dtgvLoaiSanPham.Size = new System.Drawing.Size(979, 440);
             this.dtgvLoaiSanPham.TabIndex = 1;
             // 
             // panel5
@@ -216,6 +220,43 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(979, 48);
             this.panel5.TabIndex = 2;
+            // 
+            // btLamMoi
+            // 
+            this.btLamMoi.Active = false;
+            this.btLamMoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLamMoi.BorderRadius = 0;
+            this.btLamMoi.ButtonText = "   Làm mới";
+            this.btLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLamMoi.DisabledColor = System.Drawing.Color.Gray;
+            this.btLamMoi.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLamMoi.Iconimage")));
+            this.btLamMoi.Iconimage_right = null;
+            this.btLamMoi.Iconimage_right_Selected = null;
+            this.btLamMoi.Iconimage_Selected = null;
+            this.btLamMoi.IconMarginLeft = 0;
+            this.btLamMoi.IconMarginRight = 0;
+            this.btLamMoi.IconRightVisible = true;
+            this.btLamMoi.IconRightZoom = 0D;
+            this.btLamMoi.IconVisible = true;
+            this.btLamMoi.IconZoom = 50D;
+            this.btLamMoi.IsTab = false;
+            this.btLamMoi.Location = new System.Drawing.Point(467, 6);
+            this.btLamMoi.Name = "btLamMoi";
+            this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btLamMoi.selected = false;
+            this.btLamMoi.Size = new System.Drawing.Size(135, 36);
+            this.btLamMoi.TabIndex = 63;
+            this.btLamMoi.Text = "   Làm mới";
+            this.btLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLamMoi.Textcolor = System.Drawing.Color.Black;
+            this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
             // 
             // btXoaLSP
             // 
@@ -327,43 +368,6 @@
             this.btThemLSP.Textcolor = System.Drawing.Color.Black;
             this.btThemLSP.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btThemLSP.Click += new System.EventHandler(this.BtThemLSP_Click);
-            // 
-            // btLamMoi
-            // 
-            this.btLamMoi.Active = false;
-            this.btLamMoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.btLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btLamMoi.BackColor = System.Drawing.Color.Transparent;
-            this.btLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btLamMoi.BorderRadius = 0;
-            this.btLamMoi.ButtonText = "   Làm mới";
-            this.btLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLamMoi.DisabledColor = System.Drawing.Color.Gray;
-            this.btLamMoi.Iconcolor = System.Drawing.Color.Transparent;
-            this.btLamMoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLamMoi.Iconimage")));
-            this.btLamMoi.Iconimage_right = null;
-            this.btLamMoi.Iconimage_right_Selected = null;
-            this.btLamMoi.Iconimage_Selected = null;
-            this.btLamMoi.IconMarginLeft = 0;
-            this.btLamMoi.IconMarginRight = 0;
-            this.btLamMoi.IconRightVisible = true;
-            this.btLamMoi.IconRightZoom = 0D;
-            this.btLamMoi.IconVisible = true;
-            this.btLamMoi.IconZoom = 50D;
-            this.btLamMoi.IsTab = false;
-            this.btLamMoi.Location = new System.Drawing.Point(467, 6);
-            this.btLamMoi.Name = "btLamMoi";
-            this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
-            this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.btLamMoi.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btLamMoi.selected = false;
-            this.btLamMoi.Size = new System.Drawing.Size(135, 36);
-            this.btLamMoi.TabIndex = 63;
-            this.btLamMoi.Text = "   Làm mới";
-            this.btLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLamMoi.Textcolor = System.Drawing.Color.Black;
-            this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
             // 
             // USCLoaiSanPham
             // 

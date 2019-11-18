@@ -36,26 +36,29 @@ namespace QuanLyQuanBeer
             string tuoi = txbTuoi.Text;
             if (hoTen == "" || diaChi == "" || sDT == "" || cMND == "" || tuoi == "")
                 MessageBox.Show("Bạn phải nhập đủ!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (rdbtNam.Checked == false && rdbtNu.Checked == false)
-                MessageBox.Show("Bạn phải nhập đủ!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                long _cMND = long.Parse(txbCMND.Text);
-                long _sDT = long.Parse(txbSDT.Text);
-                int _tuoi = int.Parse(txbTuoi.Text);
-
-                if (ThongTinTaiKhoanDAO.Instance.them(hoTen, _sDT, diaChi, _cMND, _tuoi, gioiTinh, tenDN))
-                {
-                    MessageBox.Show("Thêm thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
+                if (rdbtNam.Checked == false && rdbtNu.Checked == false)
+                    MessageBox.Show("Bạn phải nhập đủ!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    MessageBox.Show("Thêm không thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Close();
-                }
+                    long _cMND = long.Parse(txbCMND.Text);
+                    long _sDT = long.Parse(txbSDT.Text);
+                    int _tuoi = int.Parse(txbTuoi.Text);
 
-            }
+                    if (ThongTinTaiKhoanDAO.Instance.them(hoTen, _sDT, diaChi, _cMND, _tuoi, gioiTinh, tenDN))
+                    {
+                        MessageBox.Show("Thêm thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm không thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.Close();
+                    }
+
+                }
+            } 
         }
 
         private void TxbSDT_KeyPress(object sender, KeyPressEventArgs e)

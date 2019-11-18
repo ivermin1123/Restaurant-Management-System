@@ -58,6 +58,18 @@
     <Compile Include="DAO\BanDAO.cs" />
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="Form\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USC\USCBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCBan.Designer.cs">
+      <DependentUpon>USCBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="USC\USCDanhSachHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +184,12 @@
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCBan.resx">
+      <DependentUpon>USCBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USC\USCDanhSachHoaDon.resx">
       <DependentUpon>USCDanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>

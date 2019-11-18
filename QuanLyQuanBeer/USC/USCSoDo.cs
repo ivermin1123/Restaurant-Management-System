@@ -33,15 +33,15 @@ namespace QuanLyQuanBeer
                     //, BackgroundImage =  Image.FromFile(@"D:\C#\Icon\Bàn có màu.png")
             };
                 btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
-                //btn.ForeColor = Color.White;
+                btn.ForeColor = Color.White;
                 btn.Font = new Font("Arial", 12, FontStyle.Bold);
                 switch (item.TrangThai)
                 {
                     case "Trống":
-                        btn.BackColor = Color.Aqua;
+                        btn.BackColor = Color.FromArgb(9, 115, 185); 
                         break;
                     default:
-                        btn.BackColor = Color.LightGray;
+                        btn.BackColor = Color.FromArgb(128, 128, 128);
                         break;
                 }
                 flpBan.Controls.Add(btn);
