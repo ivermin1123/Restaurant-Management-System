@@ -20,7 +20,7 @@ namespace QuanLyQuanBeer.ADO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=DESKTOP-HIRRU46\SQLEXPRESS;Initial Catalog=QuanLyQuanBeer;Integrated Security=True";
+        private string connectionSTR = @"Data Source=.;Initial Catalog=QuanLyQuanBeer;Integrated Security=True";
 
         //trả về table 
         public DataTable ExecuteQuery(string query, object[] parameter = null)

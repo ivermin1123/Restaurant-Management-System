@@ -1,4 +1,5 @@
-﻿using QuanLyQuanBeer.DTO;
+﻿using QuanLyQuanBeer.ADO;
+using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,8 +19,8 @@ namespace QuanLyQuanBeer.DAO
             private set { BanDAO.instance = value; }
 
         }
-        public static int TableWidth = 100;
-        public static int TableHeight = 100;
+        public static int TableWidth = 156;
+        public static int TableHeight = 107;
         private BanDAO() { }
         public List<Ban> LoadDsBan()
         {

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLBH));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btDSHoaDonWhite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btDSHoaDonBlue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.lbNgay = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btDSHoaDonWhite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.USCdSHoaDon = new QuanLyQuanBeer.DanhSachHoaDon();
             this.USCnewOrder = new QuanLyQuanBeer.NewOrder();
             this.USCsoDo = new QuanLyQuanBeer.SoDo();
@@ -87,6 +87,45 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1302, 52);
             this.panel1.TabIndex = 1;
+            // 
+            // btDSHoaDonWhite
+            // 
+            this.btDSHoaDonWhite.Active = false;
+            this.btDSHoaDonWhite.Activecolor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.BackColor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btDSHoaDonWhite.BorderRadius = 0;
+            this.btDSHoaDonWhite.ButtonText = "   DS Hóa Đơn";
+            this.btDSHoaDonWhite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDSHoaDonWhite.DisabledColor = System.Drawing.Color.Gray;
+            this.btDSHoaDonWhite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDSHoaDonWhite.Iconcolor = System.Drawing.Color.Transparent;
+            this.btDSHoaDonWhite.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDSHoaDonWhite.Iconimage")));
+            this.btDSHoaDonWhite.Iconimage_right = null;
+            this.btDSHoaDonWhite.Iconimage_right_Selected = null;
+            this.btDSHoaDonWhite.Iconimage_Selected = null;
+            this.btDSHoaDonWhite.IconMarginLeft = 0;
+            this.btDSHoaDonWhite.IconMarginRight = 0;
+            this.btDSHoaDonWhite.IconRightVisible = true;
+            this.btDSHoaDonWhite.IconRightZoom = 0D;
+            this.btDSHoaDonWhite.IconVisible = true;
+            this.btDSHoaDonWhite.IconZoom = 55D;
+            this.btDSHoaDonWhite.IsTab = false;
+            this.btDSHoaDonWhite.Location = new System.Drawing.Point(345, 13);
+            this.btDSHoaDonWhite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btDSHoaDonWhite.Name = "btDSHoaDonWhite";
+            this.btDSHoaDonWhite.Normalcolor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.OnHovercolor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDSHoaDonWhite.selected = false;
+            this.btDSHoaDonWhite.Size = new System.Drawing.Size(176, 42);
+            this.btDSHoaDonWhite.TabIndex = 21;
+            this.btDSHoaDonWhite.Text = "   DS Hóa Đơn";
+            this.btDSHoaDonWhite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDSHoaDonWhite.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDSHoaDonWhite.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDSHoaDonWhite.Visible = false;
+            this.btDSHoaDonWhite.Click += new System.EventHandler(this.BtDSHoaDonWhite_Click);
             // 
             // btMinimize
             // 
@@ -146,7 +185,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(742, 17);
+            this.label2.Location = new System.Drawing.Point(732, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 17;
@@ -159,7 +198,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(936, 18);
+            this.label1.Location = new System.Drawing.Point(926, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 25);
             this.label1.TabIndex = 16;
@@ -172,7 +211,7 @@
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.White;
-            this.lbGio.Location = new System.Drawing.Point(951, 18);
+            this.lbGio.Location = new System.Drawing.Point(941, 18);
             this.lbGio.Name = "lbGio";
             this.lbGio.Size = new System.Drawing.Size(80, 25);
             this.lbGio.TabIndex = 15;
@@ -432,7 +471,7 @@
             this.lbNgay.AutoSize = true;
             this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.White;
-            this.lbNgay.Location = new System.Drawing.Point(834, 18);
+            this.lbNgay.Location = new System.Drawing.Point(824, 18);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(106, 25);
             this.lbNgay.TabIndex = 14;
@@ -457,45 +496,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // btDSHoaDonWhite
-            // 
-            this.btDSHoaDonWhite.Active = false;
-            this.btDSHoaDonWhite.Activecolor = System.Drawing.Color.White;
-            this.btDSHoaDonWhite.BackColor = System.Drawing.Color.White;
-            this.btDSHoaDonWhite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btDSHoaDonWhite.BorderRadius = 0;
-            this.btDSHoaDonWhite.ButtonText = "   DS Hóa Đơn";
-            this.btDSHoaDonWhite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDSHoaDonWhite.DisabledColor = System.Drawing.Color.Gray;
-            this.btDSHoaDonWhite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDSHoaDonWhite.Iconcolor = System.Drawing.Color.Transparent;
-            this.btDSHoaDonWhite.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDSHoaDonWhite.Iconimage")));
-            this.btDSHoaDonWhite.Iconimage_right = null;
-            this.btDSHoaDonWhite.Iconimage_right_Selected = null;
-            this.btDSHoaDonWhite.Iconimage_Selected = null;
-            this.btDSHoaDonWhite.IconMarginLeft = 0;
-            this.btDSHoaDonWhite.IconMarginRight = 0;
-            this.btDSHoaDonWhite.IconRightVisible = true;
-            this.btDSHoaDonWhite.IconRightZoom = 0D;
-            this.btDSHoaDonWhite.IconVisible = true;
-            this.btDSHoaDonWhite.IconZoom = 55D;
-            this.btDSHoaDonWhite.IsTab = false;
-            this.btDSHoaDonWhite.Location = new System.Drawing.Point(345, 13);
-            this.btDSHoaDonWhite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btDSHoaDonWhite.Name = "btDSHoaDonWhite";
-            this.btDSHoaDonWhite.Normalcolor = System.Drawing.Color.White;
-            this.btDSHoaDonWhite.OnHovercolor = System.Drawing.Color.White;
-            this.btDSHoaDonWhite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btDSHoaDonWhite.selected = false;
-            this.btDSHoaDonWhite.Size = new System.Drawing.Size(176, 42);
-            this.btDSHoaDonWhite.TabIndex = 21;
-            this.btDSHoaDonWhite.Text = "   DS Hóa Đơn";
-            this.btDSHoaDonWhite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDSHoaDonWhite.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btDSHoaDonWhite.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDSHoaDonWhite.Visible = false;
-            this.btDSHoaDonWhite.Click += new System.EventHandler(this.BtDSHoaDonWhite_Click);
             // 
             // USCdSHoaDon
             // 

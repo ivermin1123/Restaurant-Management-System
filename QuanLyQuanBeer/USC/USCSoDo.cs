@@ -29,8 +29,12 @@ namespace QuanLyQuanBeer
             List<Ban> tableList = BanDAO.Instance.LoadDsBan();
             foreach (Ban item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight
+                    //, BackgroundImage =  Image.FromFile(@"D:\C#\Icon\Bàn có màu.png")
+            };
                 btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
+                //btn.ForeColor = Color.White;
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
                 switch (item.TrangThai)
                 {
                     case "Trống":

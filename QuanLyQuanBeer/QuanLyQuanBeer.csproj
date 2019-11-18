@@ -56,11 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BanDAO.cs" />
-    <Compile Include="USC\DanhSachHoaDon.cs">
+    <Compile Include="USC\USCDanhSachHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USC\DanhSachHoaDon.Designer.cs">
-      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    <Compile Include="USC\USCDanhSachHoaDon.Designer.cs">
+      <DependentUpon>USCDanhSachHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
@@ -114,37 +114,37 @@
     <Compile Include="Form\fTinhTien.Designer.cs">
       <DependentUpon>fTinhTien.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\ManHinhChaoMung.cs">
+    <Compile Include="USC\USCManHinhChaoMung.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USC\ManHinhChaoMung.Designer.cs">
-      <DependentUpon>ManHinhChaoMung.cs</DependentUpon>
+    <Compile Include="USC\USCManHinhChaoMung.Designer.cs">
+      <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\NewOrder.cs">
+    <Compile Include="USC\USCNewOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USC\NewOrder.Designer.cs">
-      <DependentUpon>NewOrder.cs</DependentUpon>
+    <Compile Include="USC\USCNewOrder.Designer.cs">
+      <DependentUpon>USCNewOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\Order.cs">
+    <Compile Include="USC\USCOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USC\Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
+    <Compile Include="USC\USCOrder.Designer.cs">
+      <DependentUpon>USCOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="USC\SoDo.cs">
+    <Compile Include="USC\USCSoDo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USC\SoDo.Designer.cs">
-      <DependentUpon>SoDo.cs</DependentUpon>
+    <Compile Include="USC\USCSoDo.Designer.cs">
+      <DependentUpon>USCSoDo.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\TinhTien.cs">
+    <Compile Include="USC\USCTinhTien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USC\TinhTien.Designer.cs">
-      <DependentUpon>TinhTien.cs</DependentUpon>
+    <Compile Include="USC\USCTinhTien.Designer.cs">
+      <DependentUpon>USCTinhTien.cs</DependentUpon>
     </Compile>
     <Compile Include="USC\USCNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -152,14 +152,20 @@
     <Compile Include="USC\USCNhanVien.Designer.cs">
       <DependentUpon>USCNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="USC\USCSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCSanPham.Designer.cs">
+      <DependentUpon>USCSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="USC\USCTaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="USC\DanhSachHoaDon.resx">
-      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="USC\USCDanhSachHoaDon.resx">
+      <DependentUpon>USCDanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
@@ -182,14 +188,14 @@
     <EmbeddedResource Include="Form\fTinhTien.resx">
       <DependentUpon>fTinhTien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USC\ManHinhChaoMung.resx">
-      <DependentUpon>ManHinhChaoMung.cs</DependentUpon>
+    <EmbeddedResource Include="USC\USCManHinhChaoMung.resx">
+      <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USC\NewOrder.resx">
-      <DependentUpon>NewOrder.cs</DependentUpon>
+    <EmbeddedResource Include="USC\USCNewOrder.resx">
+      <DependentUpon>USCNewOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USC\Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
+    <EmbeddedResource Include="USC\USCOrder.resx">
+      <DependentUpon>USCOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,11 +206,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="USC\SoDo.resx">
-      <DependentUpon>SoDo.cs</DependentUpon>
+    <EmbeddedResource Include="USC\USCSanPham.resx">
+      <DependentUpon>USCSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USC\TinhTien.resx">
-      <DependentUpon>TinhTien.cs</DependentUpon>
+    <EmbeddedResource Include="USC\USCSoDo.resx">
+      <DependentUpon>USCSoDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCTinhTien.resx">
+      <DependentUpon>USCTinhTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCNhanVien.resx">
       <DependentUpon>USCNhanVien.cs</DependentUpon>
