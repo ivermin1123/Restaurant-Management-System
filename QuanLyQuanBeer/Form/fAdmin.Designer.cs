@@ -54,7 +54,7 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
-            this.taiKhoan1 = new QuanLyQuanBeer.TaiKhoan();
+            this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -536,20 +536,21 @@
             // 
             // pnNoiDung
             // 
-            this.pnNoiDung.Controls.Add(this.taiKhoan1);
+            this.pnNoiDung.Controls.Add(this.USCTaiKhoan);
             this.pnNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnNoiDung.Location = new System.Drawing.Point(270, 59);
             this.pnNoiDung.Name = "pnNoiDung";
             this.pnNoiDung.Size = new System.Drawing.Size(855, 607);
             this.pnNoiDung.TabIndex = 2;
             // 
-            // taiKhoan1
+            // USCTaiKhoan
             // 
-            this.taiKhoan1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taiKhoan1.Location = new System.Drawing.Point(0, 0);
-            this.taiKhoan1.Name = "taiKhoan1";
-            this.taiKhoan1.Size = new System.Drawing.Size(855, 607);
-            this.taiKhoan1.TabIndex = 0;
+            this.USCTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.USCTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.USCTaiKhoan.Name = "USCTaiKhoan";
+            this.USCTaiKhoan.Size = new System.Drawing.Size(855, 607);
+            this.USCTaiKhoan.TabIndex = 0;
+            this.USCTaiKhoan.Visible = false;
             // 
             // fAdmin
             // 
@@ -605,6 +606,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btMaximize;
         private Bunifu.Framework.UI.BunifuImageButton btExit;
         private Bunifu.Framework.UI.BunifuImageButton btMinimize;
-        private TaiKhoan taiKhoan1;
+        private USCTaiKhoan USCTaiKhoan;
     }
 }

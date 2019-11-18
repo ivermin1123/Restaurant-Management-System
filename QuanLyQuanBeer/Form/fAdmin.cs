@@ -32,6 +32,7 @@ namespace QuanLyQuanBeer
 
         private void BtTaiKhoan_Click(object sender, EventArgs e)
         {
+            USCTaiKhoan.Visible = true;
             pn1.Visible = false;
             pn2.Visible = true;
             pn3.Visible = false;

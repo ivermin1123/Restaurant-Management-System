@@ -55,14 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanhSachHoaDon.cs">
+    <Compile Include="USC\DanhSachHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DanhSachHoaDon.Designer.cs">
+    <Compile Include="USC\DanhSachHoaDon.Designer.cs">
       <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="DAO\ThongTinTaiKhoanDAO.cs" />
     <Compile Include="DTO\Ban.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\LoaiSanPham.cs" />
@@ -70,108 +71,123 @@
     <Compile Include="DTO\TaiKhoan.cs" />
     <Compile Include="DTO\ThongTinHoaDon.cs" />
     <Compile Include="DTO\ThongTinTaiKhoan.cs" />
-    <Compile Include="fAdmin.cs">
+    <Compile Include="Form\fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAdmin.Designer.cs">
+    <Compile Include="Form\fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fDangNhap.cs">
+    <Compile Include="Form\fDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDangNhap.Designer.cs">
+    <Compile Include="Form\fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="fDieuHuong.cs">
+    <Compile Include="Form\fDieuHuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDieuHuong.Designer.cs">
+    <Compile Include="Form\fDieuHuong.Designer.cs">
       <DependentUpon>fDieuHuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="fQLBH.cs">
+    <Compile Include="Form\fQLBH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fQLBH.Designer.cs">
+    <Compile Include="Form\fQLBH.Designer.cs">
       <DependentUpon>fQLBH.cs</DependentUpon>
     </Compile>
-    <Compile Include="fThuTien.cs">
+    <Compile Include="Form\fThemTTNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fThuTien.Designer.cs">
+    <Compile Include="Form\fThemTTNV.Designer.cs">
+      <DependentUpon>fThemTTNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fThuTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fThuTien.Designer.cs">
       <DependentUpon>fThuTien.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTinhTien.cs">
+    <Compile Include="Form\fTinhTien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fTinhTien.Designer.cs">
+    <Compile Include="Form\fTinhTien.Designer.cs">
       <DependentUpon>fTinhTien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManHinhChaoMung.cs">
+    <Compile Include="USC\ManHinhChaoMung.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ManHinhChaoMung.Designer.cs">
+    <Compile Include="USC\ManHinhChaoMung.Designer.cs">
       <DependentUpon>ManHinhChaoMung.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewOrder.cs">
+    <Compile Include="USC\NewOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NewOrder.Designer.cs">
+    <Compile Include="USC\NewOrder.Designer.cs">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs">
+    <Compile Include="USC\Order.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Order.Designer.cs">
+    <Compile Include="USC\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoDo.cs">
+    <Compile Include="USC\SoDo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SoDo.Designer.cs">
+    <Compile Include="USC\SoDo.Designer.cs">
       <DependentUpon>SoDo.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaiKhoan.cs">
+    <Compile Include="USC\TinhTien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TaiKhoan.Designer.cs">
-      <DependentUpon>TaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TinhTien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TinhTien.Designer.cs">
+    <Compile Include="USC\TinhTien.Designer.cs">
       <DependentUpon>TinhTien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DanhSachHoaDon.resx">
+    <Compile Include="USC\USCNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCNhanVien.Designer.cs">
+      <DependentUpon>USCNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USC\USCTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCTaiKhoan.Designer.cs">
+      <DependentUpon>USCTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="USC\DanhSachHoaDon.resx">
       <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAdmin.resx">
+    <EmbeddedResource Include="Form\fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fDangNhap.resx">
+    <EmbeddedResource Include="Form\fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fDieuHuong.resx">
+    <EmbeddedResource Include="Form\fDieuHuong.resx">
       <DependentUpon>fDieuHuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fQLBH.resx">
+    <EmbeddedResource Include="Form\fQLBH.resx">
       <DependentUpon>fQLBH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fThuTien.resx">
+    <EmbeddedResource Include="Form\fThemTTNV.resx">
+      <DependentUpon>fThemTTNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fThuTien.resx">
       <DependentUpon>fThuTien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fTinhTien.resx">
+    <EmbeddedResource Include="Form\fTinhTien.resx">
       <DependentUpon>fTinhTien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManHinhChaoMung.resx">
+    <EmbeddedResource Include="USC\ManHinhChaoMung.resx">
       <DependentUpon>ManHinhChaoMung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewOrder.resx">
+    <EmbeddedResource Include="USC\NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order.resx">
+    <EmbeddedResource Include="USC\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -183,14 +199,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SoDo.resx">
+    <EmbeddedResource Include="USC\SoDo.resx">
       <DependentUpon>SoDo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaiKhoan.resx">
-      <DependentUpon>TaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TinhTien.resx">
+    <EmbeddedResource Include="USC\TinhTien.resx">
       <DependentUpon>TinhTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCNhanVien.resx">
+      <DependentUpon>USCNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCTaiKhoan.resx">
+      <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
