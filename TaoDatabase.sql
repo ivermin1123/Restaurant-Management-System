@@ -84,7 +84,8 @@ CREATE TABLE SanPham
 	TenSanPham NVARCHAR(100) not null,
 	DonVi NVARCHAR(100) not null,
 	idLoai INT not null,
-	Gia FLOAT not null
+	Gia FLOAT not null,
+	HinhAnh image null
 
 	FOREIGN KEY (idLoai) REFERENCES dbo.LoaiSanPham(id)
 )
@@ -147,3 +148,43 @@ VALUES
 (102, 5, 2 ),
 (103, 6, 2 )
 GO
+
+create PROC themThongTinTk
+@tenDangNhap varchar(100), @hoTen nvarchar(100), @diaChi nvarchar(100), @cMND INT, @sDT INT, @tuoi INT, @gioiTinh nvarchar(100)
+AS
+BEGIN
+	INSERT INTO dbo.ThongTinTaiKhoan(HoTen, SoDienThoai, DiaChi, CMND, Tuoi, GioiTinh, TenDangNhap)
+	VALUES
+	(   @hoTen, -- HoTen - nvarchar(100)
+	    @sDT,   -- SoDienThoai - int
+	    @diaChi, -- DiaChi - nvarchar(100)
+	    @cMND,   -- CMND - int
+	    @tuoi,   -- Tuoi - int
+	    @gioiTinh, -- GioiTinh - nvarchar(100)
+	    @tenDangNhap   -- TenDangNhap - varchar(100)
+	    )
+END
+GO
+
+CREATE PROC XoaTK
+@tenDn VARCHAR(100)
+AS
+BEGIN
+	DELETE dbo.ThongTinTaiKhoan WHERE TenDangNhap = @tenDn
+	DELETE dbo.TaiKhoan WHERE TenDangNhap = @tenDn 
+END
+GO
+
+
+
+CREATE PROC themTaiKhoan
+@ten varchar(100), @matKhau nvarchar(100), @loai nvarchar(10)
+AS
+BEGIN
+	INSERT INTO dbo.TaiKhoan( TenDangNhap, MatKhau, LoaiTaiKhoan )
+	VALUES (@ten, @matKhau, @loai)
+END
+GO
+
+
+
