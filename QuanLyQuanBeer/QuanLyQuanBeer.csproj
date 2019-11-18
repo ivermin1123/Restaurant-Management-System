@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BanDAO.cs" />
     <Compile Include="USC\DanhSachHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
