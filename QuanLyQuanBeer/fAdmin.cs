@@ -17,6 +17,8 @@ namespace QuanLyQuanBeer
             InitializeComponent();
         }
 
+        
+
         private void BtBaoCao_Click(object sender, EventArgs e)
         {
             pn1.Visible = true;
@@ -126,6 +128,11 @@ namespace QuanLyQuanBeer
         private void BtExit_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

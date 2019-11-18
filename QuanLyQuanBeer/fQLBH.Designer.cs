@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanBeer
 {
-    partial class fQLBH
+    public partial class fQLBH
     {
         /// <summary>
         /// Required designer variable.
@@ -26,20 +26,20 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLBH));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btDSHoaDonBlue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbGio = new System.Windows.Forms.Label();
             this.btRestore = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btSoDowhite = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btOrderPlus = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btOption = new Bunifu.Framework.UI.BunifuImageButton();
             this.btUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.btOrderwhite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSoDoblue = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -47,20 +47,17 @@
             this.btHome = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbNgay = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btQuayLai = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btTinhTien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.USCtinhTien = new QuanLyQuanBeer.TinhTien();
-            this.USCmenu = new QuanLyQuanBeer.Menu();
+            this.btDSHoaDonWhite = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.USCdSHoaDon = new QuanLyQuanBeer.DanhSachHoaDon();
             this.USCnewOrder = new QuanLyQuanBeer.NewOrder();
             this.USCsoDo = new QuanLyQuanBeer.SoDo();
             this.USCorder = new QuanLyQuanBeer.Order();
             this.USCchaoMung = new QuanLyQuanBeer.ManHinhChaoMung();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btOption)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btHome)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,15 +66,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel1.Controls.Add(this.btDSHoaDonWhite);
+            this.panel1.Controls.Add(this.btMinimize);
+            this.panel1.Controls.Add(this.btDSHoaDonBlue);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbGio);
             this.panel1.Controls.Add(this.btRestore);
             this.panel1.Controls.Add(this.btMaximize);
             this.panel1.Controls.Add(this.btSoDowhite);
-            this.panel1.Controls.Add(this.bunifuImageButton1);
             this.panel1.Controls.Add(this.btOrderPlus);
-            this.panel1.Controls.Add(this.btOption);
             this.panel1.Controls.Add(this.btUser);
             this.panel1.Controls.Add(this.btOrderwhite);
             this.panel1.Controls.Add(this.btSoDoblue);
@@ -89,53 +87,104 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1302, 52);
             this.panel1.TabIndex = 1;
-            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseClick);
+            // 
+            // btMinimize
+            // 
+            this.btMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btMinimize.Image")));
+            this.btMinimize.ImageActive = null;
+            this.btMinimize.Location = new System.Drawing.Point(1143, 5);
+            this.btMinimize.Name = "btMinimize";
+            this.btMinimize.Size = new System.Drawing.Size(49, 44);
+            this.btMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btMinimize.TabIndex = 20;
+            this.btMinimize.TabStop = false;
+            this.btMinimize.Zoom = 10;
+            this.btMinimize.Click += new System.EventHandler(this.BtMinimize_Click);
+            // 
+            // btDSHoaDonBlue
+            // 
+            this.btDSHoaDonBlue.Active = false;
+            this.btDSHoaDonBlue.Activecolor = System.Drawing.Color.White;
+            this.btDSHoaDonBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDSHoaDonBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btDSHoaDonBlue.BorderRadius = 0;
+            this.btDSHoaDonBlue.ButtonText = "   DS Hóa Đơn";
+            this.btDSHoaDonBlue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDSHoaDonBlue.DisabledColor = System.Drawing.Color.Gray;
+            this.btDSHoaDonBlue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDSHoaDonBlue.Iconcolor = System.Drawing.Color.Transparent;
+            this.btDSHoaDonBlue.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDSHoaDonBlue.Iconimage")));
+            this.btDSHoaDonBlue.Iconimage_right = null;
+            this.btDSHoaDonBlue.Iconimage_right_Selected = null;
+            this.btDSHoaDonBlue.Iconimage_Selected = null;
+            this.btDSHoaDonBlue.IconMarginLeft = 0;
+            this.btDSHoaDonBlue.IconMarginRight = 0;
+            this.btDSHoaDonBlue.IconRightVisible = true;
+            this.btDSHoaDonBlue.IconRightZoom = 0D;
+            this.btDSHoaDonBlue.IconVisible = true;
+            this.btDSHoaDonBlue.IconZoom = 55D;
+            this.btDSHoaDonBlue.IsTab = false;
+            this.btDSHoaDonBlue.Location = new System.Drawing.Point(345, 13);
+            this.btDSHoaDonBlue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btDSHoaDonBlue.Name = "btDSHoaDonBlue";
+            this.btDSHoaDonBlue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDSHoaDonBlue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btDSHoaDonBlue.OnHoverTextColor = System.Drawing.Color.White;
+            this.btDSHoaDonBlue.selected = false;
+            this.btDSHoaDonBlue.Size = new System.Drawing.Size(176, 42);
+            this.btDSHoaDonBlue.TabIndex = 19;
+            this.btDSHoaDonBlue.Text = "   DS Hóa Đơn";
+            this.btDSHoaDonBlue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDSHoaDonBlue.Textcolor = System.Drawing.Color.White;
+            this.btDSHoaDonBlue.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDSHoaDonBlue.Click += new System.EventHandler(this.BtDSHoaDonBlue_Click);
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(494, 13);
+            this.label2.Location = new System.Drawing.Point(742, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 30);
+            this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 17;
             this.label2.Text = "Thời gian:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(699, 13);
+            this.label1.Location = new System.Drawing.Point(936, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 30);
+            this.label1.Size = new System.Drawing.Size(20, 25);
             this.label1.TabIndex = 16;
             this.label1.Text = "-";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbGio
             // 
-            this.lbGio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbGio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbGio.AutoSize = true;
-            this.lbGio.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.White;
-            this.lbGio.Location = new System.Drawing.Point(714, 13);
+            this.lbGio.Location = new System.Drawing.Point(951, 18);
             this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(66, 30);
+            this.lbGio.Size = new System.Drawing.Size(80, 25);
             this.lbGio.TabIndex = 15;
-            this.lbGio.Text = "00:00";
-            this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbGio.Text = "00:00:00";
+            this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btRestore
             // 
             this.btRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btRestore.Image = ((System.Drawing.Image)(resources.GetObject("btRestore.Image")));
             this.btRestore.ImageActive = null;
-            this.btRestore.Location = new System.Drawing.Point(985, 5);
+            this.btRestore.Location = new System.Drawing.Point(1195, 5);
             this.btRestore.Name = "btRestore";
             this.btRestore.Size = new System.Drawing.Size(49, 44);
             this.btRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +199,7 @@
             this.btMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btMaximize.Image")));
             this.btMaximize.ImageActive = null;
-            this.btMaximize.Location = new System.Drawing.Point(985, 5);
+            this.btMaximize.Location = new System.Drawing.Point(1195, 5);
             this.btMaximize.Name = "btMaximize";
             this.btMaximize.Size = new System.Drawing.Size(49, 44);
             this.btMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,19 +247,6 @@
             this.btSoDowhite.Visible = false;
             this.btSoDowhite.Click += new System.EventHandler(this.BtSoDowhite_Click);
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1161, 5);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(32, 46);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 9;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
             // btOrderPlus
             // 
             this.btOrderPlus.Active = false;
@@ -234,7 +270,7 @@
             this.btOrderPlus.IconVisible = true;
             this.btOrderPlus.IconZoom = 55D;
             this.btOrderPlus.IsTab = false;
-            this.btOrderPlus.Location = new System.Drawing.Point(1040, 5);
+            this.btOrderPlus.Location = new System.Drawing.Point(1023, 5);
             this.btOrderPlus.Name = "btOrderPlus";
             this.btOrderPlus.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btOrderPlus.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -247,20 +283,6 @@
             this.btOrderPlus.Textcolor = System.Drawing.Color.White;
             this.btOrderPlus.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btOrderPlus.Click += new System.EventHandler(this.BtOrderPlus_Click);
-            // 
-            // btOption
-            // 
-            this.btOption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btOption.Image = ((System.Drawing.Image)(resources.GetObject("btOption.Image")));
-            this.btOption.ImageActive = null;
-            this.btOption.Location = new System.Drawing.Point(1210, 11);
-            this.btOption.Name = "btOption";
-            this.btOption.Size = new System.Drawing.Size(33, 35);
-            this.btOption.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btOption.TabIndex = 7;
-            this.btOption.TabStop = false;
-            this.btOption.Zoom = 10;
-            this.btOption.Click += new System.EventHandler(this.BtOption_Click);
             // 
             // btUser
             // 
@@ -406,23 +428,20 @@
             // 
             // lbNgay
             // 
-            this.lbNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbNgay.AutoSize = true;
-            this.lbNgay.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.White;
-            this.lbNgay.Location = new System.Drawing.Point(597, 13);
+            this.lbNgay.Location = new System.Drawing.Point(834, 18);
             this.lbNgay.Name = "lbNgay";
-            this.lbNgay.Size = new System.Drawing.Size(127, 30);
+            this.lbNgay.Size = new System.Drawing.Size(106, 25);
             this.lbNgay.TabIndex = 14;
             this.lbNgay.Text = "00/00/0000";
-            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btTinhTien);
-            this.panel2.Controls.Add(this.btQuayLai);
-            this.panel2.Controls.Add(this.USCtinhTien);
-            this.panel2.Controls.Add(this.USCmenu);
+            this.panel2.Controls.Add(this.USCdSHoaDon);
             this.panel2.Controls.Add(this.USCnewOrder);
             this.panel2.Controls.Add(this.USCsoDo);
             this.panel2.Controls.Add(this.USCorder);
@@ -434,103 +453,58 @@
             this.panel2.TabIndex = 2;
             this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Panel2_MouseClick);
             // 
-            // btQuayLai
-            // 
-            this.btQuayLai.Active = false;
-            this.btQuayLai.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btQuayLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btQuayLai.BackColor = System.Drawing.Color.White;
-            this.btQuayLai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btQuayLai.BorderRadius = 0;
-            this.btQuayLai.ButtonText = "  QUAY LẠI";
-            this.btQuayLai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btQuayLai.DisabledColor = System.Drawing.Color.Gray;
-            this.btQuayLai.Iconcolor = System.Drawing.Color.Transparent;
-            this.btQuayLai.Iconimage = ((System.Drawing.Image)(resources.GetObject("btQuayLai.Iconimage")));
-            this.btQuayLai.Iconimage_right = null;
-            this.btQuayLai.Iconimage_right_Selected = null;
-            this.btQuayLai.Iconimage_Selected = null;
-            this.btQuayLai.IconMarginLeft = 0;
-            this.btQuayLai.IconMarginRight = 0;
-            this.btQuayLai.IconRightVisible = true;
-            this.btQuayLai.IconRightZoom = 0D;
-            this.btQuayLai.IconVisible = true;
-            this.btQuayLai.IconZoom = 50D;
-            this.btQuayLai.IsTab = false;
-            this.btQuayLai.Location = new System.Drawing.Point(12, 664);
-            this.btQuayLai.Name = "btQuayLai";
-            this.btQuayLai.Normalcolor = System.Drawing.Color.White;
-            this.btQuayLai.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btQuayLai.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btQuayLai.selected = false;
-            this.btQuayLai.Size = new System.Drawing.Size(138, 48);
-            this.btQuayLai.TabIndex = 6;
-            this.btQuayLai.Text = "  QUAY LẠI";
-            this.btQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btQuayLai.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btQuayLai.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQuayLai.Visible = false;
-            this.btQuayLai.Click += new System.EventHandler(this.BtQuayLai_Click);
-            // 
-            // btTinhTien
-            // 
-            this.btTinhTien.Active = false;
-            this.btTinhTien.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
-            this.btTinhTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTinhTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
-            this.btTinhTien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btTinhTien.BorderRadius = 0;
-            this.btTinhTien.ButtonText = "  Tính tiền";
-            this.btTinhTien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTinhTien.DisabledColor = System.Drawing.Color.Gray;
-            this.btTinhTien.Iconcolor = System.Drawing.Color.Transparent;
-            this.btTinhTien.Iconimage = ((System.Drawing.Image)(resources.GetObject("btTinhTien.Iconimage")));
-            this.btTinhTien.Iconimage_right = null;
-            this.btTinhTien.Iconimage_right_Selected = null;
-            this.btTinhTien.Iconimage_Selected = null;
-            this.btTinhTien.IconMarginLeft = 0;
-            this.btTinhTien.IconMarginRight = 0;
-            this.btTinhTien.IconRightVisible = true;
-            this.btTinhTien.IconRightZoom = 0D;
-            this.btTinhTien.IconVisible = true;
-            this.btTinhTien.IconZoom = 70D;
-            this.btTinhTien.IsTab = false;
-            this.btTinhTien.Location = new System.Drawing.Point(1155, 663);
-            this.btTinhTien.Name = "btTinhTien";
-            this.btTinhTien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
-            this.btTinhTien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
-            this.btTinhTien.OnHoverTextColor = System.Drawing.Color.White;
-            this.btTinhTien.selected = false;
-            this.btTinhTien.Size = new System.Drawing.Size(124, 47);
-            this.btTinhTien.TabIndex = 5;
-            this.btTinhTien.Text = "  Tính tiền";
-            this.btTinhTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTinhTien.Textcolor = System.Drawing.Color.White;
-            this.btTinhTien.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTinhTien.Visible = false;
-            this.btTinhTien.Click += new System.EventHandler(this.BtTinhTien_Click);
-            // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // USCtinhTien
+            // btDSHoaDonWhite
             // 
-            this.USCtinhTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.USCtinhTien.Location = new System.Drawing.Point(0, 0);
-            this.USCtinhTien.Name = "USCtinhTien";
-            this.USCtinhTien.Size = new System.Drawing.Size(1302, 726);
-            this.USCtinhTien.TabIndex = 4;
-            this.USCtinhTien.Visible = false;
+            this.btDSHoaDonWhite.Active = false;
+            this.btDSHoaDonWhite.Activecolor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.BackColor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btDSHoaDonWhite.BorderRadius = 0;
+            this.btDSHoaDonWhite.ButtonText = "   DS Hóa Đơn";
+            this.btDSHoaDonWhite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDSHoaDonWhite.DisabledColor = System.Drawing.Color.Gray;
+            this.btDSHoaDonWhite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDSHoaDonWhite.Iconcolor = System.Drawing.Color.Transparent;
+            this.btDSHoaDonWhite.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDSHoaDonWhite.Iconimage")));
+            this.btDSHoaDonWhite.Iconimage_right = null;
+            this.btDSHoaDonWhite.Iconimage_right_Selected = null;
+            this.btDSHoaDonWhite.Iconimage_Selected = null;
+            this.btDSHoaDonWhite.IconMarginLeft = 0;
+            this.btDSHoaDonWhite.IconMarginRight = 0;
+            this.btDSHoaDonWhite.IconRightVisible = true;
+            this.btDSHoaDonWhite.IconRightZoom = 0D;
+            this.btDSHoaDonWhite.IconVisible = true;
+            this.btDSHoaDonWhite.IconZoom = 55D;
+            this.btDSHoaDonWhite.IsTab = false;
+            this.btDSHoaDonWhite.Location = new System.Drawing.Point(345, 13);
+            this.btDSHoaDonWhite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btDSHoaDonWhite.Name = "btDSHoaDonWhite";
+            this.btDSHoaDonWhite.Normalcolor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.OnHovercolor = System.Drawing.Color.White;
+            this.btDSHoaDonWhite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDSHoaDonWhite.selected = false;
+            this.btDSHoaDonWhite.Size = new System.Drawing.Size(176, 42);
+            this.btDSHoaDonWhite.TabIndex = 21;
+            this.btDSHoaDonWhite.Text = "   DS Hóa Đơn";
+            this.btDSHoaDonWhite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDSHoaDonWhite.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDSHoaDonWhite.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDSHoaDonWhite.Visible = false;
+            this.btDSHoaDonWhite.Click += new System.EventHandler(this.BtDSHoaDonWhite_Click);
             // 
-            // USCmenu
+            // USCdSHoaDon
             // 
-            this.USCmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.USCmenu.Location = new System.Drawing.Point(1043, 0);
-            this.USCmenu.Name = "USCmenu";
-            this.USCmenu.Size = new System.Drawing.Size(203, 194);
-            this.USCmenu.TabIndex = 3;
-            this.USCmenu.Visible = false;
+            this.USCdSHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.USCdSHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.USCdSHoaDon.Name = "USCdSHoaDon";
+            this.USCdSHoaDon.Size = new System.Drawing.Size(1302, 726);
+            this.USCdSHoaDon.TabIndex = 8;
+            this.USCdSHoaDon.Visible = false;
             // 
             // USCnewOrder
             // 
@@ -586,10 +560,9 @@
             this.Load += new System.EventHandler(this.FQLBH_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btOption)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btHome)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -607,23 +580,21 @@
         private Bunifu.Framework.UI.BunifuFlatButton btSoDowhite;
         private Bunifu.Framework.UI.BunifuImageButton btUser;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuFlatButton btOrderPlus;
-        private Bunifu.Framework.UI.BunifuImageButton btOption;
-        private NewOrder USCnewOrder;
         private Bunifu.Framework.UI.BunifuImageButton btMaximize;
         private Bunifu.Framework.UI.BunifuImageButton btRestore;
-        private Order USCorder;
-        private SoDo USCsoDo;
-        private Menu USCmenu;
-        private TinhTien USCtinhTien;
-        private Bunifu.Framework.UI.BunifuFlatButton btTinhTien;
-        private Bunifu.Framework.UI.BunifuFlatButton btQuayLai;
         private System.Windows.Forms.Label lbGio;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private ManHinhChaoMung USCchaoMung;
+        public Order USCorder;
+        public SoDo USCsoDo;
+        public ManHinhChaoMung USCchaoMung;
+        public NewOrder USCnewOrder;
+        private Bunifu.Framework.UI.BunifuFlatButton btDSHoaDonBlue;
+        private Bunifu.Framework.UI.BunifuImageButton btMinimize;
+        private Bunifu.Framework.UI.BunifuFlatButton btDSHoaDonWhite;
+        private DanhSachHoaDon USCdSHoaDon;
     }
 }

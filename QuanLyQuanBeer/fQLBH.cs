@@ -19,14 +19,6 @@ namespace QuanLyQuanBeer
             USCchaoMung.Visible = true;
         }
 
-
-
-
-        public void setButton1Visible(bool flag)
-        {
-            this.USCmenu.Visible = flag;
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -36,17 +28,16 @@ namespace QuanLyQuanBeer
 
         private void BtOrderBlue_Click(object sender, EventArgs e)
         {
-            btQuayLai.Visible = false;
             USCchaoMung.Visible = false;
             btOrderwhite.Visible = true;
+            btDSHoaDonBlue.Visible = true;
+            btDSHoaDonWhite.Visible = false;
             btSoDoblue.Visible = true;
             btSoDowhite.Visible = false;
             USCnewOrder.Visible = false;
             USCorder.Visible = true;
             USCsoDo.Visible = false;
-            USCmenu.Visible = false;
-            btTinhTien.Visible = false;
-            USCtinhTien.Visible = false;
+            USCdSHoaDon.Visible = false;
         }
 
         private void BtChoThanhToan_Click(object sender, EventArgs e)
@@ -62,14 +53,15 @@ namespace QuanLyQuanBeer
 
         private void BtOrderPlus_Click(object sender, EventArgs e)
         {
-            USCtinhTien.Visible = false;
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = true;
+            btDSHoaDonBlue.Visible = true;
+            btDSHoaDonWhite.Visible = false;
+            btSoDowhite.Visible = false;
+            btOrderwhite.Visible = false;
             USCnewOrder.Visible = true;
             USCorder.Visible = false;
             USCchaoMung.Visible = false;
             USCsoDo.Visible = false;
-            USCmenu.Visible = false;
+            USCdSHoaDon.Visible = false;
         }
 
         private void BtRestore_Click(object sender, EventArgs e)
@@ -88,50 +80,34 @@ namespace QuanLyQuanBeer
 
         private void BtOrderwhite_Click(object sender, EventArgs e)
         {
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = false;
             USCnewOrder.Visible = false;
             USCorder.Visible = true;
             USCchaoMung.Visible = false;
             USCsoDo.Visible = false;
-            USCtinhTien.Visible = false;
-            USCmenu.Visible = false;
+            USCdSHoaDon.Visible = false;
         }
 
         private void BtSoDoblue_Click_1(object sender, EventArgs e)
         {
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = false;
+            btDSHoaDonBlue.Visible = true;
+            btDSHoaDonWhite.Visible = false;
             btSoDowhite.Visible = true;
             btOrderwhite.Visible = false;
             btOrderBlue.Visible = true;
             USCnewOrder.Visible = false;
             USCorder.Visible = false;
             USCsoDo.Visible = true;
-            USCmenu.Visible = false;
-            USCtinhTien.Visible = false;
             USCchaoMung.Visible = false;
+            USCdSHoaDon.Visible = false;
         }
 
         private void BtSoDowhite_Click(object sender, EventArgs e)
         {
-            USCtinhTien.Visible = false;
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = false;
             USCsoDo.Visible = true;
             USCnewOrder.Visible = false;
             USCorder.Visible = false;
             USCchaoMung.Visible = false;
-            USCmenu.Visible = false;
-        }
-
-        private void BtOption_Click(object sender, EventArgs e)
-        {
-            USCmenu.BringToFront();
-            if (USCmenu.Visible != true)
-                USCmenu.Visible = true;
-            else
-                USCmenu.Visible = false;  
+            USCdSHoaDon.Visible = false;
         }
 
         private void USCsoDo_Load(object sender, EventArgs e)
@@ -141,58 +117,28 @@ namespace QuanLyQuanBeer
 
         private void Panel2_MouseClick(object sender, MouseEventArgs e)
         {
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = false;
             USCsoDo.Visible = false;
             USCnewOrder.Visible = false;
             USCorder.Visible = false;
-            USCmenu.Visible = false;
-        }
-
-        private void Panel1_MouseClick(object sender, MouseEventArgs e)
-        {
-            USCmenu.Visible = false;
-        }
-
-        private void BtTinhTien_Click(object sender, EventArgs e)
-        {
-            USCtinhTien.Visible = true;
-            USCtinhTien.BringToFront();
-            btQuayLai.Visible = true;
-            btQuayLai.BringToFront();
-        }
-
-        private void BtQuayLai_Click(object sender, EventArgs e)
-        {
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = true;
-            USCnewOrder.Visible = true;
-            USCorder.Visible = false;
-            USCsoDo.Visible = false;
-            USCmenu.Visible = false;
-            USCtinhTien.Visible = false;
-            USCchaoMung.Visible = false;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
-            timer1.Start();
         }
 
         private void FQLBH_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy"); ;
-            lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void BtHome_Click(object sender, EventArgs e)
         {
+            btDSHoaDonBlue.Visible = true;
+            btDSHoaDonWhite.Visible = false;
             USCchaoMung.Visible = true;
             USCchaoMung.BringToFront();
-            btQuayLai.Visible = false;
-            btTinhTien.Visible = false;
             btSoDoblue.Visible = true;
             btSoDowhite.Visible = false;
             btOrderwhite.Visible = false;
@@ -200,8 +146,30 @@ namespace QuanLyQuanBeer
             USCnewOrder.Visible = false;
             USCorder.Visible = false;
             USCsoDo.Visible = false;
-            USCmenu.Visible = false;
-            USCtinhTien.Visible = false;
+            USCdSHoaDon.Visible = false;
+        }
+
+        private void BtMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtDSHoaDonBlue_Click(object sender, EventArgs e)
+        {
+            btDSHoaDonBlue.Visible = false;
+            btDSHoaDonWhite.Visible = true;
+            btSoDowhite.Visible = false;
+            btOrderwhite.Visible = false;
+            USCdSHoaDon.Visible = true;
+            USCchaoMung.Visible = false;
+            USCorder.Visible = false;
+            USCsoDo.Visible = false;
+            USCnewOrder.Visible = false;
+        }
+
+        private void BtDSHoaDonWhite_Click(object sender, EventArgs e)
+        {
+
         }
 
         // this.WindowState = FormWindowState.Maximized;

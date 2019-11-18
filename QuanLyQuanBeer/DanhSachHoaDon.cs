@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
-    public partial class Menu : UserControl
+    public partial class DanhSachHoaDon : UserControl
     {
-        public Menu()
+        public DanhSachHoaDon()
         {
             InitializeComponent();
         }

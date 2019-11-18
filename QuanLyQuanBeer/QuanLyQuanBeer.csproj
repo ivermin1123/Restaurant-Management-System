@@ -55,7 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhSachHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DanhSachHoaDon.Designer.cs">
+      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DTO\Ban.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\LoaiSanPham.cs" />
@@ -105,12 +112,6 @@
     <Compile Include="ManHinhChaoMung.Designer.cs">
       <DependentUpon>ManHinhChaoMung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="NewOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,12 +132,21 @@
     <Compile Include="SoDo.Designer.cs">
       <DependentUpon>SoDo.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="TinhTien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TinhTien.Designer.cs">
       <DependentUpon>TinhTien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DanhSachHoaDon.resx">
+      <DependentUpon>DanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,9 +168,6 @@
     <EmbeddedResource Include="ManHinhChaoMung.resx">
       <DependentUpon>ManHinhChaoMung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="SoDo.resx">
       <DependentUpon>SoDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TinhTien.resx">
       <DependentUpon>TinhTien.cs</DependentUpon>

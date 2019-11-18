@@ -46,7 +46,6 @@
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTachHD = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btQuayLai = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -239,7 +238,6 @@
             this.panel3.Controls.Add(this.bunifuFlatButton4);
             this.panel3.Controls.Add(this.bunifuFlatButton3);
             this.panel3.Controls.Add(this.btTachHD);
-            this.panel3.Controls.Add(this.btQuayLai);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 529);
             this.panel3.Name = "panel3";
@@ -388,41 +386,6 @@
             this.btTachHD.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btTachHD.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btQuayLai
-            // 
-            this.btQuayLai.Active = false;
-            this.btQuayLai.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btQuayLai.BackColor = System.Drawing.Color.White;
-            this.btQuayLai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btQuayLai.BorderRadius = 0;
-            this.btQuayLai.ButtonText = "  QUAY LẠI";
-            this.btQuayLai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btQuayLai.DisabledColor = System.Drawing.Color.Gray;
-            this.btQuayLai.Iconcolor = System.Drawing.Color.Transparent;
-            this.btQuayLai.Iconimage = ((System.Drawing.Image)(resources.GetObject("btQuayLai.Iconimage")));
-            this.btQuayLai.Iconimage_right = null;
-            this.btQuayLai.Iconimage_right_Selected = null;
-            this.btQuayLai.Iconimage_Selected = null;
-            this.btQuayLai.IconMarginLeft = 0;
-            this.btQuayLai.IconMarginRight = 0;
-            this.btQuayLai.IconRightVisible = true;
-            this.btQuayLai.IconRightZoom = 0D;
-            this.btQuayLai.IconVisible = true;
-            this.btQuayLai.IconZoom = 50D;
-            this.btQuayLai.IsTab = false;
-            this.btQuayLai.Location = new System.Drawing.Point(9, 13);
-            this.btQuayLai.Name = "btQuayLai";
-            this.btQuayLai.Normalcolor = System.Drawing.Color.White;
-            this.btQuayLai.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btQuayLai.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btQuayLai.selected = false;
-            this.btQuayLai.Size = new System.Drawing.Size(138, 48);
-            this.btQuayLai.TabIndex = 0;
-            this.btQuayLai.Text = "  QUAY LẠI";
-            this.btQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btQuayLai.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btQuayLai.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -476,7 +439,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuFlatButton btQuayLai;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton btTachHD;

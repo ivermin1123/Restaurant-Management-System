@@ -24,7 +24,7 @@ namespace QuanLyQuanBeer
 
         private void BtHuy_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

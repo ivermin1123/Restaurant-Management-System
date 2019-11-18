@@ -52,12 +52,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.label1.Location = new System.Drawing.Point(23, 338);
+            this.label1.Location = new System.Drawing.Point(147, 336);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1062, 80);
+            this.label1.Size = new System.Drawing.Size(796, 80);
             this.label1.TabIndex = 3;
-            this.label1.Text = "                 Chào mừng đến với phần mềm - Chúc bạn một ngày vui vẻ\r\nVà hãy nh" +
-    "ớ luôn luôn mỉm cười vì chỉ có cười thì người ta mới nghĩ bạn điên !!!";
+            this.label1.Text = "Chào mừng đến với phần mềm - Chúc bạn một ngày vui vẻ\r\n         Và hãy nhớ luôn l" +
+    "uôn mỉm cười với khách hàng !!";
             // 
             // pictureBox1
             // 

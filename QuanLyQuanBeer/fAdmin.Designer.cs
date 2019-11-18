@@ -54,6 +54,7 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
+            this.taiKhoan1 = new QuanLyQuanBeer.TaiKhoan();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -63,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btResize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnMenu.SuspendLayout();
+            this.pnNoiDung.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -185,6 +187,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // pnMenu
             // 
@@ -533,11 +536,20 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.taiKhoan1);
             this.pnNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnNoiDung.Location = new System.Drawing.Point(270, 59);
             this.pnNoiDung.Name = "pnNoiDung";
             this.pnNoiDung.Size = new System.Drawing.Size(855, 607);
             this.pnNoiDung.TabIndex = 2;
+            // 
+            // taiKhoan1
+            // 
+            this.taiKhoan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taiKhoan1.Location = new System.Drawing.Point(0, 0);
+            this.taiKhoan1.Name = "taiKhoan1";
+            this.taiKhoan1.Size = new System.Drawing.Size(855, 607);
+            this.taiKhoan1.TabIndex = 0;
             // 
             // fAdmin
             // 
@@ -561,6 +573,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btResize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnMenu.ResumeLayout(false);
+            this.pnNoiDung.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -592,5 +605,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btMaximize;
         private Bunifu.Framework.UI.BunifuImageButton btExit;
         private Bunifu.Framework.UI.BunifuImageButton btMinimize;
+        private TaiKhoan taiKhoan1;
     }
 }
