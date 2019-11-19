@@ -54,11 +54,11 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
+            this.uscSanPham = new QuanLyQuanBeer.USCSanPham();
+            this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
-            this.uscSanPham = new QuanLyQuanBeer.USC.USCSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
-            this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -540,9 +540,9 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.uscSanPham);
             this.pnNoiDung.Controls.Add(this.uscBan);
             this.pnNoiDung.Controls.Add(this.uscLoaiSanPham);
-            this.pnNoiDung.Controls.Add(this.uscSanPham);
             this.pnNoiDung.Controls.Add(this.uscNhanVien);
             this.pnNoiDung.Controls.Add(this.USCTaiKhoan);
             this.pnNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -550,6 +550,24 @@
             this.pnNoiDung.Name = "pnNoiDung";
             this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
+            // 
+            // uscSanPham
+            // 
+            this.uscSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscSanPham.Location = new System.Drawing.Point(0, 0);
+            this.uscSanPham.Name = "uscSanPham";
+            this.uscSanPham.Size = new System.Drawing.Size(958, 607);
+            this.uscSanPham.TabIndex = 5;
+            this.uscSanPham.Visible = false;
+            // 
+            // uscBan
+            // 
+            this.uscBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscBan.Location = new System.Drawing.Point(0, 0);
+            this.uscBan.Name = "uscBan";
+            this.uscBan.Size = new System.Drawing.Size(958, 607);
+            this.uscBan.TabIndex = 4;
+            this.uscBan.Visible = false;
             // 
             // uscLoaiSanPham
             // 
@@ -559,15 +577,6 @@
             this.uscLoaiSanPham.Size = new System.Drawing.Size(958, 607);
             this.uscLoaiSanPham.TabIndex = 3;
             this.uscLoaiSanPham.Visible = false;
-            // 
-            // uscSanPham
-            // 
-            this.uscSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscSanPham.Location = new System.Drawing.Point(0, 0);
-            this.uscSanPham.Name = "uscSanPham";
-            this.uscSanPham.Size = new System.Drawing.Size(958, 607);
-            this.uscSanPham.TabIndex = 2;
-            this.uscSanPham.Visible = false;
             // 
             // uscNhanVien
             // 
@@ -586,15 +595,6 @@
             this.USCTaiKhoan.Size = new System.Drawing.Size(958, 607);
             this.USCTaiKhoan.TabIndex = 0;
             this.USCTaiKhoan.Visible = false;
-            // 
-            // uscBan
-            // 
-            this.uscBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscBan.Location = new System.Drawing.Point(0, 0);
-            this.uscBan.Name = "uscBan";
-            this.uscBan.Size = new System.Drawing.Size(958, 607);
-            this.uscBan.TabIndex = 4;
-            this.uscBan.Visible = false;
             // 
             // fAdmin
             // 
@@ -652,8 +652,8 @@
         private Bunifu.Framework.UI.BunifuImageButton btMinimize;
         private USCTaiKhoan USCTaiKhoan;
         private USC.USCNhanVien uscNhanVien;
-        private USC.USCSanPham uscSanPham;
         private USC.USCLoaiSanPham uscLoaiSanPham;
         private USC.USCBan uscBan;
+        private USCSanPham uscSanPham;
     }
 }

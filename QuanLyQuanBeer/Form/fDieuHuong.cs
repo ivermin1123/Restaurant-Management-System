@@ -19,7 +19,7 @@ namespace QuanLyQuanBeer
 
         private void BtQLBH_Click(object sender, EventArgs e)
         {
-            fQLBH f = new fQLBH();
+            fQLBH1 f = new fQLBH1();
             f.ShowDialog();
         }
 

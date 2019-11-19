@@ -55,14 +55,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonBan.Designer.cs">
+      <DependentUpon>ButtonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\BanDAO.cs" />
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
-    <Compile Include="Form\Form1.cs">
+    <Compile Include="Form\fQLBH1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form\fQLBH1.Designer.cs">
+      <DependentUpon>fQLBH1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USC\USCSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCSanPham.Designer.cs">
+      <DependentUpon>USCSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="USC\USCBan.cs">
       <SubType>UserControl</SubType>
@@ -104,12 +116,6 @@
     <Compile Include="Form\fDieuHuong.Designer.cs">
       <DependentUpon>fDieuHuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\fQLBH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\fQLBH.Designer.cs">
-      <DependentUpon>fQLBH.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\fThemTTNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,18 +146,6 @@
     <Compile Include="USC\USCManHinhChaoMung.Designer.cs">
       <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\USCNewOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USC\USCNewOrder.Designer.cs">
-      <DependentUpon>USCNewOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="USC\USCOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USC\USCOrder.Designer.cs">
-      <DependentUpon>USCOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="USC\USCSoDo.cs">
@@ -160,23 +154,11 @@
     <Compile Include="USC\USCSoDo.Designer.cs">
       <DependentUpon>USCSoDo.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\USCTinhTien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USC\USCTinhTien.Designer.cs">
-      <DependentUpon>USCTinhTien.cs</DependentUpon>
-    </Compile>
     <Compile Include="USC\USCNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="USC\USCNhanVien.Designer.cs">
       <DependentUpon>USCNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="USC\USCSanPham.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USC\USCSanPham.Designer.cs">
-      <DependentUpon>USCSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="USC\USCTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -184,8 +166,14 @@
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ButtonBan.resx">
+      <DependentUpon>ButtonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fQLBH1.resx">
+      <DependentUpon>fQLBH1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCSanPham.resx">
+      <DependentUpon>USCSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCBan.resx">
       <DependentUpon>USCBan.cs</DependentUpon>
@@ -202,9 +190,6 @@
     <EmbeddedResource Include="Form\fDieuHuong.resx">
       <DependentUpon>fDieuHuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\fQLBH.resx">
-      <DependentUpon>fQLBH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\fThemTTNV.resx">
       <DependentUpon>fThemTTNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,12 +205,6 @@
     <EmbeddedResource Include="USC\USCManHinhChaoMung.resx">
       <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USC\USCNewOrder.resx">
-      <DependentUpon>USCNewOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="USC\USCOrder.resx">
-      <DependentUpon>USCOrder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -235,14 +214,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="USC\USCSanPham.resx">
-      <DependentUpon>USCSanPham.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="USC\USCSoDo.resx">
       <DependentUpon>USCSoDo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="USC\USCTinhTien.resx">
-      <DependentUpon>USCTinhTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCNhanVien.resx">
       <DependentUpon>USCNhanVien.cs</DependentUpon>

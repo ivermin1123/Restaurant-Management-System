@@ -29,13 +29,12 @@ namespace QuanLyQuanBeer
             List<Ban> tableList = BanDAO.Instance.LoadDsBan();
             foreach (Ban item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight
-                    //, BackgroundImage =  Image.FromFile(@"D:\C#\Icon\Bàn có màu.png")
-            };
-                btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
-                btn.ForeColor = Color.White;
+                btTang1.BackColor = Color.White;
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight, Image = Image.FromFile(@"D:\C#\Icon\banchuaxoabg1.jpg") };
+                btn.Text = item.TenBan ;
+                btn.ForeColor = Color.Black;
                 btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                switch (item.TrangThai)
+                /*switch (item.TrangThai)
                 {
                     case "Trống":
                         btn.BackColor = Color.FromArgb(9, 115, 185); 
@@ -43,7 +42,7 @@ namespace QuanLyQuanBeer
                     default:
                         btn.BackColor = Color.FromArgb(128, 128, 128);
                         break;
-                }
+                }*/
                 flpBan.Controls.Add(btn);
             }
         }

@@ -27,6 +27,20 @@ namespace QuanLyQuanBeer.DAO
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
+        public List<SanPham> LoadChonMon()
+        {
+            List<SanPham> tableList = new List<SanPham>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListFood");
+            foreach (DataRow item in data.Rows)
+            {
+                SanPham sp = new SanPham(item);
+                tableList.Add(sp);
+            }
+
+            return tableList;
+        }
+
         public DataTable GetListSP()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,a.HinhAnh From SanPham a,  LoaiSanPham b where a.idLoai = b.id");

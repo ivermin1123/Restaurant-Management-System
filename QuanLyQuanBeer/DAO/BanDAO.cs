@@ -20,7 +20,7 @@ namespace QuanLyQuanBeer.DAO
 
         }
         public static int TableWidth = 156;
-        public static int TableHeight = 107;
+        public static int TableHeight = 120;
         private BanDAO() { }
 
         public bool xoaBan(string tenBan)
