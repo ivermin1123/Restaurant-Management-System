@@ -36,7 +36,6 @@ namespace QuanLyQuanBeer
             dtgvSanPham.Columns[2].HeaderText = "Đơn vị";
             dtgvSanPham.Columns[3].HeaderText = "Giá";
             dtgvSanPham.Columns[4].HeaderText = "Loại";
-            dtgvSanPham.Columns[5].HeaderText = "Hình ảnh";
         }
 
         void binding()
@@ -49,33 +48,8 @@ namespace QuanLyQuanBeer
 
         private void BtThemSP_Click(object sender, EventArgs e)
         {
-            //sp.TenSanPham = txbTenSP1.Text;
-            //sp.Gia = Convert.ToDouble(txbGia.Text);
-            string TenSanPham = txbTenSP1.Text;
-            double Gia = Convert.ToDouble(txbGia.Text);
-            string DonVi = txbDonVi.Text;
-            // Chọn loại sản phẩm
-            LoaiSanPham loaisp = cbxLoaiSP.SelectedItem as LoaiSanPham;
-            int IDLoai = loaisp.ID;
-            if (txbTenSP1.Text == "" || txbGia.Text == "")
-            {
-                MessageBox.Show("Bạn phải nhập đủ thông tin!!", "Thông báo", MessageBoxButtons.OK);
-            }
-            else
-            {
-                if (SanPhamDAO.Instance.GetTenSP(TenSanPham) == TenSanPham)
-                    MessageBox.Show("Đã có sản phẩm này", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                {
-                    if (SanPhamDAO.Instance.ThemSP(TenSanPham, DonVi, Gia, IDLoai))
-                    {
-                        MessageBox.Show("Thêm thành công!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadAccount();
-                    }
-                    else
-                        MessageBox.Show("Thêm không thành công!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }    
-            }
+            fThemSP f = new fThemSP();
+            f.ShowDialog();
         }
 
         private void BtSuaSP_Click(object sender, EventArgs e)
@@ -88,6 +62,8 @@ namespace QuanLyQuanBeer
             string DonVi = txbDonVi.Text;
             if (txbTenSP1.Text == "" || txbGia.Text == "")
                 MessageBox.Show("Bạn phải nhập đủ!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (TenSanPham == SanPhamDAO.Instance.GetTenSP(TenSanPham))
+                MessageBox.Show("Đã có sản phẩm này!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi,Gia, IDLoai, MaSP))

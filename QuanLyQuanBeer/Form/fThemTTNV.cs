@@ -44,7 +44,7 @@ namespace QuanLyQuanBeer
                 {
                     long _cMND = long.Parse(txbCMND.Text);
                     long _sDT = long.Parse(txbSDT.Text);
-                    int _tuoi = int.Parse(txbTuoi.Text);
+                    long _tuoi = long.Parse(txbTuoi.Text);
 
                     if (ThongTinTaiKhoanDAO.Instance.them(hoTen, _sDT, diaChi, _cMND, _tuoi, gioiTinh, tenDN))
                     {

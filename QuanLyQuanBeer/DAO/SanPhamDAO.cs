@@ -43,7 +43,7 @@ namespace QuanLyQuanBeer.DAO
 
         public DataTable GetListSP()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,a.HinhAnh From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
+            return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
         }
 
         public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai)
