@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
-    public partial class ButtonBan : UserControl
+    public partial class btChonMon : UserControl
     {
-        public ButtonBan()
+        public btChonMon()
         {
             InitializeComponent();
         }

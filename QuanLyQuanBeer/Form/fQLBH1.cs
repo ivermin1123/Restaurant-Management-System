@@ -49,7 +49,8 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.LoadChonMon();
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight, Image = Image.FromFile(@"D:\C#\Icon\banchuaxoabg1.jpg") };
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight};
+                btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
                 btn.Font = new Font("Arial", 12, FontStyle.Bold);

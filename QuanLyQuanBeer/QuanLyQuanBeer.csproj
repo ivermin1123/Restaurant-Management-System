@@ -55,11 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonBan.cs">
+    <Compile Include="btChonMon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ButtonBan.Designer.cs">
-      <DependentUpon>ButtonBan.cs</DependentUpon>
+    <Compile Include="btChonMon.Designer.cs">
+      <DependentUpon>btChonMon.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\BanDAO.cs" />
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
@@ -160,12 +160,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="USC\USCSoDo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USC\USCSoDo.Designer.cs">
-      <DependentUpon>USCSoDo.cs</DependentUpon>
-    </Compile>
     <Compile Include="USC\USCNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,8 +172,8 @@
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ButtonBan.resx">
-      <DependentUpon>ButtonBan.cs</DependentUpon>
+    <EmbeddedResource Include="btChonMon.resx">
+      <DependentUpon>btChonMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fQLBH1.resx">
       <DependentUpon>fQLBH1.cs</DependentUpon>
@@ -232,9 +226,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="USC\USCSoDo.resx">
-      <DependentUpon>USCSoDo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="USC\USCNhanVien.resx">
       <DependentUpon>USCNhanVien.cs</DependentUpon>
     </EmbeddedResource>

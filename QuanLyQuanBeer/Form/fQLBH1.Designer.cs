@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLBH1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,6 +83,9 @@
             this.panel33 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton12 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -105,7 +109,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.flpChonMon = new System.Windows.Forms.FlowLayoutPanel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -122,7 +126,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.btTang1 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.panel29 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnOrder = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -131,18 +141,8 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.lbTongSoOrder = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btMenu = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton12 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.btTang1 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.flpChonMon = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
@@ -180,15 +180,14 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel16.SuspendLayout();
+            this.panel30.SuspendLayout();
+            this.panel29.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.pnOrder.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            this.panel30.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel29.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -214,6 +213,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1247, 52);
             this.panel1.TabIndex = 2;
+            // 
+            // btMenu
+            // 
+            this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMenu.Image = ((System.Drawing.Image)(resources.GetObject("btMenu.Image")));
+            this.btMenu.ImageActive = null;
+            this.btMenu.Location = new System.Drawing.Point(1040, 8);
+            this.btMenu.Name = "btMenu";
+            this.btMenu.Size = new System.Drawing.Size(45, 41);
+            this.btMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btMenu.TabIndex = 21;
+            this.btMenu.TabStop = false;
+            this.btMenu.Zoom = 10;
+            this.btMenu.Click += new System.EventHandler(this.BtMenu_Click);
             // 
             // btMinimize
             // 
@@ -1161,6 +1174,91 @@
             this.pnMenu.TabIndex = 6;
             this.pnMenu.Visible = false;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 84);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(207, 5);
+            this.panel4.TabIndex = 24;
+            // 
+            // bunifuFlatButton12
+            // 
+            this.bunifuFlatButton12.Active = false;
+            this.bunifuFlatButton12.Activecolor = System.Drawing.Color.White;
+            this.bunifuFlatButton12.BackColor = System.Drawing.Color.White;
+            this.bunifuFlatButton12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton12.BorderRadius = 0;
+            this.bunifuFlatButton12.ButtonText = "   Danh sách hóa đơn";
+            this.bunifuFlatButton12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton12.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton12.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton12.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton12.Iconimage")));
+            this.bunifuFlatButton12.Iconimage_right = null;
+            this.bunifuFlatButton12.Iconimage_right_Selected = null;
+            this.bunifuFlatButton12.Iconimage_Selected = null;
+            this.bunifuFlatButton12.IconMarginLeft = 0;
+            this.bunifuFlatButton12.IconMarginRight = 0;
+            this.bunifuFlatButton12.IconRightVisible = true;
+            this.bunifuFlatButton12.IconRightZoom = 0D;
+            this.bunifuFlatButton12.IconVisible = true;
+            this.bunifuFlatButton12.IconZoom = 55D;
+            this.bunifuFlatButton12.IsTab = false;
+            this.bunifuFlatButton12.Location = new System.Drawing.Point(0, 42);
+            this.bunifuFlatButton12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuFlatButton12.Name = "bunifuFlatButton12";
+            this.bunifuFlatButton12.Normalcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton12.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.bunifuFlatButton12.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton12.selected = false;
+            this.bunifuFlatButton12.Size = new System.Drawing.Size(207, 42);
+            this.bunifuFlatButton12.TabIndex = 23;
+            this.bunifuFlatButton12.Text = "   Danh sách hóa đơn";
+            this.bunifuFlatButton12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton12.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton12.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bunifuFlatButton11
+            // 
+            this.bunifuFlatButton11.Active = false;
+            this.bunifuFlatButton11.Activecolor = System.Drawing.Color.White;
+            this.bunifuFlatButton11.BackColor = System.Drawing.Color.White;
+            this.bunifuFlatButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton11.BorderRadius = 0;
+            this.bunifuFlatButton11.ButtonText = "   Danh sách Order";
+            this.bunifuFlatButton11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton11.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton11.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton11.Iconimage")));
+            this.bunifuFlatButton11.Iconimage_right = null;
+            this.bunifuFlatButton11.Iconimage_right_Selected = null;
+            this.bunifuFlatButton11.Iconimage_Selected = null;
+            this.bunifuFlatButton11.IconMarginLeft = 0;
+            this.bunifuFlatButton11.IconMarginRight = 0;
+            this.bunifuFlatButton11.IconRightVisible = true;
+            this.bunifuFlatButton11.IconRightZoom = 0D;
+            this.bunifuFlatButton11.IconVisible = true;
+            this.bunifuFlatButton11.IconZoom = 55D;
+            this.bunifuFlatButton11.IsTab = false;
+            this.bunifuFlatButton11.Location = new System.Drawing.Point(0, 0);
+            this.bunifuFlatButton11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuFlatButton11.Name = "bunifuFlatButton11";
+            this.bunifuFlatButton11.Normalcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton11.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.bunifuFlatButton11.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton11.selected = false;
+            this.bunifuFlatButton11.Size = new System.Drawing.Size(207, 42);
+            this.bunifuFlatButton11.TabIndex = 22;
+            this.bunifuFlatButton11.Text = "   Danh sách Order";
+            this.bunifuFlatButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton11.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton11.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
@@ -1222,9 +1320,9 @@
             this.panel10.Controls.Add(this.panel19);
             this.panel10.Controls.Add(this.panel20);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(654, 0);
+            this.panel10.Location = new System.Drawing.Point(699, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(593, 652);
+            this.panel10.Size = new System.Drawing.Size(548, 652);
             this.panel10.TabIndex = 3;
             // 
             // panel11
@@ -1234,7 +1332,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(0, 505);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(591, 58);
+            this.panel11.Size = new System.Drawing.Size(546, 58);
             this.panel11.TabIndex = 4;
             // 
             // panel28
@@ -1244,7 +1342,7 @@
             this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel28.Location = new System.Drawing.Point(0, 0);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(589, 56);
+            this.panel28.Size = new System.Drawing.Size(544, 56);
             this.panel28.TabIndex = 5;
             // 
             // label8
@@ -1252,7 +1350,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(379, 13);
+            this.label8.Location = new System.Drawing.Point(334, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 21);
             this.label8.TabIndex = 0;
@@ -1268,7 +1366,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(0, 441);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(591, 64);
+            this.panel17.Size = new System.Drawing.Size(546, 64);
             this.panel17.TabIndex = 3;
             // 
             // bunifuFlatButton4
@@ -1325,7 +1423,7 @@
             this.bunifuImageButton3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton3.Image")));
             this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(514, 12);
+            this.bunifuImageButton3.Location = new System.Drawing.Point(469, 12);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
             this.bunifuImageButton3.Size = new System.Drawing.Size(74, 46);
             this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1340,7 +1438,7 @@
             this.bunifuImageButton4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
             this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(428, 12);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(383, 12);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
             this.bunifuImageButton4.Size = new System.Drawing.Size(74, 46);
             this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1357,7 +1455,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel18.Location = new System.Drawing.Point(0, 563);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(591, 87);
+            this.panel18.Size = new System.Drawing.Size(546, 87);
             this.panel18.TabIndex = 2;
             // 
             // bunifuFlatButton5
@@ -1383,7 +1481,7 @@
             this.bunifuFlatButton5.IconVisible = true;
             this.bunifuFlatButton5.IconZoom = 70D;
             this.bunifuFlatButton5.IsTab = false;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(329, 25);
+            this.bunifuFlatButton5.Location = new System.Drawing.Point(284, 25);
             this.bunifuFlatButton5.Name = "bunifuFlatButton5";
             this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1419,7 +1517,7 @@
             this.btTinhTien.IconVisible = true;
             this.btTinhTien.IconZoom = 70D;
             this.btTinhTien.IsTab = false;
-            this.btTinhTien.Location = new System.Drawing.Point(445, 25);
+            this.btTinhTien.Location = new System.Drawing.Point(400, 25);
             this.btTinhTien.Name = "btTinhTien";
             this.btTinhTien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(40)))));
             this.btTinhTien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(85)))));
@@ -1456,7 +1554,7 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 70D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(203, 25);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(158, 25);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -1476,7 +1574,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(0, 75);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(591, 366);
+            this.panel19.Size = new System.Drawing.Size(546, 366);
             this.panel19.TabIndex = 1;
             // 
             // panel20
@@ -1486,7 +1584,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(591, 75);
+            this.panel20.Size = new System.Drawing.Size(546, 75);
             this.panel20.TabIndex = 0;
             // 
             // label9
@@ -1509,27 +1607,27 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel21.Location = new System.Drawing.Point(0, 0);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(654, 652);
+            this.panel21.Size = new System.Drawing.Size(699, 652);
             this.panel21.TabIndex = 2;
             // 
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.White;
             this.panel22.Controls.Add(this.flpChonMon);
-            this.panel22.Controls.Add(this.vScrollBar1);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel22.Location = new System.Drawing.Point(0, 137);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(654, 452);
+            this.panel22.Size = new System.Drawing.Size(699, 452);
             this.panel22.TabIndex = 3;
             // 
-            // vScrollBar1
+            // flpChonMon
             // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(637, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 452);
-            this.vScrollBar1.TabIndex = 0;
+            this.flpChonMon.AutoScroll = true;
+            this.flpChonMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpChonMon.Location = new System.Drawing.Point(0, 0);
+            this.flpChonMon.Name = "flpChonMon";
+            this.flpChonMon.Size = new System.Drawing.Size(699, 452);
+            this.flpChonMon.TabIndex = 1;
             // 
             // panel23
             // 
@@ -1540,7 +1638,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel23.Location = new System.Drawing.Point(0, 589);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(654, 63);
+            this.panel23.Size = new System.Drawing.Size(699, 63);
             this.panel23.TabIndex = 2;
             // 
             // bunifuImageButton5
@@ -1550,7 +1648,7 @@
             this.bunifuImageButton5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton5.Image")));
             this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(565, 8);
+            this.bunifuImageButton5.Location = new System.Drawing.Point(610, 8);
             this.bunifuImageButton5.Name = "bunifuImageButton5";
             this.bunifuImageButton5.Size = new System.Drawing.Size(74, 46);
             this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1565,7 +1663,7 @@
             this.bunifuImageButton6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton6.Image")));
             this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(485, 8);
+            this.bunifuImageButton6.Location = new System.Drawing.Point(530, 8);
             this.bunifuImageButton6.Name = "bunifuImageButton6";
             this.bunifuImageButton6.Size = new System.Drawing.Size(74, 46);
             this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1580,7 +1678,7 @@
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 75);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(654, 62);
+            this.panel24.Size = new System.Drawing.Size(699, 62);
             this.panel24.TabIndex = 1;
             // 
             // panel25
@@ -1592,7 +1690,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(654, 75);
+            this.panel25.Size = new System.Drawing.Size(699, 75);
             this.panel25.TabIndex = 0;
             // 
             // bunifuFlatButton2
@@ -1789,6 +1887,62 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Trống 0/0 bàn - 0 ghế";
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.panel30);
+            this.panel16.Controls.Add(this.panel29);
+            this.panel16.Controls.Add(this.bunifuImageButton1);
+            this.panel16.Controls.Add(this.bunifuImageButton2);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(208, 652);
+            this.panel16.TabIndex = 4;
+            // 
+            // panel30
+            // 
+            this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel30.Controls.Add(this.btTang1);
+            this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel30.Location = new System.Drawing.Point(0, 48);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(208, 604);
+            this.panel30.TabIndex = 6;
+            // 
+            // btTang1
+            // 
+            this.btTang1.ActiveBorderThickness = 1;
+            this.btTang1.ActiveCornerRadius = 20;
+            this.btTang1.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btTang1.ActiveForecolor = System.Drawing.Color.White;
+            this.btTang1.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btTang1.BackColor = System.Drawing.Color.White;
+            this.btTang1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTang1.BackgroundImage")));
+            this.btTang1.ButtonText = "Tầng 1";
+            this.btTang1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTang1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTang1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btTang1.IdleBorderThickness = 1;
+            this.btTang1.IdleCornerRadius = 20;
+            this.btTang1.IdleFillColor = System.Drawing.Color.White;
+            this.btTang1.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btTang1.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btTang1.Location = new System.Drawing.Point(13, 9);
+            this.btTang1.Margin = new System.Windows.Forms.Padding(5);
+            this.btTang1.Name = "btTang1";
+            this.btTang1.Size = new System.Drawing.Size(176, 41);
+            this.btTang1.TabIndex = 0;
+            this.btTang1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.label7);
+            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel29.Location = new System.Drawing.Point(0, 0);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(208, 48);
+            this.panel29.TabIndex = 5;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -1798,6 +1952,36 @@
             this.label7.Size = new System.Drawing.Size(140, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Toàn bộ quán:";
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.White;
+            this.bunifuImageButton1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(129, 603);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(74, 46);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 4;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            // 
+            // bunifuImageButton2
+            // 
+            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.White;
+            this.bunifuImageButton2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
+            this.bunifuImageButton2.ImageActive = null;
+            this.bunifuImageButton2.Location = new System.Drawing.Point(49, 603);
+            this.bunifuImageButton2.Name = "bunifuImageButton2";
+            this.bunifuImageButton2.Size = new System.Drawing.Size(74, 46);
+            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton2.TabIndex = 3;
+            this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Zoom = 10;
             // 
             // pnOrder
             // 
@@ -1906,199 +2090,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // btMenu
-            // 
-            this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btMenu.Image = ((System.Drawing.Image)(resources.GetObject("btMenu.Image")));
-            this.btMenu.ImageActive = null;
-            this.btMenu.Location = new System.Drawing.Point(1040, 8);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(45, 41);
-            this.btMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btMenu.TabIndex = 21;
-            this.btMenu.TabStop = false;
-            this.btMenu.Zoom = 10;
-            this.btMenu.Click += new System.EventHandler(this.BtMenu_Click);
-            // 
-            // bunifuFlatButton11
-            // 
-            this.bunifuFlatButton11.Active = false;
-            this.bunifuFlatButton11.Activecolor = System.Drawing.Color.White;
-            this.bunifuFlatButton11.BackColor = System.Drawing.Color.White;
-            this.bunifuFlatButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton11.BorderRadius = 0;
-            this.bunifuFlatButton11.ButtonText = "   Danh sách Order";
-            this.bunifuFlatButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton11.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton11.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton11.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton11.Iconimage")));
-            this.bunifuFlatButton11.Iconimage_right = null;
-            this.bunifuFlatButton11.Iconimage_right_Selected = null;
-            this.bunifuFlatButton11.Iconimage_Selected = null;
-            this.bunifuFlatButton11.IconMarginLeft = 0;
-            this.bunifuFlatButton11.IconMarginRight = 0;
-            this.bunifuFlatButton11.IconRightVisible = true;
-            this.bunifuFlatButton11.IconRightZoom = 0D;
-            this.bunifuFlatButton11.IconVisible = true;
-            this.bunifuFlatButton11.IconZoom = 55D;
-            this.bunifuFlatButton11.IsTab = false;
-            this.bunifuFlatButton11.Location = new System.Drawing.Point(0, 0);
-            this.bunifuFlatButton11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuFlatButton11.Name = "bunifuFlatButton11";
-            this.bunifuFlatButton11.Normalcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton11.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.bunifuFlatButton11.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton11.selected = false;
-            this.bunifuFlatButton11.Size = new System.Drawing.Size(207, 42);
-            this.bunifuFlatButton11.TabIndex = 22;
-            this.bunifuFlatButton11.Text = "   Danh sách Order";
-            this.bunifuFlatButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton11.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton11.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuFlatButton12
-            // 
-            this.bunifuFlatButton12.Active = false;
-            this.bunifuFlatButton12.Activecolor = System.Drawing.Color.White;
-            this.bunifuFlatButton12.BackColor = System.Drawing.Color.White;
-            this.bunifuFlatButton12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton12.BorderRadius = 0;
-            this.bunifuFlatButton12.ButtonText = "   Danh sách hóa đơn";
-            this.bunifuFlatButton12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton12.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton12.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton12.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton12.Iconimage")));
-            this.bunifuFlatButton12.Iconimage_right = null;
-            this.bunifuFlatButton12.Iconimage_right_Selected = null;
-            this.bunifuFlatButton12.Iconimage_Selected = null;
-            this.bunifuFlatButton12.IconMarginLeft = 0;
-            this.bunifuFlatButton12.IconMarginRight = 0;
-            this.bunifuFlatButton12.IconRightVisible = true;
-            this.bunifuFlatButton12.IconRightZoom = 0D;
-            this.bunifuFlatButton12.IconVisible = true;
-            this.bunifuFlatButton12.IconZoom = 55D;
-            this.bunifuFlatButton12.IsTab = false;
-            this.bunifuFlatButton12.Location = new System.Drawing.Point(0, 42);
-            this.bunifuFlatButton12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuFlatButton12.Name = "bunifuFlatButton12";
-            this.bunifuFlatButton12.Normalcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton12.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.bunifuFlatButton12.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton12.selected = false;
-            this.bunifuFlatButton12.Size = new System.Drawing.Size(207, 42);
-            this.bunifuFlatButton12.TabIndex = 23;
-            this.bunifuFlatButton12.Text = "   Danh sách hóa đơn";
-            this.bunifuFlatButton12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton12.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton12.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 84);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(207, 5);
-            this.panel4.TabIndex = 24;
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.White;
-            this.bunifuImageButton2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(49, 603);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(74, 46);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 3;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.White;
-            this.bunifuImageButton1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(129, 603);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(74, 46);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 4;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
-            // panel30
-            // 
-            this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel30.Controls.Add(this.btTang1);
-            this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel30.Location = new System.Drawing.Point(0, 48);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(208, 604);
-            this.panel30.TabIndex = 6;
-            // 
-            // btTang1
-            // 
-            this.btTang1.ActiveBorderThickness = 1;
-            this.btTang1.ActiveCornerRadius = 20;
-            this.btTang1.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btTang1.ActiveForecolor = System.Drawing.Color.White;
-            this.btTang1.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btTang1.BackColor = System.Drawing.Color.White;
-            this.btTang1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btTang1.BackgroundImage")));
-            this.btTang1.ButtonText = "Tầng 1";
-            this.btTang1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTang1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTang1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btTang1.IdleBorderThickness = 1;
-            this.btTang1.IdleCornerRadius = 20;
-            this.btTang1.IdleFillColor = System.Drawing.Color.White;
-            this.btTang1.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btTang1.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btTang1.Location = new System.Drawing.Point(13, 9);
-            this.btTang1.Margin = new System.Windows.Forms.Padding(5);
-            this.btTang1.Name = "btTang1";
-            this.btTang1.Size = new System.Drawing.Size(176, 41);
-            this.btTang1.TabIndex = 0;
-            this.btTang1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.panel30);
-            this.panel16.Controls.Add(this.panel29);
-            this.panel16.Controls.Add(this.bunifuImageButton1);
-            this.panel16.Controls.Add(this.bunifuImageButton2);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel16.Location = new System.Drawing.Point(0, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(208, 652);
-            this.panel16.TabIndex = 4;
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.label7);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel29.Location = new System.Drawing.Point(0, 0);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(208, 48);
-            this.panel29.TabIndex = 5;
-            // 
-            // flpChonMon
-            // 
-            this.flpChonMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpChonMon.Location = new System.Drawing.Point(0, 0);
-            this.flpChonMon.Name = "flpChonMon";
-            this.flpChonMon.Size = new System.Drawing.Size(637, 452);
-            this.flpChonMon.TabIndex = 1;
-            // 
             // fQLBH1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2124,6 +2115,7 @@
             this.Load += new System.EventHandler(this.FQLBH1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).EndInit();
@@ -2168,17 +2160,16 @@
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel30.ResumeLayout(false);
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.pnOrder.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            this.panel30.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2243,7 +2234,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Panel panel23;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;

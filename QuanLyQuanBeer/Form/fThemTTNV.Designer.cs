@@ -201,6 +201,7 @@
             this.btThem.Text = "&Thêm";
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.BtThem_Click);
+            this.btThem.Enter += new System.EventHandler(this.BtThem_Click);
             // 
             // labelSoDienThoai
             // 

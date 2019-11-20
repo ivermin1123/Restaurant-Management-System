@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btThoat = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.grbLoaiTK = new System.Windows.Forms.GroupBox();
             this.rdbtNhanVien = new System.Windows.Forms.RadioButton();
@@ -40,7 +41,6 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
-            this.btThoat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.grbLoaiTK.SuspendLayout();
@@ -85,6 +85,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(371, 183);
             this.panel2.TabIndex = 1;
+            // 
+            // btThoat
+            // 
+            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btThoat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThoat.ForeColor = System.Drawing.Color.White;
+            this.btThoat.Location = new System.Drawing.Point(198, 137);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(104, 36);
+            this.btThoat.TabIndex = 71;
+            this.btThoat.Text = "&Thoát";
+            this.btThoat.UseVisualStyleBackColor = false;
+            this.btThoat.Click += new System.EventHandler(this.BtThoat_Click);
             // 
             // btThem
             // 
@@ -188,22 +204,6 @@
             this.lbTenTK.TabIndex = 44;
             this.lbTenTK.Text = "Tên tài khoản:";
             // 
-            // btThoat
-            // 
-            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btThoat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.ForeColor = System.Drawing.Color.White;
-            this.btThoat.Location = new System.Drawing.Point(198, 137);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(104, 36);
-            this.btThoat.TabIndex = 71;
-            this.btThoat.Text = "&Thoát";
-            this.btThoat.UseVisualStyleBackColor = false;
-            this.btThoat.Click += new System.EventHandler(this.BtThoat_Click);
-            // 
             // fThemTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +215,7 @@
             this.Name = "fThemTK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemTK";
+            this.Enter += new System.EventHandler(this.BtThem_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

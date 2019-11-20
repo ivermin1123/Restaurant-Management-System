@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanBeer
 {
-    partial class ButtonBan
+    partial class btChonMon
     {
         /// <summary> 
         /// Required designer variable.

@@ -14,9 +14,19 @@ namespace QuanLyQuanBeer
 {
     public partial class fThemSP : Form
     {
+        BindingSource listSP = new BindingSource();
         public fThemSP()
         {
             InitializeComponent();
+            LoadAccount();
+        }
+
+        void LoadAccount()
+        {
+            listSP.DataSource = SanPhamDAO.Instance.GetListSP();
+            List<LoaiSanPham> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
+            cbxLoaiSP.DataSource = danhSachLoaiSP;
+            cbxLoaiSP.DisplayMember = "TenLoaiSanPham";
         }
 
         private void BtThem_Click(object sender, EventArgs e)
