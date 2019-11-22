@@ -72,10 +72,11 @@ CREATE TABLE LoaiSanPham
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	TenLoaiSanPham NVARCHAR(100) not null ,
+	DanhMuc NVARCHAR(100) not null 
 )
 Go
 
-INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham ) VALUES  (N'Cá' ),(N'Bò' ),(N'Lợn' ),(N'Beer')
+INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham,DanhMuc) VALUES  (N'Cá', N'Món ăn'),(N'Bò',N'Món ăn' ),(N'Lợn',N'Món ăn' ),(N'Beer',N'Đồ uống')
 GO
 
 CREATE TABLE SanPham
@@ -181,11 +182,11 @@ end
 GO
 
 CREATE PROC themLoaiSanPham
-@tenLoaiSanPham nvarchar(100)
+@tenLoaiSanPham nvarchar(100),@danhMuc nvarchar(100)
 AS
 BEGIN
-	INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham)
-	VALUES(@tenLoaiSanPham )
+	INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham,DanhMuc)
+	VALUES(@tenLoaiSanPham, @danhMuc )
 END
 GO
 
@@ -229,6 +230,7 @@ BEGIN
 	SELECT * FROM SanPham
 END
 GO
+
 
 CREATE PROC XoaTK
 @tenDn VARCHAR(100)
