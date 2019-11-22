@@ -29,18 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USCTaiKhoan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txbMatKhau = new System.Windows.Forms.TextBox();
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbLoaiTK = new System.Windows.Forms.Label();
             this.lbTenTK = new System.Windows.Forms.Label();
-            this.rdbtNhanVien = new System.Windows.Forms.RadioButton();
-            this.rdbtQuanLy = new System.Windows.Forms.RadioButton();
-            this.grbLoaiTK = new System.Windows.Forms.GroupBox();
             this.btResetTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btXoaTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSuaTK = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -51,10 +48,10 @@
             this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txbLoaiTK = new System.Windows.Forms.TextBox();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.grbLoaiTK.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).BeginInit();
             this.panel5.SuspendLayout();
@@ -66,9 +63,11 @@
             // txbMatKhau
             // 
             this.txbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbMatKhau.BackColor = System.Drawing.Color.White;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(307, 46);
+            this.txbMatKhau.Location = new System.Drawing.Point(484, 50);
             this.txbMatKhau.Name = "txbMatKhau";
+            this.txbMatKhau.ReadOnly = true;
             this.txbMatKhau.Size = new System.Drawing.Size(182, 33);
             this.txbMatKhau.TabIndex = 43;
             // 
@@ -77,7 +76,7 @@
             this.lbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbMatKhau.AutoSize = true;
             this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatKhau.Location = new System.Drawing.Point(202, 50);
+            this.lbMatKhau.Location = new System.Drawing.Point(379, 53);
             this.lbMatKhau.Name = "lbMatKhau";
             this.lbMatKhau.Size = new System.Drawing.Size(99, 25);
             this.lbMatKhau.TabIndex = 42;
@@ -88,7 +87,7 @@
             this.lbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbLoaiTK.AutoSize = true;
             this.lbLoaiTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiTK.Location = new System.Drawing.Point(529, 14);
+            this.lbLoaiTK.Location = new System.Drawing.Point(529, 11);
             this.lbLoaiTK.Name = "lbLoaiTK";
             this.lbLoaiTK.Size = new System.Drawing.Size(137, 25);
             this.lbLoaiTK.TabIndex = 41;
@@ -104,41 +103,6 @@
             this.lbTenTK.Size = new System.Drawing.Size(131, 25);
             this.lbTenTK.TabIndex = 39;
             this.lbTenTK.Text = "Tên tài khoản:";
-            // 
-            // rdbtNhanVien
-            // 
-            this.rdbtNhanVien.AutoSize = true;
-            this.rdbtNhanVien.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtNhanVien.Location = new System.Drawing.Point(6, 48);
-            this.rdbtNhanVien.Name = "rdbtNhanVien";
-            this.rdbtNhanVien.Size = new System.Drawing.Size(119, 29);
-            this.rdbtNhanVien.TabIndex = 1;
-            this.rdbtNhanVien.TabStop = true;
-            this.rdbtNhanVien.Text = "Nhân Viên";
-            this.rdbtNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // rdbtQuanLy
-            // 
-            this.rdbtQuanLy.AutoSize = true;
-            this.rdbtQuanLy.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtQuanLy.Location = new System.Drawing.Point(6, 12);
-            this.rdbtQuanLy.Name = "rdbtQuanLy";
-            this.rdbtQuanLy.Size = new System.Drawing.Size(98, 29);
-            this.rdbtQuanLy.TabIndex = 0;
-            this.rdbtQuanLy.TabStop = true;
-            this.rdbtQuanLy.Text = "Quản Lý";
-            this.rdbtQuanLy.UseVisualStyleBackColor = true;
-            // 
-            // grbLoaiTK
-            // 
-            this.grbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.grbLoaiTK.Controls.Add(this.rdbtNhanVien);
-            this.grbLoaiTK.Controls.Add(this.rdbtQuanLy);
-            this.grbLoaiTK.Location = new System.Drawing.Point(662, 2);
-            this.grbLoaiTK.Name = "grbLoaiTK";
-            this.grbLoaiTK.Size = new System.Drawing.Size(129, 80);
-            this.grbLoaiTK.TabIndex = 44;
-            this.grbLoaiTK.TabStop = false;
             // 
             // btResetTK
             // 
@@ -302,32 +266,32 @@
             this.dtgvTaiKhoan.AllowUserToAddRows = false;
             this.dtgvTaiKhoan.AllowUserToDeleteRows = false;
             this.dtgvTaiKhoan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTaiKhoan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvTaiKhoan.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtgvTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTaiKhoan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtgvTaiKhoan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dtgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle8;
             this.dtgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvTaiKhoan.DoubleBuffered = true;
             this.dtgvTaiKhoan.EnableHeadersVisualStyles = false;
@@ -338,17 +302,17 @@
             this.dtgvTaiKhoan.Name = "dtgvTaiKhoan";
             this.dtgvTaiKhoan.ReadOnly = true;
             this.dtgvTaiKhoan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTaiKhoan.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTaiKhoan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dtgvTaiKhoan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvTaiKhoan.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvTaiKhoan.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvTaiKhoan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 473);
@@ -417,7 +381,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.grbLoaiTK);
+            this.panel2.Controls.Add(this.txbLoaiTK);
             this.panel2.Controls.Add(this.txbMatKhau);
             this.panel2.Controls.Add(this.lbMatKhau);
             this.panel2.Controls.Add(this.lbLoaiTK);
@@ -429,16 +393,27 @@
             this.panel2.Size = new System.Drawing.Size(1005, 89);
             this.panel2.TabIndex = 5;
             // 
+            // txbLoaiTK
+            // 
+            this.txbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbLoaiTK.BackColor = System.Drawing.Color.White;
+            this.txbLoaiTK.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbLoaiTK.Location = new System.Drawing.Point(672, 8);
+            this.txbLoaiTK.Name = "txbLoaiTK";
+            this.txbLoaiTK.ReadOnly = true;
+            this.txbLoaiTK.Size = new System.Drawing.Size(182, 33);
+            this.txbLoaiTK.TabIndex = 44;
+            // 
             // txbTenTaiKhoan
             // 
             this.txbTenTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbTenTaiKhoan.BackColor = System.Drawing.Color.White;
             this.txbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenTaiKhoan.Location = new System.Drawing.Point(307, 6);
+            this.txbTenTaiKhoan.Location = new System.Drawing.Point(307, 8);
             this.txbTenTaiKhoan.Name = "txbTenTaiKhoan";
             this.txbTenTaiKhoan.ReadOnly = true;
             this.txbTenTaiKhoan.Size = new System.Drawing.Size(182, 33);
             this.txbTenTaiKhoan.TabIndex = 40;
-            this.txbTenTaiKhoan.TextChanged += new System.EventHandler(this.TxbTenTaiKhoan_TextChanged);
             // 
             // label1
             // 
@@ -473,8 +448,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "USCTaiKhoan";
             this.Size = new System.Drawing.Size(1005, 654);
-            this.grbLoaiTK.ResumeLayout(false);
-            this.grbLoaiTK.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -493,9 +466,6 @@
         private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.Label lbLoaiTK;
         private System.Windows.Forms.Label lbTenTK;
-        private System.Windows.Forms.RadioButton rdbtNhanVien;
-        private System.Windows.Forms.RadioButton rdbtQuanLy;
-        private System.Windows.Forms.GroupBox grbLoaiTK;
         private Bunifu.Framework.UI.BunifuFlatButton btResetTK;
         private Bunifu.Framework.UI.BunifuFlatButton btXoaTK;
         private Bunifu.Framework.UI.BunifuFlatButton btSuaTK;
@@ -509,5 +479,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btLamMoi;
+        private System.Windows.Forms.TextBox txbLoaiTK;
     }
 }

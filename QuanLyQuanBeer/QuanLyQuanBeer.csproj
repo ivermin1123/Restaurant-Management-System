@@ -82,6 +82,12 @@
     <Compile Include="Form\fThemSP.Designer.cs">
       <DependentUpon>fThemSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\fSuaTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fSuaTK.Designer.cs">
+      <DependentUpon>fSuaTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="USC\USCSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fThemSP.resx">
       <DependentUpon>fThemSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fSuaTK.resx">
+      <DependentUpon>fSuaTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCSanPham.resx">
       <DependentUpon>USCSanPham.cs</DependentUpon>

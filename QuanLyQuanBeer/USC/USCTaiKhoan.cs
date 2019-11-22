@@ -24,45 +24,19 @@ namespace QuanLyQuanBeer
             dtgvTaiKhoan.Columns[2].HeaderText = "Loại tài khoản";
         }
 
-        private void bdRDBT()
-        {
-            string tenDN = txbTenTaiKhoan.Text;
-            if (tenDN == "admin")
-                rdbtQuanLy.Checked = true;
-            else
-            {
-                if (TaiKhoanDAO.Instance.layTrangThai(tenDN) == "Quản lý")
-                {
-                    rdbtQuanLy.Checked = true;
-                }
-                else
-                {
-                    rdbtNhanVien.Checked = true;
-                }
-            }
-        }
 
         void binding()
         {
             txbTenTaiKhoan.DataBindings.Add("Text", dtgvTaiKhoan.DataSource, "TenDangNhap", true, DataSourceUpdateMode.Never);
             txbMatKhau.DataBindings.Add("Text", dtgvTaiKhoan.DataSource, "MatKhau", true, DataSourceUpdateMode.Never);
-        }
-
-        private void TxbTenTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-            bdRDBT();
-            if (txbTenTaiKhoan.Text == "admin")
-            {
-                rdbtNhanVien.Enabled = false;
-            }
-            else
-                rdbtNhanVien.Enabled = true;
+            txbLoaiTK.DataBindings.Add("Text", dtgvTaiKhoan.DataSource, "LoaiTaiKhoan", true, DataSourceUpdateMode.Never);
         }
 
         private void BtThemTK_Click(object sender, EventArgs e)
         {
             fThemTK f = new fThemTK();
             f.ShowDialog();
+            LoadAccount();
         }
 
         private void BtXoaTK_Click(object sender, EventArgs e)
@@ -92,25 +66,10 @@ namespace QuanLyQuanBeer
         {
             string userName = txbTenTaiKhoan.Text;
             string passWord = txbMatKhau.Text;
-            string loai;
-            if (rdbtNhanVien.Checked)//
-            {
-                loai = "Nhân viên";
-            }
-            else
-                loai = "Quản lý";
-            if (passWord == "")
-                MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thêm tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
-            {
-                if (TaiKhoanDAO.Instance.capNhatTK(passWord, loai, userName))
-                {
-                    MessageBox.Show("Cập nhật thành công!", "Cập nhật tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadAccount();
-                }
-                else
-                    MessageBox.Show("      Cập nhật không thành công! \nBạn không được thay đổi tên đăng nhập!!", "Cập nhật tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            string loai = txbLoaiTK.Text;
+            fSuaTK f = new fSuaTK(userName,passWord,loai);
+            f.ShowDialog();
+            LoadAccount();
         }
 
         private void BtResetTK_Click(object sender, EventArgs e)
