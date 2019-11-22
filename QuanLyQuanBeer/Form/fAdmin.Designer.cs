@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbGio = new System.Windows.Forms.Label();
+            this.lbNgay = new System.Windows.Forms.Label();
             this.btMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMinimize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -59,6 +64,8 @@
             this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -74,6 +81,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel1.Controls.Add(this.doubleBitmapControl1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lbGio);
+            this.panel1.Controls.Add(this.lbNgay);
             this.panel1.Controls.Add(this.btMaximize);
             this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.btMinimize);
@@ -87,6 +99,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1228, 59);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(719, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Thời gian:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(913, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 25);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "-";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbGio
+            // 
+            this.lbGio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbGio.AutoSize = true;
+            this.lbGio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGio.ForeColor = System.Drawing.Color.White;
+            this.lbGio.Location = new System.Drawing.Point(928, 18);
+            this.lbGio.Name = "lbGio";
+            this.lbGio.Size = new System.Drawing.Size(80, 25);
+            this.lbGio.TabIndex = 19;
+            this.lbGio.Text = "00:00:00";
+            this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbNgay
+            // 
+            this.lbNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNgay.AutoSize = true;
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.ForeColor = System.Drawing.Color.White;
+            this.lbNgay.Location = new System.Drawing.Point(811, 18);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(106, 25);
+            this.lbNgay.TabIndex = 18;
+            this.lbNgay.Text = "00/00/0000";
+            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btMaximize
             // 
@@ -191,7 +255,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // pnMenu
             // 
@@ -596,6 +659,20 @@
             this.USCTaiKhoan.TabIndex = 0;
             this.USCTaiKhoan.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // doubleBitmapControl1
+            // 
+            this.doubleBitmapControl1.Location = new System.Drawing.Point(1075, 35);
+            this.doubleBitmapControl1.Name = "doubleBitmapControl1";
+            this.doubleBitmapControl1.Size = new System.Drawing.Size(75, 23);
+            this.doubleBitmapControl1.TabIndex = 22;
+            this.doubleBitmapControl1.Text = "doubleBitmapControl1";
+            this.doubleBitmapControl1.Visible = false;
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,6 +685,7 @@
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fAdmin";
+            this.Load += new System.EventHandler(this.FAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).EndInit();
@@ -655,5 +733,11 @@
         private USC.USCLoaiSanPham uscLoaiSanPham;
         private USC.USCBan uscBan;
         private USCSanPham uscSanPham;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbGio;
+        private System.Windows.Forms.Label lbNgay;
+        private System.Windows.Forms.Timer timer1;
+        private BunifuAnimatorNS.DoubleBitmapControl doubleBitmapControl1;
     }
 }

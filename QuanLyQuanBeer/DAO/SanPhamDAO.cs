@@ -43,7 +43,7 @@ namespace QuanLyQuanBeer.DAO
 
         public DataTable GetListSP()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
+            return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,b.DanhMuc From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
         }
 
         public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai)
@@ -77,6 +77,16 @@ namespace QuanLyQuanBeer.DAO
             return "";
         }
 
-
+        public int GetIdLoai(string tenSanPham)
+        {
+            string query = "SELECT * FROM dbo.SanPham WHERE TenSanPham = N'" + tenSanPham + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                SanPham sp = new SanPham(item);
+                return sp.IdLoai;
+            }
+            return 0;
+        }
     }
 }

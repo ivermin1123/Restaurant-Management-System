@@ -60,6 +60,7 @@
             this.txbTenDangNhap.Name = "txbTenDangNhap";
             this.txbTenDangNhap.Size = new System.Drawing.Size(156, 31);
             this.txbTenDangNhap.TabIndex = 27;
+            this.txbTenDangNhap.Text = "admin";
             // 
             // txbMatKhau
             // 
@@ -69,6 +70,7 @@
             this.txbMatKhau.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(156, 31);
             this.txbMatKhau.TabIndex = 28;
+            this.txbMatKhau.Text = "1";
             // 
             // btDN
             // 

@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbChaoMung = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTenDN = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbGio = new System.Windows.Forms.Label();
+            this.lbNgay = new System.Windows.Forms.Label();
             this.lbThoiGian = new System.Windows.Forms.Label();
             this.lbNguoiDN = new System.Windows.Forms.Label();
             this.btDX = new System.Windows.Forms.Button();
             this.btQLHT = new System.Windows.Forms.Button();
             this.btQLBH = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +70,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lbTenDN);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lbGio);
+            this.panel2.Controls.Add(this.lbNgay);
             this.panel2.Controls.Add(this.lbThoiGian);
             this.panel2.Controls.Add(this.lbNguoiDN);
             this.panel2.Controls.Add(this.btDX);
@@ -72,6 +82,58 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(540, 73);
             this.panel2.TabIndex = 1;
+            // 
+            // lbTenDN
+            // 
+            this.lbTenDN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTenDN.AutoSize = true;
+            this.lbTenDN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenDN.ForeColor = System.Drawing.Color.Black;
+            this.lbTenDN.Location = new System.Drawing.Point(247, 9);
+            this.lbTenDN.Name = "lbTenDN";
+            this.lbTenDN.Size = new System.Drawing.Size(48, 25);
+            this.lbTenDN.TabIndex = 39;
+            this.lbTenDN.Text = "xxxx";
+            this.lbTenDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(172, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 25);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "-";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbGio
+            // 
+            this.lbGio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbGio.AutoSize = true;
+            this.lbGio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGio.ForeColor = System.Drawing.Color.Black;
+            this.lbGio.Location = new System.Drawing.Point(95, 40);
+            this.lbGio.Name = "lbGio";
+            this.lbGio.Size = new System.Drawing.Size(80, 25);
+            this.lbGio.TabIndex = 37;
+            this.lbGio.Text = "00:00:00";
+            this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbNgay
+            // 
+            this.lbNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNgay.AutoSize = true;
+            this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgay.ForeColor = System.Drawing.Color.Black;
+            this.lbNgay.Location = new System.Drawing.Point(187, 40);
+            this.lbNgay.Name = "lbNgay";
+            this.lbNgay.Size = new System.Drawing.Size(106, 25);
+            this.lbNgay.TabIndex = 36;
+            this.lbNgay.Text = "00/00/0000";
+            this.lbNgay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbThoiGian
             // 
@@ -144,6 +206,11 @@
             this.btQLBH.UseVisualStyleBackColor = false;
             this.btQLBH.Click += new System.EventHandler(this.BtQLBH_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // fDieuHuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +225,7 @@
             this.Name = "fDieuHuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fDieuHuong";
+            this.Load += new System.EventHandler(this.FDieuHuong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -176,5 +244,10 @@
         private System.Windows.Forms.Button btDX;
         private System.Windows.Forms.Label lbNguoiDN;
         private System.Windows.Forms.Label lbThoiGian;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbGio;
+        private System.Windows.Forms.Label lbNgay;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbTenDN;
     }
 }

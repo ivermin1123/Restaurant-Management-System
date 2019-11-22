@@ -21,6 +21,30 @@ namespace QuanLyQuanBeer.DAO
 
         private TaiKhoanDAO() { }
 
+        public TaiKhoan layTaiKhoan(string tenDangNhap)
+        {
+            string query = "SELECT * FROM dbo.TaiKhoan WHERE TenDangNhap = '" + tenDangNhap + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+                return new TaiKhoan(item);
+            return null;
+        }
+
+        public bool DangNhap(string TenDangNhap, string MatKhau)
+        {
+            // MA HOA MAT KHAU
+            /*byte[] temp = ASCIIEncoding.ASCII.GetBytes(MatKhau);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }*/
+            string query = "USP_DangNhap @TenDangNhap , @MatKhau";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { TenDangNhap, MatKhau });
+            return result.Rows.Count > 0;
+        }
+
         public List<TaiKhoan> layDSTaiKhoan()
         {
             List<TaiKhoan> danhSach = new List<TaiKhoan>();

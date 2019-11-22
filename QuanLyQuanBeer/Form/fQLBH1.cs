@@ -14,8 +14,15 @@ namespace QuanLyQuanBeer
 {
     public partial class fQLBH1 : Form
     {
-        public fQLBH1()
+        private TaiKhoan taiKhoanHienTai;
+        public TaiKhoan TaiKhoanHienTai
         {
+            get { return taiKhoanHienTai; }
+            set { taiKhoanHienTai = value; }
+        }
+        public fQLBH1(TaiKhoan acc)
+        {
+            this.TaiKhoanHienTai = acc;
             InitializeComponent();
             pnChaoMung.Visible = true;
             LoadTable();
@@ -26,20 +33,25 @@ namespace QuanLyQuanBeer
             List<Ban> tableList = BanDAO.Instance.LoadDsBan();
             foreach (Ban item in tableList)
             {
-                btTang1.BackColor = Color.White;
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight, Image = Image.FromFile(@"D:\C#\Icon\banchuaxoabg1.jpg") };
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                btn.Margin = new Padding(8,8,8,8);
                 btn.Text = item.TenBan;
-                btn.ForeColor = Color.Black;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);
+                btn.FlatAppearance.BorderSize = 3;
+                btn.FlatAppearance.MouseOverBackColor = Color.Azure;
+                btn.FlatAppearance.MouseDownBackColor = Color.PowderBlue;
                 btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                /*switch (item.TrangThai)
+                switch (item.TrangThai)
                 {
                     case "Trống":
-                        btn.BackColor = Color.FromArgb(9, 115, 185); 
+                        btn.BackColor = Color.White;
+                        btn.ForeColor = Color.FromArgb(9, 115, 185);
                         break;
                     default:
                         btn.BackColor = Color.FromArgb(128, 128, 128);
                         break;
-                }*/
+                }
                 flpBan.Controls.Add(btn);
             }
         }
@@ -49,20 +61,11 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.LoadChonMon();
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight};
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
                 btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
                 btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                /*switch (item.TrangThai)
-                {
-                    case "Trống":
-                        btn.BackColor = Color.FromArgb(9, 115, 185); 
-                        break;
-                    default:
-                        btn.BackColor = Color.FromArgb(128, 128, 128);
-                        break;
-                }*/
                 flpChonMon.Controls.Add(btn);
             }
         }
@@ -121,11 +124,13 @@ namespace QuanLyQuanBeer
         private void Timer1_Tick(object sender, EventArgs e)
         {
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void FQLBH1_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
             lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 

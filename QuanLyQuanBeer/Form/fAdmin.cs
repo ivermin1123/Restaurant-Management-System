@@ -165,9 +165,17 @@ namespace QuanLyQuanBeer
             this.Dispose();
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
+            lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
 
+        private void FAdmin_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }
 }

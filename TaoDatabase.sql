@@ -17,7 +17,7 @@ GO
 
 INSERT dbo.TaiKhoan(TenDangNhap, MatKhau,LoaiTaiKhoan) 
 VALUES
-('admin','1', N'Admin'),
+('admin','1', N'Quản lý'),
 ('manager','1', N'Quản lý'),
 ('staff','1', N'Nhân viên')
 GO
@@ -236,6 +236,14 @@ AS
 BEGIN
 	DELETE dbo.ThongTinTaiKhoan WHERE TenDangNhap = @tenDn
 	DELETE dbo.TaiKhoan WHERE TenDangNhap = @tenDn 
+END
+GO
+
+CREATE PROC USP_DangNhap
+@TenDangNhap NVARCHAR(100), @MatKhau NVARCHAR(100)
+AS
+BEGIN
+	SELECT * FROM dbo.TaiKhoan WHERE TenDangNhap=@TenDangNhap AND MatKhau =@MatKhau 
 END
 GO
 

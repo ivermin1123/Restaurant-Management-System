@@ -26,11 +26,8 @@ namespace QuanLyQuanBeer
         {
             dtgvSanPham.DataSource = listSP;
             listSP.DataSource = SanPhamDAO.Instance.GetListSP();
-            List<LoaiSanPham> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
-            cbxLoaiSP.DataSource = danhSachLoaiSP;
-            cbxLoaiSP.DisplayMember = "TenLoaiSanPham";
             dtgvSanPham.Columns[0].HeaderText = "ID";
-            dtgvSanPham.Columns[0].FillWeight = 30;
+            dtgvSanPham.Columns[0].FillWeight = 25;
             dtgvSanPham.Columns[1].HeaderText = "Tên sản phẩm";
             dtgvSanPham.Columns[1].FillWeight = 130;
             dtgvSanPham.Columns[2].HeaderText = "Đơn vị";
@@ -46,6 +43,20 @@ namespace QuanLyQuanBeer
             txbDonVi.DataBindings.Add("Text", dtgvSanPham.DataSource, "DonVi", true, DataSourceUpdateMode.Never);
         }
 
+        private void bdCbx()
+        {
+            string tenSP = txbTenSP1.Text;
+            int idLoai = SanPhamDAO.Instance.GetIdLoai(tenSP);
+            string tenLSP = LoaiSanPhamDAO.Instance.GetLoaiSPByID(idLoai);
+            txbLoaiSP.Text = tenLSP;
+        }
+
+        private void bdRDBT()
+        {
+            string tenLSP = txbLoaiSP.Text;
+            txbDanhMuc.Text = LoaiSanPhamDAO.Instance.layDanhMuc(tenLSP);
+        }
+
         private void BtThemSP_Click(object sender, EventArgs e)
         {
             fThemSP f = new fThemSP();
@@ -56,8 +67,7 @@ namespace QuanLyQuanBeer
         {
             string TenSanPham = txbTenSP1.Text;
             double Gia = Convert.ToDouble(txbGia.Text);
-            LoaiSanPham loaisp = cbxLoaiSP.SelectedItem as LoaiSanPham;
-            int IDLoai = loaisp.ID;
+            int IDLoai = SanPhamDAO.Instance.GetIdLoai(TenSanPham);
             int MaSP = int.Parse(txbMaSP1.Text);
             string DonVi = txbDonVi.Text;
             if (txbTenSP1.Text == "" || txbGia.Text == "")
@@ -91,6 +101,12 @@ namespace QuanLyQuanBeer
             }
             else
                 MessageBox.Show("Xóa không thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void txbTenSP1_TextChanged(object sender, EventArgs e)
+        {
+            bdCbx();
+            bdRDBT();
         }
     }
 }

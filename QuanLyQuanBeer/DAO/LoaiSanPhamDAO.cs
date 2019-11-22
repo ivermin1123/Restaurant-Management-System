@@ -24,10 +24,22 @@ namespace QuanLyQuanBeer.DAO
             string query = "DELETE dbo.LoaiSanPham WHERE tenLoaiSanPham = N'" + ten + "'";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
-
-        public bool ThemLSP(string tenLoaiSanPham)
+        public string layDanhMuc(string tenLSP)
         {
-            string query = "themLoaiSanPham N'" + tenLoaiSanPham + "' ";
+            string query = "Select * From LoaiSanPham where TenLoaiSanPham = N'" + tenLSP + "' ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                LoaiSanPham acc = new LoaiSanPham(item);
+                return acc.DanhMuc;
+            }
+            return "";
+        }
+
+
+        public bool ThemLSP(string tenLoaiSanPham, string danhMuc)
+        {
+            string query = "themLoaiSanPham N'" + tenLoaiSanPham + "', N'"+danhMuc+"' ";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
@@ -42,7 +54,7 @@ namespace QuanLyQuanBeer.DAO
         {
             List<LoaiSanPham> danhSachLoaiSP = new List<LoaiSanPham>();
 
-            string query = ("SELECT * From LoaiSanPham ");
+            string query = ("SELECT * From LoaiSanPham");
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -53,6 +65,18 @@ namespace QuanLyQuanBeer.DAO
             }
             return danhSachLoaiSP;
 
+        }
+
+        public string GetLoaiSPByID(int idLoai)
+        {
+            string query = "SELECT * FROM dbo.LoaiSanPham WHERE id = N'" + idLoai + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                LoaiSanPham sp = new LoaiSanPham(item);
+                return sp.TenloaiSanPham;
+            }
+            return "";
         }
 
         public string GetLoaiSP(string tenLoaiSanPham)
