@@ -48,12 +48,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvTaiKhoan = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.grbLoaiTK.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).BeginInit();
@@ -367,65 +367,6 @@
             this.panel5.Size = new System.Drawing.Size(1005, 42);
             this.panel5.TabIndex = 2;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 139);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1005, 515);
-            this.panel3.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.grbLoaiTK);
-            this.panel2.Controls.Add(this.txbMatKhau);
-            this.panel2.Controls.Add(this.lbMatKhau);
-            this.panel2.Controls.Add(this.lbLoaiTK);
-            this.panel2.Controls.Add(this.txbTenTaiKhoan);
-            this.panel2.Controls.Add(this.lbTenTK);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 89);
-            this.panel2.TabIndex = 5;
-            // 
-            // txbTenTaiKhoan
-            // 
-            this.txbTenTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenTaiKhoan.Location = new System.Drawing.Point(307, 6);
-            this.txbTenTaiKhoan.Name = "txbTenTaiKhoan";
-            this.txbTenTaiKhoan.Size = new System.Drawing.Size(182, 33);
-            this.txbTenTaiKhoan.TabIndex = 40;
-            this.txbTenTaiKhoan.TextChanged += new System.EventHandler(this.TxbTenTaiKhoan_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.label1.Location = new System.Drawing.Point(360, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "QUẢN LÝ TÀI KHOẢN";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1005, 50);
-            this.panel1.TabIndex = 4;
-            // 
             // btLamMoi
             // 
             this.btLamMoi.Active = false;
@@ -462,6 +403,66 @@
             this.btLamMoi.Textcolor = System.Drawing.Color.Black;
             this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 139);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1005, 515);
+            this.panel3.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.grbLoaiTK);
+            this.panel2.Controls.Add(this.txbMatKhau);
+            this.panel2.Controls.Add(this.lbMatKhau);
+            this.panel2.Controls.Add(this.lbLoaiTK);
+            this.panel2.Controls.Add(this.txbTenTaiKhoan);
+            this.panel2.Controls.Add(this.lbTenTK);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1005, 89);
+            this.panel2.TabIndex = 5;
+            // 
+            // txbTenTaiKhoan
+            // 
+            this.txbTenTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenTaiKhoan.Location = new System.Drawing.Point(307, 6);
+            this.txbTenTaiKhoan.Name = "txbTenTaiKhoan";
+            this.txbTenTaiKhoan.ReadOnly = true;
+            this.txbTenTaiKhoan.Size = new System.Drawing.Size(182, 33);
+            this.txbTenTaiKhoan.TabIndex = 40;
+            this.txbTenTaiKhoan.TextChanged += new System.EventHandler(this.TxbTenTaiKhoan_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.label1.Location = new System.Drawing.Point(360, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "QUẢN LÝ TÀI KHOẢN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Gray;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1005, 50);
+            this.panel1.TabIndex = 4;
             // 
             // USCTaiKhoan
             // 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -17,7 +10,7 @@ namespace QuanLyQuanBeer
             InitializeComponent();
         }
 
-        
+
 
         private void BtBaoCao_Click(object sender, EventArgs e)
         {
@@ -152,7 +145,7 @@ namespace QuanLyQuanBeer
         {
             btMaximize.Visible = false;
             this.WindowState = FormWindowState.Maximized;
-            btRestore.Visible = true;          
+            btRestore.Visible = true;
         }
 
         private void BtMinimize_Click(object sender, EventArgs e)

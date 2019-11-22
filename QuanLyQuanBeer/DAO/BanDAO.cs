@@ -1,11 +1,7 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -25,12 +21,12 @@ namespace QuanLyQuanBeer.DAO
 
         public bool xoaBan(string tenBan)
         {
-            string query = "xoaBan @tenBan = N'"+tenBan+"'";
+            string query = "xoaBan @tenBan = N'" + tenBan + "'";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
         public bool capNhatBan(string tenSP, int id, string trangThai)
         {
-            string query = "UPDATE dbo.Ban SET TenBan = N'" + tenSP + "', TrangThai = N'"+trangThai+"' WHERE id = " + id + " ";
+            string query = "UPDATE dbo.Ban SET TenBan = N'" + tenSP + "', TrangThai = N'" + trangThai + "' WHERE id = " + id + " ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

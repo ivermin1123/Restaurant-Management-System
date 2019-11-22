@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
@@ -175,7 +168,7 @@ namespace QuanLyQuanBeer
                 pnTinhTien.Visible = true;
                 LoadTien();
                 decimal value = decimal.Parse(lbTienTraLai.Text);
-                if (value > 0 )
+                if (value > 0)
                 {
                     panel16.Visible = true;
                 }

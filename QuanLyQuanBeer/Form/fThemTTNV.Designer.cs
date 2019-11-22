@@ -88,6 +88,7 @@
             // 
             this.txbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDT.Location = new System.Drawing.Point(155, 69);
+            this.txbSDT.MaxLength = 12;
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Size = new System.Drawing.Size(210, 24);
             this.txbSDT.TabIndex = 2;
@@ -97,6 +98,7 @@
             // 
             this.txbCMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCMND.Location = new System.Drawing.Point(155, 213);
+            this.txbCMND.MaxLength = 12;
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(210, 24);
             this.txbCMND.TabIndex = 4;
@@ -173,6 +175,7 @@
             // 
             this.txbTuoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTuoi.Location = new System.Drawing.Point(155, 241);
+            this.txbTuoi.MaxLength = 2;
             this.txbTuoi.Name = "txbTuoi";
             this.txbTuoi.Size = new System.Drawing.Size(210, 24);
             this.txbTuoi.TabIndex = 5;

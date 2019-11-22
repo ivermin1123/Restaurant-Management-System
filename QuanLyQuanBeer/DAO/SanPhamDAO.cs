@@ -1,11 +1,7 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -49,12 +45,12 @@ namespace QuanLyQuanBeer.DAO
         public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai)
         {
             string query = "USP_InsertDrink @TenSanPham , @DonVi , @Gia , @idLoai ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi ,gia, idLoai }) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai }) > 0;
         }
 
         public bool capNhatSP(string tenSP, string DonVi, double Gia, int idLoai, int id)
         {
-            string query = "UPDATE dbo.SanPham SET TenSanPham = N'" + tenSP + "' , DonVi = N'"+DonVi+"', Gia = " + Gia + ", idLoai= " + idLoai + "  WHERE id = " + id + " ";
+            string query = "UPDATE dbo.SanPham SET TenSanPham = N'" + tenSP + "' , DonVi = N'" + DonVi + "', Gia = " + Gia + ", idLoai= " + idLoai + "  WHERE id = " + id + " ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

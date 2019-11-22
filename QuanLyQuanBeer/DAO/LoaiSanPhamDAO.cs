@@ -1,11 +1,7 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -39,7 +35,7 @@ namespace QuanLyQuanBeer.DAO
 
         public bool ThemLSP(string tenLoaiSanPham, string danhMuc)
         {
-            string query = "themLoaiSanPham N'" + tenLoaiSanPham + "', N'"+danhMuc+"' ";
+            string query = "themLoaiSanPham N'" + tenLoaiSanPham + "', N'" + danhMuc + "' ";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 

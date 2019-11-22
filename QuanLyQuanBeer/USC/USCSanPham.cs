@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using QuanLyQuanBeer.DAO;
+using System;
 using System.Windows.Forms;
-using QuanLyQuanBeer.DAO;
-using QuanLyQuanBeer.DTO;
 
 namespace QuanLyQuanBeer
 {
@@ -33,6 +25,7 @@ namespace QuanLyQuanBeer
             dtgvSanPham.Columns[2].HeaderText = "Đơn vị";
             dtgvSanPham.Columns[3].HeaderText = "Giá";
             dtgvSanPham.Columns[4].HeaderText = "Loại";
+            dtgvSanPham.Columns[5].HeaderText = "Danh mục";
         }
 
         void binding()
@@ -76,7 +69,7 @@ namespace QuanLyQuanBeer
                 MessageBox.Show("Đã có sản phẩm này!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi,Gia, IDLoai, MaSP))
+                if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, IDLoai, MaSP))
                 {
                     MessageBox.Show("Cập nhật thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();

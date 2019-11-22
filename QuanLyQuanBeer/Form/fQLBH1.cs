@@ -2,12 +2,7 @@
 using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -34,7 +29,7 @@ namespace QuanLyQuanBeer
             foreach (Ban item in tableList)
             {
                 Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
-                btn.Margin = new Padding(8,8,8,8);
+                btn.Margin = new Padding(8, 8, 8, 8);
                 btn.Text = item.TenBan;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);

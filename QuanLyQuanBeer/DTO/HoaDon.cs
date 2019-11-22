@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DTO
 {
     public class HoaDon
     {
-        public HoaDon(int iD, DateTime? thoiGianVao, DateTime?  thoiGianRa, int idBan, double tongCong, string trangThai)
+        public HoaDon(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, double tongCong, string trangThai)
         {
             this.ID = iD;
             this.ThoiGianVao = thoiGianVao;

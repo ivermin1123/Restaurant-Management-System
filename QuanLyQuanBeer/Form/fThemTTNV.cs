@@ -1,12 +1,5 @@
 ﻿using QuanLyQuanBeer.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -44,21 +37,25 @@ namespace QuanLyQuanBeer
                 {
                     long _cMND = long.Parse(txbCMND.Text);
                     long _sDT = long.Parse(txbSDT.Text);
-                    long _tuoi = long.Parse(txbTuoi.Text);
-
-                    if (ThongTinTaiKhoanDAO.Instance.them(hoTen, _sDT, diaChi, _cMND, _tuoi, gioiTinh, tenDN))
-                    {
-                        MessageBox.Show("Thêm thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
+                    int _tuoi = int.Parse(txbTuoi.Text);
+                    if (_tuoi < 18 || _tuoi > 35)
+                        MessageBox.Show("Độ tuổi phải lớn hơn 18 và nhỏ hơn 35", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
-                        MessageBox.Show("Thêm không thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        this.Close();
+                        if (ThongTinTaiKhoanDAO.Instance.them(hoTen, _sDT, diaChi, _cMND, _tuoi, gioiTinh, tenDN))
+                        {
+                            MessageBox.Show("Thêm thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm không thành công!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            this.Close();
+                        }
                     }
 
                 }
-            } 
+            }
         }
 
         private void TxbSDT_KeyPress(object sender, KeyPressEventArgs e)

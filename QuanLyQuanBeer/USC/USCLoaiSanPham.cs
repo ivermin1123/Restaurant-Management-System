@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using QuanLyQuanBeer.DAO;
+using System;
 using System.Windows.Forms;
-using QuanLyQuanBeer.DAO;
 
 namespace QuanLyQuanBeer.USC
 {
@@ -61,7 +54,7 @@ namespace QuanLyQuanBeer.USC
                 danhMuc = "Đồ uống";
             else
             {
-                if(rdbtMonAn.Checked == true)
+                if (rdbtMonAn.Checked == true)
                     danhMuc = "Món ăn";
                 else
                     danhMuc = "Khác";
