@@ -75,6 +75,18 @@ namespace QuanLyQuanBeer.DAO
             return "";
         }
 
+        public int GetIDByLoaiSP(string tenLSP)
+        {
+            string query = "SELECT * FROM dbo.LoaiSanPham WHERE TenLoaiSanPham = N'" + tenLSP + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                LoaiSanPham sp = new LoaiSanPham(item);
+                return sp.ID;
+            }
+            return 0;
+        }
+
         public string GetLoaiSP(string tenLoaiSanPham)
         {
             string query = "SELECT * FROM dbo.LoaiSanPham WHERE TenLoaiSanPham = N'" + tenLoaiSanPham + "'";

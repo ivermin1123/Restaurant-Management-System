@@ -65,7 +65,7 @@
             this.txbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbMatKhau.BackColor = System.Drawing.Color.White;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(484, 50);
+            this.txbMatKhau.Location = new System.Drawing.Point(465, 8);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.ReadOnly = true;
             this.txbMatKhau.Size = new System.Drawing.Size(182, 33);
@@ -76,7 +76,7 @@
             this.lbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbMatKhau.AutoSize = true;
             this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatKhau.Location = new System.Drawing.Point(379, 53);
+            this.lbMatKhau.Location = new System.Drawing.Point(360, 11);
             this.lbMatKhau.Name = "lbMatKhau";
             this.lbMatKhau.Size = new System.Drawing.Size(99, 25);
             this.lbMatKhau.TabIndex = 42;
@@ -87,7 +87,7 @@
             this.lbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbLoaiTK.AutoSize = true;
             this.lbLoaiTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiTK.Location = new System.Drawing.Point(529, 11);
+            this.lbLoaiTK.Location = new System.Drawing.Point(651, 11);
             this.lbLoaiTK.Name = "lbLoaiTK";
             this.lbLoaiTK.Size = new System.Drawing.Size(137, 25);
             this.lbLoaiTK.TabIndex = 41;
@@ -98,7 +98,7 @@
             this.lbTenTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTenTK.AutoSize = true;
             this.lbTenTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenTK.Location = new System.Drawing.Point(170, 11);
+            this.lbTenTK.Location = new System.Drawing.Point(23, 11);
             this.lbTenTK.Name = "lbTenTK";
             this.lbTenTK.Size = new System.Drawing.Size(131, 25);
             this.lbTenTK.TabIndex = 39;
@@ -258,7 +258,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1005, 473);
+            this.panel4.Size = new System.Drawing.Size(1005, 510);
             this.panel4.TabIndex = 3;
             // 
             // dtgvTaiKhoan
@@ -315,7 +315,7 @@
             this.dtgvTaiKhoan.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvTaiKhoan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 473);
+            this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 510);
             this.dtgvTaiKhoan.TabIndex = 1;
             // 
             // panel5
@@ -373,9 +373,9 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 139);
+            this.panel3.Location = new System.Drawing.Point(0, 102);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1005, 515);
+            this.panel3.Size = new System.Drawing.Size(1005, 552);
             this.panel3.TabIndex = 6;
             // 
             // panel2
@@ -390,7 +390,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 50);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 89);
+            this.panel2.Size = new System.Drawing.Size(1005, 52);
             this.panel2.TabIndex = 5;
             // 
             // txbLoaiTK
@@ -398,7 +398,7 @@
             this.txbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbLoaiTK.BackColor = System.Drawing.Color.White;
             this.txbLoaiTK.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLoaiTK.Location = new System.Drawing.Point(672, 8);
+            this.txbLoaiTK.Location = new System.Drawing.Point(794, 8);
             this.txbLoaiTK.Name = "txbLoaiTK";
             this.txbLoaiTK.ReadOnly = true;
             this.txbLoaiTK.Size = new System.Drawing.Size(182, 33);
@@ -409,7 +409,7 @@
             this.txbTenTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbTenTaiKhoan.BackColor = System.Drawing.Color.White;
             this.txbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenTaiKhoan.Location = new System.Drawing.Point(307, 8);
+            this.txbTenTaiKhoan.Location = new System.Drawing.Point(160, 8);
             this.txbTenTaiKhoan.Name = "txbTenTaiKhoan";
             this.txbTenTaiKhoan.ReadOnly = true;
             this.txbTenTaiKhoan.Size = new System.Drawing.Size(182, 33);

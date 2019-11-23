@@ -54,29 +54,21 @@ namespace QuanLyQuanBeer
         {
             fThemSP f = new fThemSP();
             f.ShowDialog();
+            LoadAccount();
         }
 
         private void BtSuaSP_Click(object sender, EventArgs e)
         {
-            string TenSanPham = txbTenSP1.Text;
-            double Gia = Convert.ToDouble(txbGia.Text);
-            int IDLoai = SanPhamDAO.Instance.GetIdLoai(TenSanPham);
-            int MaSP = int.Parse(txbMaSP1.Text);
-            string DonVi = txbDonVi.Text;
-            if (txbTenSP1.Text == "" || txbGia.Text == "")
-                MessageBox.Show("Bạn phải nhập đủ!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (TenSanPham == SanPhamDAO.Instance.GetTenSP(TenSanPham))
-                MessageBox.Show("Đã có sản phẩm này!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
-            {
-                if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, IDLoai, MaSP))
-                {
-                    MessageBox.Show("Cập nhật thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadAccount();
-                }
-                else
-                    MessageBox.Show("Cập nhật không thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            string tenSP = txbTenSP1.Text;
+            double gia = Convert.ToDouble(txbGia.Text);
+            int idLoai = SanPhamDAO.Instance.GetIdLoai(tenSP);
+            int maSP = int.Parse(txbMaSP1.Text);
+            string donVi = txbDonVi.Text;
+            string danhMuc = txbDanhMuc.Text;
+            string loaiSP = txbLoaiSP.Text;
+            fSuaSP f = new fSuaSP(tenSP,gia,idLoai,maSP,donVi,danhMuc, loaiSP);
+            f.ShowDialog();
+            LoadAccount();
         }
 
         private void BtLamMoi_Click(object sender, EventArgs e)

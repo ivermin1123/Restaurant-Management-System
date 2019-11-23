@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USCSanPham));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -45,6 +45,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txbLoaiSP = new System.Windows.Forms.TextBox();
             this.txbDanhMuc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbDonVi = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.labelLoaiSP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txbLoaiSP = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).BeginInit();
@@ -92,32 +92,32 @@
             this.dtgvSanPham.AllowUserToAddRows = false;
             this.dtgvSanPham.AllowUserToDeleteRows = false;
             this.dtgvSanPham.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dtgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvSanPham.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvSanPham.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtgvSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvSanPham.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtgvSanPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dtgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvSanPham.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvSanPham.DefaultCellStyle = dataGridViewCellStyle23;
             this.dtgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvSanPham.DoubleBuffered = true;
             this.dtgvSanPham.EnableHeadersVisualStyles = false;
@@ -128,16 +128,16 @@
             this.dtgvSanPham.Name = "dtgvSanPham";
             this.dtgvSanPham.ReadOnly = true;
             this.dtgvSanPham.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvSanPham.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvSanPham.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dtgvSanPham.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.dtgvSanPham.Size = new System.Drawing.Size(935, 328);
             this.dtgvSanPham.TabIndex = 2;
@@ -344,9 +344,21 @@
             this.panel2.Size = new System.Drawing.Size(935, 136);
             this.panel2.TabIndex = 9;
             // 
+            // txbLoaiSP
+            // 
+            this.txbLoaiSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbLoaiSP.BackColor = System.Drawing.Color.White;
+            this.txbLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbLoaiSP.Location = new System.Drawing.Point(603, 8);
+            this.txbLoaiSP.Name = "txbLoaiSP";
+            this.txbLoaiSP.ReadOnly = true;
+            this.txbLoaiSP.Size = new System.Drawing.Size(221, 29);
+            this.txbLoaiSP.TabIndex = 63;
+            // 
             // txbDanhMuc
             // 
             this.txbDanhMuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbDanhMuc.BackColor = System.Drawing.Color.White;
             this.txbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDanhMuc.Location = new System.Drawing.Point(205, 92);
             this.txbDanhMuc.Name = "txbDanhMuc";
@@ -368,9 +380,11 @@
             // txbDonVi
             // 
             this.txbDonVi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbDonVi.BackColor = System.Drawing.Color.White;
             this.txbDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDonVi.Location = new System.Drawing.Point(603, 49);
             this.txbDonVi.Name = "txbDonVi";
+            this.txbDonVi.ReadOnly = true;
             this.txbDonVi.Size = new System.Drawing.Size(221, 29);
             this.txbDonVi.TabIndex = 60;
             // 
@@ -388,9 +402,11 @@
             // txbTenSP1
             // 
             this.txbTenSP1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbTenSP1.BackColor = System.Drawing.Color.White;
             this.txbTenSP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenSP1.Location = new System.Drawing.Point(205, 49);
             this.txbTenSP1.Name = "txbTenSP1";
+            this.txbTenSP1.ReadOnly = true;
             this.txbTenSP1.Size = new System.Drawing.Size(210, 29);
             this.txbTenSP1.TabIndex = 58;
             this.txbTenSP1.TextChanged += new System.EventHandler(this.txbTenSP1_TextChanged);
@@ -409,6 +425,7 @@
             // txbMaSP1
             // 
             this.txbMaSP1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbMaSP1.BackColor = System.Drawing.Color.White;
             this.txbMaSP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMaSP1.Location = new System.Drawing.Point(205, 10);
             this.txbMaSP1.Name = "txbMaSP1";
@@ -430,9 +447,11 @@
             // txbGia
             // 
             this.txbGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbGia.BackColor = System.Drawing.Color.White;
             this.txbGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGia.Location = new System.Drawing.Point(603, 90);
             this.txbGia.Name = "txbGia";
+            this.txbGia.ReadOnly = true;
             this.txbGia.Size = new System.Drawing.Size(221, 29);
             this.txbGia.TabIndex = 54;
             // 
@@ -481,16 +500,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(935, 50);
             this.panel1.TabIndex = 8;
-            // 
-            // txbLoaiSP
-            // 
-            this.txbLoaiSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLoaiSP.Location = new System.Drawing.Point(603, 8);
-            this.txbLoaiSP.Name = "txbLoaiSP";
-            this.txbLoaiSP.ReadOnly = true;
-            this.txbLoaiSP.Size = new System.Drawing.Size(221, 29);
-            this.txbLoaiSP.TabIndex = 63;
             // 
             // USCSanPham
             // 

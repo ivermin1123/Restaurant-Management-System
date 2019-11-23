@@ -60,12 +60,12 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
             this.uscSanPham = new QuanLyQuanBeer.USCSanPham();
             this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
-            this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -285,7 +285,7 @@
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenu.Location = new System.Drawing.Point(0, 59);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(65, 607);
+            this.pnMenu.Size = new System.Drawing.Size(270, 607);
             this.pnMenu.TabIndex = 1;
             // 
             // pn7
@@ -371,7 +371,7 @@
             this.btHelp.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btHelp.OnHoverTextColor = System.Drawing.Color.White;
             this.btHelp.selected = false;
-            this.btHelp.Size = new System.Drawing.Size(65, 48);
+            this.btHelp.Size = new System.Drawing.Size(270, 48);
             this.btHelp.TabIndex = 8;
             this.btHelp.Text = "       Help";
             this.btHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -408,7 +408,7 @@
             this.btThietLapHeThong.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btThietLapHeThong.OnHoverTextColor = System.Drawing.Color.White;
             this.btThietLapHeThong.selected = false;
-            this.btThietLapHeThong.Size = new System.Drawing.Size(65, 48);
+            this.btThietLapHeThong.Size = new System.Drawing.Size(270, 48);
             this.btThietLapHeThong.TabIndex = 7;
             this.btThietLapHeThong.Text = "       Bàn";
             this.btThietLapHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,7 +445,7 @@
             this.btNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btNhanVien.OnHoverTextColor = System.Drawing.Color.White;
             this.btNhanVien.selected = false;
-            this.btNhanVien.Size = new System.Drawing.Size(65, 48);
+            this.btNhanVien.Size = new System.Drawing.Size(270, 48);
             this.btNhanVien.TabIndex = 6;
             this.btNhanVien.Text = "       Nhân viên";
             this.btNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -482,7 +482,7 @@
             this.btDanhMuc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btDanhMuc.OnHoverTextColor = System.Drawing.Color.White;
             this.btDanhMuc.selected = false;
-            this.btDanhMuc.Size = new System.Drawing.Size(65, 48);
+            this.btDanhMuc.Size = new System.Drawing.Size(270, 48);
             this.btDanhMuc.TabIndex = 5;
             this.btDanhMuc.Text = "       Danh mục";
             this.btDanhMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -519,7 +519,7 @@
             this.btSanPham.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btSanPham.OnHoverTextColor = System.Drawing.Color.White;
             this.btSanPham.selected = false;
-            this.btSanPham.Size = new System.Drawing.Size(65, 48);
+            this.btSanPham.Size = new System.Drawing.Size(270, 48);
             this.btSanPham.TabIndex = 4;
             this.btSanPham.Text = "       Sản phẩm";
             this.btSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -556,7 +556,7 @@
             this.btTaiKhoan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btTaiKhoan.OnHoverTextColor = System.Drawing.Color.White;
             this.btTaiKhoan.selected = false;
-            this.btTaiKhoan.Size = new System.Drawing.Size(65, 48);
+            this.btTaiKhoan.Size = new System.Drawing.Size(270, 48);
             this.btTaiKhoan.TabIndex = 3;
             this.btTaiKhoan.Text = "       Tài khoản";
             this.btTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -602,7 +602,7 @@
             this.btBaoCao.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
             this.btBaoCao.OnHoverTextColor = System.Drawing.Color.White;
             this.btBaoCao.selected = false;
-            this.btBaoCao.Size = new System.Drawing.Size(65, 48);
+            this.btBaoCao.Size = new System.Drawing.Size(270, 48);
             this.btBaoCao.TabIndex = 0;
             this.btBaoCao.Text = "       Báo cáo";
             this.btBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -618,22 +618,26 @@
             this.pnNoiDung.Controls.Add(this.uscLoaiSanPham);
             this.pnNoiDung.Controls.Add(this.uscNhanVien);
             this.pnNoiDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnNoiDung.Location = new System.Drawing.Point(65, 59);
+            this.pnNoiDung.Location = new System.Drawing.Point(270, 59);
             this.pnNoiDung.Name = "pnNoiDung";
-            this.pnNoiDung.Size = new System.Drawing.Size(1163, 607);
+            this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
             // 
-            // timer1
+            // USCTaiKhoan
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.USCTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.USCTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.USCTaiKhoan.Name = "USCTaiKhoan";
+            this.USCTaiKhoan.Size = new System.Drawing.Size(958, 607);
+            this.USCTaiKhoan.TabIndex = 0;
+            this.USCTaiKhoan.Visible = false;
             // 
             // uscSanPham
             // 
             this.uscSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscSanPham.Location = new System.Drawing.Point(0, 0);
             this.uscSanPham.Name = "uscSanPham";
-            this.uscSanPham.Size = new System.Drawing.Size(1163, 607);
+            this.uscSanPham.Size = new System.Drawing.Size(958, 607);
             this.uscSanPham.TabIndex = 5;
             this.uscSanPham.Visible = false;
             // 
@@ -642,7 +646,7 @@
             this.uscBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscBan.Location = new System.Drawing.Point(0, 0);
             this.uscBan.Name = "uscBan";
-            this.uscBan.Size = new System.Drawing.Size(1163, 607);
+            this.uscBan.Size = new System.Drawing.Size(958, 607);
             this.uscBan.TabIndex = 4;
             this.uscBan.Visible = false;
             // 
@@ -651,7 +655,7 @@
             this.uscLoaiSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscLoaiSanPham.Location = new System.Drawing.Point(0, 0);
             this.uscLoaiSanPham.Name = "uscLoaiSanPham";
-            this.uscLoaiSanPham.Size = new System.Drawing.Size(1163, 607);
+            this.uscLoaiSanPham.Size = new System.Drawing.Size(958, 607);
             this.uscLoaiSanPham.TabIndex = 3;
             this.uscLoaiSanPham.Visible = false;
             // 
@@ -660,18 +664,14 @@
             this.uscNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uscNhanVien.Location = new System.Drawing.Point(0, 0);
             this.uscNhanVien.Name = "uscNhanVien";
-            this.uscNhanVien.Size = new System.Drawing.Size(1163, 607);
+            this.uscNhanVien.Size = new System.Drawing.Size(958, 607);
             this.uscNhanVien.TabIndex = 1;
             this.uscNhanVien.Visible = false;
             // 
-            // USCTaiKhoan
+            // timer1
             // 
-            this.USCTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.USCTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.USCTaiKhoan.Name = "USCTaiKhoan";
-            this.USCTaiKhoan.Size = new System.Drawing.Size(1163, 607);
-            this.USCTaiKhoan.TabIndex = 0;
-            this.USCTaiKhoan.Visible = false;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // fAdmin
             // 
