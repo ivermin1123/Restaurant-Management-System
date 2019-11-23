@@ -23,6 +23,8 @@ namespace QuanLyQuanBeer
             LoadTable();
             LoadMon();
         }
+
+        #region Method
         void LoadTable()
         {
             List<Ban> tableList = BanDAO.Instance.LoadDsBan();
@@ -65,8 +67,76 @@ namespace QuanLyQuanBeer
             }
         }
 
+        void LoadMonAn()
+        {
+            List<SanPham> tableList = SanPhamDAO.Instance.LoadMonAn();
+            foreach (SanPham item in tableList)
+            {
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                btn.TextAlign = ContentAlignment.BottomCenter;
+                btn.Text = item.TenSanPham;
+                btn.ForeColor = Color.Black;
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(btn);
+            }
+        }
+
+        void LoadDoUong()
+        {
+            List<SanPham> tableList = SanPhamDAO.Instance.LoadDoUong();
+            foreach (SanPham item in tableList)
+            {
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                btn.TextAlign = ContentAlignment.BottomCenter;
+                btn.Text = item.TenSanPham;
+                btn.ForeColor = Color.Black;
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(btn);
+            }
+        }
+
+        void LoadKhac()
+        {
+            List<SanPham> tableList = SanPhamDAO.Instance.LoadKhac();
+            foreach (SanPham item in tableList)
+            {
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                btn.TextAlign = ContentAlignment.BottomCenter;
+                btn.Text = item.TenSanPham;
+                btn.ForeColor = Color.Black;
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(btn);
+            }
+        }
+
+        void SearchMonAnTheoTen(string TenMon)
+        {
+            /*string firstLetters = "";
+            foreach (var part in TenMon.Split(' ')) -- Lay ky tu dau tien VD: Con ga => Cg;
+                firstLetters += part.Substring(0, 1);*/ 
+            flpChonMon.Controls.Clear();
+            List<SanPham> tableList = SanPhamDAO.Instance.SearchMon(TenMon);
+            foreach (SanPham item in tableList)
+            {
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                btn.TextAlign = ContentAlignment.BottomCenter;
+                btn.Text = item.TenSanPham;
+                btn.ForeColor = Color.Black;
+                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(btn);
+            }
+        }
+        #endregion
 
         #region Events
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+
+            SearchMonAnTheoTen(txbSearch.Text);
+        }
+
+
         private void BtSoDowhite_Click(object sender, EventArgs e)
         {
             pnSoDo.Visible = true;
@@ -220,6 +290,38 @@ namespace QuanLyQuanBeer
                 pnMenu.Visible = true;
             else
                 pnMenu.Visible = false;
+        }
+
+        private void btMonAn_Click(object sender, EventArgs e)
+        {
+            flpChonMon.Controls.Clear();
+            LoadMonAn();
+        }
+
+        private void btDoUong_Click(object sender, EventArgs e)
+        {
+            flpChonMon.Controls.Clear();
+            LoadDoUong();
+        }
+
+        private void btKhac_Click(object sender, EventArgs e)
+        {
+            flpChonMon.Controls.Clear();
+            LoadKhac();
+        }
+
+        private void btTatCa_Click(object sender, EventArgs e)
+        {
+            flpChonMon.Controls.Clear();
+            LoadMon();
+        }
+        private void txbSearch_Enter(object sender, EventArgs e)
+        {
+            if (txbSearch.Text == "Nhập tên món cần tìm")
+            {
+                txbSearch.Text = "";
+                txbSearch.ForeColor = Color.Black;
+            }
         }
         #endregion
     }

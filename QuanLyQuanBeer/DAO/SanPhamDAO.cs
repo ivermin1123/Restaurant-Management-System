@@ -37,6 +37,57 @@ namespace QuanLyQuanBeer.DAO
             return tableList;
         }
 
+        public List<SanPham> SearchMon(string name)
+        {
+            List<SanPham> tableList = new List<SanPham>();
+            string query = string.Format("Select * From SanPham where dbo.fuConvertToUnsign1(TenSanPham) Like N'%'+ dbo.fuConvertToUnsign1(N'{0}') +'%'", name);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                SanPham sp = new SanPham(item);
+                tableList.Add(sp);
+            }
+            return tableList;
+        }
+
+        public List<SanPham> LoadMonAn()
+        {
+            List<SanPham> tableList = new List<SanPham>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListMonAn");
+            foreach (DataRow item in data.Rows)
+            {
+                SanPham sp = new SanPham(item);
+                tableList.Add(sp);
+            }
+            return tableList;
+        }
+
+        public List<SanPham> LoadDoUong()
+        {
+            List<SanPham> tableList = new List<SanPham>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListDoUong");
+            foreach (DataRow item in data.Rows)
+            {
+                SanPham sp = new SanPham(item);
+                tableList.Add(sp);
+            }
+            return tableList;
+        }
+
+        public List<SanPham> LoadKhac()
+        {
+            List<SanPham> tableList = new List<SanPham>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListKhac");
+            foreach (DataRow item in data.Rows)
+            {
+                SanPham sp = new SanPham(item);
+                tableList.Add(sp);
+            }
+            return tableList;
+        }
+
         public DataTable GetListSP()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,b.DanhMuc From SanPham a,  LoaiSanPham b where a.idLoai = b.id");

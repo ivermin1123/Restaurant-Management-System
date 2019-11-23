@@ -152,23 +152,17 @@ VALUES
 (103, 6, 2 )
 GO
 
+
+-- PROCEDURE
 create PROC themThongTinTk
 @tenDangNhap varchar(100), @hoTen nvarchar(100), @diaChi nvarchar(100), @cMND INT, @sDT INT, @tuoi INT, @gioiTinh nvarchar(100)
 AS
 BEGIN
 	INSERT INTO dbo.ThongTinTaiKhoan(HoTen, SoDienThoai, DiaChi, CMND, Tuoi, GioiTinh, TenDangNhap)
 	VALUES
-	(   @hoTen, -- HoTen - nvarchar(100)
-	    @sDT,   -- SoDienThoai - int
-	    @diaChi, -- DiaChi - nvarchar(100)
-	    @cMND,   -- CMND - int
-	    @tuoi,   -- Tuoi - int
-	    @gioiTinh, -- GioiTinh - nvarchar(100)
-	    @tenDangNhap   -- TenDangNhap - varchar(100)
-	    )
+	( @hoTen,  @sDT, @diaChi, @cMND, @tuoi, @gioiTinh,  @tenDangNhap )
 END
 GO
-
 
 CREATE proc dbo.USP_InsertDrink
 @TenSanPham nvarchar(100),@DonVi nvarchar(100), @Gia float, @idLoai int
@@ -207,8 +201,6 @@ BEGIN
 END
 GO
 
-
-
 CREATE PROC XoaSp
 @TenSanPham NVARCHAR(100)
 as
@@ -228,6 +220,33 @@ CREATE PROC USP_GetListFood
 AS
 BEGIN
 	SELECT * FROM SanPham
+END
+GO
+
+CREATE PROC USP_GetListMonAn
+AS
+BEGIN
+	SELECT * 
+	FROM SanPham a, LoaiSanPham b
+	WHERE a.idLoai = b.id AND b.DanhMuc = N'Món ăn'
+END
+GO
+
+CREATE PROC USP_GetListDoUong
+AS
+BEGIN
+	SELECT * 
+	FROM SanPham a, LoaiSanPham b
+	WHERE a.idLoai = b.id AND b.DanhMuc = N'Đồ uống'
+END
+GO
+
+CREATE PROC USP_GetListKhac
+AS
+BEGIN
+	SELECT * 
+	FROM SanPham a, LoaiSanPham b
+	WHERE a.idLoai = b.id AND b.DanhMuc = N'Khác'
 END
 GO
 
@@ -259,4 +278,5 @@ END
 GO
 
 
-
+CREATE FUNCTION fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
+GO
