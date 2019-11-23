@@ -31,7 +31,6 @@ namespace QuanLyQuanBeer
             foreach (Ban item in tableList)
             {
                 Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
-                btn.Margin = new Padding(8, 8, 8, 8);
                 btn.Text = item.TenBan;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);
@@ -58,7 +57,7 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.LoadChonMon();
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() { Width = 137, Height = 140 };
                 btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
@@ -72,7 +71,7 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.LoadMonAn();
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() { Width = 137, Height = 140 };
                 btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
@@ -86,7 +85,7 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.LoadDoUong();
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() { Width = 137, Height = 140 };
                 btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
@@ -100,7 +99,7 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.LoadKhac();
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() { Width = 137, Height = 140 };
                 btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
@@ -118,7 +117,7 @@ namespace QuanLyQuanBeer
             List<SanPham> tableList = SanPhamDAO.Instance.SearchMon(TenMon);
             foreach (SanPham item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() { Width = 137, Height = 140 };
                 btn.TextAlign = ContentAlignment.BottomCenter;
                 btn.Text = item.TenSanPham;
                 btn.ForeColor = Color.Black;
@@ -139,7 +138,6 @@ namespace QuanLyQuanBeer
 
         private void BtSoDowhite_Click(object sender, EventArgs e)
         {
-            pnSoDo.Visible = true;
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
@@ -174,11 +172,8 @@ namespace QuanLyQuanBeer
         private void BtHome_Click(object sender, EventArgs e)
         {
             //pnChaoMung.BringToFront();
-            btSoDoblue.Visible = true;
-            btSoDowhite.Visible = false;
             btOrderwhite.Visible = false;
             btOrderBlue.Visible = true;
-            pnSoDo.Visible = false;
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = true;
@@ -202,9 +197,6 @@ namespace QuanLyQuanBeer
         private void BtOrderBlue_Click(object sender, EventArgs e)
         {
             btOrderwhite.Visible = true;
-            btSoDoblue.Visible = true;
-            btSoDowhite.Visible = false;
-            pnSoDo.Visible = false;
             pnNewOrder.Visible = false;
             pnOrder.Visible = true;
             pnChaoMung.Visible = false;
@@ -214,7 +206,6 @@ namespace QuanLyQuanBeer
 
         private void BtOrderwhite_Click(object sender, EventArgs e)
         {
-            pnSoDo.Visible = false;
             pnNewOrder.Visible = false;
             pnOrder.Visible = true;
             pnChaoMung.Visible = false;
@@ -224,10 +215,8 @@ namespace QuanLyQuanBeer
 
         private void BtSoDoblue_Click(object sender, EventArgs e)
         {
-            btSoDowhite.Visible = true;
             btOrderwhite.Visible = false;
             btOrderBlue.Visible = true;
-            pnSoDo.Visible = true;
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
@@ -237,7 +226,6 @@ namespace QuanLyQuanBeer
 
         private void BtSoDowhite_Click_1(object sender, EventArgs e)
         {
-            pnSoDo.Visible = true;
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
@@ -247,9 +235,7 @@ namespace QuanLyQuanBeer
 
         private void BtOrderPlus_Click(object sender, EventArgs e)
         {
-            btSoDowhite.Visible = false;
             btOrderwhite.Visible = false;
-            pnSoDo.Visible = false;
             pnNewOrder.Visible = true;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
@@ -260,7 +246,6 @@ namespace QuanLyQuanBeer
         private void BtTinhTien_Click(object sender, EventArgs e)
         {
             pnTinhTien.Visible = true;
-            pnSoDo.Visible = false;
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
@@ -270,7 +255,6 @@ namespace QuanLyQuanBeer
         private void BtQuayLai_Click(object sender, EventArgs e)
         {
             pnTinhTien.Visible = false;
-            pnSoDo.Visible = false;
             pnNewOrder.Visible = true;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
@@ -324,5 +308,6 @@ namespace QuanLyQuanBeer
             }
         }
         #endregion
+
     }
 }

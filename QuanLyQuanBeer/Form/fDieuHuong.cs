@@ -19,7 +19,14 @@ namespace QuanLyQuanBeer
             this.lbTenDN.Text = acc.TenDangNhap;
         }
 
-        private void BtQLBH_Click(object sender, EventArgs e)
+        private void FDieuHuong_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
+            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void btQLBH_Click_1(object sender, EventArgs e)
         {
             fQLBH1 f = new fQLBH1(this.TaiKhoanHienTai);
             this.Hide();
@@ -27,7 +34,7 @@ namespace QuanLyQuanBeer
             this.Show();
         }
 
-        private void BtQLHT_Click(object sender, EventArgs e)
+        private void btQLHT_Click_1(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin();
             this.Hide();
@@ -35,15 +42,8 @@ namespace QuanLyQuanBeer
             this.Show();
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
-            lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
-            lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
-        private void FDieuHuong_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
             lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }

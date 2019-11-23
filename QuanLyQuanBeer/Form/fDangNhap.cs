@@ -17,11 +17,6 @@ namespace QuanLyQuanBeer
             return TaiKhoanDAO.Instance.DangNhap(TenDangNhap, MatKhau);
         }
 
-        private void BtThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void FDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
@@ -30,7 +25,7 @@ namespace QuanLyQuanBeer
             }
         }
 
-        private void BtDN_Click(object sender, EventArgs e)
+        private void btDN_Click_1(object sender, EventArgs e)
         {
             string tenDN = txbTenDangNhap.Text;
             string matKhau = txbMatKhau.Text;
@@ -57,6 +52,11 @@ namespace QuanLyQuanBeer
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
