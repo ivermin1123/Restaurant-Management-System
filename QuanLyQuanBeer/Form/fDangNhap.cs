@@ -58,5 +58,29 @@ namespace QuanLyQuanBeer
         {
             Application.Exit();
         }
+
+        private void TxbTenDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btDN_Click_1(this, new EventArgs());
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                btThoat_Click(this, new EventArgs());
+            }
+        }
+
+        private void TxbMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btDN_Click_1(this, new EventArgs());
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                btThoat_Click(this, new EventArgs());
+            }
+        }
     }
 }

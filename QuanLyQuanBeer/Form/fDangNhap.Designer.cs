@@ -83,6 +83,7 @@
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(67, 59);
             this.btThoat.TabIndex = 42;
+            this.btThoat.TabStop = false;
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
@@ -92,8 +93,9 @@
             this.txbTenDangNhap.Location = new System.Drawing.Point(167, 125);
             this.txbTenDangNhap.Name = "txbTenDangNhap";
             this.txbTenDangNhap.Size = new System.Drawing.Size(156, 31);
-            this.txbTenDangNhap.TabIndex = 36;
+            this.txbTenDangNhap.TabIndex = 1;
             this.txbTenDangNhap.Text = "admin";
+            this.txbTenDangNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxbTenDangNhap_KeyDown);
             // 
             // txbMatKhau
             // 
@@ -102,8 +104,9 @@
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.PasswordChar = '*';
             this.txbMatKhau.Size = new System.Drawing.Size(156, 31);
-            this.txbMatKhau.TabIndex = 37;
+            this.txbMatKhau.TabIndex = 2;
             this.txbMatKhau.Text = "1";
+            this.txbMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxbMatKhau_KeyDown);
             // 
             // btDN
             // 
@@ -116,10 +119,12 @@
             this.btDN.Location = new System.Drawing.Point(187, 222);
             this.btDN.Name = "btDN";
             this.btDN.Size = new System.Drawing.Size(136, 40);
-            this.btDN.TabIndex = 41;
+            this.btDN.TabIndex = 3;
+            this.btDN.TabStop = false;
             this.btDN.Text = "Login";
             this.btDN.UseVisualStyleBackColor = false;
             this.btDN.Click += new System.EventHandler(this.btDN_Click_1);
+            this.btDN.Enter += new System.EventHandler(this.btDN_Click_1);
             // 
             // lbMK
             // 
