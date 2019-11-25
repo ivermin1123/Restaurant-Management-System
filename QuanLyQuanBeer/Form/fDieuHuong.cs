@@ -6,13 +6,13 @@ namespace QuanLyQuanBeer
 {
     public partial class fDieuHuong : Form
     {
-        private TaiKhoan taiKhoanHienTai;
-        public TaiKhoan TaiKhoanHienTai
+        private TaiKhoanDTO taiKhoanHienTai;
+        public TaiKhoanDTO TaiKhoanHienTai
         {
             get { return taiKhoanHienTai; }
             set { taiKhoanHienTai = value; }
         }
-        public fDieuHuong(TaiKhoan acc)
+        public fDieuHuong(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
             InitializeComponent();

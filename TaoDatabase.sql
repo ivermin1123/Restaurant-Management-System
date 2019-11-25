@@ -1,6 +1,10 @@
 Use master
 Go
 
+IF DB_ID('QuanLyQuanBeer') IS NOT NULL
+	BEGIN 
+		DROP DATABASE [QuanLyQuanBeer]
+	END
 Create database QuanLyQuanBeer
 GO
 
@@ -250,6 +254,15 @@ BEGIN
 END
 GO
 
+alter PROC USP_GetHoaDon
+@idBan INT
+AS
+BEGIN
+	SELECT f.TenSanPham,bi.SoLuong ,f.Gia,f.Gia*bi.SoLuong AS TongCong 
+	FROM dbo.ThongTinHoaDon AS bi ,dbo.HoaDon AS b,dbo.SanPham AS f 
+	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Chưa thanh toán' AND b.idBan =@idBan
+END
+GO
 
 CREATE PROC XoaTK
 @tenDn VARCHAR(100)

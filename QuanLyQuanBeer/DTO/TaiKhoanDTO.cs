@@ -2,16 +2,16 @@
 
 namespace QuanLyQuanBeer.DTO
 {
-    public class TaiKhoan
+    public class TaiKhoanDTO
     {
-        public TaiKhoan(string tenDangNhap, string matKhau, string loaiTaiKhoan)
+        public TaiKhoanDTO(string tenDangNhap, string matKhau, string loaiTaiKhoan)
         {
             this.TenDangNhap = tenDangNhap;
             this.MatKhau = matKhau;
             this.LoaiTaiKhoan = loaiTaiKhoan;
         }
 
-        public TaiKhoan(DataRow row)
+        public TaiKhoanDTO(DataRow row)
         {
             this.TenDangNhap = row["tenDangNhap"].ToString();
             this.MatKhau = row["matKhau"].ToString();

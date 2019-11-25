@@ -2,9 +2,9 @@
 
 namespace QuanLyQuanBeer.DTO
 {
-    public class SanPham
+    public class SanPhamDTO
     {
-        public SanPham(int iD, string tenSanPham, string donVi, int idLoai, double gia)
+        public SanPhamDTO(int iD, string tenSanPham, string donVi, int idLoai, double gia)
         {
             this.ID = iD;
             this.TenSanPham = tenSanPham;
@@ -13,7 +13,7 @@ namespace QuanLyQuanBeer.DTO
             this.Gia = gia;
         }
 
-        public SanPham(DataRow row)
+        public SanPhamDTO(DataRow row)
         {
             this.ID = (int)row["iD"];
             this.TenSanPham = row["tenSanPham"].ToString();

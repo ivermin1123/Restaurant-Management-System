@@ -18,27 +18,27 @@ namespace QuanLyQuanBeer
         void LoadAccount()
         {
             listSP.DataSource = SanPhamDAO.Instance.GetListSP();
-            List<LoaiSanPham> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
+            List<LoaiSanPhamDTO> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
             cbxLoaiSP.DataSource = danhSachLoaiSP;
             cbxLoaiSP.DisplayMember = "TenLoaiSanPham";
         }
 
         private void BtThem_Click(object sender, EventArgs e)
         {
-            
-            if (txbTenSP1.Text == "" || txbGia.Text == "" || cbxLoaiSP.Text == ""|| txbDonVi.Text == "")
+
+            if (txbTenSP1.Text == "" || txbGia.Text == "" || cbxLoaiSP.Text == "" || txbDonVi.Text == "")
                 MessageBox.Show("Bạn phải nhập đủ thông tin!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 if (rdbtDoUong.Checked = false && rdbtKhac.Checked == false && rdbtMonAn.Checked == false)
-                    MessageBox.Show("Bạn phải nhập đủ thông tin!!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Bạn phải nhập đủ thông tin!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                 {
                     string TenSanPham = txbTenSP1.Text;
                     double Gia = Convert.ToDouble(txbGia.Text);
                     string DonVi = txbDonVi.Text;
                     // Chọn loại sản phẩm
-                    LoaiSanPham loaisp = cbxLoaiSP.SelectedItem as LoaiSanPham;
+                    LoaiSanPhamDTO loaisp = cbxLoaiSP.SelectedItem as LoaiSanPhamDTO;
                     int IDLoai = loaisp.ID;
                     if (SanPhamDAO.Instance.GetTenSP(TenSanPham) == TenSanPham)
                         MessageBox.Show("Đã có sản phẩm này", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,7 +55,7 @@ namespace QuanLyQuanBeer
                     }
                 }
             }
-            
+
         }
 
         private void BtThoat_Click(object sender, EventArgs e)

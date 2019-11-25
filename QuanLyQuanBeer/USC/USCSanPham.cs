@@ -66,7 +66,7 @@ namespace QuanLyQuanBeer
             string donVi = txbDonVi.Text;
             string danhMuc = txbDanhMuc.Text;
             string loaiSP = txbLoaiSP.Text;
-            fSuaSP f = new fSuaSP(tenSP,gia,idLoai,maSP,donVi,danhMuc, loaiSP);
+            fSuaSP f = new fSuaSP(tenSP, gia, idLoai, maSP, donVi, danhMuc, loaiSP);
             f.ShowDialog();
             LoadAccount();
         }

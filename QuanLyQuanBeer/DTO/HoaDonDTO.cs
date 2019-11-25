@@ -3,19 +3,18 @@ using System.Data;
 
 namespace QuanLyQuanBeer.DTO
 {
-    public class HoaDon
+    public class HoaDonDTO
     {
-        public HoaDon(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, double tongCong, string trangThai)
+        public HoaDonDTO(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, string trangThai)
         {
             this.ID = iD;
             this.ThoiGianVao = thoiGianVao;
             this.ThoiGianRa = thoiGianRa;
             this.IdBan = idBan;
-            this.TongCong = tongCong;
             this.TrangThai = trangThai;
         }
 
-        public HoaDon(DataRow row)
+        public HoaDonDTO(DataRow row)
         {
             this.ID = (int)row["iD"];
             this.ThoiGianVao = (DateTime?)row["thoiGianVao"];
@@ -23,7 +22,6 @@ namespace QuanLyQuanBeer.DTO
             if (thoiGianRaTemp.ToString() != "")
                 this.ThoiGianRa = (DateTime?)thoiGianRaTemp;
             else
-                this.TongCong = (double)row["tongCong"];
             this.TrangThai = row["TrangThai"].ToString();
             this.IdBan = (int)row["iDBan"];
         }
@@ -32,14 +30,12 @@ namespace QuanLyQuanBeer.DTO
         private DateTime? thoiGianVao;
         private DateTime? thoiGianRa;
         private int idBan;
-        private double tongCong;
         private string trangThai;
 
         public int ID { get => iD; set => iD = value; }
         public DateTime? ThoiGianVao { get => thoiGianVao; set => thoiGianVao = value; }
         public DateTime? ThoiGianRa { get => thoiGianRa; set => thoiGianRa = value; }
         public int IdBan { get => idBan; set => idBan = value; }
-        public double TongCong { get => tongCong; set => tongCong = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
     }
 }

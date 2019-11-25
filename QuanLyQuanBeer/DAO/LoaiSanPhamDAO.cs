@@ -26,7 +26,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                LoaiSanPham acc = new LoaiSanPham(item);
+                LoaiSanPhamDTO acc = new LoaiSanPhamDTO(item);
                 return acc.DanhMuc;
             }
             return "";
@@ -46,9 +46,9 @@ namespace QuanLyQuanBeer.DAO
             return result > 0;
         }
 
-        public List<LoaiSanPham> GetListLoaiSP()
+        public List<LoaiSanPhamDTO> GetListLoaiSP()
         {
-            List<LoaiSanPham> danhSachLoaiSP = new List<LoaiSanPham>();
+            List<LoaiSanPhamDTO> danhSachLoaiSP = new List<LoaiSanPhamDTO>();
 
             string query = ("SELECT * From LoaiSanPham");
 
@@ -56,7 +56,7 @@ namespace QuanLyQuanBeer.DAO
 
             foreach (DataRow item in data.Rows)
             {
-                LoaiSanPham loaiSP = new LoaiSanPham(item);
+                LoaiSanPhamDTO loaiSP = new LoaiSanPhamDTO(item);
                 danhSachLoaiSP.Add(loaiSP);
             }
             return danhSachLoaiSP;
@@ -69,7 +69,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                LoaiSanPham sp = new LoaiSanPham(item);
+                LoaiSanPhamDTO sp = new LoaiSanPhamDTO(item);
                 return sp.TenloaiSanPham;
             }
             return "";
@@ -81,7 +81,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                LoaiSanPham sp = new LoaiSanPham(item);
+                LoaiSanPhamDTO sp = new LoaiSanPhamDTO(item);
                 return sp.ID;
             }
             return 0;
@@ -93,7 +93,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                LoaiSanPham sp = new LoaiSanPham(item);
+                LoaiSanPhamDTO sp = new LoaiSanPhamDTO(item);
                 return sp.TenloaiSanPham;
             }
             return "";

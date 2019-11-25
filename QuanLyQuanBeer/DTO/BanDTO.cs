@@ -2,16 +2,16 @@
 
 namespace QuanLyQuanBeer.DTO
 {
-    public class Ban
+    public class BanDTO
     {
-        public Ban(int iD, string tenBan, string trangThai)
+        public BanDTO(int iD, string tenBan, string trangThai)
         {
             this.ID = iD;
             this.TenBan = tenBan;
             this.TrangThai = trangThai;
         }
 
-        public Ban(DataRow row)
+        public BanDTO(DataRow row)
         {
             this.ID = (int)row["iD"];
             this.TenBan = row["tenBan"].ToString();

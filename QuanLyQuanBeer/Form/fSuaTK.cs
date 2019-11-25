@@ -1,12 +1,5 @@
 ﻿using QuanLyQuanBeer.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -17,7 +10,7 @@ namespace QuanLyQuanBeer
         private string _userName;
         private string _passWord;
         private string _loai;
-        public fSuaTK(string userName,string passWord, string loai)
+        public fSuaTK(string userName, string passWord, string loai)
         {
             InitializeComponent();
             _userName = userName;

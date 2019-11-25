@@ -22,7 +22,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                ThongTinTaiKhoan acc = new ThongTinTaiKhoan(item);
+                ThongTinTaiKhoanDTO acc = new ThongTinTaiKhoanDTO(item);
                 return acc.GioiTinh;
             }
             return "";

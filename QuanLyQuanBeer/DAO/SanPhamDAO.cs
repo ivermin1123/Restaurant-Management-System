@@ -23,66 +23,66 @@ namespace QuanLyQuanBeer.DAO
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
 
-        public List<SanPham> LoadChonMon()
+        public List<SanPhamDTO> LoadChonMon()
         {
-            List<SanPham> tableList = new List<SanPham>();
+            List<SanPhamDTO> tableList = new List<SanPhamDTO>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListFood");
             foreach (DataRow item in data.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 tableList.Add(sp);
             }
 
             return tableList;
         }
 
-        public List<SanPham> SearchMon(string name)
+        public List<SanPhamDTO> SearchMon(string name)
         {
-            List<SanPham> tableList = new List<SanPham>();
+            List<SanPhamDTO> tableList = new List<SanPhamDTO>();
             string query = string.Format("Select * From SanPham where dbo.fuConvertToUnsign1(TenSanPham) Like N'%'+ dbo.fuConvertToUnsign1(N'{0}') +'%'", name);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 tableList.Add(sp);
             }
             return tableList;
         }
 
-        public List<SanPham> LoadMonAn()
+        public List<SanPhamDTO> LoadMonAn()
         {
-            List<SanPham> tableList = new List<SanPham>();
+            List<SanPhamDTO> tableList = new List<SanPhamDTO>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListMonAn");
             foreach (DataRow item in data.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 tableList.Add(sp);
             }
             return tableList;
         }
 
-        public List<SanPham> LoadDoUong()
+        public List<SanPhamDTO> LoadDoUong()
         {
-            List<SanPham> tableList = new List<SanPham>();
+            List<SanPhamDTO> tableList = new List<SanPhamDTO>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListDoUong");
             foreach (DataRow item in data.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 tableList.Add(sp);
             }
             return tableList;
         }
 
-        public List<SanPham> LoadKhac()
+        public List<SanPhamDTO> LoadKhac()
         {
-            List<SanPham> tableList = new List<SanPham>();
+            List<SanPhamDTO> tableList = new List<SanPhamDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListKhac");
             foreach (DataRow item in data.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 tableList.Add(sp);
             }
             return tableList;
@@ -118,7 +118,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 return sp.TenSanPham;
             }
             return "";
@@ -130,7 +130,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                SanPham sp = new SanPham(item);
+                SanPhamDTO sp = new SanPhamDTO(item);
                 return sp.IdLoai;
             }
             return 0;

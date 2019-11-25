@@ -2,16 +2,16 @@
 
 namespace QuanLyQuanBeer.DTO
 {
-    public class LoaiSanPham
+    public class LoaiSanPhamDTO
     {
-        public LoaiSanPham(int iD, string tenLoaiSanPham, string danhMuc)
+        public LoaiSanPhamDTO(int iD, string tenLoaiSanPham, string danhMuc)
         {
             this.ID = iD;
             this.TenloaiSanPham = tenLoaiSanPham;
             this.DanhMuc = danhMuc;
         }
 
-        public LoaiSanPham(DataRow row)
+        public LoaiSanPhamDTO(DataRow row)
         {
             this.ID = (int)row["iD"];
             this.TenloaiSanPham = row["tenLoaiSanPham"].ToString();

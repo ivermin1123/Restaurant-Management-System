@@ -1,13 +1,5 @@
 ﻿using QuanLyQuanBeer.DAO;
-using QuanLyQuanBeer.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -22,10 +14,10 @@ namespace QuanLyQuanBeer
         private string _danhMuc;
         private string _loaiSP;
 
-        public fSuaSP(string tenSP, double gia, int idLoai, int maSP, string donVi,string danhMuc, string loaiSP)
+        public fSuaSP(string tenSP, double gia, int idLoai, int maSP, string donVi, string danhMuc, string loaiSP)
         {
             InitializeComponent();
-            _tenSP = tenSP; _gia = gia; _idLoai = idLoai; _maSP = maSP; _donVi = donVi; _danhMuc = danhMuc;  _loaiSP = loaiSP;
+            _tenSP = tenSP; _gia = gia; _idLoai = idLoai; _maSP = maSP; _donVi = donVi; _danhMuc = danhMuc; _loaiSP = loaiSP;
             txbTenSP1.Text = _tenSP;
             txbGia.Text = _gia.ToString();
             txbDonVi.Text = _donVi;

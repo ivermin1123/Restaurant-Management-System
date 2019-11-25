@@ -44,20 +44,20 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                Ban ban = new Ban(item);
+                BanDTO ban = new BanDTO(item);
                 return ban.TenBan;
             }
             return "";
         }
 
-        public List<Ban> LoadDsBan()
+        public List<BanDTO> LoadDsBan()
         {
-            List<Ban> tableList = new List<Ban>();
+            List<BanDTO> tableList = new List<BanDTO>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetTableList");
             foreach (DataRow item in data.Rows)
             {
-                Ban table = new Ban(item);
+                BanDTO table = new BanDTO(item);
                 tableList.Add(table);
             }
 

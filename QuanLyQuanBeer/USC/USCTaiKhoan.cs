@@ -67,7 +67,7 @@ namespace QuanLyQuanBeer
             string userName = txbTenTaiKhoan.Text;
             string passWord = txbMatKhau.Text;
             string loai = txbLoaiTK.Text;
-            fSuaTK f = new fSuaTK(userName,passWord,loai);
+            fSuaTK f = new fSuaTK(userName, passWord, loai);
             f.ShowDialog();
             LoadAccount();
         }

@@ -2,9 +2,9 @@
 
 namespace QuanLyQuanBeer.DTO
 {
-    public class ThongTinTaiKhoan
+    public class ThongTinTaiKhoanDTO
     {
-        public ThongTinTaiKhoan(int iD, string hoTen, int soDienThoai, string diaChi, int cMND, int tuoi, string gioiTinh, string tenDangNhap)
+        public ThongTinTaiKhoanDTO(int iD, string hoTen, int soDienThoai, string diaChi, int cMND, int tuoi, string gioiTinh, string tenDangNhap)
         {
             this.ID = iD;
             this.HoTen = hoTen;
@@ -16,7 +16,7 @@ namespace QuanLyQuanBeer.DTO
             this.TenDangNhap = tenDangNhap;
         }
 
-        public ThongTinTaiKhoan(DataRow row)
+        public ThongTinTaiKhoanDTO(DataRow row)
         {
             this.ID = (int)row["iD"];
             this.HoTen = row["hoTen"].ToString();

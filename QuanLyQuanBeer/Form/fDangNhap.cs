@@ -31,7 +31,7 @@ namespace QuanLyQuanBeer
             string matKhau = txbMatKhau.Text;
             if (DangNhap(tenDN, matKhau))
             {
-                TaiKhoan acc = TaiKhoanDAO.Instance.layTaiKhoan(tenDN);
+                TaiKhoanDTO acc = TaiKhoanDAO.Instance.layTaiKhoan(tenDN);
                 if (acc.LoaiTaiKhoan == "Nhân viên")
                 {
                     fQLBH1 form = new fQLBH1(acc);

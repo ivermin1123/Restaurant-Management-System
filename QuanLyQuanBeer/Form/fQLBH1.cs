@@ -9,13 +9,13 @@ namespace QuanLyQuanBeer
 {
     public partial class fQLBH1 : Form
     {
-        private TaiKhoan taiKhoanHienTai;
-        public TaiKhoan TaiKhoanHienTai
+        private TaiKhoanDTO taiKhoanHienTai;
+        public TaiKhoanDTO TaiKhoanHienTai
         {
             get { return taiKhoanHienTai; }
             set { taiKhoanHienTai = value; }
         }
-        public fQLBH1(TaiKhoan acc)
+        public fQLBH1(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
             InitializeComponent();
@@ -27,84 +27,110 @@ namespace QuanLyQuanBeer
         #region Method
         void LoadTable()
         {
-            List<Ban> tableList = BanDAO.Instance.LoadDsBan();
-            foreach (Ban item in tableList)
+            flpBan.Controls.Clear();
+            List<BanDTO> tableList = BanDAO.Instance.LoadDsBan();
+            foreach (BanDTO item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
-                btn.Text = item.TenBan;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);
-                btn.FlatAppearance.BorderSize = 3;
-                btn.FlatAppearance.MouseOverBackColor = Color.Azure;
-                btn.FlatAppearance.MouseDownBackColor = Color.PowderBlue;
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
+                Button bt = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                bt.Text = item.TenBan;
+                bt.FlatStyle = FlatStyle.Flat;
+                bt.Click += bt_click;
+                bt.Tag = item;
+                bt.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);
+                bt.FlatAppearance.BorderSize = 3;
+                bt.FlatAppearance.MouseOverBackColor = Color.Azure;
+                bt.FlatAppearance.MouseDownBackColor = Color.PowderBlue;
+                bt.Font = new Font("Arial", 12, FontStyle.Bold);
                 switch (item.TrangThai)
                 {
                     case "Trống":
-                        btn.BackColor = Color.White;
-                        btn.ForeColor = Color.FromArgb(9, 115, 185);
+                        bt.BackColor = Color.White;
+                        bt.ForeColor = Color.FromArgb(9, 115, 185);
                         break;
                     default:
-                        btn.BackColor = Color.FromArgb(128, 128, 128);
+                        bt.BackColor = Color.FromArgb(128, 128, 128);
                         break;
                 }
-                flpBan.Controls.Add(btn);
+                flpBan.Controls.Add(bt);
             }
+        }
+        public void XemHoaDon(int id)
+        {
+            lsvHoaDon.Items.Clear();
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(id);
+            List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable(id);
+            double TongTien = 0;
+            foreach (MenuDTO item in danhSachThongTinHoaDon)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.TenSanPham.ToString());
+                lsvItem.SubItems.Add(item.SoLuong.ToString());
+                lsvItem.SubItems.Add(item.Gia.ToString());
+                if (item.TongCong == 0)
+                    lsvItem.SubItems.Add("Miễn phí");
+                else
+                    lsvItem.SubItems.Add(String.Format("{0:0,0}", item.TongCong) + " VND");
+                TongTien += item.TongCong;
+                lsvHoaDon.Items.Add(lsvItem);
+            }
+            if (TongTien > 0)
+                txbTongTien.Text = String.Format("{0:0,0}", TongTien);
+            else
+                txbTongTien.Text = 0.ToString();
         }
 
         void LoadMon()
         {
-            List<SanPham> tableList = SanPhamDAO.Instance.LoadChonMon();
-            foreach (SanPham item in tableList)
+            List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadChonMon();
+            foreach (SanPhamDTO item in tableList)
             {
-                Button btn = new Button() { Width = 137, Height = 140 };
-                btn.TextAlign = ContentAlignment.BottomCenter;
-                btn.Text = item.TenSanPham;
-                btn.ForeColor = Color.Black;
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(btn);
+                Button bt = new Button() { Width = 137, Height = 140 };
+                bt.TextAlign = ContentAlignment.BottomCenter;
+                bt.Text = item.TenSanPham;
+                bt.ForeColor = Color.Black;
+                bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(bt);
             }
         }
 
         void LoadMonAn()
         {
-            List<SanPham> tableList = SanPhamDAO.Instance.LoadMonAn();
-            foreach (SanPham item in tableList)
+            List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadMonAn();
+            foreach (SanPhamDTO item in tableList)
             {
-                Button btn = new Button() { Width = 137, Height = 140 };
-                btn.TextAlign = ContentAlignment.BottomCenter;
-                btn.Text = item.TenSanPham;
-                btn.ForeColor = Color.Black;
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(btn);
+                Button bt = new Button() { Width = 137, Height = 140 };
+                bt.TextAlign = ContentAlignment.BottomCenter;
+                bt.Text = item.TenSanPham;
+                bt.ForeColor = Color.Black;
+                bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(bt);
             }
         }
 
         void LoadDoUong()
         {
-            List<SanPham> tableList = SanPhamDAO.Instance.LoadDoUong();
-            foreach (SanPham item in tableList)
+            List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadDoUong();
+            foreach (SanPhamDTO item in tableList)
             {
-                Button btn = new Button() { Width = 137, Height = 140 };
-                btn.TextAlign = ContentAlignment.BottomCenter;
-                btn.Text = item.TenSanPham;
-                btn.ForeColor = Color.Black;
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(btn);
+                Button bt = new Button() { Width = 137, Height = 140 };
+                bt.TextAlign = ContentAlignment.BottomCenter;
+                bt.Text = item.TenSanPham;
+                bt.ForeColor = Color.Black;
+                bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(bt);
             }
         }
 
         void LoadKhac()
         {
-            List<SanPham> tableList = SanPhamDAO.Instance.LoadKhac();
-            foreach (SanPham item in tableList)
+            List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadKhac();
+            foreach (SanPhamDTO item in tableList)
             {
-                Button btn = new Button() { Width = 137, Height = 140 };
-                btn.TextAlign = ContentAlignment.BottomCenter;
-                btn.Text = item.TenSanPham;
-                btn.ForeColor = Color.Black;
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(btn);
+                Button bt = new Button() { Width = 137, Height = 140 };
+                bt.TextAlign = ContentAlignment.BottomCenter;
+                bt.Text = item.TenSanPham;
+                bt.ForeColor = Color.Black;
+                bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(bt);
             }
         }
 
@@ -112,29 +138,33 @@ namespace QuanLyQuanBeer
         {
             /*string firstLetters = "";
             foreach (var part in TenMon.Split(' ')) -- Lay ky tu dau tien VD: Con ga => Cg;
-                firstLetters += part.Substring(0, 1);*/ 
+                firstLetters += part.Substring(0, 1);*/
             flpChonMon.Controls.Clear();
-            List<SanPham> tableList = SanPhamDAO.Instance.SearchMon(TenMon);
-            foreach (SanPham item in tableList)
+            List<SanPhamDTO> tableList = SanPhamDAO.Instance.SearchMon(TenMon);
+            foreach (SanPhamDTO item in tableList)
             {
-                Button btn = new Button() { Width = 137, Height = 140 };
-                btn.TextAlign = ContentAlignment.BottomCenter;
-                btn.Text = item.TenSanPham;
-                btn.ForeColor = Color.Black;
-                btn.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(btn);
+                Button bt = new Button() { Width = 137, Height = 140 };
+                bt.TextAlign = ContentAlignment.BottomCenter;
+                bt.Text = item.TenSanPham;
+                bt.ForeColor = Color.Black;
+                bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                flpChonMon.Controls.Add(bt);
             }
         }
         #endregion
 
         #region Events
-
-        private void btSearch_Click(object sender, EventArgs e)
+        void bt_click(object sender, EventArgs e)
         {
-
-            SearchMonAnTheoTen(txbSearch.Text);
+            int idBan = ((sender as Button).Tag as BanDTO).ID;
+            lbIdBan.Text = idBan.ToString();
+            XemHoaDon(idBan);
         }
 
+        private void BtSearch_Click_1(object sender, EventArgs e)
+        {
+            SearchMonAnTheoTen(txbSearch.Text);
+        }
 
         private void BtSoDowhite_Click(object sender, EventArgs e)
         {
@@ -299,7 +329,7 @@ namespace QuanLyQuanBeer
             flpChonMon.Controls.Clear();
             LoadMon();
         }
-        private void txbSearch_Enter(object sender, EventArgs e)
+        private void TxbSearch_Enter_1(object sender, EventArgs e)
         {
             if (txbSearch.Text == "Nhập tên món cần tìm")
             {
@@ -309,5 +339,6 @@ namespace QuanLyQuanBeer
         }
         #endregion
 
+        
     }
 }

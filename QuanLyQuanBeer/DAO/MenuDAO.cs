@@ -1,0 +1,34 @@
+﻿using QuanLyQuanBeer.ADO;
+using QuanLyQuanBeer.DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLyQuanBeer.DAO
+{
+    public class MenuDAO
+    {
+        private static MenuDAO instance;
+        public static MenuDAO Instance
+        {
+            get { if (instance == null) instance = new MenuDAO(); return instance; }
+            private set { instance = value; }
+        }
+        private MenuDAO() { }
+        public List<MenuDTO> GetListMenuByTable(int id)
+        {
+            List<MenuDTO> danhSachMenu = new List<MenuDTO>();
+            string query = ("EXEC dbo.USP_GetHoaDon @idBan = " + id + " ");
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                MenuDTO MenuDTO = new MenuDTO(item);
+                danhSachMenu.Add(MenuDTO);
+            }
+            return danhSachMenu;
+        }
+    }
+}

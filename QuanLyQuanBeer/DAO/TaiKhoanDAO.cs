@@ -17,12 +17,12 @@ namespace QuanLyQuanBeer.DAO
 
         private TaiKhoanDAO() { }
 
-        public TaiKhoan layTaiKhoan(string tenDangNhap)
+        public TaiKhoanDTO layTaiKhoan(string tenDangNhap)
         {
             string query = "SELECT * FROM dbo.TaiKhoan WHERE TenDangNhap = '" + tenDangNhap + "'";
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
-                return new TaiKhoan(item);
+                return new TaiKhoanDTO(item);
             return null;
         }
 
@@ -41,15 +41,15 @@ namespace QuanLyQuanBeer.DAO
             return result.Rows.Count > 0;
         }
 
-        public List<TaiKhoan> layDSTaiKhoan()
+        public List<TaiKhoanDTO> layDSTaiKhoan()
         {
-            List<TaiKhoan> danhSach = new List<TaiKhoan>();
+            List<TaiKhoanDTO> danhSach = new List<TaiKhoanDTO>();
             string query = "SELECT * FROM TaiKhoan";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
-                danhSach.Add(new TaiKhoan(item));
+                danhSach.Add(new TaiKhoanDTO(item));
             }
             return danhSach;
         }
@@ -61,7 +61,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                TaiKhoan acc = new TaiKhoan(item);
+                TaiKhoanDTO acc = new TaiKhoanDTO(item);
                 return acc.TenDangNhap;
             }
             return "";
@@ -97,7 +97,7 @@ namespace QuanLyQuanBeer.DAO
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {
-                TaiKhoan acc = new TaiKhoan(item);
+                TaiKhoanDTO acc = new TaiKhoanDTO(item);
                 return acc.LoaiTaiKhoan;
             }
             return "";
