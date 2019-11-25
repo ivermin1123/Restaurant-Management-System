@@ -70,12 +70,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="btChonMon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="btChonMon.Designer.cs">
-      <DependentUpon>btChonMon.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAO\BanDAO.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
@@ -202,9 +196,6 @@
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="btChonMon.resx">
-      <DependentUpon>btChonMon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\fQLBH1.resx">
       <DependentUpon>fQLBH1.cs</DependentUpon>
     </EmbeddedResource>

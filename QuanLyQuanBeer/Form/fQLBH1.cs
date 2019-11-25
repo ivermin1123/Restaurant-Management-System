@@ -18,6 +18,7 @@ namespace QuanLyQuanBeer
         public fQLBH1(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
+            this.SetStyle(ControlStyles.UserPaint, true);
             InitializeComponent();
             pnChaoMung.Visible = true;
             LoadTable();
@@ -83,12 +84,46 @@ namespace QuanLyQuanBeer
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadChonMon();
             foreach (SanPhamDTO item in tableList)
             {
-                Button bt = new Button() { Width = 137, Height = 140 };
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.Text = item.TenSanPham;
-                bt.ForeColor = Color.Black;
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(bt);
+                Panel pn = new Panel();
+                Bunifu.Framework.UI.BunifuImageButton bt = new Bunifu.Framework.UI.BunifuImageButton();
+                TextBox txb = new TextBox();
+                Label lb = new Label();
+                // panel
+                pn.BorderStyle = BorderStyle.FixedSingle;
+                pn.Controls.Add(lb);
+                pn.Controls.Add(txb);
+                pn.Controls.Add(bt);
+                pn.Size = new Size(155, 180);
+                // Button
+                bt.Dock = DockStyle.Top;
+                bt.Cursor = Cursors.Hand;
+                bt.Image = Image.FromFile(@"D:\C#\Pic Food\bo-luc-lac-khoai-tay-chien.jpg");
+                bt.ImageActive = null;
+                bt.Location = new Point(0, 0);
+                bt.Size = new Size(153, 127);
+                bt.SizeMode = PictureBoxSizeMode.StretchImage;
+                bt.Zoom = 0;
+                // textBox
+                txb.Cursor = Cursors.Arrow;
+                txb.BackColor = Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+                txb.Dock = DockStyle.Fill;
+                txb.ForeColor = Color.Black;
+                txb.ReadOnly = true;
+                txb.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                txb.Multiline = true;
+                txb.Size = new Size(153, 51);
+                txb.Text = item.TenSanPham;
+                txb.TextAlign = HorizontalAlignment.Center;
+                // label
+                lb.Anchor = ((AnchorStyles)((AnchorStyles.Top | AnchorStyles.Right)));
+                lb.AutoSize = true;
+                lb.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(164)))), ((int)(((byte)(201)))));
+                lb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                lb.ForeColor = Color.White;
+                lb.Size = new Size(46, 21);
+                lb.Location = new Point(106, 1);
+                lb.Text = "600K";
+                flpChonMon.Controls.Add(pn);
             }
         }
 
