@@ -22,7 +22,7 @@ namespace QuanLyQuanBeer.DTO
             if (thoiGianRaTemp.ToString() != "")
                 this.ThoiGianRa = (DateTime?)thoiGianRaTemp;
             else
-            this.TrangThai = row["TrangThai"].ToString();
+                this.TrangThai = row["TrangThai"].ToString();
             this.IdBan = (int)row["iDBan"];
         }
 

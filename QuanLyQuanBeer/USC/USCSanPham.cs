@@ -23,9 +23,14 @@ namespace QuanLyQuanBeer
             dtgvSanPham.Columns[1].HeaderText = "Tên sản phẩm";
             dtgvSanPham.Columns[1].FillWeight = 130;
             dtgvSanPham.Columns[2].HeaderText = "Đơn vị";
+            dtgvSanPham.Columns[2].FillWeight = 45;
             dtgvSanPham.Columns[3].HeaderText = "Giá";
+            dtgvSanPham.Columns[3].FillWeight = 70;
             dtgvSanPham.Columns[4].HeaderText = "Loại";
+            dtgvSanPham.Columns[4].FillWeight = 60;
             dtgvSanPham.Columns[5].HeaderText = "Danh mục";
+            dtgvSanPham.Columns[5].FillWeight = 70;
+            dtgvSanPham.Columns[6].HeaderText = "Hình ảnh";
         }
 
         void binding()

@@ -90,13 +90,13 @@ namespace QuanLyQuanBeer.DAO
 
         public DataTable GetListSP()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,b.DanhMuc From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
+            return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,b.DanhMuc,a.HinhAnh From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
         }
 
-        public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai)
+        public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai,string tenAnh)
         {
-            string query = "USP_InsertDrink @TenSanPham , @DonVi , @Gia , @idLoai ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai }) > 0;
+            string query = "USP_InsertDrink @TenSanPham , @DonVi , @Gia , @idLoai , @tenAnh ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai, tenAnh }) > 0;
         }
 
         public bool capNhatSP(string tenSP, string DonVi, double Gia, int idLoai, int id)

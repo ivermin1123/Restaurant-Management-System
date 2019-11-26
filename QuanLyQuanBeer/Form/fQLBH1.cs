@@ -18,7 +18,6 @@ namespace QuanLyQuanBeer
         public fQLBH1(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
-            this.SetStyle(ControlStyles.UserPaint, true);
             InitializeComponent();
             pnChaoMung.Visible = true;
             LoadTable();
@@ -26,6 +25,7 @@ namespace QuanLyQuanBeer
         }
 
         #region Method
+
         void LoadTable()
         {
             flpBan.Controls.Clear();
@@ -35,7 +35,7 @@ namespace QuanLyQuanBeer
                 Button bt = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
                 bt.Text = item.TenBan;
                 bt.FlatStyle = FlatStyle.Flat;
-                bt.Click += bt_click;
+                bt.Click += Bt_click;
                 bt.Tag = item;
                 bt.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);
                 bt.FlatAppearance.BorderSize = 3;
@@ -58,7 +58,6 @@ namespace QuanLyQuanBeer
         public void XemHoaDon(int id)
         {
             lsvHoaDon.Items.Clear();
-            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(id);
             List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable(id);
             double TongTien = 0;
             foreach (MenuDTO item in danhSachThongTinHoaDon)
@@ -79,9 +78,8 @@ namespace QuanLyQuanBeer
                 txbTongTien.Text = 0.ToString();
         }
 
-        void LoadMon()
+        void TaoButton(List<SanPhamDTO> tableList)
         {
-            List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadChonMon();
             foreach (SanPhamDTO item in tableList)
             {
                 Panel pn = new Panel();
@@ -94,10 +92,10 @@ namespace QuanLyQuanBeer
                 pn.Controls.Add(txb);
                 pn.Controls.Add(bt);
                 pn.Size = new Size(155, 180);
-                // Button
+                // ButtonImage
                 bt.Dock = DockStyle.Top;
                 bt.Cursor = Cursors.Hand;
-                bt.Image = Image.FromFile(@"D:\C#\Pic Food\bo-luc-lac-khoai-tay-chien.jpg");
+                bt.Image = Image.FromFile(@"..//..//..//Pic Food/"+ item.HinhAnh);
                 bt.ImageActive = null;
                 bt.Location = new Point(0, 0);
                 bt.Size = new Size(153, 127);
@@ -105,68 +103,49 @@ namespace QuanLyQuanBeer
                 bt.Zoom = 0;
                 // textBox
                 txb.Cursor = Cursors.Arrow;
-                txb.BackColor = Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+                txb.BackColor = Color.FromArgb(242,242,242);
                 txb.Dock = DockStyle.Fill;
                 txb.ForeColor = Color.Black;
                 txb.ReadOnly = true;
-                txb.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+                txb.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point,0);
                 txb.Multiline = true;
                 txb.Size = new Size(153, 51);
                 txb.Text = item.TenSanPham;
                 txb.TextAlign = HorizontalAlignment.Center;
                 // label
-                lb.Anchor = ((AnchorStyles)((AnchorStyles.Top | AnchorStyles.Right)));
                 lb.AutoSize = true;
-                lb.BackColor = Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(164)))), ((int)(((byte)(201)))));
-                lb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                lb.BackColor = Color.FromArgb(81,164,201);
+                lb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
                 lb.ForeColor = Color.White;
                 lb.Size = new Size(46, 21);
-                lb.Location = new Point(106, 1);
-                lb.Text = "600K";
+                lb.Location = new Point(103, 1);
+                string Gia = ((int)(item.Gia)/1000).ToString();
+                lb.Text = Gia + "K";
                 flpChonMon.Controls.Add(pn);
             }
+        }
+        void LoadMon()
+        {
+            List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadChonMon();
+            TaoButton(tableList);
         }
 
         void LoadMonAn()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadMonAn();
-            foreach (SanPhamDTO item in tableList)
-            {
-                Button bt = new Button() { Width = 137, Height = 140 };
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.Text = item.TenSanPham;
-                bt.ForeColor = Color.Black;
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(bt);
-            }
+            TaoButton(tableList);
         }
 
         void LoadDoUong()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadDoUong();
-            foreach (SanPhamDTO item in tableList)
-            {
-                Button bt = new Button() { Width = 137, Height = 140 };
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.Text = item.TenSanPham;
-                bt.ForeColor = Color.Black;
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(bt);
-            }
+            TaoButton(tableList);
         }
 
         void LoadKhac()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadKhac();
-            foreach (SanPhamDTO item in tableList)
-            {
-                Button bt = new Button() { Width = 137, Height = 140 };
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.Text = item.TenSanPham;
-                bt.ForeColor = Color.Black;
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(bt);
-            }
+            TaoButton(tableList);
         }
 
         void SearchMonAnTheoTen(string TenMon)
@@ -176,20 +155,12 @@ namespace QuanLyQuanBeer
                 firstLetters += part.Substring(0, 1);*/
             flpChonMon.Controls.Clear();
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.SearchMon(TenMon);
-            foreach (SanPhamDTO item in tableList)
-            {
-                Button bt = new Button() { Width = 137, Height = 140 };
-                bt.TextAlign = ContentAlignment.BottomCenter;
-                bt.Text = item.TenSanPham;
-                bt.ForeColor = Color.Black;
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
-                flpChonMon.Controls.Add(bt);
-            }
+            TaoButton(tableList);
         }
         #endregion
 
         #region Events
-        void bt_click(object sender, EventArgs e)
+        void Bt_click(object sender, EventArgs e)
         {
             int idBan = ((sender as Button).Tag as BanDTO).ID;
             lbIdBan.Text = idBan.ToString();
@@ -341,25 +312,25 @@ namespace QuanLyQuanBeer
                 pnMenu.Visible = false;
         }
 
-        private void btMonAn_Click(object sender, EventArgs e)
+        private void BtMonAn_Click(object sender, EventArgs e)
         {
             flpChonMon.Controls.Clear();
             LoadMonAn();
         }
 
-        private void btDoUong_Click(object sender, EventArgs e)
+        private void BtDoUong_Click(object sender, EventArgs e)
         {
             flpChonMon.Controls.Clear();
             LoadDoUong();
         }
 
-        private void btKhac_Click(object sender, EventArgs e)
+        private void BtKhac_Click(object sender, EventArgs e)
         {
             flpChonMon.Controls.Clear();
             LoadKhac();
         }
 
-        private void btTatCa_Click(object sender, EventArgs e)
+        private void BtTatCa_Click(object sender, EventArgs e)
         {
             flpChonMon.Controls.Clear();
             LoadMon();
@@ -374,6 +345,6 @@ namespace QuanLyQuanBeer
         }
         #endregion
 
-        
+
     }
 }

@@ -11,7 +11,7 @@ namespace QuanLyQuanBeer.USC
         {
             InitializeComponent();
             LoadAccount();
-            binding();
+            Binding();
         }
 
         void LoadAccount()
@@ -23,7 +23,7 @@ namespace QuanLyQuanBeer.USC
             dtgvBan.Columns[2].HeaderText = "Trạng Thái";
         }
 
-        void binding()
+        void Binding()
         {
             txbIdBan.DataBindings.Add("Text", dtgvBan.DataSource, "id", true, DataSourceUpdateMode.Never);
             txbTenBan.DataBindings.Add("Text", dtgvBan.DataSource, "TenBan", true, DataSourceUpdateMode.Never);
@@ -51,7 +51,7 @@ namespace QuanLyQuanBeer.USC
         private void BtXoaBan_Click(object sender, EventArgs e)
         {
             string tenBan = txbTenBan.Text;
-            if (BanDAO.Instance.xoaBan(tenBan))
+            if (BanDAO.Instance.XoaBan(tenBan))
             {
                 MessageBox.Show("Xóa thành công!", "Xóa loại bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAccount();
@@ -64,14 +64,13 @@ namespace QuanLyQuanBeer.USC
         {
             int id = int.Parse(txbIdBan.Text);
             string tenBan = txbTenBan.Text;
-            string trangThai = txbTrangThaiBan.Text;
             if (tenBan == "")
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Cập nhật bàn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             if (BanDAO.Instance.GetTenBan(tenBan) == tenBan)
                 MessageBox.Show("Đã có bàn này !!", "Thêm bàn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (BanDAO.Instance.capNhatBan(tenBan, id, trangThai))
+                if (BanDAO.Instance.CapNhatBan(tenBan, id))
                 {
                     MessageBox.Show("Cập nhật thành công!", "Cập nhật bàn", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();

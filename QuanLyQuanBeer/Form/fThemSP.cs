@@ -2,6 +2,10 @@
 using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -21,6 +25,15 @@ namespace QuanLyQuanBeer
             List<LoaiSanPhamDTO> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
             cbxLoaiSP.DataSource = danhSachLoaiSP;
             cbxLoaiSP.DisplayMember = "TenLoaiSanPham";
+        }
+
+        public static string LocDau(string s)
+        {
+            // Hàm chuyển có dấu thành không dấu và xóa khoảng trắng
+            // VD : "Cá lóc kho tộ" => "Calockhocto"
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "");
         }
 
         private void BtThem_Click(object sender, EventArgs e)
@@ -44,8 +57,12 @@ namespace QuanLyQuanBeer
                         MessageBox.Show("Đã có sản phẩm này", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
-                        if (SanPhamDAO.Instance.ThemSP(TenSanPham, DonVi, Gia, IDLoai))
+                        string somestring = txbDuongDan.Text;
+                        string newstring = somestring.Substring(somestring.Length - 4, 4);
+                        string tenAnh = LocDau(TenSanPham) + newstring;
+                        if (SanPhamDAO.Instance.ThemSP(TenSanPham, DonVi, Gia, IDLoai, tenAnh))
                         {
+                            File.Copy(txbDuongDan.Text, Path.Combine(@"..//..//..//Pic Food/", Path.GetFileName(tenAnh)),true);
                             MessageBox.Show("Thêm thành công!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
@@ -70,6 +87,18 @@ namespace QuanLyQuanBeer
                 e.Handled = false;
             }
             else e.Handled = true;
+        }
+
+        private void BtChonAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;) | *.jpg; *.jpeg; *.gif; *.bmp;";
+            if(open.ShowDialog() == DialogResult.OK)
+            {
+                txbDuongDan.Text = open.FileName;
+                ptbHienThiAnh.Image = new Bitmap(open.FileName);
+                ptbHienThiAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }

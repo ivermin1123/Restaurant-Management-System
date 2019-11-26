@@ -5,6 +5,8 @@ IF DB_ID('QuanLyQuanBeer') IS NOT NULL
 	BEGIN 
 		DROP DATABASE [QuanLyQuanBeer]
 	END
+GO
+
 Create database QuanLyQuanBeer
 GO
 
@@ -90,18 +92,23 @@ CREATE TABLE SanPham
 	DonVi NVARCHAR(100) not null,
 	idLoai INT not null,
 	Gia FLOAT not null,
-	HinhAnh image null
+	HinhAnh varchar(100) null
 
 	FOREIGN KEY (idLoai) REFERENCES dbo.LoaiSanPham(id)
 	ON DELETE CASCADE
 )
 GO
 
-INSERT INTO dbo.SanPham(TenSanPham, idLoai,DonVi, Gia )
-VALUES  ( N'Cá chép om dưa',1,N'Đĩa',88888),( N'Cá diêu hồng hai món',1,N'Đĩa',99999),
-		( N'Bò xiên nướng',2,N'Xiên',100000),( N'Bò lúc lắc khoai tây',2,N'Đĩa',111111),
-		( N'Chân giò hun khói',3,N'Phần',87000),( N'Chân giò hầm nấm',3,N'Phần',96000),
-		( N'Sài gòn xanh',4,N'Chai',15000),( N'Tiger nâu',4,N'Chai',18000)
+INSERT INTO dbo.SanPham(TenSanPham, idLoai,DonVi, Gia,HinhAnh )
+VALUES  
+( N'Cá chép om dưa',1,N'Đĩa',88888,'Cachepomdua.jpg'),
+( N'Cá diêu hồng hai món',1,N'Đĩa',99999,'Cadieuhonghaimon.jpg'),
+( N'Bò xiên nướng',2,N'Xiên',100000,'Boxiennuong.jpg'),
+( N'Bò lúc lắc khoai tây',2,N'Đĩa',111111,'Boluclackhoaitay.jpg'),
+( N'Chân giò hun khói',3,N'Phần',87000,'Changiohunkhoi.jpg'),
+( N'Chân giò hầm nấm',3,N'Phần',96000,'Changiohamnam.jpg'),
+( N'Sài gòn xanh',4,N'Chai',15000,'Saigonxanh.jpg'),
+( N'Tiger nâu',4,N'Chai',18000,'Tigernau.jpg')
 GO
 
 
@@ -168,14 +175,14 @@ BEGIN
 END
 GO
 
-CREATE proc dbo.USP_InsertDrink
-@TenSanPham nvarchar(100),@DonVi nvarchar(100), @Gia float, @idLoai int
+create proc dbo.USP_InsertDrink
+@TenSanPham nvarchar(100),@DonVi nvarchar(100), @Gia float, @idLoai int, @tenAnh varchar(100)
 as  
 begin
 	Insert into dbo.SanPham
-	(TenSanPham,DonVi,Gia,idLoai)
+	(TenSanPham,DonVi,Gia,idLoai,HinhAnh)
 	VALUES
-	(@TenSanPham,@DonVi, @Gia, @idLoai )
+	(@TenSanPham,@DonVi, @Gia, @idLoai,@tenAnh )
 end
 GO
 
@@ -254,7 +261,7 @@ BEGIN
 END
 GO
 
-alter PROC USP_GetHoaDon
+Create PROC USP_GetHoaDon
 @idBan INT
 AS
 BEGIN
@@ -293,4 +300,5 @@ GO
 
 CREATE FUNCTION fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
 GO
+
 

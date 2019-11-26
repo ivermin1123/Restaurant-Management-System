@@ -79,7 +79,7 @@
             this.btThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btThoat.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.Image")));
-            this.btThoat.Location = new System.Drawing.Point(504, 0);
+            this.btThoat.Location = new System.Drawing.Point(509, 0);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(67, 59);
             this.btThoat.TabIndex = 42;
