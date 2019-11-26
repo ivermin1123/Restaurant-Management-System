@@ -37,7 +37,6 @@ namespace QuanLyQuanBeer.DAO
             return result > 0;
         }
 
-
         public bool ThemBan(string tenBan)
         {
             // Thêm bàn
@@ -58,6 +57,24 @@ namespace QuanLyQuanBeer.DAO
                 return ban.TenBan;
             }
             return "";
+        }
+
+        public string GetTrangThaiBanBangIDBan(int idBan)
+        {
+            string query = "SELECT * FROM dbo.Ban WHERE id = "+ idBan ;
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                BanDTO ban = new BanDTO(item);
+                return ban.TrangThai;
+            }
+            return "";
+        }
+
+        public void UpdateTrangThaiBan(int idBan)
+        {
+            string query = "UPDATE dbo.Ban SET TrangThai = N'Có người' WHERE id = " + idBan + " ";
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public List<BanDTO> LoadDsBan()

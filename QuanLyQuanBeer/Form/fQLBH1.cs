@@ -55,7 +55,7 @@ namespace QuanLyQuanBeer
                 flpBan.Controls.Add(bt);
             }
         }
-        public void XemHoaDon(int id)
+        void XemHoaDon(int id)
         {
             lsvHoaDon.Items.Clear();
             List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable(id);
@@ -83,24 +83,55 @@ namespace QuanLyQuanBeer
             foreach (SanPhamDTO item in tableList)
             {
                 Panel pn = new Panel();
-                Bunifu.Framework.UI.BunifuImageButton bt = new Bunifu.Framework.UI.BunifuImageButton();
+                Bunifu.Framework.UI.BunifuImageButton bt1 = new Bunifu.Framework.UI.BunifuImageButton();
                 TextBox txb = new TextBox();
                 Label lb = new Label();
                 // panel
                 pn.BorderStyle = BorderStyle.FixedSingle;
                 pn.Controls.Add(lb);
                 pn.Controls.Add(txb);
-                pn.Controls.Add(bt);
+                pn.Controls.Add(bt1);
                 pn.Size = new Size(155, 180);
                 // ButtonImage
-                bt.Dock = DockStyle.Top;
-                bt.Cursor = Cursors.Hand;
-                bt.Image = Image.FromFile(@"..//..//..//Pic Food/"+ item.HinhAnh);
-                bt.ImageActive = null;
-                bt.Location = new Point(0, 0);
-                bt.Size = new Size(153, 127);
-                bt.SizeMode = PictureBoxSizeMode.StretchImage;
-                bt.Zoom = 0;
+                bt1.Dock = DockStyle.Top;
+                bt1.Cursor = Cursors.Hand;
+                bt1.Image = Image.FromFile(@"..//..//..//Pic Food/"+ item.HinhAnh);
+                bt1.ImageActive = null;
+                bt1.Location = new Point(0, 0);
+                bt1.Size = new Size(153, 127);
+                bt1.SizeMode = PictureBoxSizeMode.StretchImage;
+                bt1.Zoom = 0;
+                int idSP = SanPhamDAO.Instance.GetIDByTenSP(item.TenSanPham);
+                bt1.Click += (s, e) => 
+                {
+                    BanDTO ban = lsvHoaDon.Tag as BanDTO;
+                    if (ban == null)
+                    {
+                        MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                    //int idSanPham = (comboBoxTenMon.SelectedItem as SanPham).ID;
+                    double tongCong = Convert.ToDouble(txbTongTien.Text);
+                    if (BanDAO.Instance.GetTrangThaiBanBangIDBan(ban.ID) == "Trống")
+                    {
+                        DialogResult kq = MessageBox.Show("Bạn đang chọn bàn mới.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (kq == DialogResult.OK)
+                        {
+                            HoaDonDAO.Instance.InsertBill(ban.ID, tongCong);
+                            ThongTinHoaDonDAO.Instance.InsertBillInfo(HoaDonDAO.Instance.GetMaxIdBill(), idSP, 1);
+                            BanDAO.Instance.UpdateTrangThaiBan(ban.ID);
+                            LoadTable();
+                        }
+                    }
+                    else
+                    {
+                        ThongTinHoaDonDAO.Instance.InsertBillInfo(idHoaDon, idSP, 1);
+                        LoadTable();
+                    }
+                    XemHoaDon(ban.ID);
+                    LoadTable();
+                };
                 // textBox
                 txb.Cursor = Cursors.Arrow;
                 txb.BackColor = Color.FromArgb(242,242,242);
@@ -129,25 +160,21 @@ namespace QuanLyQuanBeer
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadChonMon();
             TaoButton(tableList);
         }
-
         void LoadMonAn()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadMonAn();
             TaoButton(tableList);
         }
-
         void LoadDoUong()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadDoUong();
             TaoButton(tableList);
         }
-
         void LoadKhac()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadKhac();
             TaoButton(tableList);
         }
-
         void SearchMonAnTheoTen(string TenMon)
         {
             /*string firstLetters = "";
@@ -159,10 +186,16 @@ namespace QuanLyQuanBeer
         }
         #endregion
 
+        void ThemMonEvent()
+        {
+            
+        }
+
         #region Events
         void Bt_click(object sender, EventArgs e)
         {
             int idBan = ((sender as Button).Tag as BanDTO).ID;
+            lsvHoaDon.Tag = (sender as Button).Tag;
             lbIdBan.Text = idBan.ToString();
             XemHoaDon(idBan);
         }

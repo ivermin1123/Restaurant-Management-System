@@ -1754,7 +1754,7 @@
             this.btTatCa.IconVisible = true;
             this.btTatCa.IconZoom = 50D;
             this.btTatCa.IsTab = false;
-            this.btTatCa.Location = new System.Drawing.Point(4, 15);
+            this.btTatCa.Location = new System.Drawing.Point(37, 14);
             this.btTatCa.Name = "btTatCa";
             this.btTatCa.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btTatCa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -1790,7 +1790,7 @@
             this.btKhac.IconVisible = true;
             this.btKhac.IconZoom = 50D;
             this.btKhac.IsTab = false;
-            this.btKhac.Location = new System.Drawing.Point(328, 15);
+            this.btKhac.Location = new System.Drawing.Point(361, 14);
             this.btKhac.Name = "btKhac";
             this.btKhac.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btKhac.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -1826,7 +1826,7 @@
             this.btDoUong.IconVisible = true;
             this.btDoUong.IconZoom = 50D;
             this.btDoUong.IsTab = false;
-            this.btDoUong.Location = new System.Drawing.Point(217, 15);
+            this.btDoUong.Location = new System.Drawing.Point(250, 14);
             this.btDoUong.Name = "btDoUong";
             this.btDoUong.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btDoUong.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -1862,7 +1862,7 @@
             this.btMonAn.IconVisible = true;
             this.btMonAn.IconZoom = 50D;
             this.btMonAn.IsTab = false;
-            this.btMonAn.Location = new System.Drawing.Point(102, 15);
+            this.btMonAn.Location = new System.Drawing.Point(135, 14);
             this.btMonAn.Name = "btMonAn";
             this.btMonAn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btMonAn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));

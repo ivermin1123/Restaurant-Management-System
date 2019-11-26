@@ -75,13 +75,8 @@
     <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
+    <Compile Include="DAO\ThongTinHoaDonDAO.cs" />
     <Compile Include="DTO\MenuDTO.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\fQLBH1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,9 +197,6 @@
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\fQLBH1.resx">
       <DependentUpon>fQLBH1.cs</DependentUpon>
     </EmbeddedResource>

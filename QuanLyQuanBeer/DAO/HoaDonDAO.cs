@@ -14,6 +14,12 @@ namespace QuanLyQuanBeer.DAO
         }
         private HoaDonDAO() { }
 
+        public void InsertBill(int idBan, double tongCong)
+        {
+            string query = ("Exec USP_InsertBill @idBan , @TongCong  ");
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idBan, tongCong });
+        }
+
         public int LayIDHoaDonChuaThanhToanBangIDBan(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM  dbo.HoaDon WHERE idBan = " + id + " AND TrangThai =N'Chưa thanh toán'");
@@ -23,6 +29,17 @@ namespace QuanLyQuanBeer.DAO
                 return hoaDon.ID;
             }
             return -1;
+        }
+        public int GetMaxIdBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(id) FROM dbo.HoaDon");
+            }
+            catch
+            {
+                return 1;
+            }
         }
     }
 }

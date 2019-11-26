@@ -62,10 +62,10 @@ CREATE TABLE Ban
 GO
 
 INSERT dbo.Ban(TenBan, TrangThai )
-VALUES  ( N'Bàn 01',N'Trống'),
-		( N'Bàn 02',N'Trống'),
-		( N'Bàn 03',N'Trống'),
-		( N'Bàn 04',N'Trống'),
+VALUES  ( N'Bàn 01',N'Có người'),
+		( N'Bàn 02',N'Có người'),
+		( N'Bàn 03',N'Có người'),
+		( N'Bàn 04',N'Có người'),
 		( N'Bàn 05',N'Trống'),
 		( N'Bàn 06',N'Trống'),
 		( N'Bàn 07',N'Trống'),
@@ -294,6 +294,46 @@ AS
 BEGIN
 	INSERT INTO dbo.TaiKhoan( TenDangNhap, MatKhau, LoaiTaiKhoan )
 	VALUES (@ten, @matKhau, @loai)
+END
+GO
+
+CREATE PROC USP_InsertBill
+@idBan INT,
+@TongCong FLOAT
+AS
+BEGIN
+	INSERT INTO dbo.HoaDon (ThoiGianVao, ThoiGianRa, idBan, TongCong, TrangThai) 
+	VALUES ( GETDATE(), null, @idBan, @TongCong , 0 ) 
+END
+GO
+
+CREATE PROC USP_InsertBillInfo
+@idHoaDon INT,@idSanPham INT , @SoLuong INT
+AS
+BEGIN
+
+	DECLARE @isExitsBillInfo INT
+	DECLARE @foodCount INT = 1
+
+	SELECT @isExitsBillInfo = id,@foodCount = b.SoLuong 
+	FROM dbo.ThongTinHoaDon AS b 
+	WHERE idHoaDon = @idHoaDon AND idSanPham = @idSanPham
+
+	IF(@isExitsBillInfo >0)
+		BEGIN
+			DECLARE @newCount INT = @foodCount + @SoLuong
+			IF (@newCount > 0)
+				UPDATE dbo.ThongTinHoaDon SET SoLuong = @foodCount + @SoLuong WHERE idSanPham = @idSanPham
+			ELSE
+				DELETE dbo.ThongTinHoaDon WHERE idHoaDon = @idHoaDon AND idSanPham = @idSanPham
+	END
+	ELSE 
+		BEGIN
+			INSERT INTO dbo.ThongTinHoaDon
+				(idHoaDon,idSanPham,SoLuong )
+			VALUES
+				( @idHoaDon,  @idSanPham,  @SoLuong)
+		END
 END
 GO
 

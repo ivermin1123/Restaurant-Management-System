@@ -124,6 +124,18 @@ namespace QuanLyQuanBeer.DAO
             return "";
         }
 
+        public int GetIDByTenSP(string tenSanPham)
+        {
+            string query = "SELECT * FROM dbo.SanPham WHERE TenSanPham = N'" + tenSanPham + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                SanPhamDTO sp = new SanPhamDTO(item);
+                return sp.ID;
+            }
+            return -1;
+        }
+
         public int GetIdLoai(string tenSanPham)
         {
             string query = "SELECT * FROM dbo.SanPham WHERE TenSanPham = N'" + tenSanPham + "'";
