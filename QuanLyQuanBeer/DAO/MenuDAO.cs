@@ -17,7 +17,7 @@ namespace QuanLyQuanBeer.DAO
         public List<MenuDTO> GetListMenuByTable(int id)
         {
             List<MenuDTO> danhSachMenu = new List<MenuDTO>();
-            string query = ("EXEC dbo.USP_GetHoaDon @idBan = " + id + " ");
+            string query = ("USP_GetHoaDon @idBan = " + id + " ");
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

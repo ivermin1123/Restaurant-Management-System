@@ -99,9 +99,15 @@ namespace QuanLyQuanBeer.DAO
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai, tenAnh }) > 0;
         }
 
-        public bool capNhatSP(string tenSP, string DonVi, double Gia, int idLoai, int id)
+        public bool ThemSP1(string tenSanPham, string DonVi, double gia, int idLoai)
         {
-            string query = "UPDATE dbo.SanPham SET TenSanPham = N'" + tenSP + "' , DonVi = N'" + DonVi + "', Gia = " + Gia + ", idLoai= " + idLoai + "  WHERE id = " + id + " ";
+            string query = "USP_InsertDrink1 @TenSanPham , @DonVi , @Gia , @idLoai ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai}) > 0;
+        }
+
+        public bool capNhatSP(string tenSP, string DonVi, double Gia, int idLoai, int id,string tenAnh)
+        {
+            string query = "UPDATE dbo.SanPham SET TenSanPham = N'" + tenSP + "' , DonVi = N'" + DonVi + "', Gia = " + Gia + ", idLoai= " + idLoai + ", HinhAnh = N'" + tenAnh + "'  WHERE id = " + id + " ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

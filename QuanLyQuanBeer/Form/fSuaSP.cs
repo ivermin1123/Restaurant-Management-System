@@ -1,5 +1,9 @@
 ﻿using QuanLyQuanBeer.DAO;
 using System;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -31,6 +35,15 @@ namespace QuanLyQuanBeer
             this.Close();
         }
 
+        public static string LocDau(string s)
+        {
+            // Hàm chuyển có dấu thành không dấu và xóa khoảng trắng
+            // VD : "Cá lóc kho tộ" => "Calockhocto"
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "");
+        }
+
         private void btCapNhat_Click(object sender, EventArgs e)
         {
             string TenSanPham = txbTenSP1.Text;
@@ -40,14 +53,35 @@ namespace QuanLyQuanBeer
                 MessageBox.Show("Bạn phải nhập đủ!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, _idLoai, _maSP))
+                if (txbDuongDan.Text == "")
+                    MessageBox.Show("Vui lòng chọn hình ảnh", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
                 {
-                    MessageBox.Show("Cập nhật thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string somestring = txbDuongDan.Text;
+                    string newstring = somestring.Substring(somestring.Length - 4, 4);
+                    string tenAnh = LocDau(TenSanPham) + newstring;
+                    if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, _idLoai, _maSP,tenAnh))
+                    {
+                        File.Copy(txbDuongDan.Text, Path.Combine(@"..//..//..//Pic Food/", Path.GetFileName(tenAnh)), true);
+                        MessageBox.Show("Cập nhật thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Cập nhật không thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Close();
                 }
-                else
-                    MessageBox.Show("Cập nhật không thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
+            }
+        }
+
+        private void BtChonAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;) | *.jpg; *.jpeg; *.gif; *.bmp;";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txbDuongDan.Text = open.FileName;
+                ptbHienThiAnh.Image = new Bitmap(open.FileName);
+                ptbHienThiAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
     }

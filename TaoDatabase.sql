@@ -62,10 +62,10 @@ CREATE TABLE Ban
 GO
 
 INSERT dbo.Ban(TenBan, TrangThai )
-VALUES  ( N'Bàn 01',N'Có người'),
-		( N'Bàn 02',N'Có người'),
-		( N'Bàn 03',N'Có người'),
-		( N'Bàn 04',N'Có người'),
+VALUES  ( N'Bàn 01',N'Trống'),
+		( N'Bàn 02',N'Trống'),
+		( N'Bàn 03',N'Trống'),
+		( N'Bàn 04',N'Trống'),
 		( N'Bàn 05',N'Trống'),
 		( N'Bàn 06',N'Trống'),
 		( N'Bàn 07',N'Trống'),
@@ -125,20 +125,6 @@ CREATE TABLE HoaDon
 )
 GO
 
-INSERT INTO dbo.HoaDon(ThoiGianVao,idBan,TrangThai)
-VALUES
-(GETDATE(),1, N'Chưa thanh toán'),
-(GETDATE(),2, N'Chưa thanh toán'),
-(GETDATE(),3, N'Chưa thanh toán'),
-(GETDATE(),4, N'Chưa thanh toán'),
-(GETDATE(),5, N'Chưa thanh toán'),
-(GETDATE(),6, N'Chưa thanh toán'),
-(GETDATE(),7, N'Chưa thanh toán'),
-(GETDATE(),8, N'Chưa thanh toán'),
-(GETDATE(),9, N'Chưa thanh toán'),
-(GETDATE(),10, N'Chưa thanh toán')
-GO
-
 CREATE TABLE ThongTinHoaDon
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
@@ -152,18 +138,6 @@ CREATE TABLE ThongTinHoaDon
 )
 GO
 
-INSERT INTO dbo.ThongTinHoaDon
-(idHoaDon,idSanPham,SoLuong)
-VALUES
-(100, 1, 2 ),
-(101, 2, 2 ),
-(101, 3, 2 ),
-(102, 4, 2 ),
-(102, 5, 2 ),
-(103, 6, 2 )
-GO
-
-
 -- PROCEDURE
 create PROC themThongTinTk
 @tenDangNhap varchar(100), @hoTen nvarchar(100), @diaChi nvarchar(100), @cMND INT, @sDT INT, @tuoi INT, @gioiTinh nvarchar(100)
@@ -173,6 +147,17 @@ BEGIN
 	VALUES
 	( @hoTen,  @sDT, @diaChi, @cMND, @tuoi, @gioiTinh,  @tenDangNhap )
 END
+GO
+
+CREATE proc dbo.USP_InsertDrink1
+@TenSanPham nvarchar(100),@DonVi nvarchar(100), @Gia float, @idLoai int
+as  
+begin
+	Insert into dbo.SanPham
+	(TenSanPham,DonVi,Gia,idLoai)
+	VALUES
+	(@TenSanPham, @DonVi,@Gia, @idLoai )
+end
 GO
 
 create proc dbo.USP_InsertDrink
@@ -261,11 +246,12 @@ BEGIN
 END
 GO
 
+
 Create PROC USP_GetHoaDon
 @idBan INT
 AS
 BEGIN
-	SELECT f.TenSanPham,bi.SoLuong ,f.Gia,f.Gia*bi.SoLuong AS TongCong 
+	SELECT f.TenSanPham,bi.SoLuong ,f.Gia,f.DonVi,f.Gia*bi.SoLuong AS TongCong 
 	FROM dbo.ThongTinHoaDon AS bi ,dbo.HoaDon AS b,dbo.SanPham AS f 
 	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Chưa thanh toán' AND b.idBan =@idBan
 END
@@ -297,13 +283,13 @@ BEGIN
 END
 GO
 
-CREATE PROC USP_InsertBill
+Create PROC USP_InsertBill
 @idBan INT,
 @TongCong FLOAT
 AS
 BEGIN
 	INSERT INTO dbo.HoaDon (ThoiGianVao, ThoiGianRa, idBan, TongCong, TrangThai) 
-	VALUES ( GETDATE(), null, @idBan, @TongCong , 0 ) 
+	VALUES ( GETDATE(), null, @idBan, @TongCong , N'Chưa thanh toán' ) 
 END
 GO
 
@@ -336,7 +322,6 @@ BEGIN
 		END
 END
 GO
-
 
 CREATE FUNCTION fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
 GO

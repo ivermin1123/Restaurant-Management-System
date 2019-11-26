@@ -19,10 +19,10 @@ namespace QuanLyQuanBeer.DAO
 
         private ThongTinHoaDonDAO() { }
 
-        public void InsertBillInfo(int idHoaDon, int idSanPham, int count)
+        public void InsertBillInfo(int idHoaDon, int idSanPham, int SoLuong)
         {
-            string query = ("EXEC USP_InsertBillInfo @idHoaDon , @idSanPham , @count ");
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idHoaDon, idSanPham, count });
+            string query = ("EXEC USP_InsertBillInfo @idHoaDon , @idSanPham , @SoLuong ");
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idHoaDon, idSanPham, SoLuong });
         }
     }
 }

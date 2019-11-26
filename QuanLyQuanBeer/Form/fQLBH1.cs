@@ -50,6 +50,8 @@ namespace QuanLyQuanBeer
                         break;
                     default:
                         bt.BackColor = Color.FromArgb(128, 128, 128);
+                        bt.ForeColor = Color.White;
+                        bt.FlatAppearance.MouseOverBackColor = Color.FromArgb(214,214,214);
                         break;
                 }
                 flpBan.Controls.Add(bt);
@@ -65,6 +67,7 @@ namespace QuanLyQuanBeer
                 ListViewItem lsvItem = new ListViewItem(item.TenSanPham.ToString());
                 lsvItem.SubItems.Add(item.SoLuong.ToString());
                 lsvItem.SubItems.Add(item.Gia.ToString());
+                lsvItem.SubItems.Add(item.DonVi.ToString());
                 if (item.TongCong == 0)
                     lsvItem.SubItems.Add("Miễn phí");
                 else
@@ -82,6 +85,8 @@ namespace QuanLyQuanBeer
         {
             foreach (SanPhamDTO item in tableList)
             {
+                if (item.HinhAnh == "")
+                    return;
                 Panel pn = new Panel();
                 Bunifu.Framework.UI.BunifuImageButton bt1 = new Bunifu.Framework.UI.BunifuImageButton();
                 TextBox txb = new TextBox();
@@ -104,8 +109,7 @@ namespace QuanLyQuanBeer
                 int idSP = SanPhamDAO.Instance.GetIDByTenSP(item.TenSanPham);
                 bt1.Click += (s, e) => 
                 {
-                    BanDTO ban = lsvHoaDon.Tag as BanDTO;
-                    if (ban == null)
+                    if (!(lsvHoaDon.Tag is BanDTO ban))
                     {
                         MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -121,16 +125,14 @@ namespace QuanLyQuanBeer
                             HoaDonDAO.Instance.InsertBill(ban.ID, tongCong);
                             ThongTinHoaDonDAO.Instance.InsertBillInfo(HoaDonDAO.Instance.GetMaxIdBill(), idSP, 1);
                             BanDAO.Instance.UpdateTrangThaiBan(ban.ID);
-                            LoadTable();
                         }
                     }
                     else
                     {
                         ThongTinHoaDonDAO.Instance.InsertBillInfo(idHoaDon, idSP, 1);
-                        LoadTable();
                     }
-                    XemHoaDon(ban.ID);
                     LoadTable();
+                    XemHoaDon(ban.ID);
                 };
                 // textBox
                 txb.Cursor = Cursors.Arrow;
@@ -185,11 +187,6 @@ namespace QuanLyQuanBeer
             TaoButton(tableList);
         }
         #endregion
-
-        void ThemMonEvent()
-        {
-            
-        }
 
         #region Events
         void Bt_click(object sender, EventArgs e)
@@ -376,8 +373,20 @@ namespace QuanLyQuanBeer
                 txbSearch.ForeColor = Color.Black;
             }
         }
+
         #endregion
 
-
+        private void BtThemMonKhac_Click(object sender, EventArgs e)
+        {
+            if (!(lsvHoaDon.Tag is BanDTO ban))
+            {
+                MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+            fThemMonNgoai f = new fThemMonNgoai(idHoaDon);
+            f.ShowDialog();
+            XemHoaDon(ban.ID);
+        }
     }
 }
