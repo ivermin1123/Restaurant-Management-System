@@ -6,11 +6,66 @@ namespace QuanLyQuanBeer
 {
     public partial class fThuTien : Form
     {
-        public fThuTien()
+        private string _tongTien;
+        public fThuTien(string tongTien)
         {
             InitializeComponent();
+            _tongTien = tongTien;
+            Load1();
         }
 
+        void Load1()
+        {
+            lbTienThu.Text = _tongTien;
+            CultureInfo culture = new CultureInfo("en-US");
+            double TongTien = double.Parse(lbTienThu.Text); // 655.200
+            double basocuoi = (TongTien % 1000); // 200
+            double bonsocuoi = (TongTien % 10000); // 5.200
+            double namsocuoi = (TongTien % 100000); // 55.200
+            double x = 0, y = 0, z = 0;
+            if (basocuoi > 0)
+            {
+                x = (TongTien - basocuoi + 1000);
+                y = (TongTien - bonsocuoi + 10000);
+                z = (TongTien - namsocuoi + 100000);
+                btGoiY1.Text = String.Format(culture, "{0:N0}", x); // 5,295,000
+                btGoiY2.Text = String.Format(culture, "{0:N0}", x + 1000); // 5,296,000
+                btGoiY3.Text = String.Format(culture, "{0:N0}", y); // 5,300,000
+                if (bonsocuoi <= 5000) // 5,294,442
+                {
+                    if (namsocuoi <= 50000)
+                    {
+                        btGoiY4.Text = String.Format(culture, "{0:N0}", y + 10000);
+                        btGoiY5.Text = String.Format(culture, "{0:N0}", y);
+                        btGoiY6.Text = String.Format(culture, "{0:N0}", z + 100000);
+                    }
+                    else
+                    {
+                        btGoiY4.Text = String.Format(culture, "{0:N0}", z + 100000);
+                        btGoiY5.Text = String.Format(culture, "{0:N0}", z + 200000);
+                        btGoiY6.Text = String.Format(culture, "{0:N0}", z + 300000);
+                    }
+                }
+                else
+                {
+                    btGoiY4.Text = String.Format(culture, "{0:N0}", y + 10000);
+                    btGoiY5.Text = String.Format(culture, "{0:N0}", z + 100000);
+                    btGoiY6.Text = String.Format(culture, "{0:N0}", z + 200000);
+                }
+            }
+            else
+            {
+                // 655.000
+                x = (TongTien - bonsocuoi + 10000);
+                y = (TongTien - namsocuoi + 100000);
+                btGoiY1.Text = String.Format(culture, "{0:N0}", TongTien);// 655.000
+                btGoiY2.Text = String.Format(culture, "{0:N0}", x); // 660.000
+                btGoiY3.Text = String.Format(culture, "{0:N0}", x + 10000); // 670.000
+                btGoiY4.Text = String.Format(culture, "{0:N0}", y); // 700.000
+                btGoiY5.Text = String.Format(culture, "{0:N0}", y + 100000); // 800.000
+                btGoiY6.Text = String.Format(culture, "{0:N0}", y + 200000); // 900.000
+            }
+        }
         void LoadTien()
         {
             decimal TienThuDoi = decimal.Parse(lbTienTraLai.Text); // 344.800
@@ -193,6 +248,36 @@ namespace QuanLyQuanBeer
         {
             panel16.Visible = false;
             pnTinhTien.Visible = false;
+        }
+
+        private void BtGoiY1_Click(object sender, EventArgs e)
+        {
+            txbTienKhachDua.Text = btGoiY1.Text;
+        }
+
+        private void BtGoiY2_Click(object sender, EventArgs e)
+        {
+            txbTienKhachDua.Text = btGoiY2.Text;
+        }
+
+        private void BtGoiY3_Click(object sender, EventArgs e)
+        {
+            txbTienKhachDua.Text = btGoiY3.Text;
+        }
+
+        private void BtGoiY4_Click(object sender, EventArgs e)
+        {
+            txbTienKhachDua.Text = btGoiY4.Text;
+        }
+
+        private void BtGoiY5_Click(object sender, EventArgs e)
+        {
+            txbTienKhachDua.Text = btGoiY5.Text;
+        }
+
+        private void BtGoiY6_Click(object sender, EventArgs e)
+        {
+            txbTienKhachDua.Text = btGoiY6.Text;
         }
     }
 }
