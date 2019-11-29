@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 
 namespace QuanLyQuanBeer
 {
@@ -57,7 +58,7 @@ namespace QuanLyQuanBeer
                 flpBan.Controls.Add(bt);
             }
         }
-        void XemHoaDon(int id)
+        /*void XemHoaDon(int id)
         {
             lsvHoaDon.Items.Clear();
             List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable(id);
@@ -74,6 +75,145 @@ namespace QuanLyQuanBeer
                     lsvItem.SubItems.Add(String.Format("{0:0,0}", item.TongCong) + " VND");
                 TongTien += item.TongCong;
                 lsvHoaDon.Items.Add(lsvItem);
+            }
+            if (TongTien > 0)
+                txbTongTien.Text = String.Format("{0:0,0}", TongTien);
+            else
+                txbTongTien.Text = 0.ToString();
+        }*/
+
+        void XemHoaDon(int id)
+        {
+            lsvHoaDon.Items.Clear();
+            List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable(id);
+            double TongTien = 0;
+            foreach (MenuDTO item in danhSachThongTinHoaDon)
+            {
+                if (item.TongCong == 0)
+                    lsvItem.SubItems.Add("Miễn phí");
+                else
+                    lsvItem.SubItems.Add(String.Format("{0:0,0}", item.TongCong) + " VND");
+                TongTien += item.TongCong;
+                Panel pn = new Panel();
+                BunifuMetroTextbox txb1 = new BunifuMetroTextbox();
+                BunifuMetroTextbox txb2 = new BunifuMetroTextbox();
+                BunifuMetroTextbox txb3 = new BunifuMetroTextbox();
+                BunifuMetroTextbox txb4 = new BunifuMetroTextbox();
+                TextBox txb5 = new TextBox();
+                // 
+                // panel1
+                // 
+                this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                this.panel1.Controls.Add(txb1);
+                this.panel1.Controls.Add(txb2);
+                this.panel1.Controls.Add(txb3);
+                this.panel1.Controls.Add(txb4);
+                this.panel1.Controls.Add(txb5);
+                this.panel1.Dock = DockStyle.Top;
+                this.panel1.Location = new Point(0, 0);
+                this.panel1.Name = "panel1";
+                this.panel1.Size = new System.Drawing.Size(800, 54);
+                this.panel1.TabIndex = 0;
+                // 
+                // bunifuMetroTextbox4
+                // 
+                txb1.BackColor = Color.White;
+                txb1.BorderColorFocused = System.Drawing.Color.Blue;
+                txb1.BorderColorIdle = System.Drawing.Color.Black;
+                txb1.BorderColorMouseHover = System.Drawing.Color.Blue;
+                txb1.BorderThickness = 1;
+                txb1.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+                txb1.Cursor = System.Windows.Forms.Cursors.IBeam;
+                txb1.Dock = System.Windows.Forms.DockStyle.Fill;
+                txb1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                txb1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                txb1.isPassword = false;
+                txb1.Location = new System.Drawing.Point(577, 0);
+                txb1.Margin = new System.Windows.Forms.Padding(5);
+                txb1.MaxLength = 32767;
+                txb1.Name = "bunifuMetroTextbox4";
+                txb1.Size = new System.Drawing.Size(221, 52);
+                txb1.TabIndex = 4;
+                txb1.Text = "111,456,789 VND";
+                txb1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                // 
+                // bunifuMetroTextbox3
+                // 
+                txb2.BackColor = System.Drawing.Color.White;
+                txb2.BorderColorFocused = System.Drawing.Color.Blue;
+                txb2.BorderColorIdle = System.Drawing.Color.Black;
+                txb2.BorderColorMouseHover = System.Drawing.Color.Blue;
+                txb2.BorderThickness = 1;
+                txb2.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+                txb2.Cursor = System.Windows.Forms.Cursors.IBeam;
+                txb2.Dock = System.Windows.Forms.DockStyle.Left;
+                txb2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                txb2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                txb2.isPassword = false;
+                txb2.Location = new System.Drawing.Point(465, 0);
+                txb2.Margin = new System.Windows.Forms.Padding(5);
+                txb2.MaxLength = 32767;
+                txb2.Name = "bunifuMetroTextbox3";
+                txb2.Size = new System.Drawing.Size(112, 52);
+                txb2.TabIndex = 3;
+                txb2.Text = "1000";
+                txb2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                // 
+                // bunifuMetroTextbox2
+                // 
+                txb3.BackColor = System.Drawing.Color.White;
+                txb3.BorderColorFocused = System.Drawing.Color.Blue;
+                txb3.BorderColorIdle = System.Drawing.Color.Black;
+                txb3.BorderColorMouseHover = System.Drawing.Color.Blue;
+                txb3.BorderThickness = 1;
+                txb3.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+                txb3.Cursor = System.Windows.Forms.Cursors.IBeam;
+                txb3.Dock = System.Windows.Forms.DockStyle.Left;
+                txb3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                txb3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                txb3.isPassword = false;
+                txb3.Location = new System.Drawing.Point(273, 0);
+                txb3.Margin = new System.Windows.Forms.Padding(5);
+                txb3.MaxLength = 32767;
+                txb3.Name = "bunifuMetroTextbox2";
+                txb3.Size = new System.Drawing.Size(192, 52);
+                txb3.TabIndex = 2;
+                txb3.Text = "11,151,000 VND";
+                txb3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                // 
+                // txbSL
+                // 
+                txb4.BackColor = System.Drawing.Color.White;
+                txb4.BorderColorFocused = System.Drawing.Color.Blue;
+                txb4.BorderColorIdle = System.Drawing.Color.Black;
+                txb4.BorderColorMouseHover = System.Drawing.Color.Blue;
+                txb4.BorderThickness = 1;
+                txb4.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+                txb4.Cursor = System.Windows.Forms.Cursors.IBeam;
+                txb4.Dock = System.Windows.Forms.DockStyle.Left;
+                txb4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                txb4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+                txb4.isPassword = false;
+                txb4.Location = new System.Drawing.Point(210, 0);
+                txb4.Margin = new System.Windows.Forms.Padding(5);
+                txb4.MaxLength = 32767;
+                txb4.Name = "txbSL";
+                txb4.Size = new System.Drawing.Size(63, 52);
+                txb4.TabIndex = 1;
+                txb4.Text = "1000";
+                txb4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+                // 
+                // textBox1
+                // 
+                txb5.Dock = System.Windows.Forms.DockStyle.Left;
+                txb5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                txb5.Location = new System.Drawing.Point(0, 0);
+                txb5.Multiline = true;
+                txb5.Name = "textBox1";
+                txb5.Size = new System.Drawing.Size(210, 52);
+                txb5.TabIndex = 0;
+                txb5.Text = "Cá chiên bạch tuộc hay\r\ncười";
+                lsvHoaDon.Items.Add(pn);
             }
             if (TongTien > 0)
                 txbTongTien.Text = String.Format("{0:0,0}", TongTien);
@@ -100,9 +240,9 @@ namespace QuanLyQuanBeer
                 lsvHoaDon1.Items.Add(lsvItem);
             }
             if (TongTien > 0)
-                lbTongTien.Text = String.Format("{0:0,0}", TongTien);
+                txbTongTien.Text = String.Format("{0:0,0}", TongTien);
             else
-                lbTongTien.Text = 0.ToString();
+                txbTongTien.Text = 0.ToString();
         }
 
         void TaoButton(List<SanPhamDTO> tableList)
@@ -112,7 +252,7 @@ namespace QuanLyQuanBeer
                 if (item.HinhAnh == "")
                     return;
                 Panel pn = new Panel();
-                Bunifu.Framework.UI.BunifuImageButton bt1 = new Bunifu.Framework.UI.BunifuImageButton();
+                BunifuImageButton bt1 = new BunifuImageButton();
                 TextBox txb = new TextBox();
                 Label lb = new Label();
                 // panel
@@ -149,15 +289,14 @@ namespace QuanLyQuanBeer
                             HoaDonDAO.Instance.InsertBill(ban.ID, tongCong);
                             ThongTinHoaDonDAO.Instance.InsertBillInfo(HoaDonDAO.Instance.GetMaxIdBill(), idSP, 1);
                             BanDAO.Instance.UpdateTrangThaiBan(ban.ID);
+                            LoadTable();
                         }
                     }
                     else
                     {
                         ThongTinHoaDonDAO.Instance.InsertBillInfo(idHoaDon, idSP, 1);
                     }
-                    LoadTable();
                     XemHoaDon(ban.ID);
-                    XemHoaDon1(ban.ID);
                 };
                 // textBox
                 txb.Cursor = Cursors.Arrow;
@@ -342,6 +481,7 @@ namespace QuanLyQuanBeer
                 MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            XemHoaDon1(ban.ID);
             pnTinhTien.Visible = true;
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
@@ -390,8 +530,6 @@ namespace QuanLyQuanBeer
             }
         }
 
-        #endregion
-
         private void BtThemMonKhac_Click(object sender, EventArgs e)
         {
             if (!(lsvHoaDon.Tag is BanDTO ban))
@@ -426,5 +564,11 @@ namespace QuanLyQuanBeer
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
         }
+
+        private void BtLamMoi_Click(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+        #endregion
     }
 }
