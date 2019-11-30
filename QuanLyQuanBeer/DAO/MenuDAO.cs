@@ -26,5 +26,12 @@ namespace QuanLyQuanBeer.DAO
             }
             return danhSachMenu;
         }
+
+        public DataTable GetListSP(int id)
+        {
+            string query = ("USP_GetHoaDon @idBan = " + id + " ");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
     }
 }

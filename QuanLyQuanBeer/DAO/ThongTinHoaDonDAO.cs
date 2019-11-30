@@ -24,5 +24,11 @@ namespace QuanLyQuanBeer.DAO
             string query = ("EXEC USP_InsertBillInfo @idHoaDon , @idSanPham , @SoLuong ");
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { idHoaDon, idSanPham, SoLuong });
         }
+
+        public void UpdateSL(int SoLuong, int idHoaDon, int idSanPham)
+        {
+            string query = ("EXEC USP_UpdateSL @SoLuong , @idHoaDon , @idSanPham");
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { SoLuong, idHoaDon, idSanPham });
+        }
     }
 }
