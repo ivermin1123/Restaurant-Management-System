@@ -21,7 +21,7 @@ namespace QuanLyQuanBeer
 
         void LoadAccount()
         {
-            listSP.DataSource = SanPhamDAO.Instance.GetListSP();
+            //listSP.DataSource = SanPhamDAO.Instance.GetListSP();
             List<LoaiSanPhamDTO> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
             cbxLoaiSP.DataSource = danhSachLoaiSP;
             cbxLoaiSP.DisplayMember = "TenLoaiSanPham";
@@ -57,8 +57,9 @@ namespace QuanLyQuanBeer
                         MessageBox.Show("Đã có sản phẩm này", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
+                        // abcdefgh.jpg
                         string somestring = txbDuongDan.Text;
-                        string newstring = somestring.Substring(somestring.Length - 4, 4);
+                        string newstring = somestring.Substring(somestring.Length - 4, 4);// Lấy 4 ký tự cuối cùng của đường dẫn
                         string tenAnh = LocDau(TenSanPham) + newstring;
                         if (SanPhamDAO.Instance.ThemSP(TenSanPham, DonVi, Gia, IDLoai, tenAnh))
                         {

@@ -257,6 +257,18 @@ BEGIN
 END
 GO
 
+CREATE PROC dbo.USP_InBill
+@idBan INT
+AS
+BEGIN
+	SELECT ROW_NUMBER() OVER (ORDER BY TenSanPham) AS [STT] ,f.TenSanPham ,bi.SoLuong,f.Gia ,f.Gia*bi.SoLuong AS ThanhTien
+	FROM dbo.ThongTinHoaDon AS bi ,dbo.HoaDon AS b,dbo.SanPham AS f 
+	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Chưa thanh toán' AND b.idBan = @idBan
+END
+GO
+
+
+
 CREATE PROC XoaTK
 @tenDn VARCHAR(100)
 AS

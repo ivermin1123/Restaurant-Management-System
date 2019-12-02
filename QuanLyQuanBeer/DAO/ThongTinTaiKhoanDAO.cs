@@ -28,6 +28,18 @@ namespace QuanLyQuanBeer.DAO
             return "";
         }
 
+        public string GetTenBangTenDN(string tenDN)
+        {
+            string query = "Select * From ThongTinTaiKhoan where TenDangNhap = N'" + tenDN + "' ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                ThongTinTaiKhoanDTO acc = new ThongTinTaiKhoanDTO(item);
+                return acc.HoTen;
+            }
+            return "";
+        }
+
         public DataTable GetListNhanVien()
         {
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.ThongTinTaiKhoan");

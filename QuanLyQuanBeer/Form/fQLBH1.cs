@@ -16,6 +16,7 @@ namespace QuanLyQuanBeer
         BindingSource listSP = new BindingSource();
         private TaiKhoanDTO taiKhoanHienTai;
         private double thanhTien1;
+        public bool _KetQua;
         public TaiKhoanDTO TaiKhoanHienTai
         {
             get { return taiKhoanHienTai; }
@@ -96,7 +97,7 @@ namespace QuanLyQuanBeer
             lsvHoaDon1.Items.Clear();
             BanDTO ban = dtgvHoaDon.Tag as BanDTO;
             int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable(id);
+            List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable1(id);
             double TongTien = 0;
             foreach (MenuDTO item in danhSachThongTinHoaDon)
             {
@@ -245,6 +246,25 @@ namespace QuanLyQuanBeer
             XemHoaDon1(idBan);
         }
 
+        private void CkbxGTGT_OnChange(object sender, EventArgs e)
+        {
+            double gTGT;
+            if (ckbxGTGT.Checked != true)
+            {
+                txbGTGT.Text = "";
+                double TongThanhToan = thanhTien1 + 0;
+                txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
+                txbConPhaiThu.Text = txbTongThanhToan.Text;
+            }
+            else
+            {
+                gTGT = thanhTien1 * 10 / 100;
+                txbGTGT.Text = String.Format("{0:0,0}", gTGT);
+                double TongThanhToan = thanhTien1 + gTGT;
+                txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
+                txbConPhaiThu.Text = txbTongThanhToan.Text;
+            }
+        }
         private void BtSearch_Click_1(object sender, EventArgs e)
         {
             SearchMonAnTheoTen(txbSearch.Text);
@@ -359,20 +379,27 @@ namespace QuanLyQuanBeer
 
         private void DtgvHoaDon_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            if (dtgvHoaDon.SelectedCells.Count > 0)
+            try
             {
-                int selectedrowindex = dtgvHoaDon.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvHoaDon.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["SoLuong"].Value);
-                string b = Convert.ToString(selectedRow.Cells["TenSanPham"].Value);
-                int SL = int.Parse(a);
-                int idSP = SanPhamDAO.Instance.GetIDByTenSP(b);
-                ThongTinHoaDonDAO.Instance.UpdateSL(SL, idHoaDon, idSP);
-                XemHoaDon(ban.ID);
+                BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                if (dtgvHoaDon.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = dtgvHoaDon.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dtgvHoaDon.Rows[selectedrowindex];
+                    string a = Convert.ToString(selectedRow.Cells["SoLuong"].Value);
+                    string b = Convert.ToString(selectedRow.Cells["TenSanPham"].Value);
+                    int SL = int.Parse(a);
+                    int idSP = SanPhamDAO.Instance.GetIDByTenSP(b);
+                    ThongTinHoaDonDAO.Instance.UpdateSL(SL, idHoaDon, idSP);
+                    XemHoaDon(ban.ID);
+                }
+            }
+            catch
+            {
 
             }
+            
         }
         private void DtgvHoaDon_KeyDown(object sender, KeyEventArgs e)
         {
@@ -488,24 +515,27 @@ namespace QuanLyQuanBeer
 
         #endregion
 
-        private void CkbxGTGT_OnChange(object sender, EventArgs e)
+        
+
+        private void BtInTamTinh_Click(object sender, EventArgs e)
         {
-            double gTGT;
-            if (ckbxGTGT.Checked != true)
-            {
-                txbGTGT.Text = "";
-                double TongThanhToan = thanhTien1 + 0;
-                txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-                txbConPhaiThu.Text = txbTongThanhToan.Text;
-            }
-            else
-            {
-                gTGT = thanhTien1 * 10 / 100;
-                txbGTGT.Text = String.Format("{0:0,0}", gTGT);
-                double TongThanhToan = thanhTien1 + gTGT;
-                txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-                txbConPhaiThu.Text = txbTongThanhToan.Text;
-            }
+            /*BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+            rptHoaDon rptHoaDon = new rptHoaDon(ban.ID);
+            rptHoaDon.XuatHoaDon(idHoaDon, ban.ID);
+            rptHoaDon.ShowDialog();*/
+            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+            string ThanhTien = txbTongThanhToan.Text;
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+            string TenDN = TaiKhoanHienTai.TenDangNhap;
+            string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
+            DateTime GioVao = HoaDonDAO.Instance.GetGioVaoByID(idHoaDon);
+            rptInTam rptInTam = new rptInTam(ban.ID);
+            rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao);
+            rptInTam.ShowDialog(); 
+
+
+
         }
     }
 }

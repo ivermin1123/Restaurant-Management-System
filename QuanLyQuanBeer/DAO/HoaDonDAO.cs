@@ -1,5 +1,6 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
+using System;
 using System.Data;
 
 namespace QuanLyQuanBeer.DAO
@@ -29,6 +30,17 @@ namespace QuanLyQuanBeer.DAO
                 return hoaDon.ID;
             }
             return -1;
+        }
+
+        public DateTime GetGioVaoByID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM  dbo.HoaDon WHERE idBan = " + id + " AND TrangThai = N'Chưa thanh toán'");
+            if (data.Rows.Count > 0)
+            {
+                HoaDonDTO hoaDon = new HoaDonDTO(data.Rows[0]);
+                return hoaDon.ThoiGianVao;
+            }
+            return DateTime.Now;
         }
 
         public int GetMaxIdBill()
