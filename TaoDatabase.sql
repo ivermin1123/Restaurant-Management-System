@@ -115,8 +115,8 @@ GO
 CREATE TABLE HoaDon
 (
 	id INT IDENTITY(100,1) PRIMARY KEY,
-	ThoiGianVao Date not null,
-	ThoiGianRa DATE NULL,	
+	ThoiGianVao DateTime not null,
+	ThoiGianRa DateTime NULL,	
 	idBan INT not NULl,
 	TongCong FLOAT NULL,
 	TrangThai NVARCHAR(100) not NULL, -- 1: Da thanh toan || 0: Chua thanh toan
@@ -251,7 +251,7 @@ Create PROC USP_GetHoaDon
 @idBan INT
 AS
 BEGIN
-	SELECT f.TenSanPham,bi.SoLuong ,f.Gia,f.DonVi,f.Gia*bi.SoLuong AS TongCong 
+	SELECT f.TenSanPham,bi.SoLuong ,f.Gia,f.DonVi,f.Gia*bi.SoLuong AS ThanhTien 
 	FROM dbo.ThongTinHoaDon AS bi ,dbo.HoaDon AS b,dbo.SanPham AS f 
 	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Chưa thanh toán' AND b.idBan =@idBan
 END
@@ -307,14 +307,13 @@ GO
 
 Create PROC USP_UpdateSL
 @SoLuong INT,
+@idHoaDon INT,
 @idSanPham INT
 AS
 BEGIN
-	UPDATE dbo.ThongTinHoaDon SET SoLuong = @SoLuong WHERE idSanPham = @idSanPham 
+	UPDATE dbo.ThongTinHoaDon SET SoLuong = @SoLuong WHERE  idHoaDon = @idHoaDon AND idSanPham = @idSanPham
 END
 GO
-
-EXEC USP_UpdateSL @SoLuong = 50 , @idHoaDon = 100 , @idSanPham = 9
 
 CREATE PROC USP_InsertBillInfo
 @idHoaDon INT,@idSanPham INT , @SoLuong INT
@@ -348,6 +347,3 @@ GO
 
 CREATE FUNCTION fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
 GO
-
-
-

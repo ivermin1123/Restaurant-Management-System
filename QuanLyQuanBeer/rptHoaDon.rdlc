@@ -78,7 +78,7 @@
             <Top>0.06944in</Top>
             <Left>0.10292in</Left>
             <Height>0.25in</Height>
-            <Width>0.59709in</Width>
+            <Width>0.56932in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -111,7 +111,7 @@
             <Top>0.38889in</Top>
             <Left>0.10292in</Left>
             <Height>0.25in</Height>
-            <Width>0.4375in</Width>
+            <Width>0.56932in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -313,9 +313,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
             <Top>0.38889in</Top>
-            <Left>0.60986in</Left>
+            <Left>0.74168in</Left>
             <Height>0.25in</Height>
-            <Width>1.10403in</Width>
+            <Width>0.97221in</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>

@@ -33,7 +33,7 @@ namespace QuanLyQuanBeer.DAO
 
         public void UpdateSL(int SoLuong, int idHoaDon, int idSanPham)
         {
-            string query = ("EXEC USP_UpdateSL @SoLuong , @idHoaDon , @idSanPham");
+            string query = ("EXEC USP_UpdateSL @SoLuong , @idHoaDon , @idSanPham ");
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { SoLuong, idHoaDon, idSanPham });
         }
     }

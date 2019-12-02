@@ -32,7 +32,7 @@ namespace QuanLyQuanBeer.DAO
             return -1;
         }
 
-        public DateTime GetGioVaoByID(int id)
+        public DateTime? GetGioVaoByID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM  dbo.HoaDon WHERE idBan = " + id + " AND TrangThai = N'Chưa thanh toán'");
             if (data.Rows.Count > 0)

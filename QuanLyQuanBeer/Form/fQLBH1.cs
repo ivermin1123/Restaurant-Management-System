@@ -84,10 +84,12 @@ namespace QuanLyQuanBeer
             dtgvHoaDon.Columns[4].DefaultCellStyle.Format = "0,0" + " đ";
 
             DataTable table = MenuDAO.Instance.GetListSP(id);
-            // Declare an object variable.
             object sumObject;
+            //if (table.Rows.Count > 0)
+            //{
             sumObject = table.Compute("Sum(ThanhTien)", string.Empty);
-                txbTongTien.Text = String.Format("{0:0,0}", sumObject);
+            txbTongTien.Text = String.Format("{0:0,0}", sumObject);
+            //}
         }
 
 
@@ -156,6 +158,10 @@ namespace QuanLyQuanBeer
                         return;
                     }
                     int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                    if (txbTongTien.Text == "")
+                    {
+                        txbTongTien.Text = 0.ToString();
+                    }
                     double tongCong = Convert.ToDouble(txbTongTien.Text);
                     if (BanDAO.Instance.GetTrangThaiBanBangIDBan(ban.ID) == "Trống")
                     {
@@ -395,9 +401,9 @@ namespace QuanLyQuanBeer
                     XemHoaDon(ban.ID);
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -519,22 +525,29 @@ namespace QuanLyQuanBeer
 
         private void BtInTamTinh_Click(object sender, EventArgs e)
         {
-            /*BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            rptHoaDon rptHoaDon = new rptHoaDon(ban.ID);
-            rptHoaDon.XuatHoaDon(idHoaDon, ban.ID);
-            rptHoaDon.ShowDialog();*/
-            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-            string ThanhTien = txbTongThanhToan.Text;
-            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            string TenDN = TaiKhoanHienTai.TenDangNhap;
-            string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
-            DateTime GioVao = HoaDonDAO.Instance.GetGioVaoByID(idHoaDon);
-            rptInTam rptInTam = new rptInTam(ban.ID);
-            rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao);
-            rptInTam.ShowDialog(); 
-
-
+            try
+            {
+                BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+                string ThanhTien = txbThanhTien.Text;
+                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                string TenDN = TaiKhoanHienTai.TenDangNhap;
+                string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
+                DateTime? GioVao = HoaDonDAO.Instance.GetGioVaoByID(ban.ID);
+                rptInTam rptInTam = new rptInTam(ban.ID);
+                string VAT;
+                if (ckbxGTGT.Checked == true)
+                    VAT = txbGTGT.Text;
+                else
+                    VAT = "0";
+                string ThanhToan = txbTongThanhToan.Text;
+                rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao, VAT, ThanhToan);
+                rptInTam.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
     }
