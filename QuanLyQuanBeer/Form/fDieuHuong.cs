@@ -47,5 +47,6 @@ namespace QuanLyQuanBeer
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
             lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
+
     }
 }

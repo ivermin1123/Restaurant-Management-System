@@ -17,10 +17,15 @@ namespace QuanLyQuanBeer.DAO
 
         public void InsertBill(int idBan, double tongCong)
         {
-            string query = ("Exec USP_InsertBill @idBan , @TongCong  ");
+            string query = ("Exec USP_InsertBill @idBan , @TongCong");
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { idBan, tongCong });
         }
 
+        public void CheckOut(int id, double TongCong, decimal TienThua,string NhanVien)
+        {
+            string query = "UPDATE dbo.HoaDon SET ThoiGianRa = GETDATE(), TrangThai = N'Đã thanh toán', TongCong = " + TongCong + ", TienThua = "+ TienThua + " , NhanVien = N'"+ NhanVien+"' WHERE id = " + id;
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
         public int LayIDHoaDonChuaThanhToanBangIDBan(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM  dbo.HoaDon WHERE idBan = " + id + " AND TrangThai = N'Chưa thanh toán'");

@@ -429,12 +429,21 @@ namespace QuanLyQuanBeer
                 MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            XemHoaDon1(ban.ID);
-            pnTinhTien.Visible = true;
-            pnNewOrder.Visible = false;
-            pnOrder.Visible = false;
-            pnChaoMung.Visible = false;
-            pnDsHD.Visible = false;
+            else
+            {
+                if (HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID) != -1)
+                {
+                    XemHoaDon1(ban.ID);
+                    pnTinhTien.Visible = true;
+                    pnNewOrder.Visible = false;
+                    pnOrder.Visible = false;
+                    pnChaoMung.Visible = false;
+                    pnDsHD.Visible = false;
+                }
+                else
+                    MessageBox.Show("Không có hóa đơn để thanh toán !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void BtMenu_Click(object sender, EventArgs e)
@@ -494,14 +503,24 @@ namespace QuanLyQuanBeer
 
         private void BtThuTien_Click_1(object sender, EventArgs e)
         {
-            if (!(dtgvHoaDon.Tag is BanDTO ban))
-            {
-                MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
             string tongTien = txbTongTien.Text;
-            fThuTien f = new fThuTien(tongTien);
+            string TenDN = TaiKhoanHienTai.TenDangNhap;
+            string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
+            fThuTien f = new fThuTien(tongTien,ban.ID, NhanVien);
             f.ShowDialog();
+            XemHoaDon1(ban.ID);
+            XemHoaDon(ban.ID);
+            LoadTable();
+            if (HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID) == -1)
+            {
+                btOrderwhite.Visible = false;
+                pnNewOrder.Visible = true;
+                pnOrder.Visible = false;
+                pnChaoMung.Visible = false;
+                pnDsHD.Visible = false;
+                pnTinhTien.Visible = false;
+            }
         }
 
         private void BtQuayLai_Click_1(object sender, EventArgs e)

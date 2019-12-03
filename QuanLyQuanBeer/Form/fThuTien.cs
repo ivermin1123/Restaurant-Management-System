@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanBeer.DAO;
+using System;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -7,18 +8,22 @@ namespace QuanLyQuanBeer
     public partial class fThuTien : Form
     {
         private string _tongTien;
-        public fThuTien(string tongTien)
+        private int _idBan;
+        private string _nhanVien;
+        public fThuTien(string tongTien,int idBan,string NhanVien)
         {
             InitializeComponent();
             _tongTien = tongTien;
-            Load1();
+            _idBan = idBan;
+            _nhanVien = NhanVien;
+            GoiYTien();
         }
 
-        void Load1()
+        void GoiYTien()
         {
-            lbTienThu.Text = _tongTien;
+            txbTienThu.Text = _tongTien;
             CultureInfo culture = new CultureInfo("en-US");
-            double TongTien = double.Parse(lbTienThu.Text); // 655.200
+            double TongTien = double.Parse(txbTienThu.Text); // 655.200
             double basocuoi = (TongTien % 1000); // 200
             double bonsocuoi = (TongTien % 10000); // 5.200
             double namsocuoi = (TongTien % 100000); // 55.200
@@ -65,27 +70,6 @@ namespace QuanLyQuanBeer
                 btGoiY5.Text = String.Format(culture, "{0:N0}", y + 100000); // 800.000
                 btGoiY6.Text = String.Format(culture, "{0:N0}", y + 200000); // 900.000
             }
-        }
-        void LoadTien()
-        {
-            decimal TienThuDoi = decimal.Parse(lbTienTraLai.Text); // 344.800
-            //decimal TienThuCheck = (TienThuDoi % 10000); // 4800
-
-            // Làm tròn >= 5k -> 10k || <5k -> 5k
-            /*decimal Change;
-            if (TienThuCheck == 5000 || TienThuCheck > 5000)
-                Change = 10000;
-            else
-                Change = 5000;
-            decimal HienThi = TienThuDoi - TienThuCheck + Change;*/
-
-            txbTienThua.Text = lbTienTraLai.Text;
-
-            // Đổi định dạng hiển thị
-            CultureInfo culture = new CultureInfo("en-US");
-            decimal value = decimal.Parse(txbTienThua.Text, NumberStyles.Currency);
-            txbTienThua.Text = String.Format(culture, "{0:N0}", value);
-            txbTienMat.Text = txbTienKhachDua.Text;
         }
         private void BtThoat_Click(object sender, EventArgs e)
         {
@@ -194,6 +178,28 @@ namespace QuanLyQuanBeer
             HienthiTienVN();
         }
 
+        void LoadTien()
+        {
+            //decimal TienThuDoi = decimal.Parse(txbTienTraLai.Text); // 344.800
+            //decimal TienThuCheck = (TienThuDoi % 10000); // 4800
+            // Làm tròn >= 5k -> 10k || <5k -> 5k
+            /*decimal Change;
+            if (TienThuCheck == 5000 || TienThuCheck > 5000)
+                Change = 10000;
+            else
+                Change = 5000;
+            decimal HienThi = TienThuDoi - TienThuCheck + Change;*/
+            decimal tienKhachDua = decimal.Parse(txbTienKhachDua.Text);
+            decimal tienThu = decimal.Parse(txbTienThu.Text);
+            string tienThua = (tienKhachDua - tienThu).ToString();
+            txbTienThua.Text = tienThua;
+            // Đổi định dạng hiển thị
+            CultureInfo culture = new CultureInfo("en-US");
+            decimal value = decimal.Parse(txbTienThua.Text, NumberStyles.Currency);
+            txbTienThua.Text = String.Format(culture, "{0:N0}", value);
+            txbTienMat.Text = txbTienKhachDua.Text;
+        }
+
         private void TxbTienKhachDua_TextChanged(object sender, EventArgs e)
         {
             txbTienKhachDua.Focus();
@@ -201,15 +207,15 @@ namespace QuanLyQuanBeer
             if (txbTienKhachDua.Text == "")
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhachDua = decimal.Parse(txbTienKhachDua.Text);
-            if (lbTienThu.Text == "")
-                lbTienThu.Text = 0.ToString();
-            decimal tienThu = decimal.Parse(lbTienThu.Text);
+            if (txbTienThu.Text == "")
+                txbTienThu.Text = 0.ToString();
+            decimal tienThu = decimal.Parse(txbTienThu.Text);
             string tienTraLai = (tienKhachDua - tienThu).ToString();
-            lbTienTraLai.Text = tienTraLai;
+            txbTienTraLai.Text = tienTraLai;
 
             CultureInfo culture = new CultureInfo("en-US");
-            decimal value = decimal.Parse(lbTienTraLai.Text, NumberStyles.Currency);
-            lbTienTraLai.Text = String.Format(culture, "{0:N0}", value);
+            decimal value = decimal.Parse(txbTienTraLai.Text, NumberStyles.Currency);
+            txbTienTraLai.Text = String.Format(culture, "{0:N0}", value);
 
             decimal value1 = decimal.Parse(txbTienKhachDua.Text, NumberStyles.Currency);
             txbTienKhachDua.Text = String.Format(culture, "{0:N0}", value1);
@@ -218,12 +224,16 @@ namespace QuanLyQuanBeer
 
         private void BunifuFlatButton4_Click(object sender, EventArgs e)
         {
-            if (lbTienTraLai.Text != "")
+            if (txbTienTraLai.Text != "")
             {
+                btDong.Enabled = true;
+                btInVaDong.Enabled = true;
                 pnTinhTien.Visible = true;
                 LoadTien();
-                decimal value = decimal.Parse(lbTienTraLai.Text);
-                if (value > 0)
+                decimal tienKhachDua = decimal.Parse(txbTienKhachDua.Text);
+                decimal tienThu = decimal.Parse(txbTienThu.Text);
+                decimal tienThua = tienKhachDua - tienThu;
+                if (tienThua > 0)
                 {
                     panel16.Visible = true;
                 }
@@ -278,6 +288,48 @@ namespace QuanLyQuanBeer
         private void BtGoiY6_Click(object sender, EventArgs e)
         {
             txbTienKhachDua.Text = btGoiY6.Text;
+        }
+
+        private void BtDong_Click(object sender, EventArgs e)
+        {
+            int idBill = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(_idBan);
+            decimal TienThua = 0;
+            if (ckbxKLayTienTHua.Checked == true)
+            {
+                TienThua = decimal.Parse(txbTienThua.Text);
+            }
+            else
+                TienThua = 0;
+            if (idBill != -1)
+            {
+                double tongtien = Convert.ToDouble(txbTienThu.Text);
+                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho Bàn {0}" +
+                    "\nTổng tiền = {1:0,0} VND", _idBan, tongtien), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    HoaDonDAO.Instance.CheckOut(idBill, tongtien, TienThua,_nhanVien);
+                    BanDAO.Instance.UpdateStatusTable(_idBan);
+                    this.Close();
+                }
+            }
+        }
+
+        private void CkbxKLayTienTHua_OnChange(object sender, EventArgs e)
+        {
+            decimal tienThu = decimal.Parse(txbTienThu.Text);
+            if (ckbxKLayTienTHua.Checked != true)
+            {
+                decimal tienKhachDua = decimal.Parse(txbTienKhachDua.Text);
+                decimal tienTraLai = tienKhachDua - tienThu;
+                CultureInfo culture = new CultureInfo("en-US");
+                txbTienTraLai.Text = String.Format(culture, "{0:N0}", tienTraLai);
+            }
+            else
+                txbTienTraLai.Text = 0.ToString();
+        }
+
+        private void BtHuy_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

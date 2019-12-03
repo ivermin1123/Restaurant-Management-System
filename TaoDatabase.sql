@@ -119,7 +119,10 @@ CREATE TABLE HoaDon
 	ThoiGianRa DateTime NULL,	
 	idBan INT not NULl,
 	TongCong FLOAT NULL,
-	TrangThai NVARCHAR(100) not NULL, -- 1: Da thanh toan || 0: Chua thanh toan
+	TienThua FLOAT NULL,
+	NhanVien NVARCHAR(200) NULl,
+	TrangThai NVARCHAR(100) not NULL
+	
 
 	FOREIGN KEY (idBan) REFERENCES dbo.Ban(id),
 )
@@ -301,7 +304,7 @@ create PROC USP_InsertBill
 AS
 BEGIN
 	INSERT INTO dbo.HoaDon (ThoiGianVao, ThoiGianRa, idBan, TongCong, TrangThai) 
-	VALUES ( GETDATE(), null, @idBan, @TongCong , N'Chưa thanh toán' ) 
+	VALUES ( GETDATE(), null, @idBan, @TongCong , N'Chưa thanh toán') 
 END
 GO
 

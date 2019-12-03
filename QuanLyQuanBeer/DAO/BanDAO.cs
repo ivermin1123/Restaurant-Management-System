@@ -59,6 +59,11 @@ namespace QuanLyQuanBeer.DAO
             return "";
         }
 
+        public void UpdateStatusTable( int id)
+        {
+            DataProvider.Instance.ExecuteQuery("UPDATE dbo.Ban SET TrangThai = N'Trống' Where id = " + id);
+        }
+
         public string GetTrangThaiBanBangIDBan(int idBan)
         {
             string query = "SELECT * FROM dbo.Ban WHERE id = "+ idBan ;
