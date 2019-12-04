@@ -148,6 +148,12 @@
       <DependentUpon>rptInTam.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="USCKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USCKho.Designer.cs">
+      <DependentUpon>USCKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="USC\USCSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\rptInTam.resx">
       <DependentUpon>rptInTam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USCKho.resx">
+      <DependentUpon>USCKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCSanPham.resx">
       <DependentUpon>USCSanPham.cs</DependentUpon>

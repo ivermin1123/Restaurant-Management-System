@@ -1058,6 +1058,7 @@
             this.btInVaDong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btInVaDong.Textcolor = System.Drawing.Color.White;
             this.btInVaDong.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInVaDong.Click += new System.EventHandler(this.BtInVaDong_Click);
             // 
             // btDong
             // 

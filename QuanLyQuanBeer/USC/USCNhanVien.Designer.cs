@@ -59,10 +59,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvNhanVien = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btXoaTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btThemTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSuaNV = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -380,6 +380,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgvNhanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvNhanVien.RowHeadersVisible = false;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvNhanVien.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 13F);
@@ -397,6 +398,43 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(838, 40);
             this.panel5.TabIndex = 2;
+            // 
+            // btLamMoi
+            // 
+            this.btLamMoi.Active = false;
+            this.btLamMoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLamMoi.BorderRadius = 0;
+            this.btLamMoi.ButtonText = "   Làm mới";
+            this.btLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLamMoi.DisabledColor = System.Drawing.Color.Gray;
+            this.btLamMoi.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLamMoi.Iconimage")));
+            this.btLamMoi.Iconimage_right = null;
+            this.btLamMoi.Iconimage_right_Selected = null;
+            this.btLamMoi.Iconimage_Selected = null;
+            this.btLamMoi.IconMarginLeft = 0;
+            this.btLamMoi.IconMarginRight = 0;
+            this.btLamMoi.IconRightVisible = true;
+            this.btLamMoi.IconRightZoom = 0D;
+            this.btLamMoi.IconVisible = true;
+            this.btLamMoi.IconZoom = 50D;
+            this.btLamMoi.IsTab = false;
+            this.btLamMoi.Location = new System.Drawing.Point(461, -1);
+            this.btLamMoi.Name = "btLamMoi";
+            this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
+            this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btLamMoi.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btLamMoi.selected = false;
+            this.btLamMoi.Size = new System.Drawing.Size(135, 36);
+            this.btLamMoi.TabIndex = 62;
+            this.btLamMoi.Text = "   Làm mới";
+            this.btLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLamMoi.Textcolor = System.Drawing.Color.Black;
+            this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
             // 
             // btXoaTK
             // 
@@ -510,43 +548,6 @@
             this.btSuaNV.Textcolor = System.Drawing.Color.Black;
             this.btSuaNV.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSuaNV.Click += new System.EventHandler(this.BtSuaNV_Click);
-            // 
-            // btLamMoi
-            // 
-            this.btLamMoi.Active = false;
-            this.btLamMoi.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.btLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btLamMoi.BackColor = System.Drawing.Color.Transparent;
-            this.btLamMoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btLamMoi.BorderRadius = 0;
-            this.btLamMoi.ButtonText = "   Làm mới";
-            this.btLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLamMoi.DisabledColor = System.Drawing.Color.Gray;
-            this.btLamMoi.Iconcolor = System.Drawing.Color.Transparent;
-            this.btLamMoi.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLamMoi.Iconimage")));
-            this.btLamMoi.Iconimage_right = null;
-            this.btLamMoi.Iconimage_right_Selected = null;
-            this.btLamMoi.Iconimage_Selected = null;
-            this.btLamMoi.IconMarginLeft = 0;
-            this.btLamMoi.IconMarginRight = 0;
-            this.btLamMoi.IconRightVisible = true;
-            this.btLamMoi.IconRightZoom = 0D;
-            this.btLamMoi.IconVisible = true;
-            this.btLamMoi.IconZoom = 50D;
-            this.btLamMoi.IsTab = false;
-            this.btLamMoi.Location = new System.Drawing.Point(461, -1);
-            this.btLamMoi.Name = "btLamMoi";
-            this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
-            this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.btLamMoi.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btLamMoi.selected = false;
-            this.btLamMoi.Size = new System.Drawing.Size(135, 36);
-            this.btLamMoi.TabIndex = 62;
-            this.btLamMoi.Text = "   Làm mới";
-            this.btLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLamMoi.Textcolor = System.Drawing.Color.Black;
-            this.btLamMoi.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLamMoi.Click += new System.EventHandler(this.BtLamMoi_Click);
             // 
             // USCNhanVien
             // 

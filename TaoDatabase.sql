@@ -82,7 +82,7 @@ CREATE TABLE LoaiSanPham
 )
 Go
 
-INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham,DanhMuc) VALUES  (N'Cá', N'Món ăn'),(N'Bò',N'Món ăn' ),(N'Lợn',N'Món ăn' ),(N'Beer',N'Đồ uống')
+INSERT INTO dbo.LoaiSanPham(TenLoaiSanPham,DanhMuc) VALUES  (N'Cá', N'Món ăn'),(N'Bò',N'Món ăn' ),(N'Lợn',N'Món ăn' ),(N'Beer',N'Đồ uống'),(N'Khác',N'Khác')
 GO
 
 CREATE TABLE SanPham

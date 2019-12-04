@@ -163,6 +163,7 @@
             this.txbDonGia.Size = new System.Drawing.Size(254, 29);
             this.txbDonGia.TabIndex = 3;
             this.txbDonGia.TextChanged += new System.EventHandler(this.TxbDonGia_TextChanged);
+            this.txbDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbDonGia_KeyPress);
             // 
             // label5
             // 
@@ -182,6 +183,7 @@
             this.txbSL.Size = new System.Drawing.Size(254, 29);
             this.txbSL.TabIndex = 2;
             this.txbSL.TextChanged += new System.EventHandler(this.TxbSL_TextChanged);
+            this.txbSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbSL_KeyPress);
             // 
             // label4
             // 

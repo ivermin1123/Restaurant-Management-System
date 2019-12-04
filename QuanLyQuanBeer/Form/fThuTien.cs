@@ -10,12 +10,24 @@ namespace QuanLyQuanBeer
         private string _tongTien;
         private int _idBan;
         private string _nhanVien;
-        public fThuTien(string tongTien,int idBan,string NhanVien)
+        private string _ThanhTien;
+        private int _idHoaDon;
+        private DateTime? _GioVao;
+        private string _VAT;
+        private string _TenBan;
+        private string _ThanhToan;
+        public fThuTien(string tongTien,int idBan,string NhanVien,string ThanhTien,int idHoaDon,DateTime? GioVao,string VAT,string TenBan,string ThanhToan)
         {
             InitializeComponent();
             _tongTien = tongTien;
             _idBan = idBan;
             _nhanVien = NhanVien;
+            _ThanhTien = ThanhTien;
+            _idHoaDon = idHoaDon;
+            _GioVao = GioVao;
+            _VAT = VAT;
+            _TenBan = TenBan;
+            _ThanhToan = ThanhToan;
             GoiYTien();
         }
 
@@ -330,6 +342,42 @@ namespace QuanLyQuanBeer
         private void BtHuy_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void BtInVaDong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string TienKhachDua = txbTienKhachDua.Text;
+                string TienThua1;
+                if (ckbxKLayTienTHua.Checked != true)
+                {
+                    TienThua1 = txbTienThua.Text;
+                }
+                else
+                    TienThua1 = 0.ToString();
+                DateTime? GioRa = DateTime.Now;
+                rptHoaDon rptHoaDon = new rptHoaDon(_idBan);
+                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _ThanhToan, TienKhachDua, TienThua1, GioRa);
+                int idBill = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(_idBan);
+                
+                if (idBill != -1)
+                {
+                    double tongtien = Convert.ToDouble(txbTienThu.Text);
+                    if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho Bàn {0}" +
+                        "\nTổng tiền = {1:0,0} VND", _idBan, tongtien), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        HoaDonDAO.Instance.CheckOut(idBill, tongtien, decimal.Parse(TienThua1), _nhanVien);
+                        BanDAO.Instance.UpdateStatusTable(_idBan);
+                        this.Close();
+                        rptHoaDon.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

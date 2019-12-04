@@ -338,7 +338,7 @@
             this.btHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btHelp.BorderRadius = 0;
-            this.btHelp.ButtonText = "       Help";
+            this.btHelp.ButtonText = "       Kho";
             this.btHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btHelp.DisabledColor = System.Drawing.Color.Gray;
             this.btHelp.Dock = System.Windows.Forms.DockStyle.Top;
@@ -362,7 +362,7 @@
             this.btHelp.selected = false;
             this.btHelp.Size = new System.Drawing.Size(270, 48);
             this.btHelp.TabIndex = 8;
-            this.btHelp.Text = "       Help";
+            this.btHelp.Text = "       Kho";
             this.btHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btHelp.Textcolor = System.Drawing.Color.White;
             this.btHelp.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

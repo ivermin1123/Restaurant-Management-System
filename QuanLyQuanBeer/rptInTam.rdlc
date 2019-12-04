@@ -978,9 +978,9 @@
           </Textbox>
           <Line Name="Line4">
             <Top>2.80557in</Top>
-            <Left>0.21876in</Left>
+            <Left>0.10191in</Left>
             <Height>0in</Height>
-            <Width>3.47209in</Width>
+            <Width>3.70673in</Width>
             <ZIndex>16</ZIndex>
             <Style>
               <Border>
@@ -1454,9 +1454,9 @@
             </Textbox>
             <Line Name="Line2">
               <Top>0.07812in</Top>
-              <Left>0.21876in</Left>
+              <Left>0.10191in</Left>
               <Height>0in</Height>
-              <Width>3.4857in</Width>
+              <Width>3.70673in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

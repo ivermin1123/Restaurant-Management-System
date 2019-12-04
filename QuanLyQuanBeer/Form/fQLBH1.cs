@@ -129,7 +129,7 @@ namespace QuanLyQuanBeer
             foreach (SanPhamDTO item in tableList)
             {
                 if (item.HinhAnh == "")
-                    return;
+                    item.HinhAnh = "Khongcohinhanh.jpg";
                 Panel pn = new Panel();
                 BunifuImageButton bt1 = new BunifuImageButton();
                 TextBox txb = new TextBox();
@@ -165,7 +165,7 @@ namespace QuanLyQuanBeer
                     double tongCong = Convert.ToDouble(txbTongTien.Text);
                     if (BanDAO.Instance.GetTrangThaiBanBangIDBan(ban.ID) == "Trống")
                     {
-                        DialogResult kq = MessageBox.Show("Bạn đang chọn bàn mới.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        DialogResult kq = MessageBox.Show(ban.TenBan+" chưa có hóa đơn.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (kq == DialogResult.OK)
                         {
                             HoaDonDAO.Instance.InsertBill(ban.ID, tongCong);
@@ -283,6 +283,7 @@ namespace QuanLyQuanBeer
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
+            pnDatCho.Visible = false;
         }
 
         private void BtMinimize_Click(object sender, EventArgs e)
@@ -319,6 +320,7 @@ namespace QuanLyQuanBeer
             pnChaoMung.Visible = true;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
+            pnDatCho.Visible = false;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -342,6 +344,7 @@ namespace QuanLyQuanBeer
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
+            pnDatCho.Visible = false;
         }
 
         private void BtOrderwhite_Click(object sender, EventArgs e)
@@ -351,6 +354,7 @@ namespace QuanLyQuanBeer
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
+            pnDatCho.Visible = false;
         }
 
         private void BtSoDoblue_Click(object sender, EventArgs e)
@@ -360,6 +364,7 @@ namespace QuanLyQuanBeer
             pnNewOrder.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
+            pnDatCho.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
         }
@@ -367,6 +372,7 @@ namespace QuanLyQuanBeer
         private void BtSoDowhite_Click_1(object sender, EventArgs e)
         {
             pnNewOrder.Visible = false;
+            pnDatCho.Visible = false;
             pnOrder.Visible = false;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
@@ -381,6 +387,18 @@ namespace QuanLyQuanBeer
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
+            pnDatCho.Visible = false;
+        }
+
+        private void BtDatChoWhite_Click(object sender, EventArgs e)
+        {
+            btOrderwhite.Visible = false;
+            pnNewOrder.Visible = false;
+            pnOrder.Visible = false;
+            pnChaoMung.Visible = false;
+            pnDsHD.Visible = false;
+            pnTinhTien.Visible = false;
+            pnDatCho.Visible = true;
         }
 
         private void DtgvHoaDon_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -495,7 +513,7 @@ namespace QuanLyQuanBeer
                 return;
             }
             int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            fThemMonNgoai f = new fThemMonNgoai(idHoaDon);
+            fThemMonNgoai f = new fThemMonNgoai(idHoaDon,ban.ID,ban.TenBan);
             f.ShowDialog();
             XemHoaDon(ban.ID);
             XemHoaDon1(ban.ID);
@@ -504,10 +522,20 @@ namespace QuanLyQuanBeer
         private void BtThuTien_Click_1(object sender, EventArgs e)
         {
             BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-            string tongTien = txbTongTien.Text;
+            string ThanhTien = txbThanhTien.Text;
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+            DateTime? GioVao = HoaDonDAO.Instance.GetGioVaoByID(ban.ID);
+            rptInTam rptInTam = new rptInTam(ban.ID);
+            string VAT;
+            if (ckbxGTGT.Checked == true)
+                VAT = txbGTGT.Text;
+            else
+                VAT = "0";
+            string tongTien = txbConPhaiThu.Text;
             string TenDN = TaiKhoanHienTai.TenDangNhap;
             string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
-            fThuTien f = new fThuTien(tongTien,ban.ID, NhanVien);
+            string ThanhToan = txbTongThanhToan.Text;
+            fThuTien f = new fThuTien(tongTien,ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT,ban.TenBan, ThanhToan);
             f.ShowDialog();
             XemHoaDon1(ban.ID);
             XemHoaDon(ban.ID);
@@ -566,8 +594,13 @@ namespace QuanLyQuanBeer
             {
                 MessageBox.Show(ex.Message);
             }
-            
-
         }
+
+        private void BtLamMoi_Click_1(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        
     }
 }
