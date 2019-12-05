@@ -60,7 +60,7 @@ namespace QuanLyQuanBeer
                     string somestring = txbDuongDan.Text;
                     string newstring = somestring.Substring(somestring.Length - 4, 4);
                     string tenAnh = LocDau(TenSanPham) + newstring;
-                    if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, _idLoai, _maSP,tenAnh))
+                    if (SanPhamDAO.Instance.capNhatSP(TenSanPham, DonVi, Gia, _idLoai, _maSP, tenAnh))
                     {
                         File.Copy(txbDuongDan.Text, Path.Combine(@"..//..//..//Pic Food/", Path.GetFileName(tenAnh)), true);
                         MessageBox.Show("Cập nhật thành công!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);

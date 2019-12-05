@@ -21,9 +21,9 @@ namespace QuanLyQuanBeer.DAO
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { idBan, tongCong });
         }
 
-        public void CheckOut(int id, double TongCong, decimal TienThua,string NhanVien)
+        public void CheckOut(int id, double TongCong, decimal TienThua, string NhanVien)
         {
-            string query = "UPDATE dbo.HoaDon SET ThoiGianRa = GETDATE(), TrangThai = N'Đã thanh toán', TongCong = " + TongCong + ", TienThua = "+ TienThua + " , NhanVien = N'"+ NhanVien+"' WHERE id = " + id;
+            string query = "UPDATE dbo.HoaDon SET ThoiGianRa = GETDATE(), TrangThai = N'Đã thanh toán', TongCong = " + TongCong + ", TienThua = " + TienThua + " , NhanVien = N'" + NhanVien + "' WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
         public int LayIDHoaDonChuaThanhToanBangIDBan(int id)

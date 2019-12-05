@@ -21,16 +21,16 @@ namespace QuanLyQuanBeer
             this.reportViewer1.RefreshReport();
         }
 
-        public void XuatHoaDon(int maHD, string tenban,string NhanVien, string ThanhTien,DateTime? GioVao,string VAT,string ThanhToan)
+        public void XuatHoaDon(int maHD, string tenban, string NhanVien, string ThanhTien, DateTime? GioVao, string VAT, string ThanhToan)
         {
             DataTable dt = new DataTable();
             dt = MenuDAO.Instance.GetListSP1(_idBan);
             this.reportViewer1.LocalReport.ReportPath = @"../../rptInTam.rdlc";
             ReportParameter[] param = new ReportParameter[7];
             param[0] = new ReportParameter("Ban", tenban);
-            param[1] = new ReportParameter("MaHD", "HD"+maHD.ToString());
+            param[1] = new ReportParameter("MaHD", "HD" + maHD.ToString());
             param[2] = new ReportParameter("NhanVien", NhanVien);
-            param[3] = new ReportParameter("ThanhTien", ThanhTien +" VND");
+            param[3] = new ReportParameter("ThanhTien", ThanhTien + " VND");
             param[4] = new ReportParameter("GioVao", GioVao.ToString());
             param[5] = new ReportParameter("VAT", VAT + " VND");
             param[6] = new ReportParameter("ThanhToan", ThanhToan + " VND");

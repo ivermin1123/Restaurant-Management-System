@@ -1,9 +1,4 @@
 ﻿using QuanLyQuanBeer.ADO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -28,7 +23,7 @@ namespace QuanLyQuanBeer.DAO
         public void DeleteSP(int idHoaDon, int idSanPham)
         {
             string query = ("EXEC USP_DeleteSP @idHoaDon , @idSanPham");
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] {idHoaDon, idSanPham });
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idHoaDon, idSanPham });
         }
 
         public void UpdateSL(int SoLuong, int idHoaDon, int idSanPham)

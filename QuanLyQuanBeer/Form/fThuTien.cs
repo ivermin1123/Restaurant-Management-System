@@ -16,7 +16,7 @@ namespace QuanLyQuanBeer
         private string _VAT;
         private string _TenBan;
         private string _ThanhToan;
-        public fThuTien(string tongTien,int idBan,string NhanVien,string ThanhTien,int idHoaDon,DateTime? GioVao,string VAT,string TenBan,string ThanhToan)
+        public fThuTien(string tongTien, int idBan, string NhanVien, string ThanhTien, int idHoaDon, DateTime? GioVao, string VAT, string TenBan, string ThanhToan)
         {
             InitializeComponent();
             _tongTien = tongTien;
@@ -318,7 +318,7 @@ namespace QuanLyQuanBeer
                 if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho Bàn {0}" +
                     "\nTổng tiền = {1:0,0} VND", _idBan, tongtien), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    HoaDonDAO.Instance.CheckOut(idBill, tongtien, TienThua,_nhanVien);
+                    HoaDonDAO.Instance.CheckOut(idBill, tongtien, TienThua, _nhanVien);
                     BanDAO.Instance.UpdateStatusTable(_idBan);
                     this.Close();
                 }
@@ -360,7 +360,7 @@ namespace QuanLyQuanBeer
                 rptHoaDon rptHoaDon = new rptHoaDon(_idBan);
                 rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _ThanhToan, TienKhachDua, TienThua1, GioRa);
                 int idBill = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(_idBan);
-                
+
                 if (idBill != -1)
                 {
                     double tongtien = Convert.ToDouble(txbTienThu.Text);

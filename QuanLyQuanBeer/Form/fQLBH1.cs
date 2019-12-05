@@ -1,13 +1,11 @@
-﻿using QuanLyQuanBeer.DAO;
+﻿using Bunifu.Framework.UI;
+using QuanLyQuanBeer.DAO;
 using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using Bunifu.Framework.UI;
-using System.Data;
-using System.Globalization;
-using System.Threading;
 
 namespace QuanLyQuanBeer
 {
@@ -58,7 +56,7 @@ namespace QuanLyQuanBeer
                     default:
                         bt.BackColor = Color.FromArgb(128, 128, 128);
                         bt.ForeColor = Color.White;
-                        bt.FlatAppearance.MouseOverBackColor = Color.FromArgb(214,214,214);
+                        bt.FlatAppearance.MouseOverBackColor = Color.FromArgb(214, 214, 214);
                         break;
                 }
                 flpBan.Controls.Add(bt);
@@ -77,7 +75,7 @@ namespace QuanLyQuanBeer
             dtgvHoaDon.Columns[1].HeaderText = "SL";
             dtgvHoaDon.Columns[1].FillWeight = 40;
             dtgvHoaDon.Columns[2].HeaderText = "Giá";
-            dtgvHoaDon.Columns[2].DefaultCellStyle.Format = "0,0"+ " đ";
+            dtgvHoaDon.Columns[2].DefaultCellStyle.Format = "0,0" + " đ";
             dtgvHoaDon.Columns[3].HeaderText = "Đơn vị";
             dtgvHoaDon.Columns[3].FillWeight = 65;
             dtgvHoaDon.Columns[4].HeaderText = "Thành tiền";
@@ -92,8 +90,6 @@ namespace QuanLyQuanBeer
             //}
         }
 
-
-        
         void XemHoaDon1(int id)
         {
             lsvHoaDon1.Items.Clear();
@@ -143,14 +139,14 @@ namespace QuanLyQuanBeer
                 // ButtonImage
                 bt1.Dock = DockStyle.Top;
                 bt1.Cursor = Cursors.Hand;
-                bt1.Image = Image.FromFile(@"..//..//..//Pic Food/"+ item.HinhAnh);
+                bt1.Image = Image.FromFile(@"..//..//..//Pic Food/" + item.HinhAnh);
                 bt1.ImageActive = null;
                 bt1.Location = new Point(0, 0);
                 bt1.Size = new Size(153, 127);
                 bt1.SizeMode = PictureBoxSizeMode.StretchImage;
                 bt1.Zoom = 0;
                 int idSP = SanPhamDAO.Instance.GetIDByTenSP(item.TenSanPham);
-                bt1.MouseClick += (s, e) => 
+                bt1.MouseClick += (s, e) =>
                 {
                     if (!(dtgvHoaDon.Tag is BanDTO ban))
                     {
@@ -165,7 +161,7 @@ namespace QuanLyQuanBeer
                     double tongCong = Convert.ToDouble(txbTongTien.Text);
                     if (BanDAO.Instance.GetTrangThaiBanBangIDBan(ban.ID) == "Trống")
                     {
-                        DialogResult kq = MessageBox.Show(ban.TenBan+" chưa có hóa đơn.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        DialogResult kq = MessageBox.Show(ban.TenBan + " chưa có hóa đơn.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (kq == DialogResult.OK)
                         {
                             HoaDonDAO.Instance.InsertBill(ban.ID, tongCong);
@@ -190,23 +186,23 @@ namespace QuanLyQuanBeer
                 };
                 // textBox
                 txb.Cursor = Cursors.Arrow;
-                txb.BackColor = Color.FromArgb(242,242,242);
+                txb.BackColor = Color.FromArgb(242, 242, 242);
                 txb.Dock = DockStyle.Fill;
                 txb.ForeColor = Color.Black;
                 txb.ReadOnly = true;
-                txb.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point,0);
+                txb.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
                 txb.Multiline = true;
                 txb.Size = new Size(153, 51);
                 txb.Text = item.TenSanPham;
                 txb.TextAlign = HorizontalAlignment.Center;
                 // label
                 lb.AutoSize = true;
-                lb.BackColor = Color.FromArgb(81,164,201);
+                lb.BackColor = Color.FromArgb(81, 164, 201);
                 lb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
                 lb.ForeColor = Color.White;
                 lb.Size = new Size(46, 21);
                 lb.Location = new Point(103, 1);
-                string Gia = ((int)(item.Gia)/1000).ToString();
+                string Gia = ((int)(item.Gia) / 1000).ToString();
                 lb.Text = Gia + "K";
                 flpChonMon.Controls.Add(pn);
             }
@@ -419,11 +415,11 @@ namespace QuanLyQuanBeer
                     XemHoaDon(ban.ID);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
         private void DtgvHoaDon_KeyDown(object sender, KeyEventArgs e)
         {
@@ -461,7 +457,7 @@ namespace QuanLyQuanBeer
                 else
                     MessageBox.Show("Không có hóa đơn để thanh toán !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
 
         private void BtMenu_Click(object sender, EventArgs e)
@@ -513,7 +509,7 @@ namespace QuanLyQuanBeer
                 return;
             }
             int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            fThemMonNgoai f = new fThemMonNgoai(idHoaDon,ban.ID,ban.TenBan);
+            fThemMonNgoai f = new fThemMonNgoai(idHoaDon, ban.ID, ban.TenBan);
             f.ShowDialog();
             XemHoaDon(ban.ID);
             XemHoaDon1(ban.ID);
@@ -535,7 +531,7 @@ namespace QuanLyQuanBeer
             string TenDN = TaiKhoanHienTai.TenDangNhap;
             string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
             string ThanhToan = txbTongThanhToan.Text;
-            fThuTien f = new fThuTien(tongTien,ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT,ban.TenBan, ThanhToan);
+            fThuTien f = new fThuTien(tongTien, ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT, ban.TenBan, ThanhToan);
             f.ShowDialog();
             XemHoaDon1(ban.ID);
             XemHoaDon(ban.ID);
@@ -568,7 +564,7 @@ namespace QuanLyQuanBeer
 
         #endregion
 
-        
+
 
         private void BtInTamTinh_Click(object sender, EventArgs e)
         {
@@ -590,7 +586,7 @@ namespace QuanLyQuanBeer
                 rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao, VAT, ThanhToan);
                 rptInTam.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -601,6 +597,6 @@ namespace QuanLyQuanBeer
             LoadTable();
         }
 
-        
+
     }
 }

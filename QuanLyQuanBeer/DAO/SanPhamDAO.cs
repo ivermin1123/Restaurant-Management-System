@@ -93,7 +93,7 @@ namespace QuanLyQuanBeer.DAO
             return DataProvider.Instance.ExecuteQuery("SELECT a.id,TenSanPham,DonVi,Gia,b.TenLoaiSanPham,b.DanhMuc,a.HinhAnh From SanPham a,  LoaiSanPham b where a.idLoai = b.id");
         }
 
-        public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai,string tenAnh)
+        public bool ThemSP(string tenSanPham, string DonVi, double gia, int idLoai, string tenAnh)
         {
             string query = "USP_InsertDrink @TenSanPham , @DonVi , @Gia , @idLoai , @tenAnh ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai, tenAnh }) > 0;
@@ -102,10 +102,10 @@ namespace QuanLyQuanBeer.DAO
         public bool ThemSP1(string tenSanPham, string DonVi, double gia, int idLoai)
         {
             string query = "USP_InsertDrink1 @TenSanPham , @DonVi , @Gia , @idLoai ";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai}) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSanPham, DonVi, gia, idLoai }) > 0;
         }
 
-        public bool capNhatSP(string tenSP, string DonVi, double Gia, int idLoai, int id,string tenAnh)
+        public bool capNhatSP(string tenSP, string DonVi, double Gia, int idLoai, int id, string tenAnh)
         {
             string query = "UPDATE dbo.SanPham SET TenSanPham = N'" + tenSP + "' , DonVi = N'" + DonVi + "', Gia = " + Gia + ", idLoai= " + idLoai + ", HinhAnh = N'" + tenAnh + "'  WHERE id = " + id + " ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
@@ -116,6 +116,18 @@ namespace QuanLyQuanBeer.DAO
         {
             string query = "DELETE dbo.LoaiSanPham WHERE tenLoaiSanPham = N'" + ten + "'";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+
+        public string GetTenHinhAnh(string tenSanPham)
+        {
+            string query = "SELECT * FROM dbo.SanPham WHERE TenSanPham = N'" + tenSanPham + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                SanPhamDTO sp = new SanPhamDTO(item);
+                return sp.HinhAnh;
+            }
+            return "";
         }
 
         public string GetTenSP(string tenSanPham)

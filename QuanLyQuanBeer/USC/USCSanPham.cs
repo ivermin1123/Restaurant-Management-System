@@ -1,5 +1,6 @@
 ﻿using QuanLyQuanBeer.DAO;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -84,8 +85,10 @@ namespace QuanLyQuanBeer
         private void BtXoaSP_Click(object sender, EventArgs e)
         {
             string tenSanPham = txbTenSP1.Text;
+            string hinhAnh = SanPhamDAO.Instance.GetTenHinhAnh(tenSanPham);
             if (SanPhamDAO.Instance.XoaSP(tenSanPham))
             {
+                File.Delete(@"..//..//..//Pic Food/" + hinhAnh);
                 MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAccount();
             }

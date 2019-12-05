@@ -4,7 +4,7 @@ namespace QuanLyQuanBeer.DTO
 {
     public class SanPhamDTO
     {
-        public SanPhamDTO(int iD, string tenSanPham, string donVi, int idLoai, double gia,string hinhAnh)
+        public SanPhamDTO(int iD, string tenSanPham, string donVi, int idLoai, double gia, string hinhAnh)
         {
             this.ID = iD;
             this.TenSanPham = tenSanPham;

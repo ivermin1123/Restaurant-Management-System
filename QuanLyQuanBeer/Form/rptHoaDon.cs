@@ -1,8 +1,8 @@
-﻿using QuanLyQuanBeer.DAO;
+﻿using Microsoft.Reporting.WinForms;
+using QuanLyQuanBeer.DAO;
 using System;
-using Microsoft.Reporting.WinForms;
-using System.Windows.Forms;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
@@ -20,7 +20,7 @@ namespace QuanLyQuanBeer
             this.reportViewer1.RefreshReport();
         }
 
-        public void XuatHoaDon(int maHD, string tenban, string NhanVien, string ThanhTien, DateTime? GioVao, string VAT, string ThanhToan,string TienKhachDua,string TienThua, DateTime? GioRa)
+        public void XuatHoaDon(int maHD, string tenban, string NhanVien, string ThanhTien, DateTime? GioVao, string VAT, string ThanhToan, string TienKhachDua, string TienThua, DateTime? GioRa)
         {
             DataTable dt = new DataTable();
             dt = MenuDAO.Instance.GetListSP1(_idBan);

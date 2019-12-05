@@ -63,7 +63,7 @@ namespace QuanLyQuanBeer
                         string tenAnh = LocDau(TenSanPham) + newstring;
                         if (SanPhamDAO.Instance.ThemSP(TenSanPham, DonVi, Gia, IDLoai, tenAnh))
                         {
-                            File.Copy(txbDuongDan.Text, Path.Combine(@"..//..//..//Pic Food/", Path.GetFileName(tenAnh)),true);
+                            File.Copy(txbDuongDan.Text, Path.Combine(@"..//..//..//Pic Food/", Path.GetFileName(tenAnh)), true);
                             MessageBox.Show("Thêm thành công!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
@@ -94,7 +94,7 @@ namespace QuanLyQuanBeer
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;) | *.jpg; *.jpeg; *.gif; *.bmp;";
-            if(open.ShowDialog() == DialogResult.OK)
+            if (open.ShowDialog() == DialogResult.OK)
             {
                 txbDuongDan.Text = open.FileName;
                 ptbHienThiAnh.Image = new Bitmap(open.FileName);

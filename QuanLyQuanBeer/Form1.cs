@@ -1,13 +1,6 @@
 ﻿using QuanLyQuanBeer.DAO;
-using QuanLyQuanBeer.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -24,13 +17,13 @@ namespace QuanLyQuanBeer
         void XemHoaDon()
         {
             DataTable danhSachThongTinHoaDon = MenuDAO.Instance.GetListSP(1);
-           // dtgvHoaDon.DataSource = listSP;
+            // dtgvHoaDon.DataSource = listSP;
             listSP.DataSource = MenuDAO.Instance.GetListSP(1);
         }
 
         private void DtgvHoaDon_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-                
+
         }
 
         private void DtgvHoaDon_SelectionChanged(object sender, EventArgs e)

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer.DAO
@@ -15,7 +8,7 @@ namespace QuanLyQuanBeer.DAO
         private int _idHoaDon;
         private int _idBan;
         private string _TenBan;
-        public fThemMonNgoai(int idHoaDon,int idBan,string TenBan)
+        public fThemMonNgoai(int idHoaDon, int idBan, string TenBan)
         {
             InitializeComponent();
             _idHoaDon = idHoaDon;
@@ -26,17 +19,17 @@ namespace QuanLyQuanBeer.DAO
         private void TxbSL_TextChanged(object sender, EventArgs e)
         {
             if (txbDonGia.Text == "")
-                txbThanhTien.Text = String.Format("{0:0,0}",(double.Parse(txbSL.Text) * 0)).ToString();
+                txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * 0)).ToString();
             else
-                txbThanhTien.Text = String.Format("{0:0,0}",(double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
+                txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
         }
 
         private void TxbDonGia_TextChanged(object sender, EventArgs e)
         {
             if (txbDonGia.Text == "")
-                txbThanhTien.Text = String.Format("{0:0,0}",(double.Parse(txbSL.Text) * 0)).ToString();
+                txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * 0)).ToString();
             else
-                txbThanhTien.Text = String.Format("{0:0,0}",(double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
+                txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
         }
 
         private void BtThem_Click(object sender, EventArgs e)
@@ -79,7 +72,7 @@ namespace QuanLyQuanBeer.DAO
                             DialogResult kq = MessageBox.Show(_TenBan + " chưa có hóa đơn.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                             if (kq == DialogResult.OK)
                             {
-                                
+
                                 HoaDonDAO.Instance.InsertBill(_idBan, tongCong);
                                 ThongTinHoaDonDAO.Instance.InsertBillInfo(HoaDonDAO.Instance.GetMaxIdBill(), idSP1, soLuong);
                                 BanDAO.Instance.UpdateTrangThaiBan(_idBan);
