@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DTO
 {
     public class LoaiKhoDTO
     {
-        public LoaiKhoDTO(string id,string tenLoaiKho)
+        public LoaiKhoDTO(string id, string tenLoaiKho)
         {
             this.Id = id;
             this.TenLoaiKho = tenLoaiKho;

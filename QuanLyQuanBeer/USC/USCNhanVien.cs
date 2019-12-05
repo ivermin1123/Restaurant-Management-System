@@ -60,7 +60,7 @@ namespace QuanLyQuanBeer.USC
             }
             else
                 gioiTinh = "Nữ";
-            if (hoTen == "" || diaChi == "" || cMND == "" || tuoi == "" || sDT == "")
+            if (hoTen == string.Empty || diaChi == string.Empty || cMND == string.Empty || tuoi == string.Empty || sDT == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ thông tin!", "Cập nhật thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {

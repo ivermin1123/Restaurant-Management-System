@@ -60,7 +60,7 @@ namespace QuanLyQuanBeer.USC
                     danhMuc = "Khác";
             }
             string LoaiSP = txbLoaiSP.Text;
-            if (LoaiSP == "")
+            if (LoaiSP == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ thông tin!", "Thêm loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
@@ -83,7 +83,7 @@ namespace QuanLyQuanBeer.USC
         {
             int MaLSP = int.Parse(txbMaLSP.Text);
             string LoaiSP = txbLoaiSP.Text;
-            if (LoaiSP == "")
+            if (LoaiSP == string.Empty)
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Cập nhật loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             if (LoaiSanPhamDAO.Instance.GetLoaiSP(LoaiSP) == LoaiSP)
                 MessageBox.Show("Đã có loại sản phẩm này !!", "Thêm loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);

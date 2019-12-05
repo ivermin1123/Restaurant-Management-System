@@ -25,7 +25,7 @@ namespace QuanLyQuanBeer.DAO
                 ThongTinTaiKhoanDTO acc = new ThongTinTaiKhoanDTO(item);
                 return acc.GioiTinh;
             }
-            return "";
+            return string.Empty;
         }
 
         public string GetTenBangTenDN(string tenDN)
@@ -37,7 +37,7 @@ namespace QuanLyQuanBeer.DAO
                 ThongTinTaiKhoanDTO acc = new ThongTinTaiKhoanDTO(item);
                 return acc.HoTen;
             }
-            return "";
+            return string.Empty;
         }
 
         public DataTable GetListNhanVien()

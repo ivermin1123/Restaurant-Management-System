@@ -41,7 +41,7 @@ namespace QuanLyQuanBeer
             // VD : "Cá lóc kho tộ" => "Calockhocto"
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = s.Normalize(NormalizationForm.FormD);
-            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "");
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", string.Empty);
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
@@ -49,11 +49,11 @@ namespace QuanLyQuanBeer
             string TenSanPham = txbTenSP1.Text;
             double Gia = Convert.ToDouble(txbGia.Text);
             string DonVi = txbDonVi.Text;
-            if (txbTenSP1.Text == "" || txbGia.Text == "")
+            if (txbTenSP1.Text == string.Empty || txbGia.Text == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ!", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (txbDuongDan.Text == "")
+                if (txbDuongDan.Text == string.Empty)
                     MessageBox.Show("Vui lòng chọn hình ảnh", "Cập nhật sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {

@@ -64,7 +64,7 @@ namespace QuanLyQuanBeer.DAO
                 TaiKhoanDTO acc = new TaiKhoanDTO(item);
                 return acc.TenDangNhap;
             }
-            return "";
+            return string.Empty;
         }
 
         public bool xoa(string ten)
@@ -100,7 +100,7 @@ namespace QuanLyQuanBeer.DAO
                 TaiKhoanDTO acc = new TaiKhoanDTO(item);
                 return acc.LoaiTaiKhoan;
             }
-            return "";
+            return string.Empty;
         }
 
     }

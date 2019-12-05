@@ -29,7 +29,7 @@ namespace QuanLyQuanBeer.DAO
                 LoaiSanPhamDTO acc = new LoaiSanPhamDTO(item);
                 return acc.DanhMuc;
             }
-            return "";
+            return string.Empty;
         }
 
 
@@ -72,7 +72,7 @@ namespace QuanLyQuanBeer.DAO
                 LoaiSanPhamDTO sp = new LoaiSanPhamDTO(item);
                 return sp.TenloaiSanPham;
             }
-            return "";
+            return string.Empty;
         }
 
         public int GetIDByLoaiSP(string tenLSP)
@@ -96,7 +96,7 @@ namespace QuanLyQuanBeer.DAO
                 LoaiSanPhamDTO sp = new LoaiSanPhamDTO(item);
                 return sp.TenloaiSanPham;
             }
-            return "";
+            return string.Empty;
         }
     }
 }

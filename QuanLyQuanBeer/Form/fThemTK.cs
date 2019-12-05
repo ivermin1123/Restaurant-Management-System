@@ -22,7 +22,7 @@ namespace QuanLyQuanBeer
             }
             else
                 loai = "Quản lý";
-            if (userName == "" || passWord == "")
+            if (userName == string.Empty || passWord == string.Empty)
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thêm tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {

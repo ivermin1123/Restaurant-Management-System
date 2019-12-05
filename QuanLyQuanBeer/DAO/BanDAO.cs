@@ -56,7 +56,7 @@ namespace QuanLyQuanBeer.DAO
                 BanDTO ban = new BanDTO(item);
                 return ban.TenBan;
             }
-            return "";
+            return string.Empty;
         }
 
         public void UpdateStatusTable(int id)
@@ -73,7 +73,7 @@ namespace QuanLyQuanBeer.DAO
                 BanDTO ban = new BanDTO(item);
                 return ban.TrangThai;
             }
-            return "";
+            return string.Empty;
         }
 
         public void UpdateTrangThaiBan(int idBan)

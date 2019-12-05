@@ -33,13 +33,13 @@ namespace QuanLyQuanBeer
             // VD : "Cá lóc kho tộ" => "Calockhocto"
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = s.Normalize(NormalizationForm.FormD);
-            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", "");
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D').Replace(" ", string.Empty);
         }
 
         private void BtThem_Click(object sender, EventArgs e)
         {
 
-            if (txbTenSP1.Text == "" || txbGia.Text == "" || cbxLoaiSP.Text == "" || txbDonVi.Text == "")
+            if (txbTenSP1.Text == string.Empty || txbGia.Text == string.Empty || cbxLoaiSP.Text == string.Empty || txbDonVi.Text == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ thông tin!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {

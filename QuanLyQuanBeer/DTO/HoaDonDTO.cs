@@ -19,7 +19,7 @@ namespace QuanLyQuanBeer.DTO
             this.ID = (int)row["iD"];
             this.ThoiGianVao = (DateTime?)row["thoiGianVao"];
             var thoiGianRaTemp = row["thoiGianRa"];
-            if (thoiGianRaTemp.ToString() != "")
+            if (thoiGianRaTemp.ToString() != string.Empty)
                 this.ThoiGianRa = (DateTime?)thoiGianRaTemp;
             else
                 this.TrangThai = row["TrangThai"].ToString();

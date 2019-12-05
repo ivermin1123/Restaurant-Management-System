@@ -18,7 +18,7 @@ namespace QuanLyQuanBeer.DAO
 
         private void TxbSL_TextChanged(object sender, EventArgs e)
         {
-            if (txbDonGia.Text == "")
+            if (txbDonGia.Text == string.Empty)
                 txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * 0)).ToString();
             else
                 txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
@@ -26,7 +26,7 @@ namespace QuanLyQuanBeer.DAO
 
         private void TxbDonGia_TextChanged(object sender, EventArgs e)
         {
-            if (txbDonGia.Text == "")
+            if (txbDonGia.Text == string.Empty)
                 txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * 0)).ToString();
             else
                 txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
@@ -34,7 +34,7 @@ namespace QuanLyQuanBeer.DAO
 
         private void BtThem_Click(object sender, EventArgs e)
         {
-            if (txbDonGia.Text == "" || txbDonVi.Text == "" || txbSL.Text == "" || txbTenMon.Text == "")
+            if (txbDonGia.Text == string.Empty || txbDonVi.Text == string.Empty || txbSL.Text == string.Empty || txbTenMon.Text == string.Empty)
                 MessageBox.Show("Vui lòng nhập đầy đủ các trường !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {

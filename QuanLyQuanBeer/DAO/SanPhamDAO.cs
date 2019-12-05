@@ -127,7 +127,7 @@ namespace QuanLyQuanBeer.DAO
                 SanPhamDTO sp = new SanPhamDTO(item);
                 return sp.HinhAnh;
             }
-            return "";
+            return string.Empty;
         }
 
         public string GetTenSP(string tenSanPham)
@@ -139,7 +139,7 @@ namespace QuanLyQuanBeer.DAO
                 SanPhamDTO sp = new SanPhamDTO(item);
                 return sp.TenSanPham;
             }
-            return "";
+            return string.Empty;
         }
 
         public int GetIDByTenSP(string tenSanPham)

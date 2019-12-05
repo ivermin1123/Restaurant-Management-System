@@ -33,7 +33,7 @@ namespace QuanLyQuanBeer.USC
         private void BtThemBan_Click(object sender, EventArgs e)
         {
             string tenBan = txbTenBan.Text;
-            if (tenBan == "")
+            if (tenBan == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ thông tin!", "Thêm bàn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 if (BanDAO.Instance.GetTenBan(tenBan) == tenBan)
@@ -64,7 +64,7 @@ namespace QuanLyQuanBeer.USC
         {
             int id = int.Parse(txbIdBan.Text);
             string tenBan = txbTenBan.Text;
-            if (tenBan == "")
+            if (tenBan == string.Empty)
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Cập nhật bàn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             if (BanDAO.Instance.GetTenBan(tenBan) == tenBan)
                 MessageBox.Show("Đã có bàn này !!", "Thêm bàn", MessageBoxButtons.OK, MessageBoxIcon.Warning);

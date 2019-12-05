@@ -59,12 +59,13 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
             this.uscSanPham = new QuanLyQuanBeer.USCSanPham();
             this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.uscKho1 = new QuanLyQuanBeer.USC.USCKho();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -601,6 +602,7 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.uscKho1);
             this.pnNoiDung.Controls.Add(this.USCTaiKhoan);
             this.pnNoiDung.Controls.Add(this.uscSanPham);
             this.pnNoiDung.Controls.Add(this.uscBan);
@@ -611,6 +613,11 @@
             this.pnNoiDung.Name = "pnNoiDung";
             this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // USCTaiKhoan
             // 
@@ -657,10 +664,14 @@
             this.uscNhanVien.TabIndex = 1;
             this.uscNhanVien.Visible = false;
             // 
-            // timer1
+            // uscKho1
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.uscKho1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscKho1.Location = new System.Drawing.Point(0, 0);
+            this.uscKho1.Name = "uscKho1";
+            this.uscKho1.Size = new System.Drawing.Size(958, 607);
+            this.uscKho1.TabIndex = 6;
+            this.uscKho1.Visible = false;
             // 
             // fAdmin
             // 
@@ -727,5 +738,6 @@
         private System.Windows.Forms.Label lbGio;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Timer timer1;
+        private USC.USCKho uscKho1;
     }
 }

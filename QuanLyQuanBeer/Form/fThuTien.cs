@@ -102,7 +102,7 @@ namespace QuanLyQuanBeer
         }
         private void Bt500_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 500000);
@@ -112,7 +112,7 @@ namespace QuanLyQuanBeer
 
         private void Bt200_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 200000);
@@ -122,7 +122,7 @@ namespace QuanLyQuanBeer
 
         private void Bt100_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 100000);
@@ -132,7 +132,7 @@ namespace QuanLyQuanBeer
 
         private void Bt50_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 50000);
@@ -142,7 +142,7 @@ namespace QuanLyQuanBeer
 
         private void Bt20_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 20000);
@@ -152,7 +152,7 @@ namespace QuanLyQuanBeer
 
         private void Bt10_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 10000);
@@ -162,7 +162,7 @@ namespace QuanLyQuanBeer
 
         private void Bt5_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 5000);
@@ -172,7 +172,7 @@ namespace QuanLyQuanBeer
 
         private void Bt2_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 2000);
@@ -182,7 +182,7 @@ namespace QuanLyQuanBeer
 
         private void Bt1_Click(object sender, EventArgs e)
         {
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhach = decimal.Parse(txbTienKhachDua.Text);
             decimal tienKhachCong = (tienKhach + 1000);
@@ -216,10 +216,10 @@ namespace QuanLyQuanBeer
         {
             txbTienKhachDua.Focus();
             txbTienKhachDua.SelectionStart = txbTienKhachDua.Text.Length;
-            if (txbTienKhachDua.Text == "")
+            if (txbTienKhachDua.Text == string.Empty)
                 txbTienKhachDua.Text = 0.ToString();
             decimal tienKhachDua = decimal.Parse(txbTienKhachDua.Text);
-            if (txbTienThu.Text == "")
+            if (txbTienThu.Text == string.Empty)
                 txbTienThu.Text = 0.ToString();
             decimal tienThu = decimal.Parse(txbTienThu.Text);
             string tienTraLai = (tienKhachDua - tienThu).ToString();
@@ -236,7 +236,7 @@ namespace QuanLyQuanBeer
 
         private void BunifuFlatButton4_Click(object sender, EventArgs e)
         {
-            if (txbTienTraLai.Text != "")
+            if (txbTienTraLai.Text != string.Empty)
             {
                 btDong.Enabled = true;
                 btInVaDong.Enabled = true;

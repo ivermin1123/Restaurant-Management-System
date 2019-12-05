@@ -27,7 +27,7 @@ namespace QuanLyQuanBeer
             string cMND = txbCMND.Text;
             string sDT = txbSDT.Text;
             string tuoi = txbTuoi.Text;
-            if (hoTen == "" || diaChi == "" || sDT == "" || cMND == "" || tuoi == "")
+            if (hoTen == string.Empty || diaChi == string.Empty || sDT == string.Empty || cMND == string.Empty || tuoi == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ!", "Thêm thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {

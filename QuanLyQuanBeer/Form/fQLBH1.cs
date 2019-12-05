@@ -124,7 +124,7 @@ namespace QuanLyQuanBeer
         {
             foreach (SanPhamDTO item in tableList)
             {
-                if (item.HinhAnh == "")
+                if (item.HinhAnh == string.Empty)
                     item.HinhAnh = "Khongcohinhanh.jpg";
                 Panel pn = new Panel();
                 BunifuImageButton bt1 = new BunifuImageButton();
@@ -154,7 +154,7 @@ namespace QuanLyQuanBeer
                         return;
                     }
                     int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-                    if (txbTongTien.Text == "")
+                    if (txbTongTien.Text == string.Empty)
                     {
                         txbTongTien.Text = 0.ToString();
                     }
@@ -253,7 +253,7 @@ namespace QuanLyQuanBeer
             double gTGT;
             if (ckbxGTGT.Checked != true)
             {
-                txbGTGT.Text = "";
+                txbGTGT.Text = string.Empty;
                 double TongThanhToan = thanhTien1 + 0;
                 txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
                 txbConPhaiThu.Text = txbTongThanhToan.Text;
@@ -496,7 +496,7 @@ namespace QuanLyQuanBeer
         {
             if (txbSearch.Text == "Nhập tên món cần tìm")
             {
-                txbSearch.Text = "";
+                txbSearch.Text = string.Empty;
                 txbSearch.ForeColor = Color.Black;
             }
         }
@@ -576,13 +576,13 @@ namespace QuanLyQuanBeer
                 string TenDN = TaiKhoanHienTai.TenDangNhap;
                 string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
                 DateTime? GioVao = HoaDonDAO.Instance.GetGioVaoByID(ban.ID);
-                rptInTam rptInTam = new rptInTam(ban.ID);
                 string VAT;
                 if (ckbxGTGT.Checked == true)
                     VAT = txbGTGT.Text;
                 else
                     VAT = "0";
                 string ThanhToan = txbTongThanhToan.Text;
+                rptInTam rptInTam = new rptInTam(ban.ID);
                 rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao, VAT, ThanhToan);
                 rptInTam.ShowDialog();
             }
@@ -597,6 +597,9 @@ namespace QuanLyQuanBeer
             LoadTable();
         }
 
-
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            BtOrderPlus_Click(sender, e);
+        }
     }
 }

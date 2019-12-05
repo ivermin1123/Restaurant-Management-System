@@ -555,6 +555,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1470, 697);
             this.panel2.TabIndex = 1;
+            this.panel2.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
@@ -568,6 +569,7 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Chào mừng đến với phần mềm - Chúc bạn một ngày vui vẻ\r\n         Và hãy nhớ luôn l" +
     "uôn mỉm cười với khách hàng !!";
+            this.label3.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox1
             // 
@@ -579,6 +581,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pnDsHD
             // 
@@ -2453,10 +2456,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 749);
+            this.Controls.Add(this.pnChaoMung);
             this.Controls.Add(this.pnNewOrder);
             this.Controls.Add(this.pnDatCho);
             this.Controls.Add(this.pnTinhTien);
-            this.Controls.Add(this.pnChaoMung);
             this.Controls.Add(this.pnOrder);
             this.Controls.Add(this.pnDsHD);
             this.Controls.Add(this.pnMenu);
