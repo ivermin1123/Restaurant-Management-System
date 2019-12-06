@@ -90,10 +90,13 @@
   <ItemGroup>
     <Compile Include="DAO\BanDAO.cs" />
     <Compile Include="DAO\KhoDAO.cs" />
+    <Compile Include="DAO\KhuyenMaiDAO.cs" />
     <Compile Include="DAO\LoaiKhoDAO.cs" />
+    <Compile Include="DAO\VoucherDAO.cs" />
     <Compile Include="DTO\KhoDTO.cs" />
     <Compile Include="DTO\KhuyenMaiDTO.cs" />
     <Compile Include="DTO\LoaiKhoDTO.cs" />
+    <Compile Include="DTO\LoaiKhuyenMaiDTO.cs" />
     <Compile Include="DTO\VoucherDTO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -142,6 +145,18 @@
     </Compile>
     <Compile Include="Form\fSuaSP.Designer.cs">
       <DependentUpon>fSuaSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fTaoVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fTaoVoucher.Designer.cs">
+      <DependentUpon>fTaoVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fTaoVoucherSLLon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fTaoVoucherSLLon.Designer.cs">
+      <DependentUpon>fTaoVoucherSLLon.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyQuanBeerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -283,6 +298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fSuaSP.resx">
       <DependentUpon>fSuaSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fTaoVoucher.resx">
+      <DependentUpon>fTaoVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fTaoVoucherSLLon.resx">
+      <DependentUpon>fTaoVoucherSLLon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

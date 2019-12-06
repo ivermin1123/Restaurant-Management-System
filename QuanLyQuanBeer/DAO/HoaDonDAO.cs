@@ -26,6 +26,12 @@ namespace QuanLyQuanBeer.DAO
             string query = "UPDATE dbo.HoaDon SET ThoiGianRa = GETDATE(), TrangThai = N'Đã thanh toán', TongCong = " + TongCong + ", TienThua = " + TienThua + " , NhanVien = N'" + NhanVien + "' WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+        public void ApDungVoucher(string maVC,int id)
+        {
+            string query = "UPDATE dbo.HoaDon SET Voucher ='"+ maVC + "' WHERE id = " + id+"AND TrangThai = N'Chưa thanh toán'";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
         public int LayIDHoaDonChuaThanhToanBangIDBan(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM  dbo.HoaDon WHERE idBan = " + id + " AND TrangThai = N'Chưa thanh toán'");

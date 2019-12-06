@@ -20,7 +20,7 @@ namespace QuanLyQuanBeer
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            txb1.Text = "VN" + GetUniqueKey(7);
+            //txb1.Text = "VN" + GetUniqueKey(7);
         }
         public static string GetUniqueKey(int size)
         {
@@ -37,6 +37,11 @@ namespace QuanLyQuanBeer
                 result.Append(chars[b % (chars.Length)]);
             }
             return result.ToString();
+        }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+
         }
     }
 }

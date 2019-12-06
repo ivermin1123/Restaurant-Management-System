@@ -9,33 +9,58 @@ namespace QuanLyQuanBeer.DTO
 {
     public class KhuyenMaiDTO
     {
-        public KhuyenMaiDTO(string id, string tenKM, int giamGia, double giaTien, string trangThai)
+        public KhuyenMaiDTO(string id, string tenKM, int giamGia, double giamTien, string trangThai, double toiDa, double dieuKien, int idSanPham, int idLoaiKM)
         {
             this.Id = id;
             this.TenKM = tenKM;
             this.GiamGia = giamGia;
-            this.GiaTien = giaTien;
+            this.GiamTien = giamTien;
             this.TrangThai = trangThai;
+            this.ToiDa = toiDa;
+            this.DieuKien = dieuKien;
+            this.IdSanPham = idSanPham;
+            this.IdLoaiKM = idLoaiKM;
         }
         public KhuyenMaiDTO(DataRow row)
         {
             this.Id = row["id"].ToString();
             this.TenKM = row["tenKM"].ToString();
             this.GiamGia = (int)row["giamGia"];
-            this.GiaTien = (double)row["giaTien"];
+            this.GiamTien = (double)row["giamTien"];
             this.TrangThai = row["trangThai"].ToString();
+            if (row["toiDa"] == DBNull.Value)
+                row["toiDa"] = -1;
+            this.ToiDa = (double)row["toiDa"];
+            if (row["dieuKien"] == DBNull.Value)
+                row["dieuKien"] = -1;
+            this.DieuKien = (double)row["dieuKien"];
+            if (row["idSanPham"] == DBNull.Value)
+                row["idSanPham"] = -1;
+            this.IdSanPham = (int)row["idSanPham"];
+            if (row["idLoaiKM"] == DBNull.Value)
+                row["idLoaiKM"] = -1;
+            this.IdLoaiKM = (int)row["idLoaiKM"];
         }
+
 
         private string id;
         private string tenKM;
         private int giamGia;
-        private double giaTien;
+        private double giamTien;
+        private double toiDa;
+        private double dieuKien;
+        private int idSanPham;
+        private int idLoaiKM;
         private string trangThai;
 
         public string Id { get => id; set => id = value; }
         public string TenKM { get => tenKM; set => tenKM = value; }
         public int GiamGia { get => giamGia; set => giamGia = value; }
-        public double GiaTien { get => giaTien; set => giaTien = value; }
+        public double GiamTien { get => giamTien; set => giamTien = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
+        public double ToiDa { get => toiDa; set => toiDa = value; }
+        public double DieuKien { get => dieuKien; set => dieuKien = value; }
+        public int IdLoaiKM { get => idLoaiKM; set => idLoaiKM = value; }
+        public int IdSanPham { get => idSanPham; set => idSanPham = value; }
     }
 }

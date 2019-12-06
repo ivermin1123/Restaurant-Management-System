@@ -47,25 +47,29 @@
             this.pn7 = new System.Windows.Forms.Panel();
             this.pn6 = new System.Windows.Forms.Panel();
             this.pn5 = new System.Windows.Forms.Panel();
-            this.pn4 = new System.Windows.Forms.Panel();
             this.pn3 = new System.Windows.Forms.Panel();
             this.pn2 = new System.Windows.Forms.Panel();
             this.btHelp = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btThietLapHeThong = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btNhanVien = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btDanhMuc = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSanPham = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTaiKhoan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pn4 = new System.Windows.Forms.Panel();
+            this.btDanhMuc = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.uscKho1 = new QuanLyQuanBeer.USC.USCKho();
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
             this.uscSanPham = new QuanLyQuanBeer.USCSanPham();
             this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
-            this.uscKho1 = new QuanLyQuanBeer.USC.USCKho();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -257,7 +261,12 @@
             // 
             // pnMenu
             // 
+            this.pnMenu.AutoScroll = true;
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.pnMenu.Controls.Add(this.panel3);
+            this.pnMenu.Controls.Add(this.bunifuFlatButton2);
+            this.pnMenu.Controls.Add(this.panel2);
+            this.pnMenu.Controls.Add(this.bunifuFlatButton1);
             this.pnMenu.Controls.Add(this.pn7);
             this.pnMenu.Controls.Add(this.pn6);
             this.pnMenu.Controls.Add(this.pn5);
@@ -266,9 +275,9 @@
             this.pnMenu.Controls.Add(this.pn2);
             this.pnMenu.Controls.Add(this.btHelp);
             this.pnMenu.Controls.Add(this.btThietLapHeThong);
-            this.pnMenu.Controls.Add(this.btNhanVien);
-            this.pnMenu.Controls.Add(this.btDanhMuc);
             this.pnMenu.Controls.Add(this.btSanPham);
+            this.pnMenu.Controls.Add(this.btDanhMuc);
+            this.pnMenu.Controls.Add(this.btNhanVien);
             this.pnMenu.Controls.Add(this.btTaiKhoan);
             this.pnMenu.Controls.Add(this.pn1);
             this.pnMenu.Controls.Add(this.btBaoCao);
@@ -299,25 +308,16 @@
             // pn5
             // 
             this.pn5.BackColor = System.Drawing.Color.Black;
-            this.pn5.Location = new System.Drawing.Point(0, 192);
+            this.pn5.Location = new System.Drawing.Point(0, 95);
             this.pn5.Name = "pn5";
             this.pn5.Size = new System.Drawing.Size(7, 46);
             this.pn5.TabIndex = 12;
             this.pn5.Visible = false;
             // 
-            // pn4
-            // 
-            this.pn4.BackColor = System.Drawing.Color.Black;
-            this.pn4.Location = new System.Drawing.Point(0, 144);
-            this.pn4.Name = "pn4";
-            this.pn4.Size = new System.Drawing.Size(7, 46);
-            this.pn4.TabIndex = 11;
-            this.pn4.Visible = false;
-            // 
             // pn3
             // 
             this.pn3.BackColor = System.Drawing.Color.Black;
-            this.pn3.Location = new System.Drawing.Point(0, 96);
+            this.pn3.Location = new System.Drawing.Point(0, 192);
             this.pn3.Name = "pn3";
             this.pn3.Size = new System.Drawing.Size(7, 46);
             this.pn3.TabIndex = 10;
@@ -429,7 +429,7 @@
             this.btNhanVien.IconVisible = true;
             this.btNhanVien.IconZoom = 60D;
             this.btNhanVien.IsTab = false;
-            this.btNhanVien.Location = new System.Drawing.Point(0, 192);
+            this.btNhanVien.Location = new System.Drawing.Point(0, 96);
             this.btNhanVien.Name = "btNhanVien";
             this.btNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -442,43 +442,6 @@
             this.btNhanVien.Textcolor = System.Drawing.Color.White;
             this.btNhanVien.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNhanVien.Click += new System.EventHandler(this.BtNhanVien_Click);
-            // 
-            // btDanhMuc
-            // 
-            this.btDanhMuc.Active = false;
-            this.btDanhMuc.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btDanhMuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btDanhMuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btDanhMuc.BorderRadius = 0;
-            this.btDanhMuc.ButtonText = "       Danh mục";
-            this.btDanhMuc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDanhMuc.DisabledColor = System.Drawing.Color.Gray;
-            this.btDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btDanhMuc.Iconcolor = System.Drawing.Color.Transparent;
-            this.btDanhMuc.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDanhMuc.Iconimage")));
-            this.btDanhMuc.Iconimage_right = null;
-            this.btDanhMuc.Iconimage_right_Selected = null;
-            this.btDanhMuc.Iconimage_Selected = null;
-            this.btDanhMuc.IconMarginLeft = 25;
-            this.btDanhMuc.IconMarginRight = 0;
-            this.btDanhMuc.IconRightVisible = true;
-            this.btDanhMuc.IconRightZoom = 0D;
-            this.btDanhMuc.IconVisible = true;
-            this.btDanhMuc.IconZoom = 60D;
-            this.btDanhMuc.IsTab = false;
-            this.btDanhMuc.Location = new System.Drawing.Point(0, 144);
-            this.btDanhMuc.Name = "btDanhMuc";
-            this.btDanhMuc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btDanhMuc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btDanhMuc.OnHoverTextColor = System.Drawing.Color.White;
-            this.btDanhMuc.selected = false;
-            this.btDanhMuc.Size = new System.Drawing.Size(270, 48);
-            this.btDanhMuc.TabIndex = 5;
-            this.btDanhMuc.Text = "       Danh mục";
-            this.btDanhMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDanhMuc.Textcolor = System.Drawing.Color.White;
-            this.btDanhMuc.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDanhMuc.Click += new System.EventHandler(this.BtDanhMuc_Click);
             // 
             // btSanPham
             // 
@@ -503,7 +466,7 @@
             this.btSanPham.IconVisible = true;
             this.btSanPham.IconZoom = 60D;
             this.btSanPham.IsTab = false;
-            this.btSanPham.Location = new System.Drawing.Point(0, 96);
+            this.btSanPham.Location = new System.Drawing.Point(0, 192);
             this.btSanPham.Name = "btSanPham";
             this.btSanPham.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btSanPham.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -619,6 +582,151 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // pn4
+            // 
+            this.pn4.BackColor = System.Drawing.Color.Black;
+            this.pn4.Location = new System.Drawing.Point(0, 144);
+            this.pn4.Name = "pn4";
+            this.pn4.Size = new System.Drawing.Size(7, 46);
+            this.pn4.TabIndex = 11;
+            this.pn4.Visible = false;
+            // 
+            // btDanhMuc
+            // 
+            this.btDanhMuc.Active = false;
+            this.btDanhMuc.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btDanhMuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDanhMuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btDanhMuc.BorderRadius = 0;
+            this.btDanhMuc.ButtonText = "       Loại sản phẩm";
+            this.btDanhMuc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDanhMuc.DisabledColor = System.Drawing.Color.Gray;
+            this.btDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btDanhMuc.Iconcolor = System.Drawing.Color.Transparent;
+            this.btDanhMuc.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDanhMuc.Iconimage")));
+            this.btDanhMuc.Iconimage_right = null;
+            this.btDanhMuc.Iconimage_right_Selected = null;
+            this.btDanhMuc.Iconimage_Selected = null;
+            this.btDanhMuc.IconMarginLeft = 25;
+            this.btDanhMuc.IconMarginRight = 0;
+            this.btDanhMuc.IconRightVisible = true;
+            this.btDanhMuc.IconRightZoom = 0D;
+            this.btDanhMuc.IconVisible = true;
+            this.btDanhMuc.IconZoom = 60D;
+            this.btDanhMuc.IsTab = false;
+            this.btDanhMuc.Location = new System.Drawing.Point(0, 144);
+            this.btDanhMuc.Name = "btDanhMuc";
+            this.btDanhMuc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btDanhMuc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btDanhMuc.OnHoverTextColor = System.Drawing.Color.White;
+            this.btDanhMuc.selected = false;
+            this.btDanhMuc.Size = new System.Drawing.Size(270, 48);
+            this.btDanhMuc.TabIndex = 5;
+            this.btDanhMuc.Text = "       Loại sản phẩm";
+            this.btDanhMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDanhMuc.Textcolor = System.Drawing.Color.White;
+            this.btDanhMuc.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDanhMuc.Click += new System.EventHandler(this.BtDanhMuc_Click);
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Active = false;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "     Loại khuyến mại";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 25;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 80D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 336);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(270, 48);
+            this.bunifuFlatButton1.TabIndex = 15;
+            this.bunifuFlatButton1.Text = "     Loại khuyến mại";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(0, 336);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(7, 46);
+            this.panel2.TabIndex = 16;
+            this.panel2.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(0, 384);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(7, 46);
+            this.panel3.TabIndex = 18;
+            this.panel3.Visible = false;
+            // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Active = false;
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 0;
+            this.bunifuFlatButton2.ButtonText = "     Khuyến mại";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 25;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 80D;
+            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 384);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(270, 48);
+            this.bunifuFlatButton2.TabIndex = 17;
+            this.bunifuFlatButton2.Text = "     Khuyến mại";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // uscKho1
+            // 
+            this.uscKho1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscKho1.Location = new System.Drawing.Point(0, 0);
+            this.uscKho1.Name = "uscKho1";
+            this.uscKho1.Size = new System.Drawing.Size(958, 607);
+            this.uscKho1.TabIndex = 6;
+            this.uscKho1.Visible = false;
+            // 
             // USCTaiKhoan
             // 
             this.USCTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -664,15 +772,6 @@
             this.uscNhanVien.TabIndex = 1;
             this.uscNhanVien.Visible = false;
             // 
-            // uscKho1
-            // 
-            this.uscKho1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscKho1.Location = new System.Drawing.Point(0, 0);
-            this.uscKho1.Name = "uscKho1";
-            this.uscKho1.Size = new System.Drawing.Size(958, 607);
-            this.uscKho1.TabIndex = 6;
-            this.uscKho1.Visible = false;
-            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,13 +815,11 @@
         private Bunifu.Framework.UI.BunifuFlatButton btHelp;
         private Bunifu.Framework.UI.BunifuFlatButton btThietLapHeThong;
         private Bunifu.Framework.UI.BunifuFlatButton btNhanVien;
-        private Bunifu.Framework.UI.BunifuFlatButton btDanhMuc;
         private Bunifu.Framework.UI.BunifuFlatButton btSanPham;
         private Bunifu.Framework.UI.BunifuFlatButton btTaiKhoan;
         private System.Windows.Forms.Panel pn7;
         private System.Windows.Forms.Panel pn6;
         private System.Windows.Forms.Panel pn5;
-        private System.Windows.Forms.Panel pn4;
         private System.Windows.Forms.Panel pn3;
         private Bunifu.Framework.UI.BunifuImageButton btRestore;
         private Bunifu.Framework.UI.BunifuImageButton btMaximize;
@@ -739,5 +836,11 @@
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Timer timer1;
         private USC.USCKho uscKho1;
+        private System.Windows.Forms.Panel panel3;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.Panel pn4;
+        private Bunifu.Framework.UI.BunifuFlatButton btDanhMuc;
     }
 }

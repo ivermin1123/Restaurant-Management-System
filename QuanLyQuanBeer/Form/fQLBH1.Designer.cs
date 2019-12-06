@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLBH1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btDatChoWhite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btMenu = new Bunifu.Framework.UI.BunifuImageButton();
@@ -75,16 +75,15 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel32 = new System.Windows.Forms.Panel();
+            this.txbVoucher = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.txbKM = new System.Windows.Forms.TextBox();
-            this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txbConPhaiThu = new System.Windows.Forms.TextBox();
             this.txbTongThanhToan = new System.Windows.Forms.TextBox();
             this.txbThanhTien = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.txbGTGT = new System.Windows.Forms.TextBox();
             this.ckbxGTGT = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -104,9 +103,21 @@
             this.lbMaHD_Ban = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.panel38 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.flpKM = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txbNoiDungVoucher = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.btApDungVoucher = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txbMaVoucher = new System.Windows.Forms.TextBox();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btTaoVoucherSLLon = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btTaoVouher = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.bunifuFlatButton12 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -168,9 +179,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.lbTongSoOrder = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).BeginInit();
@@ -188,12 +197,14 @@
             this.pncha.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel32.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             this.panel31.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
-            this.panel38.SuspendLayout();
+            this.panel37.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel35.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.pnDatCho.SuspendLayout();
             this.panel30.SuspendLayout();
@@ -221,7 +232,6 @@
             this.pnOrder.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel29.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -838,16 +848,15 @@
             // 
             // panel32
             // 
+            this.panel32.Controls.Add(this.txbVoucher);
+            this.panel32.Controls.Add(this.label7);
+            this.panel32.Controls.Add(this.label12);
             this.panel32.Controls.Add(this.txbKM);
-            this.panel32.Controls.Add(this.bunifuImageButton2);
-            this.panel32.Controls.Add(this.textBox1);
             this.panel32.Controls.Add(this.txbConPhaiThu);
             this.panel32.Controls.Add(this.txbTongThanhToan);
             this.panel32.Controls.Add(this.txbThanhTien);
-            this.panel32.Controls.Add(this.textBox5);
             this.panel32.Controls.Add(this.txbGTGT);
             this.panel32.Controls.Add(this.ckbxGTGT);
-            this.panel32.Controls.Add(this.label18);
             this.panel32.Controls.Add(this.label21);
             this.panel32.Controls.Add(this.label13);
             this.panel32.Controls.Add(this.label6);
@@ -864,45 +873,53 @@
             this.panel32.Size = new System.Drawing.Size(957, 137);
             this.panel32.TabIndex = 2;
             // 
+            // txbVoucher
+            // 
+            this.txbVoucher.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.txbVoucher.Location = new System.Drawing.Point(234, 89);
+            this.txbVoucher.Name = "txbVoucher";
+            this.txbVoucher.ReadOnly = true;
+            this.txbVoucher.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txbVoucher.Size = new System.Drawing.Size(197, 33);
+            this.txbVoucher.TabIndex = 21;
+            this.txbVoucher.Text = "0";
+            this.txbVoucher.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbVoucher.TextChanged += new System.EventHandler(this.txbVoucher_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(148, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Voucher:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(442, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 23);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "VND";
+            // 
             // txbKM
             // 
-            this.txbKM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbKM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbKM.Location = new System.Drawing.Point(54, 85);
-            this.txbKM.Multiline = true;
+            this.txbKM.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.txbKM.Location = new System.Drawing.Point(710, 50);
             this.txbKM.Name = "txbKM";
+            this.txbKM.ReadOnly = true;
             this.txbKM.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txbKM.Size = new System.Drawing.Size(174, 49);
-            this.txbKM.TabIndex = 20;
-            this.txbKM.Text = "dsf\r\nsdf";
-            this.txbKM.Visible = false;
-            // 
-            // bunifuImageButton2
-            // 
-            this.bunifuImageButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(229)))), ((int)(((byte)(230)))));
-            this.bunifuImageButton2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
-            this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(14, 94);
-            this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(34, 33);
-            this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton2.TabIndex = 19;
-            this.bunifuImageButton2.TabStop = false;
-            this.bunifuImageButton2.Visible = false;
-            this.bunifuImageButton2.Zoom = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBox1.Location = new System.Drawing.Point(710, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(182, 33);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.Visible = false;
+            this.txbKM.Size = new System.Drawing.Size(182, 33);
+            this.txbKM.TabIndex = 18;
+            this.txbKM.Text = "0";
+            this.txbKM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbKM.TextChanged += new System.EventHandler(this.txbKM_TextChanged);
             // 
             // txbConPhaiThu
             // 
@@ -910,9 +927,11 @@
             this.txbConPhaiThu.Location = new System.Drawing.Point(710, 89);
             this.txbConPhaiThu.Name = "txbConPhaiThu";
             this.txbConPhaiThu.ReadOnly = true;
-            this.txbConPhaiThu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txbConPhaiThu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txbConPhaiThu.Size = new System.Drawing.Size(182, 33);
             this.txbConPhaiThu.TabIndex = 18;
+            this.txbConPhaiThu.Text = "0";
+            this.txbConPhaiThu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbTongThanhToan
             // 
@@ -920,41 +939,36 @@
             this.txbTongThanhToan.Location = new System.Drawing.Point(710, 11);
             this.txbTongThanhToan.Name = "txbTongThanhToan";
             this.txbTongThanhToan.ReadOnly = true;
-            this.txbTongThanhToan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txbTongThanhToan.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txbTongThanhToan.Size = new System.Drawing.Size(182, 33);
             this.txbTongThanhToan.TabIndex = 18;
+            this.txbTongThanhToan.Text = "0";
+            this.txbTongThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbThanhTien
             // 
             this.txbThanhTien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbThanhTien.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.txbThanhTien.Location = new System.Drawing.Point(200, 12);
+            this.txbThanhTien.Location = new System.Drawing.Point(233, 10);
             this.txbThanhTien.Name = "txbThanhTien";
             this.txbThanhTien.ReadOnly = true;
-            this.txbThanhTien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txbThanhTien.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txbThanhTien.Size = new System.Drawing.Size(198, 33);
             this.txbThanhTien.TabIndex = 18;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBox5.Location = new System.Drawing.Point(246, 95);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox5.Size = new System.Drawing.Size(153, 33);
-            this.textBox5.TabIndex = 18;
-            this.textBox5.Visible = false;
+            this.txbThanhTien.Text = "0";
+            this.txbThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbGTGT
             // 
             this.txbGTGT.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.txbGTGT.Location = new System.Drawing.Point(200, 49);
+            this.txbGTGT.Location = new System.Drawing.Point(233, 47);
             this.txbGTGT.Name = "txbGTGT";
             this.txbGTGT.ReadOnly = true;
-            this.txbGTGT.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txbGTGT.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txbGTGT.Size = new System.Drawing.Size(199, 33);
             this.txbGTGT.TabIndex = 18;
+            this.txbGTGT.Text = "0";
+            this.txbGTGT.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ckbxGTGT
             // 
@@ -964,7 +978,7 @@
             this.ckbxGTGT.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.ckbxGTGT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.ckbxGTGT.ForeColor = System.Drawing.Color.White;
-            this.ckbxGTGT.Location = new System.Drawing.Point(20, 57);
+            this.ckbxGTGT.Location = new System.Drawing.Point(55, 55);
             this.ckbxGTGT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ckbxGTGT.MaximumSize = new System.Drawing.Size(99, 99);
             this.ckbxGTGT.Name = "ckbxGTGT";
@@ -972,22 +986,11 @@
             this.ckbxGTGT.TabIndex = 8;
             this.ckbxGTGT.OnChange += new System.EventHandler(this.CkbxGTGT_OnChange);
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(408, 101);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 23);
-            this.label18.TabIndex = 7;
-            this.label18.Text = "VND";
-            this.label18.Visible = false;
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(409, 56);
+            this.label21.Location = new System.Drawing.Point(442, 54);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(47, 23);
             this.label21.TabIndex = 7;
@@ -997,7 +1000,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(409, 20);
+            this.label13.Location = new System.Drawing.Point(442, 18);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 23);
             this.label13.TabIndex = 7;
@@ -1013,7 +1016,6 @@
             this.label6.Size = new System.Drawing.Size(109, 23);
             this.label6.TabIndex = 6;
             this.label6.Text = "Khuyến mại:";
-            this.label6.Visible = false;
             // 
             // label15
             // 
@@ -1021,7 +1023,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(47, 54);
+            this.label15.Location = new System.Drawing.Point(82, 51);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(145, 25);
             this.label15.TabIndex = 17;
@@ -1049,7 +1051,6 @@
             this.label5.Size = new System.Drawing.Size(47, 23);
             this.label5.TabIndex = 3;
             this.label5.Text = "VND";
-            this.label5.Visible = false;
             // 
             // label14
             // 
@@ -1077,7 +1078,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(15, 20);
+            this.label16.Location = new System.Drawing.Point(128, 21);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 23);
             this.label16.TabIndex = 4;
@@ -1286,71 +1287,311 @@
             this.panel18.BackColor = System.Drawing.Color.White;
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel18.Controls.Add(this.panel37);
-            this.panel18.Controls.Add(this.panel29);
-            this.panel18.Controls.Add(this.panel38);
+            this.panel18.Controls.Add(this.panel9);
             this.panel18.Location = new System.Drawing.Point(4, 3);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(503, 689);
             this.panel18.TabIndex = 0;
             // 
-            // panel38
+            // panel37
             // 
-            this.panel38.BackColor = System.Drawing.Color.White;
-            this.panel38.Controls.Add(this.bunifuFlatButton9);
-            this.panel38.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel38.Location = new System.Drawing.Point(0, 627);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(501, 60);
-            this.panel38.TabIndex = 4;
+            this.panel37.Controls.Add(this.flpKM);
+            this.panel37.Controls.Add(this.panel29);
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel37.Location = new System.Drawing.Point(0, 0);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(501, 463);
+            this.panel37.TabIndex = 9;
             // 
-            // bunifuFlatButton9
+            // flpKM
             // 
-            this.bunifuFlatButton9.Active = false;
-            this.bunifuFlatButton9.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.bunifuFlatButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuFlatButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton9.BorderRadius = 0;
-            this.bunifuFlatButton9.ButtonText = "  KHUYẾN MÃI KHÁC";
-            this.bunifuFlatButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton9.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton9.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton9.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton9.Iconimage")));
-            this.bunifuFlatButton9.Iconimage_right = null;
-            this.bunifuFlatButton9.Iconimage_right_Selected = null;
-            this.bunifuFlatButton9.Iconimage_Selected = null;
-            this.bunifuFlatButton9.IconMarginLeft = 0;
-            this.bunifuFlatButton9.IconMarginRight = 0;
-            this.bunifuFlatButton9.IconRightVisible = true;
-            this.bunifuFlatButton9.IconRightZoom = 0D;
-            this.bunifuFlatButton9.IconVisible = true;
-            this.bunifuFlatButton9.IconZoom = 60D;
-            this.bunifuFlatButton9.IsTab = false;
-            this.bunifuFlatButton9.Location = new System.Drawing.Point(14, 6);
-            this.bunifuFlatButton9.Name = "bunifuFlatButton9";
-            this.bunifuFlatButton9.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.bunifuFlatButton9.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.bunifuFlatButton9.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton9.selected = false;
-            this.bunifuFlatButton9.Size = new System.Drawing.Size(202, 48);
-            this.bunifuFlatButton9.TabIndex = 4;
-            this.bunifuFlatButton9.Text = "  KHUYẾN MÃI KHÁC";
-            this.bunifuFlatButton9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton9.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton9.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpKM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpKM.Location = new System.Drawing.Point(0, 57);
+            this.flpKM.Name = "flpKM";
+            this.flpKM.Size = new System.Drawing.Size(501, 406);
+            this.flpKM.TabIndex = 8;
+            // 
+            // panel29
+            // 
+            this.panel29.BackColor = System.Drawing.SystemColors.Control;
+            this.panel29.Controls.Add(this.bunifuFlatButton4);
+            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel29.Location = new System.Drawing.Point(0, 0);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(501, 57);
+            this.panel29.TabIndex = 7;
+            // 
+            // bunifuFlatButton4
+            // 
+            this.bunifuFlatButton4.Active = false;
+            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton4.BorderRadius = 0;
+            this.bunifuFlatButton4.ButtonText = "  Chương trình khuyến mại";
+            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
+            this.bunifuFlatButton4.Iconimage_right = null;
+            this.bunifuFlatButton4.Iconimage_right_Selected = null;
+            this.bunifuFlatButton4.Iconimage_Selected = null;
+            this.bunifuFlatButton4.IconMarginLeft = 0;
+            this.bunifuFlatButton4.IconMarginRight = 0;
+            this.bunifuFlatButton4.IconRightVisible = true;
+            this.bunifuFlatButton4.IconRightZoom = 0D;
+            this.bunifuFlatButton4.IconVisible = true;
+            this.bunifuFlatButton4.IconZoom = 90D;
+            this.bunifuFlatButton4.IsTab = false;
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(2, 3);
+            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
+            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.LightGray;
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
+            this.bunifuFlatButton4.selected = false;
+            this.bunifuFlatButton4.Size = new System.Drawing.Size(342, 48);
+            this.bunifuFlatButton4.TabIndex = 0;
+            this.bunifuFlatButton4.Text = "  Chương trình khuyến mại";
+            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
+            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txbNoiDungVoucher);
+            this.panel9.Controls.Add(this.label22);
+            this.panel9.Controls.Add(this.btApDungVoucher);
+            this.panel9.Controls.Add(this.label18);
+            this.panel9.Controls.Add(this.txbMaVoucher);
+            this.panel9.Controls.Add(this.panel35);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(0, 463);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(501, 224);
+            this.panel9.TabIndex = 8;
+            // 
+            // txbNoiDungVoucher
+            // 
+            this.txbNoiDungVoucher.BackColor = System.Drawing.Color.White;
+            this.txbNoiDungVoucher.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.txbNoiDungVoucher.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txbNoiDungVoucher.Location = new System.Drawing.Point(14, 155);
+            this.txbNoiDungVoucher.Multiline = true;
+            this.txbNoiDungVoucher.Name = "txbNoiDungVoucher";
+            this.txbNoiDungVoucher.ReadOnly = true;
+            this.txbNoiDungVoucher.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txbNoiDungVoucher.Size = new System.Drawing.Size(466, 60);
+            this.txbNoiDungVoucher.TabIndex = 26;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(15, 130);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(159, 23);
+            this.label22.TabIndex = 25;
+            this.label22.Text = "Nội dung voucher:";
+            // 
+            // btApDungVoucher
+            // 
+            this.btApDungVoucher.Active = false;
+            this.btApDungVoucher.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btApDungVoucher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btApDungVoucher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btApDungVoucher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btApDungVoucher.BorderRadius = 0;
+            this.btApDungVoucher.ButtonText = "   Áp dụng";
+            this.btApDungVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btApDungVoucher.DisabledColor = System.Drawing.Color.Gray;
+            this.btApDungVoucher.Iconcolor = System.Drawing.Color.Transparent;
+            this.btApDungVoucher.Iconimage = ((System.Drawing.Image)(resources.GetObject("btApDungVoucher.Iconimage")));
+            this.btApDungVoucher.Iconimage_right = null;
+            this.btApDungVoucher.Iconimage_right_Selected = null;
+            this.btApDungVoucher.Iconimage_Selected = null;
+            this.btApDungVoucher.IconMarginLeft = 0;
+            this.btApDungVoucher.IconMarginRight = 0;
+            this.btApDungVoucher.IconRightVisible = true;
+            this.btApDungVoucher.IconRightZoom = 0D;
+            this.btApDungVoucher.IconVisible = true;
+            this.btApDungVoucher.IconZoom = 55D;
+            this.btApDungVoucher.IsTab = false;
+            this.btApDungVoucher.Location = new System.Drawing.Point(331, 83);
+            this.btApDungVoucher.Name = "btApDungVoucher";
+            this.btApDungVoucher.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btApDungVoucher.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btApDungVoucher.OnHoverTextColor = System.Drawing.Color.White;
+            this.btApDungVoucher.selected = false;
+            this.btApDungVoucher.Size = new System.Drawing.Size(149, 48);
+            this.btApDungVoucher.TabIndex = 24;
+            this.btApDungVoucher.Text = "   Áp dụng";
+            this.btApDungVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btApDungVoucher.Textcolor = System.Drawing.Color.White;
+            this.btApDungVoucher.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btApDungVoucher.Click += new System.EventHandler(this.btApDungVoucher_Click);
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(10, 65);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(158, 23);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Nhập mã Voucher:";
+            // 
+            // txbMaVoucher
+            // 
+            this.txbMaVoucher.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txbMaVoucher.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.txbMaVoucher.Location = new System.Drawing.Point(14, 93);
+            this.txbMaVoucher.Name = "txbMaVoucher";
+            this.txbMaVoucher.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txbMaVoucher.Size = new System.Drawing.Size(285, 33);
+            this.txbMaVoucher.TabIndex = 22;
+            this.txbMaVoucher.TextChanged += new System.EventHandler(this.txbMaVoucher_TextChanged);
+            // 
+            // panel35
+            // 
+            this.panel35.BackColor = System.Drawing.SystemColors.Control;
+            this.panel35.Controls.Add(this.bunifuFlatButton1);
+            this.panel35.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel35.Location = new System.Drawing.Point(0, 0);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(501, 57);
+            this.panel35.TabIndex = 8;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Active = false;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "  Voucher";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(15, 6);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightGray;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(239, 48);
+            this.bunifuFlatButton1.TabIndex = 0;
+            this.bunifuFlatButton1.Text = "  Voucher";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // pnMenu
             // 
             this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnMenu.BackColor = System.Drawing.Color.White;
             this.pnMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnMenu.Controls.Add(this.panel38);
+            this.pnMenu.Controls.Add(this.btTaoVoucherSLLon);
+            this.pnMenu.Controls.Add(this.btTaoVouher);
             this.pnMenu.Controls.Add(this.panel4);
             this.pnMenu.Controls.Add(this.bunifuFlatButton12);
             this.pnMenu.Controls.Add(this.bunifuFlatButton11);
             this.pnMenu.Location = new System.Drawing.Point(1102, 51);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(209, 198);
+            this.pnMenu.Size = new System.Drawing.Size(209, 183);
             this.pnMenu.TabIndex = 6;
             this.pnMenu.Visible = false;
+            // 
+            // btTaoVoucherSLLon
+            // 
+            this.btTaoVoucherSLLon.Active = false;
+            this.btTaoVoucherSLLon.Activecolor = System.Drawing.Color.White;
+            this.btTaoVoucherSLLon.BackColor = System.Drawing.Color.White;
+            this.btTaoVoucherSLLon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btTaoVoucherSLLon.BorderRadius = 0;
+            this.btTaoVoucherSLLon.ButtonText = "   Tạo Voucher SL Lớn";
+            this.btTaoVoucherSLLon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTaoVoucherSLLon.DisabledColor = System.Drawing.Color.Gray;
+            this.btTaoVoucherSLLon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btTaoVoucherSLLon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaoVoucherSLLon.Iconcolor = System.Drawing.Color.Transparent;
+            this.btTaoVoucherSLLon.Iconimage = ((System.Drawing.Image)(resources.GetObject("btTaoVoucherSLLon.Iconimage")));
+            this.btTaoVoucherSLLon.Iconimage_right = null;
+            this.btTaoVoucherSLLon.Iconimage_right_Selected = null;
+            this.btTaoVoucherSLLon.Iconimage_Selected = null;
+            this.btTaoVoucherSLLon.IconMarginLeft = 0;
+            this.btTaoVoucherSLLon.IconMarginRight = 0;
+            this.btTaoVoucherSLLon.IconRightVisible = true;
+            this.btTaoVoucherSLLon.IconRightZoom = 0D;
+            this.btTaoVoucherSLLon.IconVisible = true;
+            this.btTaoVoucherSLLon.IconZoom = 55D;
+            this.btTaoVoucherSLLon.IsTab = false;
+            this.btTaoVoucherSLLon.Location = new System.Drawing.Point(0, 131);
+            this.btTaoVoucherSLLon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btTaoVoucherSLLon.Name = "btTaoVoucherSLLon";
+            this.btTaoVoucherSLLon.Normalcolor = System.Drawing.Color.White;
+            this.btTaoVoucherSLLon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btTaoVoucherSLLon.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btTaoVoucherSLLon.selected = false;
+            this.btTaoVoucherSLLon.Size = new System.Drawing.Size(207, 42);
+            this.btTaoVoucherSLLon.TabIndex = 26;
+            this.btTaoVoucherSLLon.Text = "   Tạo Voucher SL Lớn";
+            this.btTaoVoucherSLLon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTaoVoucherSLLon.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btTaoVoucherSLLon.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaoVoucherSLLon.Click += new System.EventHandler(this.btTaoVoucherSLLon_Click);
+            // 
+            // btTaoVouher
+            // 
+            this.btTaoVouher.Active = false;
+            this.btTaoVouher.Activecolor = System.Drawing.Color.White;
+            this.btTaoVouher.BackColor = System.Drawing.Color.White;
+            this.btTaoVouher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btTaoVouher.BorderRadius = 0;
+            this.btTaoVouher.ButtonText = "   Tạo Voucher";
+            this.btTaoVouher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTaoVouher.DisabledColor = System.Drawing.Color.Gray;
+            this.btTaoVouher.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btTaoVouher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaoVouher.Iconcolor = System.Drawing.Color.Transparent;
+            this.btTaoVouher.Iconimage = ((System.Drawing.Image)(resources.GetObject("btTaoVouher.Iconimage")));
+            this.btTaoVouher.Iconimage_right = null;
+            this.btTaoVouher.Iconimage_right_Selected = null;
+            this.btTaoVouher.Iconimage_Selected = null;
+            this.btTaoVouher.IconMarginLeft = 0;
+            this.btTaoVouher.IconMarginRight = 0;
+            this.btTaoVouher.IconRightVisible = true;
+            this.btTaoVouher.IconRightZoom = 0D;
+            this.btTaoVouher.IconVisible = true;
+            this.btTaoVouher.IconZoom = 55D;
+            this.btTaoVouher.IsTab = false;
+            this.btTaoVouher.Location = new System.Drawing.Point(0, 89);
+            this.btTaoVouher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btTaoVouher.Name = "btTaoVouher";
+            this.btTaoVouher.Normalcolor = System.Drawing.Color.White;
+            this.btTaoVouher.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btTaoVouher.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btTaoVouher.selected = false;
+            this.btTaoVouher.Size = new System.Drawing.Size(207, 42);
+            this.btTaoVouher.TabIndex = 25;
+            this.btTaoVouher.Text = "   Tạo Voucher";
+            this.btTaoVouher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTaoVouher.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btTaoVouher.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaoVouher.Click += new System.EventHandler(this.btTaoVouher_Click);
             // 
             // panel4
             // 
@@ -1963,32 +2204,32 @@
             this.dtgvHoaDon.AllowUserToAddRows = false;
             this.dtgvHoaDon.AllowUserToDeleteRows = false;
             this.dtgvHoaDon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dtgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvHoaDon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvHoaDon.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtgvHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtgvHoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dtgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvHoaDon.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvHoaDon.DefaultCellStyle = dataGridViewCellStyle48;
             this.dtgvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvHoaDon.DoubleBuffered = true;
             this.dtgvHoaDon.EnableHeadersVisualStyles = false;
@@ -1997,17 +2238,17 @@
             this.dtgvHoaDon.Location = new System.Drawing.Point(0, 0);
             this.dtgvHoaDon.Name = "dtgvHoaDon";
             this.dtgvHoaDon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.dtgvHoaDon.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle50;
             this.dtgvHoaDon.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgvHoaDon.Size = new System.Drawing.Size(559, 618);
@@ -2398,58 +2639,14 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // panel29
+            // panel38
             // 
-            this.panel29.BackColor = System.Drawing.SystemColors.Control;
-            this.panel29.Controls.Add(this.bunifuFlatButton4);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel29.Location = new System.Drawing.Point(0, 0);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(501, 66);
-            this.panel29.TabIndex = 6;
-            // 
-            // bunifuFlatButton4
-            // 
-            this.bunifuFlatButton4.Active = false;
-            this.bunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "  Chương trình khuyến mại";
-            this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton4.Iconimage")));
-            this.bunifuFlatButton4.Iconimage_right = null;
-            this.bunifuFlatButton4.Iconimage_right_Selected = null;
-            this.bunifuFlatButton4.Iconimage_Selected = null;
-            this.bunifuFlatButton4.IconMarginLeft = 0;
-            this.bunifuFlatButton4.IconMarginRight = 0;
-            this.bunifuFlatButton4.IconRightVisible = true;
-            this.bunifuFlatButton4.IconRightZoom = 0D;
-            this.bunifuFlatButton4.IconVisible = true;
-            this.bunifuFlatButton4.IconZoom = 90D;
-            this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(33, 12);
-            this.bunifuFlatButton4.Name = "bunifuFlatButton4";
-            this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.LightGray;
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
-            this.bunifuFlatButton4.selected = false;
-            this.bunifuFlatButton4.Size = new System.Drawing.Size(342, 48);
-            this.bunifuFlatButton4.TabIndex = 0;
-            this.bunifuFlatButton4.Text = "  Chương trình khuyến mại";
-            this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton4.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(133)))), ((int)(((byte)(197)))));
-            this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel37
-            // 
-            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Location = new System.Drawing.Point(0, 66);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(501, 561);
-            this.panel37.TabIndex = 7;
+            this.panel38.BackColor = System.Drawing.Color.Gray;
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel38.Location = new System.Drawing.Point(0, 173);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(207, 5);
+            this.panel38.TabIndex = 27;
             // 
             // fQLBH1
             // 
@@ -2458,11 +2655,11 @@
             this.ClientSize = new System.Drawing.Size(1470, 749);
             this.Controls.Add(this.pnTinhTien);
             this.Controls.Add(this.pnNewOrder);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnChaoMung);
             this.Controls.Add(this.pnDatCho);
             this.Controls.Add(this.pnOrder);
             this.Controls.Add(this.pnDsHD);
-            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -2495,13 +2692,16 @@
             this.panel34.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
             this.panel32.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             this.panel31.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
-            this.panel38.ResumeLayout(false);
+            this.panel37.ResumeLayout(false);
+            this.panel29.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel35.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
             this.pnDatCho.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
@@ -2533,7 +2733,6 @@
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel29.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2630,21 +2829,15 @@
         private System.Windows.Forms.Label lbMaHD_Ban;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.TextBox txbKM;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.TextBox txbConPhaiThu;
         private System.Windows.Forms.TextBox txbTongThanhToan;
         private System.Windows.Forms.TextBox txbThanhTien;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txbGTGT;
         private Bunifu.Framework.UI.BunifuCheckbox ckbxGTGT;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel38;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton9;
         private System.Windows.Forms.ListView lsvHoaDon1;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
@@ -2655,7 +2848,7 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dtgvHoaDon;
         private Bunifu.Framework.UI.BunifuFlatButton btTinhTien;
         private Bunifu.Framework.UI.BunifuFlatButton btLamMoi;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbKM;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuFlatButton btDatChoWhite;
@@ -2673,8 +2866,23 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txbVoucher;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txbMaVoucher;
+        private System.Windows.Forms.Panel panel35;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.FlowLayoutPanel flpKM;
         private System.Windows.Forms.Panel panel29;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
+        private System.Windows.Forms.Label label22;
+        private Bunifu.Framework.UI.BunifuFlatButton btApDungVoucher;
+        private System.Windows.Forms.TextBox txbNoiDungVoucher;
+        private Bunifu.Framework.UI.BunifuFlatButton btTaoVouher;
+        private Bunifu.Framework.UI.BunifuFlatButton btTaoVoucherSLLon;
+        private System.Windows.Forms.Panel panel38;
     }
 }

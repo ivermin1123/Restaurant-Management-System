@@ -53,14 +53,6 @@ VALUES
 GO
 SET IDENTITY_INSERT dbo.ThongTinTaiKhoan OFF
 
-CREATE TABLE KhachHang
-(
-	id Varchar(100) PRIMARY KEY,
-	TenKH NVARCHAR(100) NOT NULL,
-	Diem INT
-)
-GO
-
 CREATE TABLE Ban
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
@@ -164,6 +156,62 @@ CREATE TABLE ThongTinHoaDon
 )
 GO
 
+Create TABLE LoaiKhuyenMai
+(
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	TenLoaiKM NVARCHAR(100) NOT NULL,
+)
+
+INSERT dbo.LoaiKhuyenMai(TenLoaiKM)
+VALUES
+(N'Giảm giá hóa đơn'),
+(N'Giảm giá món'),
+(N'Tặng món'),
+(N'Mua A món B tặng C')
+GO
+
+Create TABLE KhuyenMai
+(
+	id VARCHAR(100) NOT NULL,
+	TenKM NVARCHAR(100) NOT NULL,
+	GiamGia INT NOT NULL,
+	GiamTien Float NOT NULL,
+	ToiDa Float NULL,
+	DieuKien Float NULL,
+	idSanPham INT NULL,
+	idLoaiKM INT NOT NULL,
+	TrangThai NVARCHAR(100) NOT NULL
+
+	FOREIGN KEY (idSanPham) REFERENCES dbo.SanPham(id),
+	FOREIGN KEY (idLoaiKM) REFERENCES dbo.LoaiKhuyenMai(id)
+	ON DELETE CASCADE
+)
+
+INSERT dbo.KhuyenMai(id, TenKM, GiamGia,GiamTien,ToiDa,DieuKien,idSanPham,idLoaiKM,TrangThai)
+VALUES
+	('MUNGVNTHANGLON',N'Mừng VN chiến thằng -10% Tổng hóa đơn(tối đa 100k)',10,0,100000,NULL,NULL,1,N'Đang diễn ra'),
+	('NOELAMAP',N'Noel Ấm Áp - Giảm 100k cho hóa đơn trên 1tr',0,100000,100000,1000000,NULL,1,N'Đang diễn ra'),
+	('TETDENXUANVE',N'Mừng xuân 2020 Giảm giá không giới hạn 5% tổng hóa đơn',5,0,NULL,NULL,NULL,1,N'Đang diễn ra'),
+	('CACHEP',N'Giảm 10% Món cá chép om dưa',10,0,NULL,NULL,1,2,N'Không hoạt động')
+GO
+
+Create TABLE Voucher
+(
+	id VARCHAR(100) NOT NULL,
+	TenVoucher NVARCHAR(100) NOT NULL,
+	GiamGia INT NOT NULL,
+	GiamTien Float NOT NULL,
+	HanSuDung Date NOT NULL,
+	TrangThai NVARCHAR(100) NOT NULL  
+)
+
+INSERT dbo.Voucher(id, TenVoucher, GiamGia,GiamTien,HanSuDung,TrangThai)
+VALUES
+	('SVIP',N'Giảm 20 % Tổng hóa đơn',20,0,'2022-10-29',N'Đã sử dụng'),
+	('ADMINVIPPRO',N'Vì anh là ADMIN sao lại phải mất tiền',100,0,'2022-10-29',N'Chưa sử dụng'),
+	('SVIP202020',N'Giảm 20 % Tổng hóa đơn',20,0,'2022-10-29',N'Chưa sử dụng'),
+	('VIP200',N'Giảm 200.000 VND Tổng hóa đơn',0,200000,'2022-10-29',N'Chưa sử dụng')
+GO
 -- PROCEDURE
 create PROC USP_GetDsKho
 AS
@@ -235,6 +283,13 @@ CREATE PROC XoaSp
 as
 BEGIN
 	DELETE dbo.SanPham WHERE TenSanPham = @TenSanPham
+END
+GO
+
+create PROC USP_GetDSKM
+AS
+BEGIN
+	SELECT * FROM KhuyenMai Where TrangThai = N'Đang diễn ra'
 END
 GO
 
@@ -379,4 +434,13 @@ END
 GO
 
 CREATE FUNCTION fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
+GO
+
+Create proc USP_InsertVoucher
+@id varchar(100), @TenVoucher Nvarchar(100), @giamGia INT, @giamTien Float, @hanSuDung Date
+as
+BEGIN
+	INSERT INTO Voucher(id,TenVoucher,GiamGia,GiamTien,HanSuDung,TrangThai)
+	VALUES(@id,@TenVoucher,@giamGia,@giamTien,@hanSuDung,N'Chưa sử dụng')
+END 
 GO

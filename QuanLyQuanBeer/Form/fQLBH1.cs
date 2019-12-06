@@ -30,7 +30,224 @@ namespace QuanLyQuanBeer
         }
 
         #region Method
-
+        void LoadVoucher()
+        {
+            string maVC = txbMaVoucher.Text;
+            List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
+            if (VoucherDAO.Instance.CheckMaVC(maVC))
+            {
+                foreach (VoucherDTO item in list)
+                {
+                    if (item.TrangThai == "Đã sử dụng")
+                    {
+                        txbNoiDungVoucher.Text = "Voucher này đã được sử dụng !!";
+                        txbNoiDungVoucher.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        txbNoiDungVoucher.Text = item.TenVoucher;
+                        txbNoiDungVoucher.ForeColor = Color.Green;
+                    }
+                }
+            }
+            else
+            {
+                txbNoiDungVoucher.Text = "Không tồn tại Mã Voucher này !!";
+                txbNoiDungVoucher.ForeColor = Color.Blue;
+            }
+        }
+        void LoadTien()
+        {
+            txbConPhaiThu.Text = txbTongThanhToan.Text;
+            decimal conPhaiThu = decimal.Parse(txbConPhaiThu.Text);
+            decimal voucher = decimal.Parse(txbVoucher.Text);
+            decimal km = decimal.Parse(txbKM.Text);
+            txbConPhaiThu.Text = String.Format("{0:0,0}", (conPhaiThu + voucher + km));
+        }
+        void LoadKM()
+        {
+            flpKM.Controls.Clear();
+            List<KhuyenMaiDTO> tableList = KhuyenMaiDAO.Instance.LoadDsKM();
+            foreach (KhuyenMaiDTO item in tableList)
+            {
+                Panel pn1 = new Panel();
+                Panel pn2 = new Panel();
+                BunifuCheckbox chk = new BunifuCheckbox();
+                Panel pn3 = new Panel();
+                Label lb = new Label();
+                // panel1
+                pn1.BackColor = System.Drawing.Color.White;
+                pn1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                pn1.Controls.Add(pn3);
+                pn1.Controls.Add(pn2);
+                pn1.Location = new System.Drawing.Point(0, 295);
+                pn1.Size = new System.Drawing.Size(501, 54);
+                // panel2
+                pn2.Controls.Add(chk);
+                pn2.Dock = System.Windows.Forms.DockStyle.Left;
+                pn2.Location = new System.Drawing.Point(0, 0);
+                pn2.Size = new System.Drawing.Size(57, 52);
+                // bunifuCheckbox1
+                chk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+                chk.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+                chk.Checked = false;
+                chk.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+                chk.ForeColor = System.Drawing.Color.White;
+                chk.Location = new System.Drawing.Point(18, 17);
+                chk.Size = new System.Drawing.Size(20, 20);
+                chk.OnChange += (s, e) => 
+                {
+                    double km = 0;
+                    if (txbKM.Text == string.Empty)
+                        txbKM.Text = 0.ToString();
+                    double km1 = -double.Parse(txbKM.Text);
+                    double thanhTien = double.Parse(txbThanhTien.Text);
+                    if (chk.Checked == true)
+                    {
+                        switch (item.IdLoaiKM)
+                        {
+                            case 1:
+                                if (item.DieuKien != -1)
+                                {
+                                    if (thanhTien >= item.DieuKien)
+                                    {
+                                        km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
+                                        if (item.ToiDa != -1)
+                                        {
+                                            if (km > item.ToiDa)
+                                            {
+                                                km = item.ToiDa;
+                                                txbKM.Text = String.Format("{0:0,0}", -(km+km1));
+                                            }
+                                            else
+                                                txbKM.Text = String.Format("{0:0,0}", -(km + km1));
+                                        }
+                                        else
+                                            txbKM.Text = String.Format("{0:0,0}", -(km + km1));
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chương trình này chỉ áp dụng cho những hóa đơn có tổng thanh toán lớn hơn " + item.DieuKien + " !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        chk.Checked = false;
+                                    }
+                                }
+                                else
+                                {
+                                    km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
+                                    if (item.ToiDa != -1)
+                                    {
+                                        if (km > item.ToiDa)
+                                        {
+                                            km = item.ToiDa;
+                                            txbKM.Text = String.Format("{0:0,0}", -(km + km1));
+                                        }
+                                        else
+                                            txbKM.Text = String.Format("{0:0,0}", -(km + km1));
+                                    }
+                                    else
+                                        txbKM.Text = String.Format("{0:0,0}", -(km + km1));
+                                }
+                                break;
+                            case 2:
+                                MessageBox.Show("Chưa làm hehe !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (item.IdLoaiKM)
+                        {
+                            case 1:
+                                if (item.DieuKien != -1)
+                                {
+                                    if (thanhTien >= item.DieuKien)
+                                    {
+                                        km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
+                                        if (item.ToiDa != -1)
+                                        {
+                                            if (km > item.ToiDa)
+                                            {
+                                                km = item.ToiDa;
+                                                if (km1 == 0)
+                                                    txbKM.Text = 0.ToString();
+                                                else
+                                                    txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                            }
+                                            else
+                                            {
+                                                if (km1 == 0)
+                                                    txbKM.Text = 0.ToString();
+                                                else
+                                                    txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (km1 == 0)
+                                                txbKM.Text = 0.ToString();
+                                            else
+                                                txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chương trình này chỉ áp dụng cho những hóa đơn có tổng thanh toán lớn hơn " + item.DieuKien + " !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        chk.Checked = false;
+                                    }
+                                }
+                                else
+                                {
+                                    km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
+                                    if (item.ToiDa != -1)
+                                    {
+                                        if (km > item.ToiDa)
+                                        {
+                                            km = item.ToiDa;
+                                            if (km1 == 0)
+                                                txbKM.Text = 0.ToString();
+                                            else
+                                                txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                        }
+                                        else
+                                        {
+                                            if (km1 == 0)
+                                                txbKM.Text = 0.ToString();
+                                            else
+                                                txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                        }
+                                    }
+                                    else
+                                        if (km1 == 0)
+                                                txbKM.Text = 0.ToString();
+                                            else
+                                                txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                }
+                                break;
+                            case 2:
+                                MessageBox.Show("Chưa làm hehe !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                        }
+                    }
+                };
+                // 
+                // panel3
+                // 
+                pn3.Controls.Add(lb);
+                pn3.Dock = System.Windows.Forms.DockStyle.Fill;
+                pn3.Location = new System.Drawing.Point(57, 0);
+                pn3.Size = new System.Drawing.Size(442, 52);
+                // 
+                // label1
+                // 
+                lb.Dock = System.Windows.Forms.DockStyle.Fill;
+                lb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                lb.Location = new System.Drawing.Point(0, 0);
+                lb.Size = new System.Drawing.Size(442, 52);
+                lb.Text = item.TenKM;
+                lb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                flpKM.Controls.Add(pn1);
+            }
+        }
         void LoadTable()
         {
             flpBan.Controls.Clear();
@@ -117,10 +334,12 @@ namespace QuanLyQuanBeer
             txbGTGT.Text = String.Format("{0:0,0}", gTGT);
             double TongThanhToan = thanhTien1 + gTGT;
             txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-            txbConPhaiThu.Text = txbTongThanhToan.Text;
+            if (txbVoucher.Text == string.Empty)
+                txbVoucher.Text = 0.ToString();
+            double voucher = double.Parse(txbVoucher.Text);
+            LoadTien();
         }
-
-        void TaoButton(List<SanPhamDTO> tableList)
+            void TaoButton(List<SanPhamDTO> tableList)
         {
             foreach (SanPhamDTO item in tableList)
             {
@@ -256,7 +475,7 @@ namespace QuanLyQuanBeer
                 txbGTGT.Text = string.Empty;
                 double TongThanhToan = thanhTien1 + 0;
                 txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-                txbConPhaiThu.Text = txbTongThanhToan.Text;
+                LoadTien();
             }
             else
             {
@@ -264,7 +483,7 @@ namespace QuanLyQuanBeer
                 txbGTGT.Text = String.Format("{0:0,0}", gTGT);
                 double TongThanhToan = thanhTien1 + gTGT;
                 txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-                txbConPhaiThu.Text = txbTongThanhToan.Text;
+                LoadTien();
             }
         }
         private void BtSearch_Click_1(object sender, EventArgs e)
@@ -448,6 +667,10 @@ namespace QuanLyQuanBeer
                 if (HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID) != -1)
                 {
                     XemHoaDon1(ban.ID);
+                    LoadKM();
+                    LoadVoucher();
+                    txbKM.Text = 0.ToString();
+                    txbVoucher.Text = 0.ToString();
                     pnTinhTien.Visible = true;
                     pnNewOrder.Visible = false;
                     pnOrder.Visible = false;
@@ -549,11 +772,26 @@ namespace QuanLyQuanBeer
 
         private void BtQuayLai_Click_1(object sender, EventArgs e)
         {
-            pnTinhTien.Visible = false;
-            pnNewOrder.Visible = true;
-            pnOrder.Visible = false;
-            pnChaoMung.Visible = false;
-            pnDsHD.Visible = false;
+            if (txbVoucher.Text != 0.ToString())
+            {
+                if (MessageBox.Show("Nếu quay lại Voucher đang áp dụng sẽ bị mất !!\nBạn có muốn quay lại không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    pnTinhTien.Visible = false;
+                    pnNewOrder.Visible = true;
+                    pnOrder.Visible = false;
+                    pnChaoMung.Visible = false;
+                    pnDsHD.Visible = false;
+                }
+            }
+            else
+            {
+                pnTinhTien.Visible = false;
+                pnNewOrder.Visible = true;
+                pnOrder.Visible = false;
+                pnChaoMung.Visible = false;
+                pnDsHD.Visible = false;
+            }
+            
         }
 
         private void BtLamMoi_Click(object sender, EventArgs e)
@@ -600,6 +838,83 @@ namespace QuanLyQuanBeer
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             BtOrderPlus_Click(sender, e);
+        }
+
+        private void btApDungVoucher_Click(object sender, EventArgs e)
+        {
+            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+            string maVC = txbMaVoucher.Text;
+            List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
+            double thanhTien = double.Parse(txbThanhTien.Text);
+            double giamGia = 0;
+            if (VoucherDAO.Instance.CheckMaVC(maVC))
+            {
+                foreach (VoucherDTO item in list)
+                {
+                    if (item.TrangThai == "Đã sử dụng")
+                        MessageBox.Show("Voucher này đã được sử dụng !!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    else
+                    {
+                        if (MessageBox.Show("Bạn có muốn áp dụng Voucher \nGiảm giá " + item.GiamGia + "% Hóa đơn và " + item.GiamTien + " VND", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                        {
+                            if (VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC))
+                            {
+                                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                                HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon);
+                                MessageBox.Show("Áp dụng thành công", "Áp dụng Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
+                                txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
+                            }  
+                        }
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Không tồn tại Mã Voucher này !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void txbMaVoucher_TextChanged(object sender, EventArgs e)
+        {
+            LoadVoucher();
+        }
+
+        private void txbVoucher_TextChanged(object sender, EventArgs e)
+        {
+            LoadTien();
+        }
+
+        private void btTaoVouher_Click(object sender, EventArgs e)
+        {
+            pnMenu.Visible = false;
+            if (TaiKhoanHienTai.LoaiTaiKhoan != "Quản lý")
+            {
+                MessageBox.Show("Để tạo Voucher bạn phải là quản lý chứ không phải 1 thằng nhân viên quèn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                fTaoVoucher f = new fTaoVoucher();
+                f.ShowDialog();
+            }
+        }
+
+        private void btTaoVoucherSLLon_Click(object sender, EventArgs e)
+        {
+            pnMenu.Visible = false;
+            if (TaiKhoanHienTai.LoaiTaiKhoan != "Quản lý")
+            {
+                MessageBox.Show("Để tạo Voucher bạn phải là quản lý chứ không phải 1 thằng nhân viên quèn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                fTaoVoucherSLLon f = new fTaoVoucherSLLon();
+                f.ShowDialog();
+            }
+        }
+
+        private void txbKM_TextChanged(object sender, EventArgs e)
+        {
+            LoadTien();
         }
     }
 }

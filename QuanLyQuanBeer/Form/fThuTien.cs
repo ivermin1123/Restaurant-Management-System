@@ -314,7 +314,7 @@ namespace QuanLyQuanBeer
                 TienThua = 0;
             if (idBill != -1)
             {
-                double tongtien = Convert.ToDouble(txbTienThu.Text);
+                double tongtien = Convert.ToDouble(_ThanhToan);
                 if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho Bàn {0}" +
                     "\nTổng tiền = {1:0,0} VND", _idBan, tongtien), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
@@ -349,8 +349,9 @@ namespace QuanLyQuanBeer
             try
             {
                 string TienKhachDua = txbTienKhachDua.Text;
+                string TienTraLai = txbTienTraLai.Text;
                 string TienThua1;
-                if (ckbxKLayTienTHua.Checked != true)
+                if (ckbxKLayTienTHua.Checked == true)
                 {
                     TienThua1 = txbTienThua.Text;
                 }
@@ -358,7 +359,7 @@ namespace QuanLyQuanBeer
                     TienThua1 = 0.ToString();
                 DateTime? GioRa = DateTime.Now;
                 rptHoaDon rptHoaDon = new rptHoaDon(_idBan);
-                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _ThanhToan, TienKhachDua, TienThua1, GioRa);
+                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _ThanhToan, TienKhachDua, TienTraLai, GioRa);
                 int idBill = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(_idBan);
 
                 if (idBill != -1)
