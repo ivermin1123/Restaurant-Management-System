@@ -36,7 +36,7 @@ namespace QuanLyQuanBeer
                 else
                 {
                     long _cMND = long.Parse(txbCMND.Text);
-                    long _sDT = long.Parse(txbSDT.Text);
+                    int _sDT = int.Parse(txbSDT.Text);
                     int _tuoi = int.Parse(txbTuoi.Text);
                     if (_tuoi < 18 || _tuoi > 35)
                         MessageBox.Show("Độ tuổi phải lớn hơn 18 và nhỏ hơn 35", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

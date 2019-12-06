@@ -75,6 +75,18 @@ namespace QuanLyQuanBeer.DAO
             return string.Empty;
         }
 
+        public string GetDanhMucSPByID(int idLoai)
+        {
+            string query = "SELECT * FROM dbo.LoaiSanPham WHERE id = N'" + idLoai + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                LoaiSanPhamDTO sp = new LoaiSanPhamDTO(item);
+                return sp.DanhMuc;
+            }
+            return string.Empty;
+        }
+
         public int GetIDByLoaiSP(string tenLSP)
         {
             string query = "SELECT * FROM dbo.LoaiSanPham WHERE TenLoaiSanPham = N'" + tenLSP + "'";

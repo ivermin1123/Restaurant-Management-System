@@ -43,20 +43,6 @@
             this.btSuaSP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btThemSP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txbLoaiSP = new System.Windows.Forms.TextBox();
-            this.txbDanhMuc = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txbDonVi = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txbTenSP1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbMaSP1 = new System.Windows.Forms.TextBox();
-            this.labelVND = new System.Windows.Forms.Label();
-            this.txbGia = new System.Windows.Forms.TextBox();
-            this.labelGia = new System.Windows.Forms.Label();
-            this.labelLoaiSP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
@@ -64,7 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +60,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(935, 376);
+            this.panel4.Size = new System.Drawing.Size(935, 512);
             this.panel4.TabIndex = 3;
             // 
             // panel6
@@ -84,7 +69,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 48);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(935, 328);
+            this.panel6.Size = new System.Drawing.Size(935, 464);
             this.panel6.TabIndex = 4;
             // 
             // dtgvSanPham
@@ -140,7 +125,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvSanPham.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvSanPham.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.dtgvSanPham.Size = new System.Drawing.Size(935, 328);
+            this.dtgvSanPham.Size = new System.Drawing.Size(935, 464);
             this.dtgvSanPham.TabIndex = 2;
             // 
             // panel5
@@ -307,176 +292,10 @@
             // 
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 186);
+            this.panel3.Location = new System.Drawing.Point(0, 50);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(935, 376);
+            this.panel3.Size = new System.Drawing.Size(935, 512);
             this.panel3.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(66, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 25);
-            this.label10.TabIndex = 45;
-            this.label10.Text = "Mã sản phẩm:";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txbLoaiSP);
-            this.panel2.Controls.Add(this.txbDanhMuc);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txbDonVi);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txbTenSP1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txbMaSP1);
-            this.panel2.Controls.Add(this.labelVND);
-            this.panel2.Controls.Add(this.txbGia);
-            this.panel2.Controls.Add(this.labelGia);
-            this.panel2.Controls.Add(this.labelLoaiSP);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(935, 136);
-            this.panel2.TabIndex = 9;
-            // 
-            // txbLoaiSP
-            // 
-            this.txbLoaiSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbLoaiSP.BackColor = System.Drawing.Color.White;
-            this.txbLoaiSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLoaiSP.Location = new System.Drawing.Point(603, 8);
-            this.txbLoaiSP.Name = "txbLoaiSP";
-            this.txbLoaiSP.ReadOnly = true;
-            this.txbLoaiSP.Size = new System.Drawing.Size(221, 29);
-            this.txbLoaiSP.TabIndex = 63;
-            // 
-            // txbDanhMuc
-            // 
-            this.txbDanhMuc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbDanhMuc.BackColor = System.Drawing.Color.White;
-            this.txbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDanhMuc.Location = new System.Drawing.Point(205, 92);
-            this.txbDanhMuc.Name = "txbDanhMuc";
-            this.txbDanhMuc.ReadOnly = true;
-            this.txbDanhMuc.Size = new System.Drawing.Size(210, 29);
-            this.txbDanhMuc.TabIndex = 62;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(96, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 25);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Danh mục:";
-            // 
-            // txbDonVi
-            // 
-            this.txbDonVi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbDonVi.BackColor = System.Drawing.Color.White;
-            this.txbDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbDonVi.Location = new System.Drawing.Point(603, 49);
-            this.txbDonVi.Name = "txbDonVi";
-            this.txbDonVi.ReadOnly = true;
-            this.txbDonVi.Size = new System.Drawing.Size(221, 29);
-            this.txbDonVi.TabIndex = 60;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(523, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 25);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "Đơn vị:";
-            // 
-            // txbTenSP1
-            // 
-            this.txbTenSP1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbTenSP1.BackColor = System.Drawing.Color.White;
-            this.txbTenSP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenSP1.Location = new System.Drawing.Point(205, 49);
-            this.txbTenSP1.Name = "txbTenSP1";
-            this.txbTenSP1.ReadOnly = true;
-            this.txbTenSP1.Size = new System.Drawing.Size(210, 29);
-            this.txbTenSP1.TabIndex = 58;
-            this.txbTenSP1.TextChanged += new System.EventHandler(this.txbTenSP1_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 25);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "Tên sản phẩm:";
-            // 
-            // txbMaSP1
-            // 
-            this.txbMaSP1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbMaSP1.BackColor = System.Drawing.Color.White;
-            this.txbMaSP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaSP1.Location = new System.Drawing.Point(205, 10);
-            this.txbMaSP1.Name = "txbMaSP1";
-            this.txbMaSP1.ReadOnly = true;
-            this.txbMaSP1.Size = new System.Drawing.Size(210, 29);
-            this.txbMaSP1.TabIndex = 56;
-            // 
-            // labelVND
-            // 
-            this.labelVND.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelVND.AutoSize = true;
-            this.labelVND.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVND.Location = new System.Drawing.Point(830, 97);
-            this.labelVND.Name = "labelVND";
-            this.labelVND.Size = new System.Drawing.Size(43, 20);
-            this.labelVND.TabIndex = 55;
-            this.labelVND.Text = "VND";
-            // 
-            // txbGia
-            // 
-            this.txbGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbGia.BackColor = System.Drawing.Color.White;
-            this.txbGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbGia.Location = new System.Drawing.Point(603, 90);
-            this.txbGia.Name = "txbGia";
-            this.txbGia.ReadOnly = true;
-            this.txbGia.Size = new System.Drawing.Size(221, 29);
-            this.txbGia.TabIndex = 54;
-            // 
-            // labelGia
-            // 
-            this.labelGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelGia.AutoSize = true;
-            this.labelGia.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGia.Location = new System.Drawing.Point(552, 92);
-            this.labelGia.Name = "labelGia";
-            this.labelGia.Size = new System.Drawing.Size(45, 25);
-            this.labelGia.TabIndex = 53;
-            this.labelGia.Text = "Giá:";
-            // 
-            // labelLoaiSP
-            // 
-            this.labelLoaiSP.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelLoaiSP.AutoSize = true;
-            this.labelLoaiSP.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoaiSP.Location = new System.Drawing.Point(457, 13);
-            this.labelLoaiSP.Name = "labelLoaiSP";
-            this.labelLoaiSP.Size = new System.Drawing.Size(140, 25);
-            this.labelLoaiSP.TabIndex = 51;
-            this.labelLoaiSP.Text = "Loại sản phẩm:";
             // 
             // label1
             // 
@@ -507,7 +326,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "USCSanPham";
             this.Size = new System.Drawing.Size(935, 562);
@@ -516,8 +334,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -528,17 +344,6 @@
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txbDonVi;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbTenSP1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbMaSP1;
-        private System.Windows.Forms.Label labelVND;
-        private System.Windows.Forms.TextBox txbGia;
-        private System.Windows.Forms.Label labelGia;
-        private System.Windows.Forms.Label labelLoaiSP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
@@ -548,8 +353,5 @@
         private Bunifu.Framework.UI.BunifuFlatButton btThemSP;
         private System.Windows.Forms.Panel panel6;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dtgvSanPham;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbDanhMuc;
-        private System.Windows.Forms.TextBox txbLoaiSP;
     }
 }

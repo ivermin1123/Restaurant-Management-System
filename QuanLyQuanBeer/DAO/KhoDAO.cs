@@ -24,10 +24,6 @@ namespace QuanLyQuanBeer.DAO
             string query = "USP_GetDsKho";
             return  DataProvider.Instance.ExecuteQuery(query);
         }
-        public DataTable GetListKho(string idLoaiKho)
-        {
-            string query = "USP_GetDsKho @idLoaiKho";
-            return DataProvider.Instance.ExecuteQuery(query);
-        }
+
     }
 }

@@ -11,8 +11,6 @@ namespace QuanLyQuanBeer
         {
             InitializeComponent();
             LoadAccount();
-            binding();
-            dtgvTaiKhoan.DataSource = accountList;
         }
 
         void LoadAccount()
@@ -24,14 +22,6 @@ namespace QuanLyQuanBeer
             dtgvTaiKhoan.Columns[2].HeaderText = "Loại tài khoản";
         }
 
-
-        void binding()
-        {
-            txbTenTaiKhoan.DataBindings.Add("Text", dtgvTaiKhoan.DataSource, "TenDangNhap", true, DataSourceUpdateMode.Never);
-            txbMatKhau.DataBindings.Add("Text", dtgvTaiKhoan.DataSource, "MatKhau", true, DataSourceUpdateMode.Never);
-            txbLoaiTK.DataBindings.Add("Text", dtgvTaiKhoan.DataSource, "LoaiTaiKhoan", true, DataSourceUpdateMode.Never);
-        }
-
         private void BtThemTK_Click(object sender, EventArgs e)
         {
             fThemTK f = new fThemTK();
@@ -41,7 +31,9 @@ namespace QuanLyQuanBeer
 
         private void BtXoaTK_Click(object sender, EventArgs e)
         {
-            string tenDN = txbTenTaiKhoan.Text;
+            int selectedrowindex = dtgvTaiKhoan.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvTaiKhoan.Rows[selectedrowindex];
+            string tenDN = Convert.ToString(selectedRow.Cells["TenDangNhap"].Value);
             if (tenDN == "admin")
             {
                 MessageBox.Show("Đừng tự delete bản thân như vậy chứ ??", "Xóa tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -64,9 +56,11 @@ namespace QuanLyQuanBeer
 
         private void BtSuaTK_Click(object sender, EventArgs e)
         {
-            string userName = txbTenTaiKhoan.Text;
-            string passWord = txbMatKhau.Text;
-            string loai = txbLoaiTK.Text;
+            int selectedrowindex = dtgvTaiKhoan.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvTaiKhoan.Rows[selectedrowindex];
+            string userName = Convert.ToString(selectedRow.Cells["TenDangNhap"].Value);
+            string passWord = Convert.ToString(selectedRow.Cells["MatKhau"].Value); ;
+            string loai = Convert.ToString(selectedRow.Cells["LoaiTaiKhoan"].Value); ;
             fSuaTK f = new fSuaTK(userName, passWord, loai);
             f.ShowDialog();
             LoadAccount();
@@ -74,7 +68,9 @@ namespace QuanLyQuanBeer
 
         private void BtResetTK_Click(object sender, EventArgs e)
         {
-            string userName = txbTenTaiKhoan.Text;
+            int selectedrowindex = dtgvTaiKhoan.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvTaiKhoan.Rows[selectedrowindex];
+            string userName = Convert.ToString(selectedRow.Cells["TenDangNhap"].Value);
             if (TaiKhoanDAO.Instance.datLaiMK(userName))
             {
                 MessageBox.Show("Đặt lại thành công!", "Đặt lại tài khoản", MessageBoxButtons.OK, MessageBoxIcon.Information);

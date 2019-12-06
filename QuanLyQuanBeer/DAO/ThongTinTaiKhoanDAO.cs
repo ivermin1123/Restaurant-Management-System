@@ -1,5 +1,6 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
+using System.Collections.Generic;
 using System.Data;
 
 namespace QuanLyQuanBeer.DAO
@@ -38,6 +39,19 @@ namespace QuanLyQuanBeer.DAO
                 return acc.HoTen;
             }
             return string.Empty;
+        }
+
+        public List<ThongTinTaiKhoanDTO> GetListNhanVien1()
+        {
+            List<ThongTinTaiKhoanDTO> tableList = new List<ThongTinTaiKhoanDTO>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.ThongTinTaiKhoan");
+            foreach (DataRow item in data.Rows)
+            {
+                ThongTinTaiKhoanDTO sp = new ThongTinTaiKhoanDTO(item);
+                tableList.Add(sp);
+            }
+            return tableList;
         }
 
         public DataTable GetListNhanVien()

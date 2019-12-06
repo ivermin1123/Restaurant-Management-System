@@ -53,6 +53,14 @@ VALUES
 GO
 SET IDENTITY_INSERT dbo.ThongTinTaiKhoan OFF
 
+CREATE TABLE KhachHang
+(
+	id Varchar(100) PRIMARY KEY,
+	TenKH NVARCHAR(100) NOT NULL,
+	Diem INT
+)
+GO
+
 CREATE TABLE Ban
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
@@ -60,6 +68,7 @@ CREATE TABLE Ban
 	TrangThai NVARCHAR(100) NOT NULL
 )
 GO
+
 
 INSERT dbo.Ban(TenBan, TrangThai )
 VALUES  ( N'Bàn 01',N'Trống'),
@@ -111,6 +120,20 @@ VALUES
 ( N'Tiger nâu',4,N'Chai',18000,'Tigernau.jpg')
 GO
 
+CREATE TABLE Kho
+(
+	idHang INT IDENTITY(1,1) PRIMARY KEY ,
+	TenHang NVARCHAR(100) not null,
+	DVT NVARCHAR(100) not null,
+	SL INT not null,
+	Gia FLOAT not null
+)
+GO
+
+INSERT INTO Kho(TenHang,DVT,SL,Gia)
+VALUES
+(N'Cá',N'Kg',5,500000),
+(N'Thịt heo',N'Kg',5,500000)
 
 CREATE TABLE HoaDon
 (
@@ -142,6 +165,13 @@ CREATE TABLE ThongTinHoaDon
 GO
 
 -- PROCEDURE
+create PROC USP_GetDsKho
+AS
+BEGIN
+	SELECT  idHang,TenHang,SL,DVT,Gia FROM Kho 
+END
+GO
+
 create PROC themThongTinTk
 @tenDangNhap varchar(100), @hoTen nvarchar(100), @diaChi nvarchar(100), @cMND INT, @sDT INT, @tuoi INT, @gioiTinh nvarchar(100)
 AS

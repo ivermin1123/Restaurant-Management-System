@@ -17,7 +17,7 @@ namespace QuanLyQuanBeer.USC
         void LoadAccount()
         {
             dtgvNhanVien.DataSource = listNhanVien;
-            listNhanVien.DataSource = ThongTinTaiKhoanDAO.Instance.GetListNhanVien();
+            listNhanVien.DataSource = ThongTinTaiKhoanDAO.Instance.GetListNhanVien1();
             dtgvNhanVien.Columns[0].HeaderText = "ID";
             dtgvNhanVien.Columns[0].FillWeight = 30;
             dtgvNhanVien.Columns[1].HeaderText = "Họ Tên";

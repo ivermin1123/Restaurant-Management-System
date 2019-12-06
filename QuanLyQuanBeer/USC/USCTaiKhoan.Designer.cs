@@ -34,10 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txbMatKhau = new System.Windows.Forms.TextBox();
-            this.lbMatKhau = new System.Windows.Forms.Label();
-            this.lbLoaiTK = new System.Windows.Forms.Label();
-            this.lbTenTK = new System.Windows.Forms.Label();
             this.btResetTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btXoaTK = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSuaTK = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -47,62 +43,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btLamMoi = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txbLoaiTK = new System.Windows.Forms.TextBox();
-            this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txbMatKhau
-            // 
-            this.txbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbMatKhau.BackColor = System.Drawing.Color.White;
-            this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(465, 8);
-            this.txbMatKhau.Name = "txbMatKhau";
-            this.txbMatKhau.ReadOnly = true;
-            this.txbMatKhau.Size = new System.Drawing.Size(182, 33);
-            this.txbMatKhau.TabIndex = 43;
-            // 
-            // lbMatKhau
-            // 
-            this.lbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbMatKhau.AutoSize = true;
-            this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatKhau.Location = new System.Drawing.Point(360, 11);
-            this.lbMatKhau.Name = "lbMatKhau";
-            this.lbMatKhau.Size = new System.Drawing.Size(99, 25);
-            this.lbMatKhau.TabIndex = 42;
-            this.lbMatKhau.Text = "Mật khẩu:";
-            // 
-            // lbLoaiTK
-            // 
-            this.lbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbLoaiTK.AutoSize = true;
-            this.lbLoaiTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiTK.Location = new System.Drawing.Point(651, 11);
-            this.lbLoaiTK.Name = "lbLoaiTK";
-            this.lbLoaiTK.Size = new System.Drawing.Size(137, 25);
-            this.lbLoaiTK.TabIndex = 41;
-            this.lbLoaiTK.Text = "Loại tài khoản:";
-            // 
-            // lbTenTK
-            // 
-            this.lbTenTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTenTK.AutoSize = true;
-            this.lbTenTK.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenTK.Location = new System.Drawing.Point(23, 11);
-            this.lbTenTK.Name = "lbTenTK";
-            this.lbTenTK.Size = new System.Drawing.Size(131, 25);
-            this.lbTenTK.TabIndex = 39;
-            this.lbTenTK.Text = "Tên tài khoản:";
             // 
             // btResetTK
             // 
@@ -258,7 +206,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 42);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1005, 510);
+            this.panel4.Size = new System.Drawing.Size(1005, 562);
             this.panel4.TabIndex = 3;
             // 
             // dtgvTaiKhoan
@@ -316,7 +264,7 @@
             this.dtgvTaiKhoan.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvTaiKhoan.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 510);
+            this.dtgvTaiKhoan.Size = new System.Drawing.Size(1005, 562);
             this.dtgvTaiKhoan.TabIndex = 1;
             // 
             // panel5
@@ -374,47 +322,10 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 102);
+            this.panel3.Location = new System.Drawing.Point(0, 50);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1005, 552);
+            this.panel3.Size = new System.Drawing.Size(1005, 604);
             this.panel3.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txbLoaiTK);
-            this.panel2.Controls.Add(this.txbMatKhau);
-            this.panel2.Controls.Add(this.lbMatKhau);
-            this.panel2.Controls.Add(this.lbLoaiTK);
-            this.panel2.Controls.Add(this.txbTenTaiKhoan);
-            this.panel2.Controls.Add(this.lbTenTK);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1005, 52);
-            this.panel2.TabIndex = 5;
-            // 
-            // txbLoaiTK
-            // 
-            this.txbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbLoaiTK.BackColor = System.Drawing.Color.White;
-            this.txbLoaiTK.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLoaiTK.Location = new System.Drawing.Point(794, 8);
-            this.txbLoaiTK.Name = "txbLoaiTK";
-            this.txbLoaiTK.ReadOnly = true;
-            this.txbLoaiTK.Size = new System.Drawing.Size(182, 33);
-            this.txbLoaiTK.TabIndex = 44;
-            // 
-            // txbTenTaiKhoan
-            // 
-            this.txbTenTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbTenTaiKhoan.BackColor = System.Drawing.Color.White;
-            this.txbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenTaiKhoan.Location = new System.Drawing.Point(160, 8);
-            this.txbTenTaiKhoan.Name = "txbTenTaiKhoan";
-            this.txbTenTaiKhoan.ReadOnly = true;
-            this.txbTenTaiKhoan.Size = new System.Drawing.Size(182, 33);
-            this.txbTenTaiKhoan.TabIndex = 40;
             // 
             // label1
             // 
@@ -445,7 +356,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "USCTaiKhoan";
             this.Size = new System.Drawing.Size(1005, 654);
@@ -453,8 +363,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -462,11 +370,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txbMatKhau;
-        private System.Windows.Forms.Label lbMatKhau;
-        private System.Windows.Forms.Label lbLoaiTK;
-        private System.Windows.Forms.Label lbTenTK;
         private Bunifu.Framework.UI.BunifuFlatButton btResetTK;
         private Bunifu.Framework.UI.BunifuFlatButton btXoaTK;
         private Bunifu.Framework.UI.BunifuFlatButton btSuaTK;
@@ -475,11 +378,8 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dtgvTaiKhoan;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txbTenTaiKhoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btLamMoi;
-        private System.Windows.Forms.TextBox txbLoaiTK;
     }
 }

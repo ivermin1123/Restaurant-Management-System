@@ -41,8 +41,6 @@
             this.btXoaSP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSuaSP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btThemSP = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.cbxLoaiKho = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dtgvKho = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -75,8 +73,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.cbxLoaiKho);
             this.panel5.Controls.Add(this.btLamMoi);
             this.panel5.Controls.Add(this.btXoaSP);
             this.panel5.Controls.Add(this.btSuaSP);
@@ -110,7 +106,7 @@
             this.btLamMoi.IconVisible = true;
             this.btLamMoi.IconZoom = 50D;
             this.btLamMoi.IsTab = false;
-            this.btLamMoi.Location = new System.Drawing.Point(559, 4);
+            this.btLamMoi.Location = new System.Drawing.Point(531, 4);
             this.btLamMoi.Name = "btLamMoi";
             this.btLamMoi.Normalcolor = System.Drawing.Color.Transparent;
             this.btLamMoi.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -146,7 +142,7 @@
             this.btXoaSP.IconVisible = true;
             this.btXoaSP.IconZoom = 50D;
             this.btXoaSP.IsTab = false;
-            this.btXoaSP.Location = new System.Drawing.Point(700, 4);
+            this.btXoaSP.Location = new System.Drawing.Point(672, 4);
             this.btXoaSP.Name = "btXoaSP";
             this.btXoaSP.Normalcolor = System.Drawing.Color.Transparent;
             this.btXoaSP.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -182,7 +178,7 @@
             this.btSuaSP.IconVisible = true;
             this.btSuaSP.IconZoom = 50D;
             this.btSuaSP.IsTab = false;
-            this.btSuaSP.Location = new System.Drawing.Point(450, 4);
+            this.btSuaSP.Location = new System.Drawing.Point(422, 4);
             this.btSuaSP.Name = "btSuaSP";
             this.btSuaSP.Normalcolor = System.Drawing.Color.Transparent;
             this.btSuaSP.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -218,7 +214,7 @@
             this.btThemSP.IconVisible = true;
             this.btThemSP.IconZoom = 50D;
             this.btThemSP.IsTab = false;
-            this.btThemSP.Location = new System.Drawing.Point(341, 4);
+            this.btThemSP.Location = new System.Drawing.Point(313, 4);
             this.btThemSP.Name = "btThemSP";
             this.btThemSP.Normalcolor = System.Drawing.Color.Transparent;
             this.btThemSP.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -230,25 +226,7 @@
             this.btThemSP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btThemSP.Textcolor = System.Drawing.Color.Black;
             this.btThemSP.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // cbxLoaiKho
-            // 
-            this.cbxLoaiKho.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxLoaiKho.FormattingEnabled = true;
-            this.cbxLoaiKho.Location = new System.Drawing.Point(72, 6);
-            this.cbxLoaiKho.Name = "cbxLoaiKho";
-            this.cbxLoaiKho.Size = new System.Drawing.Size(170, 29);
-            this.cbxLoaiKho.TabIndex = 64;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 21);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Kho";
+            this.btThemSP.Click += new System.EventHandler(this.btThemSP_Click);
             // 
             // dtgvKho
             // 
@@ -318,7 +296,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKho)).EndInit();
             this.ResumeLayout(false);
 
@@ -329,8 +306,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbxLoaiKho;
         private Bunifu.Framework.UI.BunifuFlatButton btLamMoi;
         private Bunifu.Framework.UI.BunifuFlatButton btXoaSP;
         private Bunifu.Framework.UI.BunifuFlatButton btSuaSP;

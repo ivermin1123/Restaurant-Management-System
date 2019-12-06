@@ -12,7 +12,6 @@ namespace QuanLyQuanBeer
         {
             InitializeComponent();
             LoadAccount();
-            binding();
         }
 
         void LoadAccount()
@@ -34,27 +33,6 @@ namespace QuanLyQuanBeer
             dtgvSanPham.Columns[6].HeaderText = "Hình ảnh";
         }
 
-        void binding()
-        {
-            txbMaSP1.DataBindings.Add("Text", dtgvSanPham.DataSource, "id", true, DataSourceUpdateMode.Never);
-            txbTenSP1.DataBindings.Add("Text", dtgvSanPham.DataSource, "TenSanPham", true, DataSourceUpdateMode.Never);
-            txbGia.DataBindings.Add("Text", dtgvSanPham.DataSource, "Gia", true, DataSourceUpdateMode.Never);
-            txbDonVi.DataBindings.Add("Text", dtgvSanPham.DataSource, "DonVi", true, DataSourceUpdateMode.Never);
-        }
-
-        private void bdCbx()
-        {
-            string tenSP = txbTenSP1.Text;
-            int idLoai = SanPhamDAO.Instance.GetIdLoai(tenSP);
-            string tenLSP = LoaiSanPhamDAO.Instance.GetLoaiSPByID(idLoai);
-            txbLoaiSP.Text = tenLSP;
-        }
-
-        private void bdRDBT()
-        {
-            string tenLSP = txbLoaiSP.Text;
-            txbDanhMuc.Text = LoaiSanPhamDAO.Instance.layDanhMuc(tenLSP);
-        }
 
         private void BtThemSP_Click(object sender, EventArgs e)
         {
@@ -65,13 +43,15 @@ namespace QuanLyQuanBeer
 
         private void BtSuaSP_Click(object sender, EventArgs e)
         {
-            string tenSP = txbTenSP1.Text;
-            double gia = Convert.ToDouble(txbGia.Text);
+            int selectedrowindex = dtgvSanPham.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvSanPham.Rows[selectedrowindex];
+            string tenSP = Convert.ToString(selectedRow.Cells["TenSanPham"].Value);
+            double gia = Convert.ToDouble(selectedRow.Cells["Gia"].Value);
             int idLoai = SanPhamDAO.Instance.GetIdLoai(tenSP);
-            int maSP = int.Parse(txbMaSP1.Text);
-            string donVi = txbDonVi.Text;
-            string danhMuc = txbDanhMuc.Text;
-            string loaiSP = txbLoaiSP.Text;
+            int maSP = Convert.ToInt32(selectedRow.Cells["id"].Value);
+            string donVi = Convert.ToString(selectedRow.Cells["DonVi"].Value);
+            string danhMuc = LoaiSanPhamDAO.Instance.GetDanhMucSPByID(idLoai);
+            string loaiSP = LoaiSanPhamDAO.Instance.GetLoaiSPByID(idLoai);
             fSuaSP f = new fSuaSP(tenSP, gia, idLoai, maSP, donVi, danhMuc, loaiSP);
             f.ShowDialog();
             LoadAccount();
@@ -84,7 +64,9 @@ namespace QuanLyQuanBeer
 
         private void BtXoaSP_Click(object sender, EventArgs e)
         {
-            string tenSanPham = txbTenSP1.Text;
+            int selectedrowindex = dtgvSanPham.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dtgvSanPham.Rows[selectedrowindex];
+            string tenSanPham = Convert.ToString(selectedRow.Cells["TenSanPham"].Value);
             string hinhAnh = SanPhamDAO.Instance.GetTenHinhAnh(tenSanPham);
             if (SanPhamDAO.Instance.XoaSP(tenSanPham))
             {
@@ -94,12 +76,6 @@ namespace QuanLyQuanBeer
             }
             else
                 MessageBox.Show("Xóa không thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void txbTenSP1_TextChanged(object sender, EventArgs e)
-        {
-            bdCbx();
-            bdRDBT();
         }
     }
 }
