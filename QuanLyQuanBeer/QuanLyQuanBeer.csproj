@@ -171,6 +171,12 @@
     <Compile Include="Form\fSuaKM.Designer.cs">
       <DependentUpon>fSuaKM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\fSuaVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fSuaVoucher.Designer.cs">
+      <DependentUpon>fSuaVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyQuanBeerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -297,6 +303,12 @@
     <Compile Include="USC\USCTaiKhoan.Designer.cs">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="USC\USCVoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCVoucher.Designer.cs">
+      <DependentUpon>USCVoucher.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fSuaKM.resx">
       <DependentUpon>fSuaKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fSuaVoucher.resx">
+      <DependentUpon>fSuaVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -392,12 +407,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="USC\USCNhanVien.resx">
       <DependentUpon>USCNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCTaiKhoan.resx">
       <DependentUpon>USCTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCVoucher.resx">
+      <DependentUpon>USCVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -448,6 +467,7 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\xoa.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

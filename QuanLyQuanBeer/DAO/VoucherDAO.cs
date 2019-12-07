@@ -19,18 +19,41 @@ namespace QuanLyQuanBeer.DAO
         }
         private VoucherDAO() { }
 
-        public List<SanPhamDTO> LoadChonMon()
+        public VoucherDTO GETDTOVoucher(string maVC)
         {
-            List<SanPhamDTO> tableList = new List<SanPhamDTO>();
-
-            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetListFood");
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From Voucher WHERE id = '" + maVC + "'");
+            if (data.Rows.Count > 0)
+            {
+                VoucherDTO km = new VoucherDTO(data.Rows[0]);
+                return km;
+            }
+            return null;
+        }
+        public List<VoucherDTO> GetlistVC()
+        {
+            List<VoucherDTO> listVC = new List<VoucherDTO>();
+            string query = "Select * From Voucher ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                SanPhamDTO sp = new SanPhamDTO(item);
-                tableList.Add(sp);
+                VoucherDTO vc = new VoucherDTO(item);
+                listVC.Add(vc);
             }
+            return listVC;
+        }
 
-            return tableList;
+        public bool SuaVoucher(string id,string tenVC, int giamGia, double giamTien, DateTime hSD)
+        {
+            string query = "UPDATE dbo.Voucher SET TenVoucher = N'"+tenVC+"' , GiamGia = "+giamGia+", GiamTien = "+giamTien+", HanSuDung = '"+hSD+"' where id = '"+id+"'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool XoaVoucher(string id)
+        {
+            string query = "DELETE dbo.Voucher where id = '" + id + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
 
         public List<VoucherDTO> LayThongTinVoucher(string maVC)

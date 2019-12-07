@@ -25,6 +25,8 @@ namespace QuanLyQuanBeer.DTO
             else
                 this.TrangThai = row["TrangThai"].ToString();
             this.IdBan = (int)row["iDBan"];
+            if (row["voucher"] == DBNull.Value)
+                row["voucher"] = string.Empty;
             this.Voucher = row["voucher"].ToString();
         }
 

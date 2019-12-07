@@ -44,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.pn10 = new System.Windows.Forms.Panel();
+            this.btVoucher = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pn9 = new System.Windows.Forms.Panel();
             this.btKM = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pn8 = new System.Windows.Forms.Panel();
@@ -63,8 +65,9 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
-            this.uscKhuyenMai1 = new QuanLyQuanBeer.USC.USCKhuyenMai();
-            this.uscLoaiKM1 = new QuanLyQuanBeer.USC.USCLoaiKM();
+            this.uscKhuyenMai2 = new QuanLyQuanBeer.USC.USCKhuyenMai();
+            this.uscVoucher1 = new QuanLyQuanBeer.USC.USCVoucher();
+            this.uscLoaiKM = new QuanLyQuanBeer.USC.USCLoaiKM();
             this.uscKho1 = new QuanLyQuanBeer.USC.USCKho();
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
             this.uscSanPham = new QuanLyQuanBeer.USCSanPham();
@@ -265,6 +268,8 @@
             // 
             this.pnMenu.AutoScroll = true;
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.pnMenu.Controls.Add(this.pn10);
+            this.pnMenu.Controls.Add(this.btVoucher);
             this.pnMenu.Controls.Add(this.pn9);
             this.pnMenu.Controls.Add(this.btKM);
             this.pnMenu.Controls.Add(this.pn8);
@@ -288,6 +293,52 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(270, 607);
             this.pnMenu.TabIndex = 1;
+            // 
+            // pn10
+            // 
+            this.pn10.BackColor = System.Drawing.Color.Black;
+            this.pn10.Location = new System.Drawing.Point(0, 433);
+            this.pn10.Name = "pn10";
+            this.pn10.Size = new System.Drawing.Size(7, 46);
+            this.pn10.TabIndex = 19;
+            this.pn10.Visible = false;
+            // 
+            // btVoucher
+            // 
+            this.btVoucher.Active = false;
+            this.btVoucher.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btVoucher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btVoucher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btVoucher.BorderRadius = 0;
+            this.btVoucher.ButtonText = "     Voucher";
+            this.btVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btVoucher.DisabledColor = System.Drawing.Color.Gray;
+            this.btVoucher.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btVoucher.Iconcolor = System.Drawing.Color.Transparent;
+            this.btVoucher.Iconimage = ((System.Drawing.Image)(resources.GetObject("btVoucher.Iconimage")));
+            this.btVoucher.Iconimage_right = null;
+            this.btVoucher.Iconimage_right_Selected = null;
+            this.btVoucher.Iconimage_Selected = null;
+            this.btVoucher.IconMarginLeft = 25;
+            this.btVoucher.IconMarginRight = 0;
+            this.btVoucher.IconRightVisible = true;
+            this.btVoucher.IconRightZoom = 0D;
+            this.btVoucher.IconVisible = true;
+            this.btVoucher.IconZoom = 80D;
+            this.btVoucher.IsTab = false;
+            this.btVoucher.Location = new System.Drawing.Point(0, 432);
+            this.btVoucher.Name = "btVoucher";
+            this.btVoucher.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btVoucher.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btVoucher.OnHoverTextColor = System.Drawing.Color.White;
+            this.btVoucher.selected = false;
+            this.btVoucher.Size = new System.Drawing.Size(270, 48);
+            this.btVoucher.TabIndex = 19;
+            this.btVoucher.Text = "     Voucher";
+            this.btVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btVoucher.Textcolor = System.Drawing.Color.White;
+            this.btVoucher.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVoucher.Click += new System.EventHandler(this.btVoucher_Click);
             // 
             // pn9
             // 
@@ -705,8 +756,9 @@
             // 
             // pnNoiDung
             // 
-            this.pnNoiDung.Controls.Add(this.uscKhuyenMai1);
-            this.pnNoiDung.Controls.Add(this.uscLoaiKM1);
+            this.pnNoiDung.Controls.Add(this.uscKhuyenMai2);
+            this.pnNoiDung.Controls.Add(this.uscVoucher1);
+            this.pnNoiDung.Controls.Add(this.uscLoaiKM);
             this.pnNoiDung.Controls.Add(this.uscKho1);
             this.pnNoiDung.Controls.Add(this.USCTaiKhoan);
             this.pnNoiDung.Controls.Add(this.uscSanPham);
@@ -719,23 +771,32 @@
             this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
             // 
-            // uscKhuyenMai1
+            // uscKhuyenMai2
             // 
-            this.uscKhuyenMai1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscKhuyenMai1.Location = new System.Drawing.Point(0, 0);
-            this.uscKhuyenMai1.Name = "uscKhuyenMai1";
-            this.uscKhuyenMai1.Size = new System.Drawing.Size(958, 607);
-            this.uscKhuyenMai1.TabIndex = 8;
-            this.uscKhuyenMai1.Visible = false;
+            this.uscKhuyenMai2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscKhuyenMai2.Location = new System.Drawing.Point(0, 0);
+            this.uscKhuyenMai2.Name = "uscKhuyenMai2";
+            this.uscKhuyenMai2.Size = new System.Drawing.Size(958, 607);
+            this.uscKhuyenMai2.TabIndex = 9;
+            this.uscKhuyenMai2.Visible = false;
             // 
-            // uscLoaiKM1
+            // uscVoucher1
             // 
-            this.uscLoaiKM1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscLoaiKM1.Location = new System.Drawing.Point(0, 0);
-            this.uscLoaiKM1.Name = "uscLoaiKM1";
-            this.uscLoaiKM1.Size = new System.Drawing.Size(958, 607);
-            this.uscLoaiKM1.TabIndex = 7;
-            this.uscLoaiKM1.Visible = false;
+            this.uscVoucher1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscVoucher1.Location = new System.Drawing.Point(0, 0);
+            this.uscVoucher1.Name = "uscVoucher1";
+            this.uscVoucher1.Size = new System.Drawing.Size(958, 607);
+            this.uscVoucher1.TabIndex = 8;
+            this.uscVoucher1.Visible = false;
+            // 
+            // uscLoaiKM
+            // 
+            this.uscLoaiKM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscLoaiKM.Location = new System.Drawing.Point(0, 0);
+            this.uscLoaiKM.Name = "uscLoaiKM";
+            this.uscLoaiKM.Size = new System.Drawing.Size(958, 607);
+            this.uscLoaiKM.TabIndex = 7;
+            this.uscLoaiKM.Visible = false;
             // 
             // uscKho1
             // 
@@ -866,7 +927,10 @@
         private Bunifu.Framework.UI.BunifuFlatButton btLoaiKM;
         private System.Windows.Forms.Panel pn4;
         private Bunifu.Framework.UI.BunifuFlatButton btLoaiSP;
-        private USC.USCLoaiKM uscLoaiKM1;
-        private USC.USCKhuyenMai uscKhuyenMai1;
+        private USC.USCLoaiKM uscLoaiKM;
+        private System.Windows.Forms.Panel pn10;
+        private Bunifu.Framework.UI.BunifuFlatButton btVoucher;
+        private USC.USCVoucher uscVoucher1;
+        private USC.USCKhuyenMai uscKhuyenMai2;
     }
 }

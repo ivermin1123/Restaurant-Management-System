@@ -16,7 +16,10 @@ namespace QuanLyQuanBeer
         private string _VAT;
         private string _TenBan;
         private string _ThanhToan;
-        public fThuTien(string tongTien, int idBan, string NhanVien, string ThanhTien, int idHoaDon, DateTime? GioVao, string VAT, string TenBan, string ThanhToan)
+        private string _Voucher;
+        private string _KhuyenMai;
+
+        public fThuTien(string tongTien, int idBan, string NhanVien, string ThanhTien, int idHoaDon, DateTime? GioVao, string VAT, string TenBan, string ThanhToan,string Voucher,string KhuyenMai)
         {
             InitializeComponent();
             _tongTien = tongTien;
@@ -28,6 +31,8 @@ namespace QuanLyQuanBeer
             _VAT = VAT;
             _TenBan = TenBan;
             _ThanhToan = ThanhToan;
+            _Voucher = Voucher;
+            _KhuyenMai = KhuyenMai;
             GoiYTien();
         }
 
@@ -341,7 +346,7 @@ namespace QuanLyQuanBeer
 
         private void BtHuy_Click_1(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void BtInVaDong_Click(object sender, EventArgs e)
@@ -359,7 +364,7 @@ namespace QuanLyQuanBeer
                     TienThua1 = 0.ToString();
                 DateTime? GioRa = DateTime.Now;
                 rptHoaDon rptHoaDon = new rptHoaDon(_idBan);
-                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _ThanhToan, TienKhachDua, TienTraLai, GioRa);
+                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _tongTien, TienKhachDua, TienTraLai, GioRa,_Voucher,_KhuyenMai);
                 int idBill = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(_idBan);
 
                 if (idBill != -1)

@@ -78,10 +78,9 @@ namespace QuanLyQuanBeer.USC
                         pn4.Size = new System.Drawing.Size(32, 29);
                         pn4.TabIndex = 108;
                         // btXoa
-                        bt.Image = Image.FromFile(@"..//..//..//icon/xoa.png" );
+                        bt.Image = Properties.Resources.xoa;
                         bt.ImageActive = null;
                         bt.Location = new System.Drawing.Point(-3, -1);
-                        bt.Name = "btXoa";
                         bt.Size = new System.Drawing.Size(35, 29);
                         bt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
                         bt.TabIndex = 112;

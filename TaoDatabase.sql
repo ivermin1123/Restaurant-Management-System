@@ -455,7 +455,7 @@ BEGIN
 END 
 GO
 
-alter proc dbo.USP_InsertDiscount
+create proc dbo.USP_InsertDiscount
 @tenKM NVARCHAR(200) , @giamGia INT , @giamTien FLOAT, @toiDa FLOAT, @dieuKien FLOAT,@idLoaiKM INT
 as  
 begin
@@ -466,9 +466,22 @@ begin
 end
 GO
 
+create proc dbo.USP_UpdateDiscount
+@tenKM NVARCHAR(200) , @giamGia INT , @giamTien FLOAT, @toiDa FLOAT, @dieuKien FLOAT,@idLoaiKM INT,@idKM INT
+as  
+begin
+	UPDATE dbo.KhuyenMai 
+	SET TenKM = @tenKM,GiamGia = @giamGia,GiamTien = @giamTien,ToiDa = @toiDa ,DieuKien = @dieuKien ,idLoaiKM = @idLoaiKM
+	WHERE id = @idKM
+end
+GO
+
+
 
 
 
 --SELECT * FROM  dbo.HoaDon WHERE idBan = 1 AND TrangThai = N'Chưa thanh toán'
 --SELECT * FROM KhuyenMai
-SELECT * FROM LoaiKhuyenMai
+-- SELECT * FROM LoaiKhuyenMai
+--Select * From KhuyenMai WHERE TenKM = 
+-- SELECT * FROM Voucher

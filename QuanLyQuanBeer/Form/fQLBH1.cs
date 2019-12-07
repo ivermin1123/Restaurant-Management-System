@@ -38,6 +38,7 @@ namespace QuanLyQuanBeer
             {
                 foreach (VoucherDTO item in list)
                 {
+                    
                     if (item.TrangThai == "Đã sử dụng")
                     {
                         txbNoiDungVoucher.Text = "Voucher này đã được sử dụng !!";
@@ -45,8 +46,16 @@ namespace QuanLyQuanBeer
                     }
                     else
                     {
-                        txbNoiDungVoucher.Text = item.TenVoucher;
-                        txbNoiDungVoucher.ForeColor = Color.Green;
+                        if (item.HanSuDung < DateTime.Now)
+                        {
+                            txbNoiDungVoucher.Text = "Voucher này đã Hết hạn !! HSD: "+item.HanSuDung;
+                            txbNoiDungVoucher.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            txbNoiDungVoucher.Text = item.TenVoucher+ " - HSD:" + item.HanSuDung;
+                            txbNoiDungVoucher.ForeColor = Color.Green;
+                        }
                     }
                 }
             }
@@ -744,7 +753,9 @@ namespace QuanLyQuanBeer
             string TenDN = TaiKhoanHienTai.TenDangNhap;
             string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
             string ThanhToan = txbTongThanhToan.Text;
-            fThuTien f = new fThuTien(tongTien, ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT, ban.TenBan, ThanhToan);
+            string Voucher = txbVoucher.Text;
+            string KhuyenMai = txbKM.Text;
+            fThuTien f = new fThuTien(tongTien, ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT, ban.TenBan, ThanhToan,Voucher,KhuyenMai);
             f.ShowDialog();
             XemHoaDon1(ban.ID);
             XemHoaDon(ban.ID);
@@ -819,6 +830,7 @@ namespace QuanLyQuanBeer
             List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
             double thanhTien = double.Parse(txbThanhTien.Text);
             double giamGia = 0;
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
             if (VoucherDAO.Instance.CheckMaVC(maVC))
             {
                 foreach (VoucherDTO item in list)
@@ -827,18 +839,31 @@ namespace QuanLyQuanBeer
                         MessageBox.Show("Voucher này đã được sử dụng !!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     else
                     {
-                        if (MessageBox.Show("Bạn có muốn áp dụng Voucher \nGiảm giá " + item.GiamGia + "% Hóa đơn và " + item.GiamTien + " VND", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                        if (item.HanSuDung < DateTime.Now)
                         {
-                            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-                            if (HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon))
+                            MessageBox.Show("Voucher này đã hết hạn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            if (HoaDonDAO.Instance.GetVoucherNeuCo(ban.ID) != string.Empty)
                             {
-                                VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC);
-                                MessageBox.Show("Áp dụng thành công", "Áp dụng Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
-                                txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
+                                MessageBox.Show("Bàn này đã áp dụng một Voucher khác !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
-                                txbVoucher.Text = 0.ToString();
+                            {
+                                if (MessageBox.Show("Bạn có muốn áp dụng Voucher \nGiảm giá " + item.GiamGia + "% Hóa đơn và " + item.GiamTien + " VND", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                                {
+                                    if (HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon))
+                                    {
+                                        VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC);
+                                        MessageBox.Show("Áp dụng thành công", "Áp dụng Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
+                                        txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
+                                    }
+                                    else
+                                        txbVoucher.Text = 0.ToString();
+                                }
+                            }
                         }
                     }
                 }
