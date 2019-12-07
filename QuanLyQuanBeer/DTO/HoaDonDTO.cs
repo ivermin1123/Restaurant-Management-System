@@ -5,13 +5,14 @@ namespace QuanLyQuanBeer.DTO
 {
     public class HoaDonDTO
     {
-        public HoaDonDTO(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, string trangThai)
+        public HoaDonDTO(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, string trangThai,string voucher)
         {
             this.ID = iD;
             this.ThoiGianVao = thoiGianVao;
             this.ThoiGianRa = thoiGianRa;
             this.IdBan = idBan;
             this.TrangThai = trangThai;
+            this.Voucher = voucher;
         }
 
         public HoaDonDTO(DataRow row)
@@ -24,6 +25,7 @@ namespace QuanLyQuanBeer.DTO
             else
                 this.TrangThai = row["TrangThai"].ToString();
             this.IdBan = (int)row["iDBan"];
+            this.Voucher = row["voucher"].ToString();
         }
 
         private int iD;
@@ -31,11 +33,13 @@ namespace QuanLyQuanBeer.DTO
         private DateTime? thoiGianRa;
         private int idBan;
         private string trangThai;
+        private string voucher;
 
         public int ID { get => iD; set => iD = value; }
         public DateTime? ThoiGianVao { get => thoiGianVao; set => thoiGianVao = value; }
         public DateTime? ThoiGianRa { get => thoiGianRa; set => thoiGianRa = value; }
         public int IdBan { get => idBan; set => idBan = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
+        public string Voucher { get => voucher; set => voucher = value; }
     }
 }

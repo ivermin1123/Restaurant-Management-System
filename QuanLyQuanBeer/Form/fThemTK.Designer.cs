@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btThoat = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
             this.grbLoaiTK = new System.Windows.Forms.GroupBox();
             this.rdbtNhanVien = new System.Windows.Forms.RadioButton();
             this.rdbtQuanLy = new System.Windows.Forms.RadioButton();
@@ -39,8 +41,7 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
-            this.btThem = new System.Windows.Forms.Button();
-            this.btThoat = new System.Windows.Forms.Button();
+            this.rdbtThuKho = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.grbLoaiTK.SuspendLayout();
@@ -53,7 +54,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(371, 48);
+            this.panel1.Size = new System.Drawing.Size(435, 48);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -62,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 9);
+            this.label1.Location = new System.Drawing.Point(111, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 32);
             this.label1.TabIndex = 1;
@@ -83,17 +84,50 @@
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(371, 183);
+            this.panel2.Size = new System.Drawing.Size(435, 215);
             this.panel2.TabIndex = 1;
+            // 
+            // btThoat
+            // 
+            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btThoat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThoat.ForeColor = System.Drawing.Color.White;
+            this.btThoat.Location = new System.Drawing.Point(230, 167);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(104, 36);
+            this.btThoat.TabIndex = 71;
+            this.btThoat.Text = "&Thoát";
+            this.btThoat.UseVisualStyleBackColor = false;
+            this.btThoat.Click += new System.EventHandler(this.BtThoat_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btThem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThem.ForeColor = System.Drawing.Color.White;
+            this.btThem.Location = new System.Drawing.Point(104, 167);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(104, 36);
+            this.btThem.TabIndex = 50;
+            this.btThem.Text = "&Thêm";
+            this.btThem.UseVisualStyleBackColor = false;
+            this.btThem.Click += new System.EventHandler(this.BtThem_Click);
             // 
             // grbLoaiTK
             // 
             this.grbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grbLoaiTK.Controls.Add(this.rdbtThuKho);
             this.grbLoaiTK.Controls.Add(this.rdbtNhanVien);
             this.grbLoaiTK.Controls.Add(this.rdbtQuanLy);
-            this.grbLoaiTK.Location = new System.Drawing.Point(135, 89);
+            this.grbLoaiTK.Location = new System.Drawing.Point(167, 89);
             this.grbLoaiTK.Name = "grbLoaiTK";
-            this.grbLoaiTK.Size = new System.Drawing.Size(209, 42);
+            this.grbLoaiTK.Size = new System.Drawing.Size(209, 72);
             this.grbLoaiTK.TabIndex = 49;
             this.grbLoaiTK.TabStop = false;
             // 
@@ -126,7 +160,7 @@
             this.lbLoaiTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbLoaiTK.AutoSize = true;
             this.lbLoaiTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiTK.Location = new System.Drawing.Point(19, 101);
+            this.lbLoaiTK.Location = new System.Drawing.Point(51, 101);
             this.lbLoaiTK.Name = "lbLoaiTK";
             this.lbLoaiTK.Size = new System.Drawing.Size(110, 21);
             this.lbLoaiTK.TabIndex = 48;
@@ -136,7 +170,7 @@
             // 
             this.txbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbMatKhau.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMatKhau.Location = new System.Drawing.Point(135, 53);
+            this.txbMatKhau.Location = new System.Drawing.Point(167, 53);
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(209, 33);
             this.txbMatKhau.TabIndex = 47;
@@ -146,7 +180,7 @@
             this.lbMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbMatKhau.AutoSize = true;
             this.lbMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatKhau.Location = new System.Drawing.Point(51, 59);
+            this.lbMatKhau.Location = new System.Drawing.Point(83, 59);
             this.lbMatKhau.Name = "lbMatKhau";
             this.lbMatKhau.Size = new System.Drawing.Size(78, 21);
             this.lbMatKhau.TabIndex = 46;
@@ -156,7 +190,7 @@
             // 
             this.txbTenTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenTaiKhoan.Location = new System.Drawing.Point(135, 14);
+            this.txbTenTaiKhoan.Location = new System.Drawing.Point(167, 14);
             this.txbTenTaiKhoan.Name = "txbTenTaiKhoan";
             this.txbTenTaiKhoan.Size = new System.Drawing.Size(209, 33);
             this.txbTenTaiKhoan.TabIndex = 45;
@@ -166,49 +200,29 @@
             this.lbTenTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTenTK.AutoSize = true;
             this.lbTenTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenTK.Location = new System.Drawing.Point(25, 20);
+            this.lbTenTK.Location = new System.Drawing.Point(57, 20);
             this.lbTenTK.Name = "lbTenTK";
             this.lbTenTK.Size = new System.Drawing.Size(104, 21);
             this.lbTenTK.TabIndex = 44;
             this.lbTenTK.Text = "Tên tài khoản:";
             // 
-            // btThem
+            // rdbtThuKho
             // 
-            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btThem.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.btThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.ForeColor = System.Drawing.Color.White;
-            this.btThem.Location = new System.Drawing.Point(72, 137);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(104, 36);
-            this.btThem.TabIndex = 50;
-            this.btThem.Text = "&Thêm";
-            this.btThem.UseVisualStyleBackColor = false;
-            this.btThem.Click += new System.EventHandler(this.BtThem_Click);
-            // 
-            // btThoat
-            // 
-            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btThoat.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.btThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.ForeColor = System.Drawing.Color.White;
-            this.btThoat.Location = new System.Drawing.Point(198, 137);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(104, 36);
-            this.btThoat.TabIndex = 71;
-            this.btThoat.Text = "&Thoát";
-            this.btThoat.UseVisualStyleBackColor = false;
-            this.btThoat.Click += new System.EventHandler(this.BtThoat_Click);
+            this.rdbtThuKho.AutoSize = true;
+            this.rdbtThuKho.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtThuKho.Location = new System.Drawing.Point(49, 41);
+            this.rdbtThuKho.Name = "rdbtThuKho";
+            this.rdbtThuKho.Size = new System.Drawing.Size(84, 25);
+            this.rdbtThuKho.TabIndex = 2;
+            this.rdbtThuKho.TabStop = true;
+            this.rdbtThuKho.Text = "Thủ kho";
+            this.rdbtThuKho.UseVisualStyleBackColor = true;
             // 
             // fThemTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 231);
+            this.ClientSize = new System.Drawing.Size(435, 263);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,5 +255,6 @@
         private System.Windows.Forms.Label lbLoaiTK;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Button btThem;
+        private System.Windows.Forms.RadioButton rdbtThuKho;
     }
 }

@@ -20,6 +20,8 @@ namespace QuanLyQuanBeer
             {
                 loai = "Nhân viên";
             }
+            else if (rdbtThuKho.Checked)
+                loai = "Thủ kho";
             else
                 loai = "Quản lý";
             if (userName == string.Empty || passWord == string.Empty)

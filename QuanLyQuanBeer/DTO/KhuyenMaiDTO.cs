@@ -9,7 +9,7 @@ namespace QuanLyQuanBeer.DTO
 {
     public class KhuyenMaiDTO
     {
-        public KhuyenMaiDTO(string id, string tenKM, int giamGia, double giamTien, string trangThai, double toiDa, double dieuKien, int idSanPham, int idLoaiKM)
+        public KhuyenMaiDTO(int id, string tenKM, int giamGia, double giamTien, string trangThai, double toiDa, double dieuKien, int idSanPham, int idLoaiKM)
         {
             this.Id = id;
             this.TenKM = tenKM;
@@ -23,27 +23,27 @@ namespace QuanLyQuanBeer.DTO
         }
         public KhuyenMaiDTO(DataRow row)
         {
-            this.Id = row["id"].ToString();
+            this.Id = (int)row["id"];
             this.TenKM = row["tenKM"].ToString();
             this.GiamGia = (int)row["giamGia"];
             this.GiamTien = (double)row["giamTien"];
             this.TrangThai = row["trangThai"].ToString();
             if (row["toiDa"] == DBNull.Value)
-                row["toiDa"] = -1;
+                row["toiDa"] = 0;
             this.ToiDa = (double)row["toiDa"];
             if (row["dieuKien"] == DBNull.Value)
-                row["dieuKien"] = -1;
+                row["dieuKien"] = 0;
             this.DieuKien = (double)row["dieuKien"];
             if (row["idSanPham"] == DBNull.Value)
-                row["idSanPham"] = -1;
+                row["idSanPham"] = 0;
             this.IdSanPham = (int)row["idSanPham"];
             if (row["idLoaiKM"] == DBNull.Value)
-                row["idLoaiKM"] = -1;
+                row["idLoaiKM"] = 0;
             this.IdLoaiKM = (int)row["idLoaiKM"];
         }
 
 
-        private string id;
+        private int id;
         private string tenKM;
         private int giamGia;
         private double giamTien;
@@ -53,7 +53,7 @@ namespace QuanLyQuanBeer.DTO
         private int idLoaiKM;
         private string trangThai;
 
-        public string Id { get => id; set => id = value; }
+        public int Id { get => id; set => id = value; }
         public string TenKM { get => tenKM; set => tenKM = value; }
         public int GiamGia { get => giamGia; set => giamGia = value; }
         public double GiamTien { get => giamTien; set => giamTien = value; }

@@ -23,6 +23,7 @@ GO
 
 INSERT dbo.TaiKhoan(TenDangNhap, MatKhau,LoaiTaiKhoan) 
 VALUES
+('thukho','1', N'Thủ kho'),
 ('admin','1', N'Quản lý'),
 ('manager','1', N'Quản lý'),
 ('staff','1', N'Nhân viên')
@@ -127,6 +128,24 @@ VALUES
 (N'Cá',N'Kg',5,500000),
 (N'Thịt heo',N'Kg',5,500000)
 
+Create TABLE Voucher
+(
+	id VARCHAR(100) NOT NULL,
+	TenVoucher NVARCHAR(100) NOT NULL,
+	GiamGia INT NOT NULL,
+	GiamTien Float NOT NULL,
+	HanSuDung Date NOT NULL,
+	TrangThai NVARCHAR(100) NOT NULL  
+)
+
+INSERT dbo.Voucher(id, TenVoucher, GiamGia,GiamTien,HanSuDung,TrangThai)
+VALUES
+	('SVIP',N'Giảm 20 % Tổng hóa đơn',20,0,'2022-10-29',N'Đã sử dụng'),
+	('ADMINVIPPRO',N'Vì anh là ADMIN sao lại phải mất tiền',100,0,'2022-10-29',N'Chưa sử dụng'),
+	('SVIP202020',N'Giảm 20 % Tổng hóa đơn',20,0,'2022-10-29',N'Chưa sử dụng'),
+	('VIP200',N'Giảm 200.000 VND Tổng hóa đơn',0,200000,'2022-10-29',N'Chưa sử dụng')
+GO
+
 CREATE TABLE HoaDon
 (
 	id INT IDENTITY(100,1) PRIMARY KEY,
@@ -136,10 +155,11 @@ CREATE TABLE HoaDon
 	TongCong FLOAT NULL,
 	TienThua FLOAT NULL,
 	NhanVien NVARCHAR(200) NULl,
+	Voucher VARCHAR(100) NULl,
 	TrangThai NVARCHAR(100) not NULL
 	
 
-	FOREIGN KEY (idBan) REFERENCES dbo.Ban(id),
+	FOREIGN KEY (idBan) REFERENCES dbo.Ban(id)
 )
 GO
 
@@ -172,7 +192,7 @@ GO
 
 Create TABLE KhuyenMai
 (
-	id VARCHAR(100) NOT NULL,
+	id INT IDENTITY(1,1) PRIMARY KEY,
 	TenKM NVARCHAR(100) NOT NULL,
 	GiamGia INT NOT NULL,
 	GiamTien Float NOT NULL,
@@ -187,31 +207,14 @@ Create TABLE KhuyenMai
 	ON DELETE CASCADE
 )
 
-INSERT dbo.KhuyenMai(id, TenKM, GiamGia,GiamTien,ToiDa,DieuKien,idSanPham,idLoaiKM,TrangThai)
+INSERT dbo.KhuyenMai(TenKM, GiamGia,GiamTien,ToiDa,DieuKien,idSanPham,idLoaiKM,TrangThai)
 VALUES
-	('MUNGVNTHANGLON',N'Mừng VN chiến thằng -10% Tổng hóa đơn(tối đa 100k)',10,0,100000,NULL,NULL,1,N'Đang diễn ra'),
-	('NOELAMAP',N'Noel Ấm Áp - Giảm 100k cho hóa đơn trên 1tr',0,100000,100000,1000000,NULL,1,N'Đang diễn ra'),
-	('TETDENXUANVE',N'Mừng xuân 2020 Giảm giá không giới hạn 5% tổng hóa đơn',5,0,NULL,NULL,NULL,1,N'Đang diễn ra'),
-	('CACHEP',N'Giảm 10% Món cá chép om dưa',10,0,NULL,NULL,1,2,N'Không hoạt động')
+	(N'Mừng VN chiến thằng -10% Tổng hóa đơn(tối đa 100k)',10,0,100000,NULL,NULL,1,N'Đang diễn ra'),
+	(N'Noel Ấm Áp - Giảm 100k cho hóa đơn trên 1tr',0,100000,100000,1000000,NULL,1,N'Đang diễn ra'),
+	(N'Mừng xuân 2020 Giảm giá không giới hạn 5% tổng hóa đơn',5,0,NULL,NULL,NULL,1,N'Đang diễn ra'),
+	(N'Giảm 10% Món cá chép om dưa',10,0,NULL,NULL,1,2,N'Không hoạt động')
 GO
 
-Create TABLE Voucher
-(
-	id VARCHAR(100) NOT NULL,
-	TenVoucher NVARCHAR(100) NOT NULL,
-	GiamGia INT NOT NULL,
-	GiamTien Float NOT NULL,
-	HanSuDung Date NOT NULL,
-	TrangThai NVARCHAR(100) NOT NULL  
-)
-
-INSERT dbo.Voucher(id, TenVoucher, GiamGia,GiamTien,HanSuDung,TrangThai)
-VALUES
-	('SVIP',N'Giảm 20 % Tổng hóa đơn',20,0,'2022-10-29',N'Đã sử dụng'),
-	('ADMINVIPPRO',N'Vì anh là ADMIN sao lại phải mất tiền',100,0,'2022-10-29',N'Chưa sử dụng'),
-	('SVIP202020',N'Giảm 20 % Tổng hóa đơn',20,0,'2022-10-29',N'Chưa sử dụng'),
-	('VIP200',N'Giảm 200.000 VND Tổng hóa đơn',0,200000,'2022-10-29',N'Chưa sử dụng')
-GO
 -- PROCEDURE
 create PROC USP_GetDsKho
 AS
@@ -290,6 +293,13 @@ create PROC USP_GetDSKM
 AS
 BEGIN
 	SELECT * FROM KhuyenMai Where TrangThai = N'Đang diễn ra'
+END
+GO
+
+create PROC USP_GetDSKMAll
+AS
+BEGIN
+	SELECT * FROM KhuyenMai 
 END
 GO
 
@@ -444,3 +454,21 @@ BEGIN
 	VALUES(@id,@TenVoucher,@giamGia,@giamTien,@hanSuDung,N'Chưa sử dụng')
 END 
 GO
+
+alter proc dbo.USP_InsertDiscount
+@tenKM NVARCHAR(200) , @giamGia INT , @giamTien FLOAT, @toiDa FLOAT, @dieuKien FLOAT,@idLoaiKM INT
+as  
+begin
+	Insert into dbo.KhuyenMai
+	(TenKM,GiamGia,GiamTien,ToiDa,DieuKien,idLoaiKM,TrangThai)
+	VALUES
+	(@tenKM , @giamGia , @giamTien , @toiDa , @dieuKien,@idLoaiKM,N'Đang diễn ra')
+end
+GO
+
+
+
+
+--SELECT * FROM  dbo.HoaDon WHERE idBan = 1 AND TrangThai = N'Chưa thanh toán'
+--SELECT * FROM KhuyenMai
+SELECT * FROM LoaiKhuyenMai

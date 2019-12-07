@@ -26,10 +26,11 @@ namespace QuanLyQuanBeer.DAO
             string query = "UPDATE dbo.HoaDon SET ThoiGianRa = GETDATE(), TrangThai = N'Đã thanh toán', TongCong = " + TongCong + ", TienThua = " + TienThua + " , NhanVien = N'" + NhanVien + "' WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
-        public void ApDungVoucher(string maVC,int id)
+        public bool ApDungVoucher(string maVC,int id)
         {
             string query = "UPDATE dbo.HoaDon SET Voucher ='"+ maVC + "' WHERE id = " + id+"AND TrangThai = N'Chưa thanh toán'";
-            DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
 
         public int LayIDHoaDonChuaThanhToanBangIDBan(int id)
@@ -41,6 +42,17 @@ namespace QuanLyQuanBeer.DAO
                 return hoaDon.ID;
             }
             return -1;
+        }
+
+        public string GetVoucherNeuCo(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM  dbo.HoaDon WHERE idBan = " + id + " AND TrangThai = N'Chưa thanh toán'");
+            if (data.Rows.Count > 0)
+            {
+                HoaDonDTO hoaDon = new HoaDonDTO(data.Rows[0]);
+                return hoaDon.Voucher;
+            }
+            return string.Empty;
         }
 
         public DateTime? GetGioVaoByID(int id)

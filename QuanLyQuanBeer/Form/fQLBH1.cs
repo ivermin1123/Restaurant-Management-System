@@ -63,6 +63,9 @@ namespace QuanLyQuanBeer
             decimal voucher = decimal.Parse(txbVoucher.Text);
             decimal km = decimal.Parse(txbKM.Text);
             txbConPhaiThu.Text = String.Format("{0:0,0}", (conPhaiThu + voucher + km));
+            decimal conPhaiThu1 = decimal.Parse(txbConPhaiThu.Text);
+            if (conPhaiThu1 < 0)
+                txbConPhaiThu.Text = 0.ToString();
         }
         void LoadKM()
         {
@@ -107,12 +110,12 @@ namespace QuanLyQuanBeer
                         switch (item.IdLoaiKM)
                         {
                             case 1:
-                                if (item.DieuKien != -1)
+                                if (item.DieuKien != 0)
                                 {
                                     if (thanhTien >= item.DieuKien)
                                     {
                                         km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
-                                        if (item.ToiDa != -1)
+                                        if (item.ToiDa != 0)
                                         {
                                             if (km > item.ToiDa)
                                             {
@@ -134,7 +137,7 @@ namespace QuanLyQuanBeer
                                 else
                                 {
                                     km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
-                                    if (item.ToiDa != -1)
+                                    if (item.ToiDa != 0)
                                     {
                                         if (km > item.ToiDa)
                                         {
@@ -158,12 +161,12 @@ namespace QuanLyQuanBeer
                         switch (item.IdLoaiKM)
                         {
                             case 1:
-                                if (item.DieuKien != -1)
+                                if (item.DieuKien != 0)
                                 {
                                     if (thanhTien >= item.DieuKien)
                                     {
                                         km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
-                                        if (item.ToiDa != -1)
+                                        if (item.ToiDa != 0)
                                         {
                                             if (km > item.ToiDa)
                                             {
@@ -198,7 +201,7 @@ namespace QuanLyQuanBeer
                                 else
                                 {
                                     km = (item.GiamGia * thanhTien / 100) + item.GiamTien;
-                                    if (item.ToiDa != -1)
+                                    if (item.ToiDa != 0)
                                     {
                                         if (km > item.ToiDa)
                                         {
@@ -494,7 +497,6 @@ namespace QuanLyQuanBeer
         private void BtSoDowhite_Click(object sender, EventArgs e)
         {
             pnNewOrder.Visible = false;
-            pnOrder.Visible = false;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -506,20 +508,6 @@ namespace QuanLyQuanBeer
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void BtRestore_Click(object sender, EventArgs e)
-        {
-            btRestore.Visible = false;
-            btMaximize.Visible = true;
-            this.WindowState = FormWindowState.Normal;
-        }
-
-        private void BtMaximize_Click(object sender, EventArgs e)
-        {
-            btMaximize.Visible = false;
-            this.WindowState = FormWindowState.Maximized;
-            btRestore.Visible = true;
-        }
-
         private void BtUser_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -528,10 +516,7 @@ namespace QuanLyQuanBeer
         private void BtHome_Click(object sender, EventArgs e)
         {
             //pnChaoMung.BringToFront();
-            btOrderwhite.Visible = false;
-            btOrderBlue.Visible = true;
             pnNewOrder.Visible = false;
-            pnOrder.Visible = false;
             pnChaoMung.Visible = true;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -553,9 +538,7 @@ namespace QuanLyQuanBeer
 
         private void BtOrderBlue_Click(object sender, EventArgs e)
         {
-            btOrderwhite.Visible = true;
             pnNewOrder.Visible = false;
-            pnOrder.Visible = true;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -565,7 +548,6 @@ namespace QuanLyQuanBeer
         private void BtOrderwhite_Click(object sender, EventArgs e)
         {
             pnNewOrder.Visible = false;
-            pnOrder.Visible = true;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -574,10 +556,7 @@ namespace QuanLyQuanBeer
 
         private void BtSoDoblue_Click(object sender, EventArgs e)
         {
-            btOrderwhite.Visible = false;
-            btOrderBlue.Visible = true;
             pnNewOrder.Visible = false;
-            pnOrder.Visible = false;
             pnChaoMung.Visible = false;
             pnDatCho.Visible = false;
             pnDsHD.Visible = false;
@@ -588,7 +567,6 @@ namespace QuanLyQuanBeer
         {
             pnNewOrder.Visible = false;
             pnDatCho.Visible = false;
-            pnOrder.Visible = false;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -596,9 +574,7 @@ namespace QuanLyQuanBeer
 
         private void BtOrderPlus_Click(object sender, EventArgs e)
         {
-            btOrderwhite.Visible = false;
             pnNewOrder.Visible = true;
-            pnOrder.Visible = false;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -607,9 +583,7 @@ namespace QuanLyQuanBeer
 
         private void BtDatChoWhite_Click(object sender, EventArgs e)
         {
-            btOrderwhite.Visible = false;
             pnNewOrder.Visible = false;
-            pnOrder.Visible = false;
             pnChaoMung.Visible = false;
             pnDsHD.Visible = false;
             pnTinhTien.Visible = false;
@@ -666,14 +640,30 @@ namespace QuanLyQuanBeer
             {
                 if (HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID) != -1)
                 {
+                    string maVC = HoaDonDAO.Instance.GetVoucherNeuCo(ban.ID);
+                    if (maVC != string.Empty)
+                    {
+                        txbMaVoucher.Text = maVC;
+                        double thanhTien = double.Parse(txbThanhTien.Text);
+                        List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
+                        foreach (VoucherDTO item in list)
+                        {
+                            double giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
+                            txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
+                        }
+                    }
+                    else
+                    {
+                        txbVoucher.Text = 0.ToString();
+                        txbMaVoucher.Text = string.Empty;
+                    }
                     XemHoaDon1(ban.ID);
                     LoadKM();
                     LoadVoucher();
                     txbKM.Text = 0.ToString();
-                    txbVoucher.Text = 0.ToString();
+                    //txbVoucher.Text = 0.ToString();
                     pnTinhTien.Visible = true;
                     pnNewOrder.Visible = false;
-                    pnOrder.Visible = false;
                     pnChaoMung.Visible = false;
                     pnDsHD.Visible = false;
                 }
@@ -761,9 +751,7 @@ namespace QuanLyQuanBeer
             LoadTable();
             if (HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID) == -1)
             {
-                btOrderwhite.Visible = false;
                 pnNewOrder.Visible = true;
-                pnOrder.Visible = false;
                 pnChaoMung.Visible = false;
                 pnDsHD.Visible = false;
                 pnTinhTien.Visible = false;
@@ -772,26 +760,10 @@ namespace QuanLyQuanBeer
 
         private void BtQuayLai_Click_1(object sender, EventArgs e)
         {
-            if (txbVoucher.Text != 0.ToString())
-            {
-                if (MessageBox.Show("Nếu quay lại Voucher đang áp dụng sẽ bị mất !!\nBạn có muốn quay lại không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-                {
-                    pnTinhTien.Visible = false;
-                    pnNewOrder.Visible = true;
-                    pnOrder.Visible = false;
-                    pnChaoMung.Visible = false;
-                    pnDsHD.Visible = false;
-                }
-            }
-            else
-            {
-                pnTinhTien.Visible = false;
-                pnNewOrder.Visible = true;
-                pnOrder.Visible = false;
-                pnChaoMung.Visible = false;
-                pnDsHD.Visible = false;
-            }
-            
+            pnTinhTien.Visible = false;
+            pnNewOrder.Visible = true;
+            pnChaoMung.Visible = false;
+            pnDsHD.Visible = false;
         }
 
         private void BtLamMoi_Click(object sender, EventArgs e)
@@ -857,14 +829,16 @@ namespace QuanLyQuanBeer
                     {
                         if (MessageBox.Show("Bạn có muốn áp dụng Voucher \nGiảm giá " + item.GiamGia + "% Hóa đơn và " + item.GiamTien + " VND", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                         {
-                            if (VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC))
+                            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                            if (HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon))
                             {
-                                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-                                HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon);
+                                VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC);
                                 MessageBox.Show("Áp dụng thành công", "Áp dụng Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
                                 txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
-                            }  
+                            }
+                            else
+                                txbVoucher.Text = 0.ToString();
                         }
                     }
                 }

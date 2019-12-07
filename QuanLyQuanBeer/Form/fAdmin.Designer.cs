@@ -44,32 +44,34 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.pn9 = new System.Windows.Forms.Panel();
+            this.btKM = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pn8 = new System.Windows.Forms.Panel();
+            this.btLoaiKM = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pn7 = new System.Windows.Forms.Panel();
             this.pn6 = new System.Windows.Forms.Panel();
             this.pn5 = new System.Windows.Forms.Panel();
+            this.pn4 = new System.Windows.Forms.Panel();
             this.pn3 = new System.Windows.Forms.Panel();
             this.pn2 = new System.Windows.Forms.Panel();
-            this.btHelp = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btThietLapHeThong = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btNhanVien = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btKho = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btBan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btSanPham = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btLoaiSP = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btNhanVien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTaiKhoan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pn4 = new System.Windows.Forms.Panel();
-            this.btDanhMuc = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.uscKhuyenMai1 = new QuanLyQuanBeer.USC.USCKhuyenMai();
+            this.uscLoaiKM1 = new QuanLyQuanBeer.USC.USCLoaiKM();
             this.uscKho1 = new QuanLyQuanBeer.USC.USCKho();
             this.USCTaiKhoan = new QuanLyQuanBeer.USCTaiKhoan();
             this.uscSanPham = new QuanLyQuanBeer.USCSanPham();
             this.uscBan = new QuanLyQuanBeer.USC.USCBan();
             this.uscLoaiSanPham = new QuanLyQuanBeer.USC.USCLoaiSanPham();
             this.uscNhanVien = new QuanLyQuanBeer.USC.USCNhanVien();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
@@ -263,20 +265,20 @@
             // 
             this.pnMenu.AutoScroll = true;
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.pnMenu.Controls.Add(this.panel3);
-            this.pnMenu.Controls.Add(this.bunifuFlatButton2);
-            this.pnMenu.Controls.Add(this.panel2);
-            this.pnMenu.Controls.Add(this.bunifuFlatButton1);
+            this.pnMenu.Controls.Add(this.pn9);
+            this.pnMenu.Controls.Add(this.btKM);
+            this.pnMenu.Controls.Add(this.pn8);
+            this.pnMenu.Controls.Add(this.btLoaiKM);
             this.pnMenu.Controls.Add(this.pn7);
             this.pnMenu.Controls.Add(this.pn6);
             this.pnMenu.Controls.Add(this.pn5);
             this.pnMenu.Controls.Add(this.pn4);
             this.pnMenu.Controls.Add(this.pn3);
             this.pnMenu.Controls.Add(this.pn2);
-            this.pnMenu.Controls.Add(this.btHelp);
-            this.pnMenu.Controls.Add(this.btThietLapHeThong);
+            this.pnMenu.Controls.Add(this.btKho);
+            this.pnMenu.Controls.Add(this.btBan);
             this.pnMenu.Controls.Add(this.btSanPham);
-            this.pnMenu.Controls.Add(this.btDanhMuc);
+            this.pnMenu.Controls.Add(this.btLoaiSP);
             this.pnMenu.Controls.Add(this.btNhanVien);
             this.pnMenu.Controls.Add(this.btTaiKhoan);
             this.pnMenu.Controls.Add(this.pn1);
@@ -286,6 +288,98 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(270, 607);
             this.pnMenu.TabIndex = 1;
+            // 
+            // pn9
+            // 
+            this.pn9.BackColor = System.Drawing.Color.Black;
+            this.pn9.Location = new System.Drawing.Point(0, 384);
+            this.pn9.Name = "pn9";
+            this.pn9.Size = new System.Drawing.Size(7, 46);
+            this.pn9.TabIndex = 18;
+            this.pn9.Visible = false;
+            // 
+            // btKM
+            // 
+            this.btKM.Active = false;
+            this.btKM.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btKM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btKM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btKM.BorderRadius = 0;
+            this.btKM.ButtonText = "     Khuyến mại";
+            this.btKM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btKM.DisabledColor = System.Drawing.Color.Gray;
+            this.btKM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btKM.Iconcolor = System.Drawing.Color.Transparent;
+            this.btKM.Iconimage = ((System.Drawing.Image)(resources.GetObject("btKM.Iconimage")));
+            this.btKM.Iconimage_right = null;
+            this.btKM.Iconimage_right_Selected = null;
+            this.btKM.Iconimage_Selected = null;
+            this.btKM.IconMarginLeft = 25;
+            this.btKM.IconMarginRight = 0;
+            this.btKM.IconRightVisible = true;
+            this.btKM.IconRightZoom = 0D;
+            this.btKM.IconVisible = true;
+            this.btKM.IconZoom = 80D;
+            this.btKM.IsTab = false;
+            this.btKM.Location = new System.Drawing.Point(0, 384);
+            this.btKM.Name = "btKM";
+            this.btKM.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btKM.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btKM.OnHoverTextColor = System.Drawing.Color.White;
+            this.btKM.selected = false;
+            this.btKM.Size = new System.Drawing.Size(270, 48);
+            this.btKM.TabIndex = 17;
+            this.btKM.Text = "     Khuyến mại";
+            this.btKM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btKM.Textcolor = System.Drawing.Color.White;
+            this.btKM.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btKM.Click += new System.EventHandler(this.btKM_Click);
+            // 
+            // pn8
+            // 
+            this.pn8.BackColor = System.Drawing.Color.Black;
+            this.pn8.Location = new System.Drawing.Point(0, 336);
+            this.pn8.Name = "pn8";
+            this.pn8.Size = new System.Drawing.Size(7, 46);
+            this.pn8.TabIndex = 16;
+            this.pn8.Visible = false;
+            // 
+            // btLoaiKM
+            // 
+            this.btLoaiKM.Active = false;
+            this.btLoaiKM.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btLoaiKM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btLoaiKM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLoaiKM.BorderRadius = 0;
+            this.btLoaiKM.ButtonText = "     Loại khuyến mại";
+            this.btLoaiKM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLoaiKM.DisabledColor = System.Drawing.Color.Gray;
+            this.btLoaiKM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btLoaiKM.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLoaiKM.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLoaiKM.Iconimage")));
+            this.btLoaiKM.Iconimage_right = null;
+            this.btLoaiKM.Iconimage_right_Selected = null;
+            this.btLoaiKM.Iconimage_Selected = null;
+            this.btLoaiKM.IconMarginLeft = 25;
+            this.btLoaiKM.IconMarginRight = 0;
+            this.btLoaiKM.IconRightVisible = true;
+            this.btLoaiKM.IconRightZoom = 0D;
+            this.btLoaiKM.IconVisible = true;
+            this.btLoaiKM.IconZoom = 80D;
+            this.btLoaiKM.IsTab = false;
+            this.btLoaiKM.Location = new System.Drawing.Point(0, 336);
+            this.btLoaiKM.Name = "btLoaiKM";
+            this.btLoaiKM.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btLoaiKM.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btLoaiKM.OnHoverTextColor = System.Drawing.Color.White;
+            this.btLoaiKM.selected = false;
+            this.btLoaiKM.Size = new System.Drawing.Size(270, 48);
+            this.btLoaiKM.TabIndex = 15;
+            this.btLoaiKM.Text = "     Loại khuyến mại";
+            this.btLoaiKM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLoaiKM.Textcolor = System.Drawing.Color.White;
+            this.btLoaiKM.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLoaiKM.Click += new System.EventHandler(this.btLoaiKM_Click);
             // 
             // pn7
             // 
@@ -314,6 +408,15 @@
             this.pn5.TabIndex = 12;
             this.pn5.Visible = false;
             // 
+            // pn4
+            // 
+            this.pn4.BackColor = System.Drawing.Color.Black;
+            this.pn4.Location = new System.Drawing.Point(0, 144);
+            this.pn4.Name = "pn4";
+            this.pn4.Size = new System.Drawing.Size(7, 46);
+            this.pn4.TabIndex = 11;
+            this.pn4.Visible = false;
+            // 
             // pn3
             // 
             this.pn3.BackColor = System.Drawing.Color.Black;
@@ -332,116 +435,79 @@
             this.pn2.TabIndex = 9;
             this.pn2.Visible = false;
             // 
-            // btHelp
+            // btKho
             // 
-            this.btHelp.Active = false;
-            this.btHelp.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btHelp.BorderRadius = 0;
-            this.btHelp.ButtonText = "       Kho";
-            this.btHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btHelp.DisabledColor = System.Drawing.Color.Gray;
-            this.btHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btHelp.Iconcolor = System.Drawing.Color.Transparent;
-            this.btHelp.Iconimage = ((System.Drawing.Image)(resources.GetObject("btHelp.Iconimage")));
-            this.btHelp.Iconimage_right = null;
-            this.btHelp.Iconimage_right_Selected = null;
-            this.btHelp.Iconimage_Selected = null;
-            this.btHelp.IconMarginLeft = 25;
-            this.btHelp.IconMarginRight = 0;
-            this.btHelp.IconRightVisible = true;
-            this.btHelp.IconRightZoom = 0D;
-            this.btHelp.IconVisible = true;
-            this.btHelp.IconZoom = 60D;
-            this.btHelp.IsTab = false;
-            this.btHelp.Location = new System.Drawing.Point(0, 288);
-            this.btHelp.Name = "btHelp";
-            this.btHelp.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btHelp.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btHelp.OnHoverTextColor = System.Drawing.Color.White;
-            this.btHelp.selected = false;
-            this.btHelp.Size = new System.Drawing.Size(270, 48);
-            this.btHelp.TabIndex = 8;
-            this.btHelp.Text = "       Kho";
-            this.btHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btHelp.Textcolor = System.Drawing.Color.White;
-            this.btHelp.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHelp.Click += new System.EventHandler(this.BtHelp_Click);
+            this.btKho.Active = false;
+            this.btKho.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btKho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btKho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btKho.BorderRadius = 0;
+            this.btKho.ButtonText = "       Kho";
+            this.btKho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btKho.DisabledColor = System.Drawing.Color.Gray;
+            this.btKho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btKho.Iconcolor = System.Drawing.Color.Transparent;
+            this.btKho.Iconimage = ((System.Drawing.Image)(resources.GetObject("btKho.Iconimage")));
+            this.btKho.Iconimage_right = null;
+            this.btKho.Iconimage_right_Selected = null;
+            this.btKho.Iconimage_Selected = null;
+            this.btKho.IconMarginLeft = 25;
+            this.btKho.IconMarginRight = 0;
+            this.btKho.IconRightVisible = true;
+            this.btKho.IconRightZoom = 0D;
+            this.btKho.IconVisible = true;
+            this.btKho.IconZoom = 60D;
+            this.btKho.IsTab = false;
+            this.btKho.Location = new System.Drawing.Point(0, 288);
+            this.btKho.Name = "btKho";
+            this.btKho.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btKho.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btKho.OnHoverTextColor = System.Drawing.Color.White;
+            this.btKho.selected = false;
+            this.btKho.Size = new System.Drawing.Size(270, 48);
+            this.btKho.TabIndex = 8;
+            this.btKho.Text = "       Kho";
+            this.btKho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btKho.Textcolor = System.Drawing.Color.White;
+            this.btKho.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btKho.Click += new System.EventHandler(this.BtHelp_Click);
             // 
-            // btThietLapHeThong
+            // btBan
             // 
-            this.btThietLapHeThong.Active = false;
-            this.btThietLapHeThong.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btThietLapHeThong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btThietLapHeThong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btThietLapHeThong.BorderRadius = 0;
-            this.btThietLapHeThong.ButtonText = "       Bàn";
-            this.btThietLapHeThong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btThietLapHeThong.DisabledColor = System.Drawing.Color.Gray;
-            this.btThietLapHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btThietLapHeThong.Iconcolor = System.Drawing.Color.Transparent;
-            this.btThietLapHeThong.Iconimage = ((System.Drawing.Image)(resources.GetObject("btThietLapHeThong.Iconimage")));
-            this.btThietLapHeThong.Iconimage_right = null;
-            this.btThietLapHeThong.Iconimage_right_Selected = null;
-            this.btThietLapHeThong.Iconimage_Selected = null;
-            this.btThietLapHeThong.IconMarginLeft = 25;
-            this.btThietLapHeThong.IconMarginRight = 0;
-            this.btThietLapHeThong.IconRightVisible = true;
-            this.btThietLapHeThong.IconRightZoom = 0D;
-            this.btThietLapHeThong.IconVisible = true;
-            this.btThietLapHeThong.IconZoom = 60D;
-            this.btThietLapHeThong.IsTab = false;
-            this.btThietLapHeThong.Location = new System.Drawing.Point(0, 240);
-            this.btThietLapHeThong.Name = "btThietLapHeThong";
-            this.btThietLapHeThong.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btThietLapHeThong.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btThietLapHeThong.OnHoverTextColor = System.Drawing.Color.White;
-            this.btThietLapHeThong.selected = false;
-            this.btThietLapHeThong.Size = new System.Drawing.Size(270, 48);
-            this.btThietLapHeThong.TabIndex = 7;
-            this.btThietLapHeThong.Text = "       Bàn";
-            this.btThietLapHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btThietLapHeThong.Textcolor = System.Drawing.Color.White;
-            this.btThietLapHeThong.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThietLapHeThong.Click += new System.EventHandler(this.BtThietLapHeThong_Click);
-            // 
-            // btNhanVien
-            // 
-            this.btNhanVien.Active = false;
-            this.btNhanVien.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btNhanVien.BorderRadius = 0;
-            this.btNhanVien.ButtonText = "       Nhân viên";
-            this.btNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btNhanVien.DisabledColor = System.Drawing.Color.Gray;
-            this.btNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btNhanVien.Iconcolor = System.Drawing.Color.Transparent;
-            this.btNhanVien.Iconimage = ((System.Drawing.Image)(resources.GetObject("btNhanVien.Iconimage")));
-            this.btNhanVien.Iconimage_right = null;
-            this.btNhanVien.Iconimage_right_Selected = null;
-            this.btNhanVien.Iconimage_Selected = null;
-            this.btNhanVien.IconMarginLeft = 25;
-            this.btNhanVien.IconMarginRight = 0;
-            this.btNhanVien.IconRightVisible = true;
-            this.btNhanVien.IconRightZoom = 0D;
-            this.btNhanVien.IconVisible = true;
-            this.btNhanVien.IconZoom = 60D;
-            this.btNhanVien.IsTab = false;
-            this.btNhanVien.Location = new System.Drawing.Point(0, 96);
-            this.btNhanVien.Name = "btNhanVien";
-            this.btNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btNhanVien.OnHoverTextColor = System.Drawing.Color.White;
-            this.btNhanVien.selected = false;
-            this.btNhanVien.Size = new System.Drawing.Size(270, 48);
-            this.btNhanVien.TabIndex = 6;
-            this.btNhanVien.Text = "       Nhân viên";
-            this.btNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btNhanVien.Textcolor = System.Drawing.Color.White;
-            this.btNhanVien.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNhanVien.Click += new System.EventHandler(this.BtNhanVien_Click);
+            this.btBan.Active = false;
+            this.btBan.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btBan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btBan.BorderRadius = 0;
+            this.btBan.ButtonText = "       Bàn";
+            this.btBan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btBan.DisabledColor = System.Drawing.Color.Gray;
+            this.btBan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btBan.Iconcolor = System.Drawing.Color.Transparent;
+            this.btBan.Iconimage = ((System.Drawing.Image)(resources.GetObject("btBan.Iconimage")));
+            this.btBan.Iconimage_right = null;
+            this.btBan.Iconimage_right_Selected = null;
+            this.btBan.Iconimage_Selected = null;
+            this.btBan.IconMarginLeft = 25;
+            this.btBan.IconMarginRight = 0;
+            this.btBan.IconRightVisible = true;
+            this.btBan.IconRightZoom = 0D;
+            this.btBan.IconVisible = true;
+            this.btBan.IconZoom = 60D;
+            this.btBan.IsTab = false;
+            this.btBan.Location = new System.Drawing.Point(0, 240);
+            this.btBan.Name = "btBan";
+            this.btBan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btBan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btBan.OnHoverTextColor = System.Drawing.Color.White;
+            this.btBan.selected = false;
+            this.btBan.Size = new System.Drawing.Size(270, 48);
+            this.btBan.TabIndex = 7;
+            this.btBan.Text = "       Bàn";
+            this.btBan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBan.Textcolor = System.Drawing.Color.White;
+            this.btBan.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBan.Click += new System.EventHandler(this.BtThietLapHeThong_Click);
             // 
             // btSanPham
             // 
@@ -479,6 +545,80 @@
             this.btSanPham.Textcolor = System.Drawing.Color.White;
             this.btSanPham.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSanPham.Click += new System.EventHandler(this.BtSanPham_Click);
+            // 
+            // btLoaiSP
+            // 
+            this.btLoaiSP.Active = false;
+            this.btLoaiSP.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btLoaiSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btLoaiSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btLoaiSP.BorderRadius = 0;
+            this.btLoaiSP.ButtonText = "       Loại sản phẩm";
+            this.btLoaiSP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btLoaiSP.DisabledColor = System.Drawing.Color.Gray;
+            this.btLoaiSP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btLoaiSP.Iconcolor = System.Drawing.Color.Transparent;
+            this.btLoaiSP.Iconimage = ((System.Drawing.Image)(resources.GetObject("btLoaiSP.Iconimage")));
+            this.btLoaiSP.Iconimage_right = null;
+            this.btLoaiSP.Iconimage_right_Selected = null;
+            this.btLoaiSP.Iconimage_Selected = null;
+            this.btLoaiSP.IconMarginLeft = 25;
+            this.btLoaiSP.IconMarginRight = 0;
+            this.btLoaiSP.IconRightVisible = true;
+            this.btLoaiSP.IconRightZoom = 0D;
+            this.btLoaiSP.IconVisible = true;
+            this.btLoaiSP.IconZoom = 60D;
+            this.btLoaiSP.IsTab = false;
+            this.btLoaiSP.Location = new System.Drawing.Point(0, 144);
+            this.btLoaiSP.Name = "btLoaiSP";
+            this.btLoaiSP.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btLoaiSP.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btLoaiSP.OnHoverTextColor = System.Drawing.Color.White;
+            this.btLoaiSP.selected = false;
+            this.btLoaiSP.Size = new System.Drawing.Size(270, 48);
+            this.btLoaiSP.TabIndex = 5;
+            this.btLoaiSP.Text = "       Loại sản phẩm";
+            this.btLoaiSP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLoaiSP.Textcolor = System.Drawing.Color.White;
+            this.btLoaiSP.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLoaiSP.Click += new System.EventHandler(this.BtDanhMuc_Click);
+            // 
+            // btNhanVien
+            // 
+            this.btNhanVien.Active = false;
+            this.btNhanVien.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btNhanVien.BorderRadius = 0;
+            this.btNhanVien.ButtonText = "       Nhân viên";
+            this.btNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNhanVien.DisabledColor = System.Drawing.Color.Gray;
+            this.btNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btNhanVien.Iconcolor = System.Drawing.Color.Transparent;
+            this.btNhanVien.Iconimage = ((System.Drawing.Image)(resources.GetObject("btNhanVien.Iconimage")));
+            this.btNhanVien.Iconimage_right = null;
+            this.btNhanVien.Iconimage_right_Selected = null;
+            this.btNhanVien.Iconimage_Selected = null;
+            this.btNhanVien.IconMarginLeft = 25;
+            this.btNhanVien.IconMarginRight = 0;
+            this.btNhanVien.IconRightVisible = true;
+            this.btNhanVien.IconRightZoom = 0D;
+            this.btNhanVien.IconVisible = true;
+            this.btNhanVien.IconZoom = 60D;
+            this.btNhanVien.IsTab = false;
+            this.btNhanVien.Location = new System.Drawing.Point(0, 96);
+            this.btNhanVien.Name = "btNhanVien";
+            this.btNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
+            this.btNhanVien.OnHoverTextColor = System.Drawing.Color.White;
+            this.btNhanVien.selected = false;
+            this.btNhanVien.Size = new System.Drawing.Size(270, 48);
+            this.btNhanVien.TabIndex = 6;
+            this.btNhanVien.Text = "       Nhân viên";
+            this.btNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNhanVien.Textcolor = System.Drawing.Color.White;
+            this.btNhanVien.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNhanVien.Click += new System.EventHandler(this.BtNhanVien_Click);
             // 
             // btTaiKhoan
             // 
@@ -565,6 +705,8 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.uscKhuyenMai1);
+            this.pnNoiDung.Controls.Add(this.uscLoaiKM1);
             this.pnNoiDung.Controls.Add(this.uscKho1);
             this.pnNoiDung.Controls.Add(this.USCTaiKhoan);
             this.pnNoiDung.Controls.Add(this.uscSanPham);
@@ -577,146 +719,23 @@
             this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
             // 
-            // timer1
+            // uscKhuyenMai1
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.uscKhuyenMai1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscKhuyenMai1.Location = new System.Drawing.Point(0, 0);
+            this.uscKhuyenMai1.Name = "uscKhuyenMai1";
+            this.uscKhuyenMai1.Size = new System.Drawing.Size(958, 607);
+            this.uscKhuyenMai1.TabIndex = 8;
+            this.uscKhuyenMai1.Visible = false;
             // 
-            // pn4
+            // uscLoaiKM1
             // 
-            this.pn4.BackColor = System.Drawing.Color.Black;
-            this.pn4.Location = new System.Drawing.Point(0, 144);
-            this.pn4.Name = "pn4";
-            this.pn4.Size = new System.Drawing.Size(7, 46);
-            this.pn4.TabIndex = 11;
-            this.pn4.Visible = false;
-            // 
-            // btDanhMuc
-            // 
-            this.btDanhMuc.Active = false;
-            this.btDanhMuc.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btDanhMuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btDanhMuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btDanhMuc.BorderRadius = 0;
-            this.btDanhMuc.ButtonText = "       Loại sản phẩm";
-            this.btDanhMuc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDanhMuc.DisabledColor = System.Drawing.Color.Gray;
-            this.btDanhMuc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btDanhMuc.Iconcolor = System.Drawing.Color.Transparent;
-            this.btDanhMuc.Iconimage = ((System.Drawing.Image)(resources.GetObject("btDanhMuc.Iconimage")));
-            this.btDanhMuc.Iconimage_right = null;
-            this.btDanhMuc.Iconimage_right_Selected = null;
-            this.btDanhMuc.Iconimage_Selected = null;
-            this.btDanhMuc.IconMarginLeft = 25;
-            this.btDanhMuc.IconMarginRight = 0;
-            this.btDanhMuc.IconRightVisible = true;
-            this.btDanhMuc.IconRightZoom = 0D;
-            this.btDanhMuc.IconVisible = true;
-            this.btDanhMuc.IconZoom = 60D;
-            this.btDanhMuc.IsTab = false;
-            this.btDanhMuc.Location = new System.Drawing.Point(0, 144);
-            this.btDanhMuc.Name = "btDanhMuc";
-            this.btDanhMuc.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btDanhMuc.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btDanhMuc.OnHoverTextColor = System.Drawing.Color.White;
-            this.btDanhMuc.selected = false;
-            this.btDanhMuc.Size = new System.Drawing.Size(270, 48);
-            this.btDanhMuc.TabIndex = 5;
-            this.btDanhMuc.Text = "       Loại sản phẩm";
-            this.btDanhMuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDanhMuc.Textcolor = System.Drawing.Color.White;
-            this.btDanhMuc.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDanhMuc.Click += new System.EventHandler(this.BtDanhMuc_Click);
-            // 
-            // bunifuFlatButton1
-            // 
-            this.bunifuFlatButton1.Active = false;
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "     Loại khuyến mại";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 25;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 80D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 336);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(270, 48);
-            this.bunifuFlatButton1.TabIndex = 15;
-            this.bunifuFlatButton1.Text = "     Loại khuyến mại";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(0, 336);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(7, 46);
-            this.panel2.TabIndex = 16;
-            this.panel2.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(0, 384);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(7, 46);
-            this.panel3.TabIndex = 18;
-            this.panel3.Visible = false;
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Active = false;
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "     Khuyến mại";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 25;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 80D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 384);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(270, 48);
-            this.bunifuFlatButton2.TabIndex = 17;
-            this.bunifuFlatButton2.Text = "     Khuyến mại";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uscLoaiKM1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscLoaiKM1.Location = new System.Drawing.Point(0, 0);
+            this.uscLoaiKM1.Name = "uscLoaiKM1";
+            this.uscLoaiKM1.Size = new System.Drawing.Size(958, 607);
+            this.uscLoaiKM1.TabIndex = 7;
+            this.uscLoaiKM1.Visible = false;
             // 
             // uscKho1
             // 
@@ -772,6 +791,11 @@
             this.uscNhanVien.TabIndex = 1;
             this.uscNhanVien.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,8 +836,8 @@
         private System.Windows.Forms.Panel pn1;
         private Bunifu.Framework.UI.BunifuFlatButton btBaoCao;
         private System.Windows.Forms.Panel pn2;
-        private Bunifu.Framework.UI.BunifuFlatButton btHelp;
-        private Bunifu.Framework.UI.BunifuFlatButton btThietLapHeThong;
+        private Bunifu.Framework.UI.BunifuFlatButton btKho;
+        private Bunifu.Framework.UI.BunifuFlatButton btBan;
         private Bunifu.Framework.UI.BunifuFlatButton btNhanVien;
         private Bunifu.Framework.UI.BunifuFlatButton btSanPham;
         private Bunifu.Framework.UI.BunifuFlatButton btTaiKhoan;
@@ -836,11 +860,13 @@
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Timer timer1;
         private USC.USCKho uscKho1;
-        private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private System.Windows.Forms.Panel pn9;
+        private Bunifu.Framework.UI.BunifuFlatButton btKM;
+        private System.Windows.Forms.Panel pn8;
+        private Bunifu.Framework.UI.BunifuFlatButton btLoaiKM;
         private System.Windows.Forms.Panel pn4;
-        private Bunifu.Framework.UI.BunifuFlatButton btDanhMuc;
+        private Bunifu.Framework.UI.BunifuFlatButton btLoaiSP;
+        private USC.USCLoaiKM uscLoaiKM1;
+        private USC.USCKhuyenMai uscKhuyenMai1;
     }
 }

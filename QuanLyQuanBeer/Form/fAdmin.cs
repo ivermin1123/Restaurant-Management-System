@@ -1,17 +1,39 @@
-﻿using System;
+﻿using QuanLyQuanBeer.DTO;
+using System;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
     public partial class fAdmin : Form
     {
-        public fAdmin()
+        private TaiKhoanDTO taiKhoanHienTai;
+        public TaiKhoanDTO TaiKhoanHienTai
         {
+            get { return taiKhoanHienTai; }
+            set { taiKhoanHienTai = value; }
+        }
+        public fAdmin(TaiKhoanDTO acc)
+        {
+            this.TaiKhoanHienTai = acc;
             InitializeComponent();
+            if (acc.LoaiTaiKhoan == "Thủ kho")
+            {
+                btBaoCao.Enabled = false;
+                btTaiKhoan.Enabled = false;
+                btNhanVien.Enabled = false;
+                btKM.Enabled = false;
+                btLoaiKM.Enabled = false;
+                btSanPham.Enabled = false;
+                btBan.Enabled = false;
+                btKho.Enabled = true;
+                btLoaiSP.Enabled = false;
+            }
         }
 
         private void BtBaoCao_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = false;
             uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
@@ -25,10 +47,14 @@ namespace QuanLyQuanBeer
             pn5.Visible = false;
             pn6.Visible = false;
             pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtTaiKhoan_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = false;
             uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
@@ -42,10 +68,14 @@ namespace QuanLyQuanBeer
             pn5.Visible = false;
             pn6.Visible = false;
             pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtSanPham_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = false;
             uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
@@ -59,10 +89,14 @@ namespace QuanLyQuanBeer
             pn5.Visible = false;
             pn6.Visible = false;
             pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtDanhMuc_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = false;
             uscBan.Visible = false;
             uscLoaiSanPham.Visible = true;
@@ -76,10 +110,14 @@ namespace QuanLyQuanBeer
             pn5.Visible = false;
             pn6.Visible = false;
             pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtNhanVien_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = false;
             uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
@@ -93,10 +131,14 @@ namespace QuanLyQuanBeer
             pn5.Visible = true;
             pn6.Visible = false;
             pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtThietLapHeThong_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = false;
             uscBan.Visible = true;
             uscLoaiSanPham.Visible = false;
@@ -110,10 +152,14 @@ namespace QuanLyQuanBeer
             pn5.Visible = false;
             pn6.Visible = true;
             pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtHelp_Click(object sender, EventArgs e)
         {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = false;
             uscKho1.Visible = true;
             uscBan.Visible = false;
             uscLoaiSanPham.Visible = false;
@@ -127,6 +173,8 @@ namespace QuanLyQuanBeer
             pn5.Visible = false;
             pn6.Visible = false;
             pn7.Visible = true;
+            pn8.Visible = false;
+            pn9.Visible = false;
         }
 
         private void BtResize_Click(object sender, EventArgs e)
@@ -174,6 +222,48 @@ namespace QuanLyQuanBeer
             timer1.Start();
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
             lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void btLoaiKM_Click(object sender, EventArgs e)
+        {
+            uscKhuyenMai1.Visible = false;
+            uscLoaiKM1.Visible = true;
+            uscKho1.Visible = false;
+            uscBan.Visible = false;
+            uscLoaiSanPham.Visible = false;
+            uscSanPham.Visible = false;
+            uscNhanVien.Visible = false;
+            USCTaiKhoan.Visible = false;
+            pn1.Visible = false;
+            pn2.Visible = false;
+            pn3.Visible = false;
+            pn4.Visible = false;
+            pn5.Visible = false;
+            pn6.Visible = false;
+            pn7.Visible = false;
+            pn8.Visible = true;
+            pn9.Visible = false;
+        }
+
+        private void btKM_Click(object sender, EventArgs e)
+        {
+            uscKhuyenMai1.Visible = true;
+            uscLoaiKM1.Visible = false;
+            uscKho1.Visible = false;
+            uscBan.Visible = false;
+            uscLoaiSanPham.Visible = false;
+            uscSanPham.Visible = false;
+            uscNhanVien.Visible = false;
+            USCTaiKhoan.Visible = false;
+            pn1.Visible = false;
+            pn2.Visible = false;
+            pn3.Visible = false;
+            pn4.Visible = false;
+            pn5.Visible = false;
+            pn6.Visible = false;
+            pn7.Visible = false;
+            pn8.Visible = false;
+            pn9.Visible = true;
         }
     }
 }

@@ -92,6 +92,7 @@
     <Compile Include="DAO\KhoDAO.cs" />
     <Compile Include="DAO\KhuyenMaiDAO.cs" />
     <Compile Include="DAO\LoaiKhoDAO.cs" />
+    <Compile Include="DAO\LoaiKhuyenMaiDAO.cs" />
     <Compile Include="DAO\VoucherDAO.cs" />
     <Compile Include="DTO\KhoDTO.cs" />
     <Compile Include="DTO\KhuyenMaiDTO.cs" />
@@ -158,6 +159,18 @@
     <Compile Include="Form\fTaoVoucherSLLon.Designer.cs">
       <DependentUpon>fTaoVoucherSLLon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\fThemKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fThemKhuyenMai.Designer.cs">
+      <DependentUpon>fThemKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fSuaKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fSuaKM.Designer.cs">
+      <DependentUpon>fSuaKM.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyQuanBeerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,17 +189,23 @@
       <DependentUpon>rptInTam.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="USCKho.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USCKho.Designer.cs">
-      <DependentUpon>USCKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="USC\USCKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="USC\USCKho.Designer.cs">
       <DependentUpon>USCKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USC\USCKhuyenMai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCKhuyenMai.Designer.cs">
+      <DependentUpon>USCKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USC\USCLoaiKM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCLoaiKM.Designer.cs">
+      <DependentUpon>USCLoaiKM.cs</DependentUpon>
     </Compile>
     <Compile Include="USC\USCSanPham.cs">
       <SubType>UserControl</SubType>
@@ -305,6 +324,12 @@
     <EmbeddedResource Include="Form\fTaoVoucherSLLon.resx">
       <DependentUpon>fTaoVoucherSLLon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\fThemKhuyenMai.resx">
+      <DependentUpon>fThemKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fSuaKM.resx">
+      <DependentUpon>fSuaKM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -317,11 +342,14 @@
     <EmbeddedResource Include="Form\rptInTam.resx">
       <DependentUpon>rptInTam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USCKho.resx">
-      <DependentUpon>USCKho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="USC\USCKho.resx">
       <DependentUpon>USCKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCKhuyenMai.resx">
+      <DependentUpon>USCKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCLoaiKM.resx">
+      <DependentUpon>USCLoaiKM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCSanPham.resx">
       <DependentUpon>USCSanPham.cs</DependentUpon>

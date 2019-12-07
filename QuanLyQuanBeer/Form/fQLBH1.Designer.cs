@@ -30,24 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLBH1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btDatChoWhite = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btMenu = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btOrderwhite = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btRestore = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbGio = new System.Windows.Forms.Label();
-            this.btMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btOrderPlus = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btUser = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btOrderBlue = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btHome = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbNgay = new System.Windows.Forms.Label();
             this.pnChaoMung = new System.Windows.Forms.Panel();
@@ -116,6 +112,7 @@
             this.panel35 = new System.Windows.Forms.Panel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
             this.btTaoVoucherSLLon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTaoVouher = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -171,20 +168,10 @@
             this.btKhac = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btDoUong = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btMonAn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pnOrder = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btChoThanhToan = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.lbTongSoOrder = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel38 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btRestore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btHome)).BeginInit();
             this.pnChaoMung.SuspendLayout();
@@ -229,9 +216,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).BeginInit();
             this.panel25.SuspendLayout();
-            this.pnOrder.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -242,13 +226,9 @@
             this.panel1.Controls.Add(this.btMinimize);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btOrderwhite);
-            this.panel1.Controls.Add(this.btRestore);
             this.panel1.Controls.Add(this.lbGio);
-            this.panel1.Controls.Add(this.btMaximize);
             this.panel1.Controls.Add(this.btOrderPlus);
             this.panel1.Controls.Add(this.btUser);
-            this.panel1.Controls.Add(this.btOrderBlue);
             this.panel1.Controls.Add(this.btHome);
             this.panel1.Controls.Add(this.lbNgay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -280,7 +260,7 @@
             this.btDatChoWhite.IconVisible = true;
             this.btDatChoWhite.IconZoom = 55D;
             this.btDatChoWhite.IsTab = false;
-            this.btDatChoWhite.Location = new System.Drawing.Point(223, 13);
+            this.btDatChoWhite.Location = new System.Drawing.Point(95, 7);
             this.btDatChoWhite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btDatChoWhite.Name = "btDatChoWhite";
             this.btDatChoWhite.Normalcolor = System.Drawing.Color.White;
@@ -293,6 +273,7 @@
             this.btDatChoWhite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btDatChoWhite.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btDatChoWhite.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDatChoWhite.Visible = false;
             this.btDatChoWhite.Click += new System.EventHandler(this.BtDatChoWhite_Click);
             // 
             // btMenu
@@ -300,7 +281,7 @@
             this.btMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btMenu.Image = ((System.Drawing.Image)(resources.GetObject("btMenu.Image")));
             this.btMenu.ImageActive = null;
-            this.btMenu.Location = new System.Drawing.Point(1263, 8);
+            this.btMenu.Location = new System.Drawing.Point(1315, 8);
             this.btMenu.Name = "btMenu";
             this.btMenu.Size = new System.Drawing.Size(45, 41);
             this.btMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -314,7 +295,7 @@
             this.btMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btMinimize.Image")));
             this.btMinimize.ImageActive = null;
-            this.btMinimize.Location = new System.Drawing.Point(1311, 5);
+            this.btMinimize.Location = new System.Drawing.Point(1363, 5);
             this.btMinimize.Name = "btMinimize";
             this.btMinimize.Size = new System.Drawing.Size(49, 44);
             this.btMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,7 +310,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(850, 15);
+            this.label2.Location = new System.Drawing.Point(904, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 17;
@@ -342,66 +323,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1044, 16);
+            this.label1.Location = new System.Drawing.Point(1098, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 25);
             this.label1.TabIndex = 16;
             this.label1.Text = "-";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btOrderwhite
-            // 
-            this.btOrderwhite.Active = false;
-            this.btOrderwhite.Activecolor = System.Drawing.Color.White;
-            this.btOrderwhite.BackColor = System.Drawing.Color.White;
-            this.btOrderwhite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btOrderwhite.BorderRadius = 0;
-            this.btOrderwhite.ButtonText = "  Order";
-            this.btOrderwhite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btOrderwhite.DisabledColor = System.Drawing.Color.Gray;
-            this.btOrderwhite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btOrderwhite.Iconcolor = System.Drawing.Color.Transparent;
-            this.btOrderwhite.Iconimage = ((System.Drawing.Image)(resources.GetObject("btOrderwhite.Iconimage")));
-            this.btOrderwhite.Iconimage_right = null;
-            this.btOrderwhite.Iconimage_right_Selected = null;
-            this.btOrderwhite.Iconimage_Selected = null;
-            this.btOrderwhite.IconMarginLeft = 0;
-            this.btOrderwhite.IconMarginRight = 0;
-            this.btOrderwhite.IconRightVisible = true;
-            this.btOrderwhite.IconRightZoom = 0D;
-            this.btOrderwhite.IconVisible = true;
-            this.btOrderwhite.IconZoom = 55D;
-            this.btOrderwhite.IsTab = false;
-            this.btOrderwhite.Location = new System.Drawing.Point(95, 13);
-            this.btOrderwhite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btOrderwhite.Name = "btOrderwhite";
-            this.btOrderwhite.Normalcolor = System.Drawing.Color.White;
-            this.btOrderwhite.OnHovercolor = System.Drawing.Color.White;
-            this.btOrderwhite.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btOrderwhite.selected = false;
-            this.btOrderwhite.Size = new System.Drawing.Size(126, 42);
-            this.btOrderwhite.TabIndex = 4;
-            this.btOrderwhite.Text = "  Order";
-            this.btOrderwhite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btOrderwhite.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btOrderwhite.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btOrderwhite.Visible = false;
-            this.btOrderwhite.Click += new System.EventHandler(this.BtOrderwhite_Click);
-            // 
-            // btRestore
-            // 
-            this.btRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRestore.Image = ((System.Drawing.Image)(resources.GetObject("btRestore.Image")));
-            this.btRestore.ImageActive = null;
-            this.btRestore.Location = new System.Drawing.Point(1363, 5);
-            this.btRestore.Name = "btRestore";
-            this.btRestore.Size = new System.Drawing.Size(49, 44);
-            this.btRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btRestore.TabIndex = 13;
-            this.btRestore.TabStop = false;
-            this.btRestore.Visible = false;
-            this.btRestore.Zoom = 10;
-            this.btRestore.Click += new System.EventHandler(this.BtRestore_Click);
             // 
             // lbGio
             // 
@@ -409,26 +336,12 @@
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.White;
-            this.lbGio.Location = new System.Drawing.Point(1059, 16);
+            this.lbGio.Location = new System.Drawing.Point(1113, 16);
             this.lbGio.Name = "lbGio";
             this.lbGio.Size = new System.Drawing.Size(80, 25);
             this.lbGio.TabIndex = 15;
             this.lbGio.Text = "00:00:00";
             this.lbGio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btMaximize
-            // 
-            this.btMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btMaximize.Image")));
-            this.btMaximize.ImageActive = null;
-            this.btMaximize.Location = new System.Drawing.Point(1363, 5);
-            this.btMaximize.Name = "btMaximize";
-            this.btMaximize.Size = new System.Drawing.Size(49, 44);
-            this.btMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btMaximize.TabIndex = 12;
-            this.btMaximize.TabStop = false;
-            this.btMaximize.Zoom = 10;
-            this.btMaximize.Click += new System.EventHandler(this.BtMaximize_Click);
             // 
             // btOrderPlus
             // 
@@ -453,7 +366,7 @@
             this.btOrderPlus.IconVisible = true;
             this.btOrderPlus.IconZoom = 55D;
             this.btOrderPlus.IsTab = false;
-            this.btOrderPlus.Location = new System.Drawing.Point(1141, 3);
+            this.btOrderPlus.Location = new System.Drawing.Point(1195, 3);
             this.btOrderPlus.Name = "btOrderPlus";
             this.btOrderPlus.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btOrderPlus.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -481,44 +394,6 @@
             this.btUser.Zoom = 10;
             this.btUser.Click += new System.EventHandler(this.BtUser_Click);
             // 
-            // btOrderBlue
-            // 
-            this.btOrderBlue.Active = false;
-            this.btOrderBlue.Activecolor = System.Drawing.Color.White;
-            this.btOrderBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btOrderBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btOrderBlue.BorderRadius = 0;
-            this.btOrderBlue.ButtonText = "  Order";
-            this.btOrderBlue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btOrderBlue.DisabledColor = System.Drawing.Color.Gray;
-            this.btOrderBlue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btOrderBlue.Iconcolor = System.Drawing.Color.Transparent;
-            this.btOrderBlue.Iconimage = ((System.Drawing.Image)(resources.GetObject("btOrderBlue.Iconimage")));
-            this.btOrderBlue.Iconimage_right = null;
-            this.btOrderBlue.Iconimage_right_Selected = null;
-            this.btOrderBlue.Iconimage_Selected = null;
-            this.btOrderBlue.IconMarginLeft = 0;
-            this.btOrderBlue.IconMarginRight = 0;
-            this.btOrderBlue.IconRightVisible = true;
-            this.btOrderBlue.IconRightZoom = 0D;
-            this.btOrderBlue.IconVisible = true;
-            this.btOrderBlue.IconZoom = 55D;
-            this.btOrderBlue.IsTab = false;
-            this.btOrderBlue.Location = new System.Drawing.Point(91, 12);
-            this.btOrderBlue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btOrderBlue.Name = "btOrderBlue";
-            this.btOrderBlue.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btOrderBlue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btOrderBlue.OnHoverTextColor = System.Drawing.Color.White;
-            this.btOrderBlue.selected = false;
-            this.btOrderBlue.Size = new System.Drawing.Size(126, 42);
-            this.btOrderBlue.TabIndex = 2;
-            this.btOrderBlue.Text = "  Order";
-            this.btOrderBlue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btOrderBlue.Textcolor = System.Drawing.Color.White;
-            this.btOrderBlue.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btOrderBlue.Click += new System.EventHandler(this.BtOrderBlue_Click);
-            // 
             // btHome
             // 
             this.btHome.Image = ((System.Drawing.Image)(resources.GetObject("btHome.Image")));
@@ -538,7 +413,7 @@
             this.lbNgay.AutoSize = true;
             this.lbNgay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgay.ForeColor = System.Drawing.Color.White;
-            this.lbNgay.Location = new System.Drawing.Point(942, 16);
+            this.lbNgay.Location = new System.Drawing.Point(996, 16);
             this.lbNgay.Name = "lbNgay";
             this.lbNgay.Size = new System.Drawing.Size(106, 25);
             this.lbNgay.TabIndex = 14;
@@ -1509,11 +1384,20 @@
             this.pnMenu.Controls.Add(this.panel4);
             this.pnMenu.Controls.Add(this.bunifuFlatButton12);
             this.pnMenu.Controls.Add(this.bunifuFlatButton11);
-            this.pnMenu.Location = new System.Drawing.Point(1102, 51);
+            this.pnMenu.Location = new System.Drawing.Point(1153, 51);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(209, 183);
             this.pnMenu.TabIndex = 6;
             this.pnMenu.Visible = false;
+            // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.Gray;
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel38.Location = new System.Drawing.Point(0, 173);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(207, 5);
+            this.panel38.TabIndex = 27;
             // 
             // btTaoVoucherSLLon
             // 
@@ -2204,32 +2088,32 @@
             this.dtgvHoaDon.AllowUserToAddRows = false;
             this.dtgvHoaDon.AllowUserToDeleteRows = false;
             this.dtgvHoaDon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvHoaDon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvHoaDon.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dtgvHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtgvHoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dtgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvHoaDon.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvHoaDon.DefaultCellStyle = dataGridViewCellStyle13;
             this.dtgvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvHoaDon.DoubleBuffered = true;
             this.dtgvHoaDon.EnableHeadersVisualStyles = false;
@@ -2238,17 +2122,17 @@
             this.dtgvHoaDon.Location = new System.Drawing.Point(0, 0);
             this.dtgvHoaDon.Name = "dtgvHoaDon";
             this.dtgvHoaDon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dtgvHoaDon.RowHeadersVisible = false;
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgvHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgvHoaDon.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dtgvHoaDon.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgvHoaDon.Size = new System.Drawing.Size(559, 618);
@@ -2532,133 +2416,20 @@
             this.btMonAn.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btMonAn.Click += new System.EventHandler(this.BtMonAn_Click);
             // 
-            // pnOrder
-            // 
-            this.pnOrder.BackColor = System.Drawing.Color.White;
-            this.pnOrder.Controls.Add(this.panel13);
-            this.pnOrder.Controls.Add(this.panel14);
-            this.pnOrder.Controls.Add(this.panel15);
-            this.pnOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnOrder.Location = new System.Drawing.Point(0, 52);
-            this.pnOrder.Name = "pnOrder";
-            this.pnOrder.Size = new System.Drawing.Size(1470, 697);
-            this.pnOrder.TabIndex = 14;
-            this.pnOrder.Visible = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(0, 58);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1470, 576);
-            this.panel13.TabIndex = 9;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Controls.Add(this.bunifuThinButton21);
-            this.panel14.Controls.Add(this.btChoThanhToan);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1470, 58);
-            this.panel14.TabIndex = 7;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Mang về";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.bunifuThinButton21.Location = new System.Drawing.Point(227, 5);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(119, 45);
-            this.bunifuThinButton21.TabIndex = 1;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btChoThanhToan
-            // 
-            this.btChoThanhToan.ActiveBorderThickness = 1;
-            this.btChoThanhToan.ActiveCornerRadius = 20;
-            this.btChoThanhToan.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btChoThanhToan.ActiveForecolor = System.Drawing.Color.White;
-            this.btChoThanhToan.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btChoThanhToan.BackColor = System.Drawing.Color.White;
-            this.btChoThanhToan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btChoThanhToan.BackgroundImage")));
-            this.btChoThanhToan.ButtonText = "Chờ thanh toán";
-            this.btChoThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btChoThanhToan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChoThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btChoThanhToan.IdleBorderThickness = 1;
-            this.btChoThanhToan.IdleCornerRadius = 20;
-            this.btChoThanhToan.IdleFillColor = System.Drawing.Color.White;
-            this.btChoThanhToan.IdleForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btChoThanhToan.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btChoThanhToan.Location = new System.Drawing.Point(14, 5);
-            this.btChoThanhToan.Margin = new System.Windows.Forms.Padding(5);
-            this.btChoThanhToan.Name = "btChoThanhToan";
-            this.btChoThanhToan.Size = new System.Drawing.Size(203, 45);
-            this.btChoThanhToan.TabIndex = 0;
-            this.btChoThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.panel15.Controls.Add(this.lbTongSoOrder);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 634);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1470, 63);
-            this.panel15.TabIndex = 8;
-            // 
-            // lbTongSoOrder
-            // 
-            this.lbTongSoOrder.AutoSize = true;
-            this.lbTongSoOrder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongSoOrder.Location = new System.Drawing.Point(10, 21);
-            this.lbTongSoOrder.Name = "lbTongSoOrder";
-            this.lbTongSoOrder.Size = new System.Drawing.Size(113, 21);
-            this.lbTongSoOrder.TabIndex = 1;
-            this.lbTongSoOrder.Text = "Tổng số Order:";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // panel38
-            // 
-            this.panel38.BackColor = System.Drawing.Color.Gray;
-            this.panel38.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel38.Location = new System.Drawing.Point(0, 173);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(207, 5);
-            this.panel38.TabIndex = 27;
             // 
             // fQLBH1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 749);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnTinhTien);
             this.Controls.Add(this.pnNewOrder);
-            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnChaoMung);
             this.Controls.Add(this.pnDatCho);
-            this.Controls.Add(this.pnOrder);
             this.Controls.Add(this.pnDsHD);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -2675,8 +2446,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btRestore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btHome)).EndInit();
             this.pnChaoMung.ResumeLayout(false);
@@ -2729,10 +2498,6 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btSearch)).EndInit();
             this.panel25.ResumeLayout(false);
-            this.pnOrder.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2744,12 +2509,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbGio;
-        private Bunifu.Framework.UI.BunifuImageButton btRestore;
-        private Bunifu.Framework.UI.BunifuImageButton btMaximize;
         private Bunifu.Framework.UI.BunifuFlatButton btOrderPlus;
         private Bunifu.Framework.UI.BunifuImageButton btUser;
-        private Bunifu.Framework.UI.BunifuFlatButton btOrderwhite;
-        private Bunifu.Framework.UI.BunifuFlatButton btOrderBlue;
         private Bunifu.Framework.UI.BunifuImageButton btHome;
         private System.Windows.Forms.Label lbNgay;
         private System.Windows.Forms.Panel pnChaoMung;
@@ -2761,16 +2522,9 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel pnDatCho;
         private System.Windows.Forms.Panel pnNewOrder;
-        private System.Windows.Forms.Panel pnOrder;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private Bunifu.Framework.UI.BunifuThinButton2 btChoThanhToan;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label lbTongSoOrder;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel Mid;
         private System.Windows.Forms.Panel Top1;

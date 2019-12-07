@@ -12,7 +12,7 @@ namespace QuanLyQuanBeer
 {
     public partial class fThemSP : Form
     {
-        BindingSource listSP = new BindingSource();
+       // BindingSource listSP = new BindingSource();
         public fThemSP()
         {
             InitializeComponent();

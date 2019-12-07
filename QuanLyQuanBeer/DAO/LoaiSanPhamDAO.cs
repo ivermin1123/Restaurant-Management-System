@@ -49,18 +49,14 @@ namespace QuanLyQuanBeer.DAO
         public List<LoaiSanPhamDTO> GetListLoaiSP()
         {
             List<LoaiSanPhamDTO> danhSachLoaiSP = new List<LoaiSanPhamDTO>();
-
             string query = ("SELECT * From LoaiSanPham");
-
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
             foreach (DataRow item in data.Rows)
             {
                 LoaiSanPhamDTO loaiSP = new LoaiSanPhamDTO(item);
                 danhSachLoaiSP.Add(loaiSP);
             }
             return danhSachLoaiSP;
-
         }
 
         public string GetLoaiSPByID(int idLoai)
