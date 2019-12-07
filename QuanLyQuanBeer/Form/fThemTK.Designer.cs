@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemTK));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btThoat = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.grbLoaiTK = new System.Windows.Forms.GroupBox();
+            this.rdbtThuKho = new System.Windows.Forms.RadioButton();
             this.rdbtNhanVien = new System.Windows.Forms.RadioButton();
             this.rdbtQuanLy = new System.Windows.Forms.RadioButton();
             this.lbLoaiTK = new System.Windows.Forms.Label();
@@ -41,15 +43,17 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
-            this.rdbtThuKho = new System.Windows.Forms.RadioButton();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.grbLoaiTK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -131,6 +135,18 @@
             this.grbLoaiTK.TabIndex = 49;
             this.grbLoaiTK.TabStop = false;
             // 
+            // rdbtThuKho
+            // 
+            this.rdbtThuKho.AutoSize = true;
+            this.rdbtThuKho.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbtThuKho.Location = new System.Drawing.Point(49, 41);
+            this.rdbtThuKho.Name = "rdbtThuKho";
+            this.rdbtThuKho.Size = new System.Drawing.Size(84, 25);
+            this.rdbtThuKho.TabIndex = 2;
+            this.rdbtThuKho.TabStop = true;
+            this.rdbtThuKho.Text = "Thủ kho";
+            this.rdbtThuKho.UseVisualStyleBackColor = true;
+            // 
             // rdbtNhanVien
             // 
             this.rdbtNhanVien.AutoSize = true;
@@ -206,17 +222,19 @@
             this.lbTenTK.TabIndex = 44;
             this.lbTenTK.Text = "Tên tài khoản:";
             // 
-            // rdbtThuKho
+            // btExit
             // 
-            this.rdbtThuKho.AutoSize = true;
-            this.rdbtThuKho.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtThuKho.Location = new System.Drawing.Point(49, 41);
-            this.rdbtThuKho.Name = "rdbtThuKho";
-            this.rdbtThuKho.Size = new System.Drawing.Size(84, 25);
-            this.rdbtThuKho.TabIndex = 2;
-            this.rdbtThuKho.TabStop = true;
-            this.rdbtThuKho.Text = "Thủ kho";
-            this.rdbtThuKho.UseVisualStyleBackColor = true;
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(404, 7);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // fThemTK
             // 
@@ -236,6 +254,7 @@
             this.panel2.PerformLayout();
             this.grbLoaiTK.ResumeLayout(false);
             this.grbLoaiTK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,5 +275,6 @@
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.RadioButton rdbtThuKho;
+        private Bunifu.Framework.UI.BunifuImageButton btExit;
     }
 }

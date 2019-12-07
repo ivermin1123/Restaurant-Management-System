@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,6 +65,44 @@ namespace QuanLyQuanBeer
                     MessageBox.Show("Thêm không thành công!", "Thêm khuyến mại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
             }
+        }
+
+        private void txbGiamGiaTM_TextChanged(object sender, EventArgs e)
+        {
+            txbGiamGiaTM.Focus();
+            txbGiamGiaTM.SelectionStart = txbGiamGiaTM.Text.Length;
+            if (txbGiamGiaTM.Text == string.Empty)
+                txbGiamGiaTM.Text = 0.ToString();
+            CultureInfo culture = new CultureInfo("en-US");
+            decimal value1 = decimal.Parse(txbGiamGiaTM.Text, NumberStyles.Currency);
+            txbGiamGiaTM.Text = String.Format(culture, "{0:N0}", value1);
+        }
+
+        private void txbToiDa_TextChanged(object sender, EventArgs e)
+        {
+            txbToiDa.Focus();
+            txbToiDa.SelectionStart = txbToiDa.Text.Length;
+            if (txbToiDa.Text == string.Empty)
+                txbToiDa.Text = 0.ToString();
+            CultureInfo culture = new CultureInfo("en-US");
+            decimal value1 = decimal.Parse(txbToiDa.Text, NumberStyles.Currency);
+            txbToiDa.Text = String.Format(culture, "{0:N0}", value1);
+        }
+
+        private void txbDieuKien_TextChanged(object sender, EventArgs e)
+        {
+            txbDieuKien.Focus();
+            txbDieuKien.SelectionStart = txbDieuKien.Text.Length;
+            if (txbDieuKien.Text == string.Empty)
+                txbDieuKien.Text = 0.ToString();
+            CultureInfo culture = new CultureInfo("en-US");
+            decimal value1 = decimal.Parse(txbDieuKien.Text, NumberStyles.Currency);
+            txbDieuKien.Text = String.Format(culture, "{0:N0}", value1);
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

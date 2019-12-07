@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSuaTK));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,14 +42,17 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.grbLoaiTK.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -206,6 +210,20 @@
             this.lbTenTK.TabIndex = 44;
             this.lbTenTK.Text = "Tên tài khoản:";
             // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(368, 3);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
             // fSuaTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +241,7 @@
             this.panel2.PerformLayout();
             this.grbLoaiTK.ResumeLayout(false);
             this.grbLoaiTK.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +261,6 @@
         private System.Windows.Forms.Label lbMatKhau;
         private System.Windows.Forms.TextBox txbTenTaiKhoan;
         private System.Windows.Forms.Label lbTenTK;
+        private Bunifu.Framework.UI.BunifuImageButton btExit;
     }
 }

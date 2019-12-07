@@ -266,29 +266,58 @@ namespace QuanLyQuanBeer
             List<BanDTO> tableList = BanDAO.Instance.LoadDsBan();
             foreach (BanDTO item in tableList)
             {
-                Button bt = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
-                bt.Text = item.TenBan;
-                bt.FlatStyle = FlatStyle.Flat;
-                bt.Click += Bt_click;
-                bt.Tag = item;
-                bt.FlatAppearance.BorderColor = Color.FromArgb(9, 115, 185);
-                bt.FlatAppearance.BorderSize = 3;
-                bt.FlatAppearance.MouseOverBackColor = Color.Azure;
-                bt.FlatAppearance.MouseDownBackColor = Color.PowderBlue;
-                bt.Font = new Font("Arial", 12, FontStyle.Bold);
+                BunifuImageButton bt = new BunifuImageButton();
+                Panel pn1 = new Panel();
+                Panel pn2 = new Panel();
+                Label lb = new Label();
+                // panel1
+                pn1.Controls.Add(pn2);
+                pn1.Controls.Add(bt);
+                pn1.Size = new Size(120, 109);
+                // panel2
+                pn2.BackColor = Color.White;
+                pn2.BorderStyle = BorderStyle.FixedSingle;
+                pn2.Controls.Add(lb);
+                pn2.Dock = System.Windows.Forms.DockStyle.Fill;
+                pn2.Size = new System.Drawing.Size(120, 31);
+                // 
+                // label1
+                // 
+                lb.Dock = DockStyle.Fill;
+                lb.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
+                lb.Size = new Size(118, 29);
+                lb.TabIndex = 0;
+                lb.Text = item.TenBan;
+                lb.TextAlign = ContentAlignment.MiddleCenter;
+                // 
+                // bunifuImageButton1
+                // 
+                bt.BackColor = Color.White;
+                bt.BorderStyle = BorderStyle.FixedSingle;
+                bt.Dock = DockStyle.Top;
                 switch (item.TrangThai)
                 {
                     case "Trống":
-                        bt.BackColor = Color.White;
-                        bt.ForeColor = Color.FromArgb(9, 115, 185);
+                        bt.Image = Properties.Resources.OK;
                         break;
-                    default:
-                        bt.BackColor = Color.FromArgb(128, 128, 128);
-                        bt.ForeColor = Color.White;
-                        bt.FlatAppearance.MouseOverBackColor = Color.FromArgb(214, 214, 214);
+                    case "Có người":
+                        bt.Image = Properties.Resources.OK1;
                         break;
                 }
-                flpBan.Controls.Add(bt);
+                bt.ImageActive = null;
+                bt.Tag = item;
+                bt.Click += (s, e) =>
+                {
+                    int idBan = ((s as BunifuImageButton).Tag as BanDTO).ID;
+                    dtgvHoaDon.Tag = (s as BunifuImageButton).Tag;
+                    lbIdBan.Text = item.TenBan;
+                    XemHoaDon(idBan);
+                    XemHoaDon1(idBan);
+                };
+                bt.Size = new Size(120, 78);
+                bt.SizeMode = PictureBoxSizeMode.Zoom;
+                bt.Zoom = 3;
+                flpBan.Controls.Add(pn1);
             }
         }
 
@@ -351,8 +380,10 @@ namespace QuanLyQuanBeer
             double voucher = double.Parse(txbVoucher.Text);
             LoadTien();
         }
-            void TaoButton(List<SanPhamDTO> tableList)
+
+        void TaoButton(List<SanPhamDTO> tableList)
         {
+            flpChonMon.Controls.Clear();
             foreach (SanPhamDTO item in tableList)
             {
                 if (item.HinhAnh == string.Empty)
@@ -470,14 +501,6 @@ namespace QuanLyQuanBeer
         #endregion
 
         #region Events
-        void Bt_click(object sender, EventArgs e)
-        {
-            int idBan = ((sender as Button).Tag as BanDTO).ID;
-            dtgvHoaDon.Tag = (sender as Button).Tag;
-            lbIdBan.Text = idBan.ToString();
-            XemHoaDon(idBan);
-            XemHoaDon1(idBan);
-        }
 
         private void CkbxGTGT_OnChange(object sender, EventArgs e)
         {
@@ -733,6 +756,7 @@ namespace QuanLyQuanBeer
             int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
             fThemMonNgoai f = new fThemMonNgoai(idHoaDon, ban.ID, ban.TenBan);
             f.ShowDialog();
+            LoadMon();
             XemHoaDon(ban.ID);
             XemHoaDon1(ban.ID);
         }
@@ -915,5 +939,6 @@ namespace QuanLyQuanBeer
         {
             LoadTien();
         }
+
     }
 }

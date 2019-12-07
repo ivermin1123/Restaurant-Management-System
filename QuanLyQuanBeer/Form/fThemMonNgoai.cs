@@ -105,5 +105,10 @@ namespace QuanLyQuanBeer.DAO
             }
             else e.Handled = true;
         }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -282,10 +282,11 @@
             this.txbGiamGiaTM.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbGiamGiaTM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGiamGiaTM.Location = new System.Drawing.Point(230, 114);
-            this.txbGiamGiaTM.MaxLength = 8;
+            this.txbGiamGiaTM.MaxLength = 22;
             this.txbGiamGiaTM.Name = "txbGiamGiaTM";
             this.txbGiamGiaTM.Size = new System.Drawing.Size(260, 33);
             this.txbGiamGiaTM.TabIndex = 86;
+            this.txbGiamGiaTM.TextChanged += new System.EventHandler(this.txbGiamGiaTM_TextChanged);
             // 
             // lbMatKhau
             // 

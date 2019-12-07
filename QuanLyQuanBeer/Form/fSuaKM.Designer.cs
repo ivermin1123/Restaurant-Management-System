@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSuaKM));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbxTenKM = new System.Windows.Forms.ComboBox();
@@ -57,9 +58,11 @@
             this.btSua = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -366,6 +369,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel2.Controls.Add(this.btExit);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -386,6 +390,20 @@
             this.label1.Text = "SỬA KHUYẾN MẠI";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(577, 5);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
             // fSuaKM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +419,7 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,5 +455,6 @@
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuImageButton btExit;
     }
 }

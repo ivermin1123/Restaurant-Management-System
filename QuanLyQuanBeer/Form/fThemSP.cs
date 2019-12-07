@@ -101,5 +101,10 @@ namespace QuanLyQuanBeer
                 ptbHienThiAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

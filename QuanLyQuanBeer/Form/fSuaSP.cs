@@ -17,16 +17,20 @@ namespace QuanLyQuanBeer
         private string _donVi;
         private string _danhMuc;
         private string _loaiSP;
+        private string _tenAnh;
 
-        public fSuaSP(string tenSP, double gia, int idLoai, int maSP, string donVi, string danhMuc, string loaiSP)
+        public fSuaSP(string tenSP, double gia, int idLoai, int maSP, string donVi, string danhMuc, string loaiSP,string tenAnh)
         {
             InitializeComponent();
-            _tenSP = tenSP; _gia = gia; _idLoai = idLoai; _maSP = maSP; _donVi = donVi; _danhMuc = danhMuc; _loaiSP = loaiSP;
+            _tenSP = tenSP; _gia = gia; _idLoai = idLoai; _maSP = maSP; _donVi = donVi; _danhMuc = danhMuc; _loaiSP = loaiSP; _tenAnh = tenAnh;
             txbTenSP1.Text = _tenSP;
             txbGia.Text = _gia.ToString();
             txbDonVi.Text = _donVi;
             txbLoaiSP.Text = _loaiSP;
             txbDanhMuc.Text = _danhMuc;
+            if (_tenAnh == string.Empty)
+               _tenAnh = "Khongcohinhanh.jpg";
+            ptbHienThiAnh.Image = Image.FromFile(@"..//..//..//Pic Food/" + _tenAnh);
         }
 
 
@@ -76,13 +80,18 @@ namespace QuanLyQuanBeer
         private void BtChonAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;) | *.jpg; *.jpeg; *.gif; *.bmp;";
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;;*.png;) | *.jpg; *.jpeg; *.gif; *.bmp;*.png;";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 txbDuongDan.Text = open.FileName;
                 ptbHienThiAnh.Image = new Bitmap(open.FileName);
                 ptbHienThiAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+        }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

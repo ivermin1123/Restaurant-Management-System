@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemKhuyenMai));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txbDieuKien = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txbToiDa = new System.Windows.Forms.TextBox();
@@ -53,11 +54,13 @@
             this.txbNDKM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btThem = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,29 +73,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 486);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(190, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "THÊM KHUYẾN MẠI";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(592, 48);
-            this.panel2.TabIndex = 5;
             // 
             // panel3
             // 
@@ -126,14 +106,36 @@
             this.panel3.Size = new System.Drawing.Size(592, 436);
             this.panel3.TabIndex = 7;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(89, 356);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(426, 20);
+            this.label15.TabIndex = 108;
+            this.label15.Text = "Nhập điều kiện cho khuyến mại. Để trống nếu không có điều kiện.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(26, 301);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(555, 20);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "Nhập số tiền tối đa bạn muốn giảm giá cho khuyến mại, để trống nếu không giới hạn" +
+    ".";
+            // 
             // txbDieuKien
             // 
             this.txbDieuKien.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDieuKien.Location = new System.Drawing.Point(187, 324);
-            this.txbDieuKien.MaxLength = 8;
+            this.txbDieuKien.MaxLength = 22;
             this.txbDieuKien.Name = "txbDieuKien";
             this.txbDieuKien.Size = new System.Drawing.Size(328, 29);
             this.txbDieuKien.TabIndex = 106;
+            this.txbDieuKien.TextChanged += new System.EventHandler(this.txbDieuKien_TextChanged);
             // 
             // label9
             // 
@@ -149,10 +151,11 @@
             // 
             this.txbToiDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbToiDa.Location = new System.Drawing.Point(187, 269);
-            this.txbToiDa.MaxLength = 8;
+            this.txbToiDa.MaxLength = 22;
             this.txbToiDa.Name = "txbToiDa";
             this.txbToiDa.Size = new System.Drawing.Size(328, 29);
             this.txbToiDa.TabIndex = 104;
+            this.txbToiDa.TextChanged += new System.EventHandler(this.txbToiDa_TextChanged);
             // 
             // label10
             // 
@@ -188,10 +191,11 @@
             // 
             this.txbGiamGiaTM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGiamGiaTM.Location = new System.Drawing.Point(187, 214);
-            this.txbGiamGiaTM.MaxLength = 8;
+            this.txbGiamGiaTM.MaxLength = 22;
             this.txbGiamGiaTM.Name = "txbGiamGiaTM";
             this.txbGiamGiaTM.Size = new System.Drawing.Size(328, 29);
             this.txbGiamGiaTM.TabIndex = 100;
+            this.txbGiamGiaTM.TextChanged += new System.EventHandler(this.txbGiamGiaTM_TextChanged);
             // 
             // label4
             // 
@@ -341,26 +345,43 @@
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
-            // label5
+            // panel2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 301);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(555, 20);
-            this.label5.TabIndex = 107;
-            this.label5.Text = "Nhập số tiền tối đa bạn muốn giảm giá cho khuyến mại, để trống nếu không giới hạn" +
-    ".";
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel2.Controls.Add(this.btExit);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(592, 48);
+            this.panel2.TabIndex = 5;
             // 
-            // label15
+            // label1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(89, 356);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(426, 20);
-            this.label15.TabIndex = 108;
-            this.label15.Text = "Nhập điều kiện cho khuyến mại. Để trống nếu không có điều kiện.";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(190, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(243, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "THÊM KHUYẾN MẠI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(553, 7);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // fThemKhuyenMai
             // 
@@ -373,10 +394,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fThemKhuyenMai";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,5 +432,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuImageButton btExit;
     }
 }

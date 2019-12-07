@@ -52,7 +52,8 @@ namespace QuanLyQuanBeer
             string donVi = Convert.ToString(selectedRow.Cells["DonVi"].Value);
             string danhMuc = LoaiSanPhamDAO.Instance.GetDanhMucSPByID(idLoai);
             string loaiSP = LoaiSanPhamDAO.Instance.GetLoaiSPByID(idLoai);
-            fSuaSP f = new fSuaSP(tenSP, gia, idLoai, maSP, donVi, danhMuc, loaiSP);
+            string tenAnh = Convert.ToString(selectedRow.Cells["HinhAnh"].Value);
+            fSuaSP f = new fSuaSP(tenSP, gia, idLoai, maSP, donVi, danhMuc, loaiSP, tenAnh);
             f.ShowDialog();
             LoadAccount();
         }

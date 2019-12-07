@@ -49,8 +49,8 @@
             this.txbGiamGiaPT = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -252,7 +252,7 @@
             this.txbGiamGiaTM.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbGiamGiaTM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbGiamGiaTM.Location = new System.Drawing.Point(222, 69);
-            this.txbGiamGiaTM.MaxLength = 8;
+            this.txbGiamGiaTM.MaxLength = 22;
             this.txbGiamGiaTM.Name = "txbGiamGiaTM";
             this.txbGiamGiaTM.Size = new System.Drawing.Size(260, 33);
             this.txbGiamGiaTM.TabIndex = 47;
@@ -303,19 +303,6 @@
             this.panel2.Size = new System.Drawing.Size(545, 48);
             this.panel2.TabIndex = 4;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(186, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "TẠO VOUCHER";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btExit
             // 
             this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -329,6 +316,19 @@
             this.btExit.TabStop = false;
             this.btExit.Zoom = 10;
             this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(186, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 32);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "TẠO VOUCHER";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fTaoVoucher
             // 

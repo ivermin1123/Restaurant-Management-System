@@ -48,7 +48,6 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptInTam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "rptInTam";
             this.Load += new System.EventHandler(this.RptInTam_Load);
             this.ResumeLayout(false);
 

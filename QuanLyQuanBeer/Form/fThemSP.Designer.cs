@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemSP));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ptbHienThiAnh = new System.Windows.Forms.PictureBox();
+            this.btChonAnh = new System.Windows.Forms.Button();
+            this.txbDuongDan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btThoat = new System.Windows.Forms.Button();
             this.labelVND = new System.Windows.Forms.Label();
@@ -46,15 +51,13 @@
             this.rdbtDoUong = new System.Windows.Forms.RadioButton();
             this.rdbtMonAn = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbDuongDan = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btChonAnh = new System.Windows.Forms.Button();
-            this.ptbHienThiAnh = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHienThiAnh)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbHienThiAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,6 +85,49 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(756, 314);
             this.panel2.TabIndex = 3;
+            // 
+            // ptbHienThiAnh
+            // 
+            this.ptbHienThiAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptbHienThiAnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbHienThiAnh.Location = new System.Drawing.Point(518, 102);
+            this.ptbHienThiAnh.Name = "ptbHienThiAnh";
+            this.ptbHienThiAnh.Size = new System.Drawing.Size(153, 127);
+            this.ptbHienThiAnh.TabIndex = 76;
+            this.ptbHienThiAnh.TabStop = false;
+            // 
+            // btChonAnh
+            // 
+            this.btChonAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btChonAnh.Location = new System.Drawing.Point(537, 68);
+            this.btChonAnh.Name = "btChonAnh";
+            this.btChonAnh.Size = new System.Drawing.Size(113, 28);
+            this.btChonAnh.TabIndex = 75;
+            this.btChonAnh.Text = "Chọn ảnh";
+            this.btChonAnh.UseVisualStyleBackColor = true;
+            this.btChonAnh.Click += new System.EventHandler(this.BtChonAnh_Click);
+            // 
+            // txbDuongDan
+            // 
+            this.txbDuongDan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txbDuongDan.BackColor = System.Drawing.Color.White;
+            this.txbDuongDan.Location = new System.Drawing.Point(473, 6);
+            this.txbDuongDan.Multiline = true;
+            this.txbDuongDan.Name = "txbDuongDan";
+            this.txbDuongDan.ReadOnly = true;
+            this.txbDuongDan.Size = new System.Drawing.Size(258, 56);
+            this.txbDuongDan.TabIndex = 73;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label5.Location = new System.Drawing.Point(391, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 21);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Hình ảnh:";
             // 
             // label4
             // 
@@ -270,12 +316,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(756, 48);
             this.panel1.TabIndex = 2;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(725, 7);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // label1
             // 
@@ -290,48 +351,6 @@
             this.label1.Text = "THÊM SẢN PHẨM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txbDuongDan
-            // 
-            this.txbDuongDan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbDuongDan.BackColor = System.Drawing.Color.White;
-            this.txbDuongDan.Location = new System.Drawing.Point(473, 6);
-            this.txbDuongDan.Multiline = true;
-            this.txbDuongDan.Name = "txbDuongDan";
-            this.txbDuongDan.ReadOnly = true;
-            this.txbDuongDan.Size = new System.Drawing.Size(258, 56);
-            this.txbDuongDan.TabIndex = 73;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label5.Location = new System.Drawing.Point(391, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 21);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Hình ảnh:";
-            // 
-            // btChonAnh
-            // 
-            this.btChonAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btChonAnh.Location = new System.Drawing.Point(537, 68);
-            this.btChonAnh.Name = "btChonAnh";
-            this.btChonAnh.Size = new System.Drawing.Size(113, 28);
-            this.btChonAnh.TabIndex = 75;
-            this.btChonAnh.Text = "Chọn ảnh";
-            this.btChonAnh.UseVisualStyleBackColor = true;
-            this.btChonAnh.Click += new System.EventHandler(this.BtChonAnh_Click);
-            // 
-            // ptbHienThiAnh
-            // 
-            this.ptbHienThiAnh.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ptbHienThiAnh.Location = new System.Drawing.Point(518, 102);
-            this.ptbHienThiAnh.Name = "ptbHienThiAnh";
-            this.ptbHienThiAnh.Size = new System.Drawing.Size(153, 127);
-            this.ptbHienThiAnh.TabIndex = 76;
-            this.ptbHienThiAnh.TabStop = false;
-            // 
             // fThemSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,11 +364,12 @@
             this.Text = "fThemSP";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbHienThiAnh)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbHienThiAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,5 +399,6 @@
         private System.Windows.Forms.Button btChonAnh;
         private System.Windows.Forms.TextBox txbDuongDan;
         private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuImageButton btExit;
     }
 }

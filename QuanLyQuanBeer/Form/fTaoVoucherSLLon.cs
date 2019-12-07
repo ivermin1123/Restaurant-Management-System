@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -80,6 +81,17 @@ namespace QuanLyQuanBeer
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txbGiamGiaTM_TextChanged(object sender, EventArgs e)
+        {
+            txbGiamGiaTM.Focus();
+            txbGiamGiaTM.SelectionStart = txbGiamGiaTM.Text.Length;
+            if (txbGiamGiaTM.Text == string.Empty)
+                txbGiamGiaTM.Text = 0.ToString();
+            CultureInfo culture = new CultureInfo("en-US");
+            decimal value1 = decimal.Parse(txbGiamGiaTM.Text, NumberStyles.Currency);
+            txbGiamGiaTM.Text = String.Format(culture, "{0:N0}", value1);
         }
     }
 }
