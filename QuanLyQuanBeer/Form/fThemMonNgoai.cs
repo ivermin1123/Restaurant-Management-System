@@ -19,7 +19,9 @@ namespace QuanLyQuanBeer.DAO
         private void TxbSL_TextChanged(object sender, EventArgs e)
         {
             if (txbDonGia.Text == string.Empty)
-                txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * 0)).ToString();
+                txbDonGia.Text = 0.ToString();
+            else if (txbSL.Text == string.Empty)
+                txbSL.Text = 0.ToString();
             else
                 txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
         }
@@ -27,7 +29,9 @@ namespace QuanLyQuanBeer.DAO
         private void TxbDonGia_TextChanged(object sender, EventArgs e)
         {
             if (txbDonGia.Text == string.Empty)
-                txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * 0)).ToString();
+                txbDonGia.Text = 0.ToString();
+            else if (txbSL.Text == string.Empty)
+                txbSL.Text = 0.ToString();
             else
                 txbThanhTien.Text = String.Format("{0:0,0}", (double.Parse(txbSL.Text) * double.Parse(txbDonGia.Text))).ToString();
         }

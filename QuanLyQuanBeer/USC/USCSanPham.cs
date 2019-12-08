@@ -71,9 +71,18 @@ namespace QuanLyQuanBeer
             string hinhAnh = SanPhamDAO.Instance.GetTenHinhAnh(tenSanPham);
             if (SanPhamDAO.Instance.XoaSP(tenSanPham))
             {
-                File.Delete(@"..//..//..//Pic Food/" + hinhAnh);
-                MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAccount();
+                if (hinhAnh == string.Empty)
+                {
+                    MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadAccount();
+                }
+                else
+                {
+                    File.Delete(@"..//..//..//Pic Food/" + hinhAnh);
+                    MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadAccount();
+                }
+                
             }
             else
                 MessageBox.Show("Xóa không thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
