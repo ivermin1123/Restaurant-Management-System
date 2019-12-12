@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using QuanLyQuanBeer.DTO;
+﻿using Bunifu.Framework.UI;
 using QuanLyQuanBeer.DAO;
-using Bunifu.Framework.UI;
+using QuanLyQuanBeer.DTO;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace QuanLyQuanBeer.USC
 {
@@ -21,7 +15,7 @@ namespace QuanLyQuanBeer.USC
             LoadKM();
         }
 
-        void LoadKM()
+        private void LoadKM()
         {
             panelAdd.Controls.Clear();
             List<KhuyenMaiDTO> tableList = KhuyenMaiDAO.Instance.LoadDsKMAll();
@@ -158,7 +152,7 @@ namespace QuanLyQuanBeer.USC
                         txbToiDa.TabIndex = 3;
                         txbToiDa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
                         panelAdd.Controls.Add(pn2);
-                         break;
+                        break;
                 }
             }
         }

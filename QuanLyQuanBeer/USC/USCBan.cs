@@ -6,7 +6,8 @@ namespace QuanLyQuanBeer.USC
 {
     public partial class USCBan : UserControl
     {
-        BindingSource listBan = new BindingSource();
+        private BindingSource listBan = new BindingSource();
+
         public USCBan()
         {
             InitializeComponent();
@@ -14,7 +15,7 @@ namespace QuanLyQuanBeer.USC
             Binding();
         }
 
-        void LoadAccount()
+        private void LoadAccount()
         {
             dtgvBan.DataSource = listBan;
             listBan.DataSource = BanDAO.Instance.LoadDsBan();
@@ -23,7 +24,7 @@ namespace QuanLyQuanBeer.USC
             dtgvBan.Columns[2].HeaderText = "Trạng Thái";
         }
 
-        void Binding()
+        private void Binding()
         {
             txbIdBan.DataBindings.Add("Text", dtgvBan.DataSource, "id", true, DataSourceUpdateMode.Never);
             txbTenBan.DataBindings.Add("Text", dtgvBan.DataSource, "TenBan", true, DataSourceUpdateMode.Never);

@@ -1,11 +1,7 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -19,7 +15,9 @@ namespace QuanLyQuanBeer.DAO
             private set { LoaiKhuyenMaiDAO.instance = value; }
         }
 
-        private LoaiKhuyenMaiDAO() { }
+        private LoaiKhuyenMaiDAO()
+        {
+        }
 
         public int GetIDByTenLoaiKM(string tenKM)
         {
@@ -35,7 +33,7 @@ namespace QuanLyQuanBeer.DAO
 
         public string GetTenLoaiKMByID(int idLKM)
         {
-            string query = "SELECT * FROM LoaiKhuyenMai WHERE id="+ idLKM;
+            string query = "SELECT * FROM LoaiKhuyenMai WHERE id=" + idLKM;
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {

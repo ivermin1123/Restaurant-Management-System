@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 
 namespace QuanLyQuanBeer.DTO
 {
@@ -13,6 +11,7 @@ namespace QuanLyQuanBeer.DTO
             this.DVT = dVT;
             this.SL = sL;
         }
+
         public KhoDTO(DataRow row)
         {
             this.IdHang = (int)row["idHang"];

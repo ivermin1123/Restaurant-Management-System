@@ -8,6 +8,7 @@ namespace QuanLyQuanBeer.DAO
         private int _idHoaDon;
         private int _idBan;
         private string _TenBan;
+
         public fThemMonNgoai(int idHoaDon, int idBan, string TenBan)
         {
             InitializeComponent();
@@ -76,7 +77,6 @@ namespace QuanLyQuanBeer.DAO
                             DialogResult kq = MessageBox.Show(_TenBan + " chưa có hóa đơn.\n Bạn có muốn tạo hóa đơn mới cho bàn này chứ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                             if (kq == DialogResult.OK)
                             {
-
                                 HoaDonDAO.Instance.InsertBill(_idBan, tongCong);
                                 ThongTinHoaDonDAO.Instance.InsertBillInfo(HoaDonDAO.Instance.GetMaxIdBill(), idSP1, soLuong);
                                 BanDAO.Instance.UpdateTrangThaiBan(_idBan);

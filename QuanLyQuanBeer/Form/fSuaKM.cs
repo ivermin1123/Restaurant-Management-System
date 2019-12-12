@@ -2,12 +2,6 @@
 using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -20,7 +14,7 @@ namespace QuanLyQuanBeer
             LoadCBX();
         }
 
-        void LoadCBX()
+        private void LoadCBX()
         {
             List<LoaiKhuyenMaiDTO> dsLKM = LoaiKhuyenMaiDAO.Instance.GetListLoaiSP();
             cbxLoaiKM.DataSource = dsLKM;
@@ -47,7 +41,6 @@ namespace QuanLyQuanBeer
             txbToiDa.Text = km.ToiDa.ToString();
             txbNDKM.Text = km.TenKM;
             cbxLoaiKM.Text = LoaiKhuyenMaiDAO.Instance.GetTenLoaiKMByID(km.IdLoaiKM);
-
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -74,7 +67,7 @@ namespace QuanLyQuanBeer
                 string tenKMDau = cbxTenKM.Text;
                 int idLoaiKM = LoaiKhuyenMaiDAO.Instance.GetIDByTenLoaiKM(cbxLoaiKM.Text);
                 int idKM = KhuyenMaiDAO.Instance.GetIDByTenKM(tenKMDau);
-                if (KhuyenMaiDAO.Instance.SuaKhuyenMai(tenKMSua, giamGia, giamTien, toiDa, dieuKien, idLoaiKM,idKM))
+                if (KhuyenMaiDAO.Instance.SuaKhuyenMai(tenKMSua, giamGia, giamTien, toiDa, dieuKien, idLoaiKM, idKM))
                 {
                     MessageBox.Show("Sửa thành công!", "Sửa khuyến mại", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

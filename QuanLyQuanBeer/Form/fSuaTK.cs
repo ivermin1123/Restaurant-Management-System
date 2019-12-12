@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
 {
-
     public partial class fSuaTK : Form
     {
         private string _userName;
         private string _passWord;
         private string _loai;
+
         public fSuaTK(string userName, string passWord, string loai)
         {
             InitializeComponent();

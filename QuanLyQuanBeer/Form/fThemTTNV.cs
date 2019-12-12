@@ -8,6 +8,7 @@ namespace QuanLyQuanBeer
     {
         private string _userName;
         private string gioiTinh;
+
         public fThemTTNV(string userName)
         {
             InitializeComponent();
@@ -53,7 +54,6 @@ namespace QuanLyQuanBeer
                             this.Close();
                         }
                     }
-
                 }
             }
         }

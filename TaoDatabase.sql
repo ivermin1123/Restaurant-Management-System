@@ -539,7 +539,3 @@ begin
 end
 GO
 
---SELECT * FROM  dbo.HoaDon WHERE idBan = 1 AND TrangThai = N'Chưa thanh toán'
---SELECT * FROM KhuyenMai
--- SELECT * FROM LoaiKhuyenMai
---Select * From KhuyenMai WHERE TenKM = 

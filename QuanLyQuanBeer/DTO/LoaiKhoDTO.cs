@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 
 namespace QuanLyQuanBeer.DTO
 {
@@ -11,6 +9,7 @@ namespace QuanLyQuanBeer.DTO
             this.Id = id;
             this.TenLoaiKho = tenLoaiKho;
         }
+
         public LoaiKhoDTO(DataRow row)
         {
             this.Id = row["id"].ToString();

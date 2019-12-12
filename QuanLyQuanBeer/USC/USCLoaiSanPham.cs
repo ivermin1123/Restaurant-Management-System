@@ -6,14 +6,16 @@ namespace QuanLyQuanBeer.USC
 {
     public partial class USCLoaiSanPham : UserControl
     {
-        BindingSource listLoaiSP = new BindingSource();
+        private BindingSource listLoaiSP = new BindingSource();
+
         public USCLoaiSanPham()
         {
             InitializeComponent();
             LoadAccount();
             binding();
         }
-        void LoadAccount()
+
+        private void LoadAccount()
         {
             dtgvLoaiSanPham.DataSource = listLoaiSP;
             listLoaiSP.DataSource = LoaiSanPhamDAO.Instance.GetListLoaiSP();
@@ -22,7 +24,7 @@ namespace QuanLyQuanBeer.USC
             dtgvLoaiSanPham.Columns[2].HeaderText = "Danh mục";
         }
 
-        void binding()
+        private void binding()
         {
             txbMaLSP.DataBindings.Add("Text", dtgvLoaiSanPham.DataSource, "id", true, DataSourceUpdateMode.Never);
             txbLoaiSP.DataBindings.Add("Text", dtgvLoaiSanPham.DataSource, "TenLoaiSanPham", true, DataSourceUpdateMode.Never);
@@ -45,7 +47,6 @@ namespace QuanLyQuanBeer.USC
                     rdbtKhac.Checked = true;
             }
         }
-
 
         private void BtThemLSP_Click(object sender, EventArgs e)
         {

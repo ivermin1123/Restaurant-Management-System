@@ -7,11 +7,13 @@ namespace QuanLyQuanBeer
     public partial class fAdmin : Form
     {
         private TaiKhoanDTO taiKhoanHienTai;
+
         public TaiKhoanDTO TaiKhoanHienTai
         {
             get { return taiKhoanHienTai; }
             set { taiKhoanHienTai = value; }
         }
+
         public fAdmin(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
@@ -317,6 +319,5 @@ namespace QuanLyQuanBeer
             pn9.Visible = false;
             pn10.Visible = true;
         }
-
     }
 }

@@ -1,14 +1,9 @@
 ﻿using QuanLyQuanBeer.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -39,7 +34,7 @@ namespace QuanLyQuanBeer
 
         private void btTao_Click_1(object sender, EventArgs e)
         {
-            if (txbNoiDung.Text == string.Empty )
+            if (txbNoiDung.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập nội dung Voucher", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -71,7 +66,6 @@ namespace QuanLyQuanBeer
                     }
                     else
                         MessageBox.Show("Thêm không thành công!", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
                 }
             }
         }

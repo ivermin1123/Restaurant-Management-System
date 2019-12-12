@@ -7,11 +7,13 @@ namespace QuanLyQuanBeer
     public partial class fDieuHuong : Form
     {
         private TaiKhoanDTO taiKhoanHienTai;
+
         public TaiKhoanDTO TaiKhoanHienTai
         {
             get { return taiKhoanHienTai; }
             set { taiKhoanHienTai = value; }
         }
+
         public fDieuHuong(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
@@ -51,6 +53,5 @@ namespace QuanLyQuanBeer
             lbGio.Text = DateTime.Now.ToString("HH:mm:ss");
             lbNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
-
     }
 }

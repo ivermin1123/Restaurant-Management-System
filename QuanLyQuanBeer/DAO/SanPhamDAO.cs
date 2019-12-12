@@ -15,7 +15,9 @@ namespace QuanLyQuanBeer.DAO
             private set { instance = value; }
         }
 
-        private SanPhamDAO() { }
+        private SanPhamDAO()
+        {
+        }
 
         public bool XoaSP(string tenSanPham)
         {

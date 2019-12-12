@@ -6,14 +6,15 @@ namespace QuanLyQuanBeer
 {
     public partial class USCTaiKhoan : UserControl
     {
-        BindingSource accountList = new BindingSource();
+        private BindingSource accountList = new BindingSource();
+
         public USCTaiKhoan()
         {
             InitializeComponent();
             LoadAccount();
         }
 
-        void LoadAccount()
+        private void LoadAccount()
         {
             dtgvTaiKhoan.DataSource = accountList;
             accountList.DataSource = TaiKhoanDAO.Instance.layDSTaiKhoan();

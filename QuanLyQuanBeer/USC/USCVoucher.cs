@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using QuanLyQuanBeer.DAO;
+using System;
 using System.Windows.Forms;
-using QuanLyQuanBeer.DAO;
 
 namespace QuanLyQuanBeer.USC
 {
     public partial class USCVoucher : UserControl
     {
-        BindingSource listVC = new BindingSource();
+        private BindingSource listVC = new BindingSource();
+
         public USCVoucher()
         {
             InitializeComponent();
             LoadVoucher();
         }
 
-        void LoadVoucher()
+        private void LoadVoucher()
         {
             dtgvVoucher.DataSource = listVC;
             listVC.DataSource = VoucherDAO.Instance.GetlistVC();
@@ -67,14 +61,13 @@ namespace QuanLyQuanBeer.USC
             int selectedrowindex = dtgvVoucher.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dtgvVoucher.Rows[selectedrowindex];
             string maVC = Convert.ToString(selectedRow.Cells["id"].Value);
-            if(VoucherDAO.Instance.XoaVoucher(maVC))
+            if (VoucherDAO.Instance.XoaVoucher(maVC))
             {
                 MessageBox.Show("Xóa thành công", "Xóa Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("Xóa không thành công", "Xóa Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadVoucher();
-
         }
     }
 }

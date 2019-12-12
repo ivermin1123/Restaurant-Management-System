@@ -51,8 +51,6 @@ namespace QuanLyQuanBeer
                         this.Close();
                     }
                 }
-
-
             }
         }
 

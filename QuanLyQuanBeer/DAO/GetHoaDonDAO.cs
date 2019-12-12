@@ -3,9 +3,6 @@ using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -18,7 +15,10 @@ namespace QuanLyQuanBeer.DAO
             get { if (instance == null) instance = new GetHoaDonDAO(); return instance; }
             private set { GetHoaDonDAO.instance = value; }
         }
-        private GetHoaDonDAO() { }
+
+        private GetHoaDonDAO()
+        {
+        }
 
         public List<GetHoaDonDTO> LayDsHoaDonByDate(DateTime fromDay, DateTime toDay)
         {

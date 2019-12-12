@@ -1,11 +1,7 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -19,7 +15,9 @@ namespace QuanLyQuanBeer.DAO
             private set { KhuyenMaiDAO.instance = value; }
         }
 
-        private KhuyenMaiDAO() { }
+        private KhuyenMaiDAO()
+        {
+        }
 
         public List<KhuyenMaiDTO> LoadDsKM()
         {
@@ -47,8 +45,8 @@ namespace QuanLyQuanBeer.DAO
 
         public KhuyenMaiDTO GetDTOKM(string tenKM)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From KhuyenMai WHERE TenKM = N'"+tenKM+"'");
-            if (data.Rows.Count >0)
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From KhuyenMai WHERE TenKM = N'" + tenKM + "'");
+            if (data.Rows.Count > 0)
             {
                 KhuyenMaiDTO km = new KhuyenMaiDTO(data.Rows[0]);
                 return km;
@@ -68,7 +66,7 @@ namespace QuanLyQuanBeer.DAO
             return dsKM;
         }
 
-        public void DoiTrangThai(string trangThai,int id)
+        public void DoiTrangThai(string trangThai, int id)
         {
             string query = "UPDATE dbo.KhuyenMai SET TrangThai =N'" + trangThai + "' WHERE id =" + id;
             DataProvider.Instance.ExecuteQuery(query);
@@ -76,11 +74,11 @@ namespace QuanLyQuanBeer.DAO
 
         public void XoaKhuyenMai(int id)
         {
-            string query = "DELETE dbo.KhuyenMai WHERE id ="+ id ;
+            string query = "DELETE dbo.KhuyenMai WHERE id =" + id;
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public bool ThemKhuyenMai(string tenKM,int giamGia,double giamTien,double toiDa,double dieuKien,int idLoaiKm)
+        public bool ThemKhuyenMai(string tenKM, int giamGia, double giamTien, double toiDa, double dieuKien, int idLoaiKm)
         {
             string query = "USP_InsertDiscount @tenKM , @giamGia , @giamTien , @toiDa , @dieuKien , @idLoaiKM ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenKM, giamGia, giamTien, toiDa, dieuKien, idLoaiKm }) > 0;

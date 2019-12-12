@@ -15,7 +15,9 @@ namespace QuanLyQuanBeer.DAO
             private set { TaiKhoanDAO.instance = value; }
         }
 
-        private TaiKhoanDAO() { }
+        private TaiKhoanDAO()
+        {
+        }
 
         public TaiKhoanDTO layTaiKhoan(string tenDangNhap)
         {
@@ -54,7 +56,6 @@ namespace QuanLyQuanBeer.DAO
             return danhSach;
         }
 
-
         public string layTenDangNhap(string tenDangNhap)
         {
             string query = "SELECT * FROM dbo.TaiKhoan WHERE TenDangNhap = '" + tenDangNhap + "'";
@@ -72,6 +73,7 @@ namespace QuanLyQuanBeer.DAO
             string query = "XoaTK '" + ten + "'";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
+
         public bool capNhatTK(string matKhau, string loai, string tenDangNhap)
         {
             string query = "UPDATE dbo.TaiKhoan SET MatKhau = '" + matKhau + "', LoaiTaiKhoan = N'" + loai + "' WHERE TenDangNhap = '" + tenDangNhap + "'";
@@ -102,6 +104,5 @@ namespace QuanLyQuanBeer.DAO
             }
             return string.Empty;
         }
-
     }
 }

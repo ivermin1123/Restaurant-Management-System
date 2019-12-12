@@ -3,21 +3,22 @@ using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DAO
 {
     public class VoucherDAO
     {
         private static VoucherDAO instance;
+
         public static VoucherDAO Instance
         {
             get { if (instance == null) instance = new VoucherDAO(); return instance; }
             private set { VoucherDAO.instance = value; }
         }
-        private VoucherDAO() { }
+
+        private VoucherDAO()
+        {
+        }
 
         public VoucherDTO GETDTOVoucher(string maVC)
         {
@@ -29,6 +30,7 @@ namespace QuanLyQuanBeer.DAO
             }
             return null;
         }
+
         public List<VoucherDTO> GetlistVC()
         {
             List<VoucherDTO> listVC = new List<VoucherDTO>();
@@ -42,9 +44,9 @@ namespace QuanLyQuanBeer.DAO
             return listVC;
         }
 
-        public bool SuaVoucher(string id,string tenVC, int giamGia, double giamTien, DateTime hSD)
+        public bool SuaVoucher(string id, string tenVC, int giamGia, double giamTien, DateTime hSD)
         {
-            string query = "UPDATE dbo.Voucher SET TenVoucher = N'"+tenVC+"' , GiamGia = "+giamGia+", GiamTien = "+giamTien+", HanSuDung = '"+hSD+"' where id = '"+id+"'";
+            string query = "UPDATE dbo.Voucher SET TenVoucher = N'" + tenVC + "' , GiamGia = " + giamGia + ", GiamTien = " + giamTien + ", HanSuDung = '" + hSD + "' where id = '" + id + "'";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -59,7 +61,7 @@ namespace QuanLyQuanBeer.DAO
         public List<VoucherDTO> LayThongTinVoucher(string maVC)
         {
             List<VoucherDTO> listVC = new List<VoucherDTO>();
-            string query = "Select * From Voucher where id = '"+ maVC + "'" ;
+            string query = "Select * From Voucher where id = '" + maVC + "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -83,6 +85,7 @@ namespace QuanLyQuanBeer.DAO
             string query = "USP_InsertVoucher @id , @TenVoucher , @giamGia , @giamTien , @hanSuDung ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, TenVoucher, giamGia, giamTien, hanSuDung }) > 0;
         }
+
         public bool CapNhatTrangThaiVoucher(string maVC)
         {
             string query = "UPDATE dbo.Voucher SET TrangThai = N'Đã sử dụng' WHERE id = '" + maVC + "'";
@@ -90,6 +93,4 @@ namespace QuanLyQuanBeer.DAO
             return result > 0;
         }
     }
-
-    
 }

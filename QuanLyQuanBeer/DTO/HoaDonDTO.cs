@@ -5,7 +5,7 @@ namespace QuanLyQuanBeer.DTO
 {
     public class HoaDonDTO
     {
-        public HoaDonDTO(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, string trangThai,string voucher,double khuyenMai,double vAT, double tongCong, string nhanVien)
+        public HoaDonDTO(int iD, DateTime? thoiGianVao, DateTime? thoiGianRa, int idBan, string trangThai, string voucher, double khuyenMai, double vAT, double tongCong, string nhanVien)
         {
             this.ID = iD;
             this.ThoiGianVao = thoiGianVao;

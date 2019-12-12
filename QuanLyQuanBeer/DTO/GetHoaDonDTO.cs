@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace QuanLyQuanBeer.DTO
 {
@@ -24,6 +19,7 @@ namespace QuanLyQuanBeer.DTO
             this.TongCong = (double)row["tongCong"];
             this.NhanVien = row["nhanVien"].ToString();
         }
+
         private int iD;
         private string nhanVien;
         private string tenBan;

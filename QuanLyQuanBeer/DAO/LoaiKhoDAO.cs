@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace QuanLyQuanBeer.DAO
+﻿namespace QuanLyQuanBeer.DAO
 {
     public class LoaiKhoDAO
     {
@@ -13,6 +10,8 @@ namespace QuanLyQuanBeer.DAO
             private set { LoaiKhoDAO.instance = value; }
         }
 
-        private LoaiKhoDAO() { }
+        private LoaiKhoDAO()
+        {
+        }
     }
 }

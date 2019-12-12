@@ -11,15 +11,17 @@ namespace QuanLyQuanBeer
 {
     public partial class fQLBH1 : Form
     {
-        BindingSource listSP = new BindingSource();
+        private BindingSource listSP = new BindingSource();
         private TaiKhoanDTO taiKhoanHienTai;
         private double thanhTien1;
         public bool _KetQua;
+
         public TaiKhoanDTO TaiKhoanHienTai
         {
             get { return taiKhoanHienTai; }
             set { taiKhoanHienTai = value; }
         }
+
         public fQLBH1(TaiKhoanDTO acc)
         {
             this.TaiKhoanHienTai = acc;
@@ -30,7 +32,8 @@ namespace QuanLyQuanBeer
         }
 
         #region Method
-        void LoadVoucher()
+
+        private void LoadVoucher()
         {
             string maVC = txbMaVoucher.Text;
             List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
@@ -38,7 +41,6 @@ namespace QuanLyQuanBeer
             {
                 foreach (VoucherDTO item in list)
                 {
-                    
                     if (item.TrangThai == "Đã sử dụng")
                     {
                         txbNoiDungVoucher.Text = "Voucher này đã được sử dụng !!";
@@ -48,12 +50,12 @@ namespace QuanLyQuanBeer
                     {
                         if (item.HanSuDung < DateTime.Now)
                         {
-                            txbNoiDungVoucher.Text = "Voucher này đã Hết hạn !! HSD: "+item.HanSuDung;
+                            txbNoiDungVoucher.Text = "Voucher này đã Hết hạn !! HSD: " + item.HanSuDung;
                             txbNoiDungVoucher.ForeColor = Color.Red;
                         }
                         else
                         {
-                            txbNoiDungVoucher.Text = item.TenVoucher+ " - HSD:" + item.HanSuDung;
+                            txbNoiDungVoucher.Text = item.TenVoucher + " - HSD:" + item.HanSuDung;
                             txbNoiDungVoucher.ForeColor = Color.Green;
                         }
                     }
@@ -65,7 +67,8 @@ namespace QuanLyQuanBeer
                 txbNoiDungVoucher.ForeColor = Color.Blue;
             }
         }
-        void LoadTien()
+
+        private void LoadTien()
         {
             txbConPhaiThu.Text = txbTongThanhToan.Text;
             decimal conPhaiThu = decimal.Parse(txbConPhaiThu.Text);
@@ -76,7 +79,8 @@ namespace QuanLyQuanBeer
             if (conPhaiThu1 < 0)
                 txbConPhaiThu.Text = 0.ToString();
         }
-        void LoadKM()
+
+        private void LoadKM()
         {
             flpKM.Controls.Clear();
             List<KhuyenMaiDTO> tableList = KhuyenMaiDAO.Instance.LoadDsKM();
@@ -107,7 +111,7 @@ namespace QuanLyQuanBeer
                 chk.ForeColor = System.Drawing.Color.White;
                 chk.Location = new System.Drawing.Point(18, 17);
                 chk.Size = new System.Drawing.Size(20, 20);
-                chk.OnChange += (s, e) => 
+                chk.OnChange += (s, e) =>
                 {
                     double km = 0;
                     if (txbKM.Text == string.Empty)
@@ -129,7 +133,7 @@ namespace QuanLyQuanBeer
                                             if (km > item.ToiDa)
                                             {
                                                 km = item.ToiDa;
-                                                txbKM.Text = String.Format("{0:0,0}", -(km+km1));
+                                                txbKM.Text = String.Format("{0:0,0}", -(km + km1));
                                             }
                                             else
                                                 txbKM.Text = String.Format("{0:0,0}", -(km + km1));
@@ -160,6 +164,7 @@ namespace QuanLyQuanBeer
                                         txbKM.Text = String.Format("{0:0,0}", -(km + km1));
                                 }
                                 break;
+
                             case 2:
                                 MessageBox.Show("Chưa làm hehe !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
@@ -230,27 +235,28 @@ namespace QuanLyQuanBeer
                                     }
                                     else
                                         if (km1 == 0)
-                                                txbKM.Text = 0.ToString();
-                                            else
-                                                txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
+                                        txbKM.Text = 0.ToString();
+                                    else
+                                        txbKM.Text = String.Format("{0:0,0}", -(-km + km1));
                                 }
                                 break;
+
                             case 2:
                                 MessageBox.Show("Chưa làm hehe !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 break;
                         }
                     }
                 };
-                // 
+                //
                 // panel3
-                // 
+                //
                 pn3.Controls.Add(lb);
                 pn3.Dock = System.Windows.Forms.DockStyle.Fill;
                 pn3.Location = new System.Drawing.Point(57, 0);
                 pn3.Size = new System.Drawing.Size(442, 52);
-                // 
+                //
                 // label1
-                // 
+                //
                 lb.Dock = System.Windows.Forms.DockStyle.Fill;
                 lb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 lb.Location = new System.Drawing.Point(0, 0);
@@ -260,7 +266,8 @@ namespace QuanLyQuanBeer
                 flpKM.Controls.Add(pn1);
             }
         }
-        void LoadTable()
+
+        private void LoadTable()
         {
             flpBan.Controls.Clear();
             List<BanDTO> tableList = BanDAO.Instance.LoadDsBan();
@@ -280,18 +287,18 @@ namespace QuanLyQuanBeer
                 pn2.Controls.Add(lb);
                 pn2.Dock = System.Windows.Forms.DockStyle.Fill;
                 pn2.Size = new System.Drawing.Size(120, 31);
-                // 
+                //
                 // label1
-                // 
+                //
                 lb.Dock = DockStyle.Fill;
                 lb.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
                 lb.Size = new Size(118, 29);
                 lb.TabIndex = 0;
                 lb.Text = item.TenBan;
                 lb.TextAlign = ContentAlignment.MiddleCenter;
-                // 
+                //
                 // bunifuImageButton1
-                // 
+                //
                 bt.BackColor = Color.White;
                 bt.BorderStyle = BorderStyle.FixedSingle;
                 bt.Dock = DockStyle.Top;
@@ -300,6 +307,7 @@ namespace QuanLyQuanBeer
                     case "Trống":
                         bt.Image = Properties.Resources.OK;
                         break;
+
                     case "Có người":
                         bt.Image = Properties.Resources.OK1;
                         break;
@@ -321,7 +329,7 @@ namespace QuanLyQuanBeer
             }
         }
 
-        void XemHoaDon(int id)
+        private void XemHoaDon(int id)
         {
             //CultureInfo culture = new CultureInfo("en-US");
             //Thread.CurrentThread.CurrentCulture = culture;
@@ -348,7 +356,7 @@ namespace QuanLyQuanBeer
             //}
         }
 
-        void XemHoaDon1(int id)
+        private void XemHoaDon1(int id)
         {
             lsvHoaDon1.Items.Clear();
             BanDTO ban = dtgvHoaDon.Tag as BanDTO;
@@ -381,7 +389,7 @@ namespace QuanLyQuanBeer
             LoadTien();
         }
 
-        void TaoButton(List<SanPhamDTO> tableList)
+        private void TaoButton(List<SanPhamDTO> tableList)
         {
             flpChonMon.Controls.Clear();
             foreach (SanPhamDTO item in tableList)
@@ -439,6 +447,7 @@ namespace QuanLyQuanBeer
                             case MouseButtons.Left:
                                 ThongTinHoaDonDAO.Instance.InsertBillInfo(idHoaDon, idSP, 1);
                                 break;
+
                             case MouseButtons.Right:
                                 ThongTinHoaDonDAO.Instance.InsertBillInfo(idHoaDon, idSP, -1);
                                 break;
@@ -469,27 +478,32 @@ namespace QuanLyQuanBeer
                 flpChonMon.Controls.Add(pn);
             }
         }
-        void LoadMon()
+
+        private void LoadMon()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadChonMon();
             TaoButton(tableList);
         }
-        void LoadMonAn()
+
+        private void LoadMonAn()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadMonAn();
             TaoButton(tableList);
         }
-        void LoadDoUong()
+
+        private void LoadDoUong()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadDoUong();
             TaoButton(tableList);
         }
-        void LoadKhac()
+
+        private void LoadKhac()
         {
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.LoadKhac();
             TaoButton(tableList);
         }
-        void SearchMonAnTheoTen(string TenMon)
+
+        private void SearchMonAnTheoTen(string TenMon)
         {
             /*string firstLetters = "";
             foreach (var part in TenMon.Split(' ')) -- Lay ky tu dau tien VD: Con ga => Cg;
@@ -498,7 +512,8 @@ namespace QuanLyQuanBeer
             List<SanPhamDTO> tableList = SanPhamDAO.Instance.SearchMon(TenMon);
             TaoButton(tableList);
         }
-        #endregion
+
+        #endregion Method
 
         #region Events
 
@@ -604,7 +619,7 @@ namespace QuanLyQuanBeer
                 else
                     MessageBox.Show("Không tồn tại Mã Voucher này !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -674,11 +689,12 @@ namespace QuanLyQuanBeer
                     LoadTien();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void BtSearch_Click_1(object sender, EventArgs e)
         {
             SearchMonAnTheoTen(txbSearch.Text);
@@ -802,8 +818,8 @@ namespace QuanLyQuanBeer
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
+
         private void DtgvHoaDon_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -820,7 +836,7 @@ namespace QuanLyQuanBeer
                     XemHoaDon(ban.ID);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Vui lòng chỉ nhập số");
                 MessageBox.Show(ex.Message);
@@ -868,7 +884,6 @@ namespace QuanLyQuanBeer
                 else
                     MessageBox.Show("Không có hóa đơn để thanh toán !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
         private void BtMenu_Click(object sender, EventArgs e)
@@ -903,6 +918,7 @@ namespace QuanLyQuanBeer
             flpChonMon.Controls.Clear();
             LoadMon();
         }
+
         private void TxbSearch_Enter_1(object sender, EventArgs e)
         {
             if (txbSearch.Text == "Nhập tên món cần tìm")
@@ -945,7 +961,7 @@ namespace QuanLyQuanBeer
             string ThanhToan = txbTongThanhToan.Text;
             string Voucher = txbVoucher.Text;
             string KhuyenMai = txbKM.Text;
-            fThuTien f = new fThuTien(tongTien, ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT, ban.TenBan, ThanhToan,Voucher,KhuyenMai);
+            fThuTien f = new fThuTien(tongTien, ban.ID, NhanVien, ThanhTien, idHoaDon, GioVao, VAT, ban.TenBan, ThanhToan, Voucher, KhuyenMai);
             f.ShowDialog();
             XemHoaDon1(ban.ID);
             XemHoaDon(ban.ID);
@@ -972,12 +988,6 @@ namespace QuanLyQuanBeer
             LoadTable();
         }
 
-
-        #endregion
-
-
-
-        
-
+        #endregion Events
     }
 }

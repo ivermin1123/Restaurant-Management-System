@@ -2,12 +2,6 @@
 using QuanLyQuanBeer.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -16,16 +10,16 @@ namespace QuanLyQuanBeer
     {
         private TaiKhoanDTO _taiKhoanHienTai;
         private BanDTO _ban;
-        public fChuyenBan(TaiKhoanDTO taiKhoanHienTai,BanDTO ban)
+
+        public fChuyenBan(TaiKhoanDTO taiKhoanHienTai, BanDTO ban)
         {
             InitializeComponent();
             _taiKhoanHienTai = taiKhoanHienTai;
             _ban = ban;
             LoadCBXT();
-           
         }
 
-        void LoadCBXT()
+        private void LoadCBXT()
         {
             List<BanDTO> dsBanPhai = BanDAO.Instance.LoadDsBan();
             dsBanPhai.RemoveAt(dsBanPhai.FindIndex(a => a.TenBan == _ban.TenBan));
@@ -37,13 +31,14 @@ namespace QuanLyQuanBeer
             txbMaHDTrai.Text = "HD00" + idHoaDonTrai;
             if (idHoaDonPhai == -1)
                 txbMaHDPhai.Text = string.Empty;
-            else 
+            else
                 txbMaHDPhai.Text = "HD00" + idHoaDonPhai;
             txbBanTrai.Text = _ban.TenBan;
             XemHoaDon1(_ban.ID);
             XemHoaDon(idBanPhai);
         }
-        void XemHoaDon1(int id)
+
+        private void XemHoaDon1(int id)
         {
             lsvTableFrom.Items.Clear();
             List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable1(id);
@@ -63,7 +58,7 @@ namespace QuanLyQuanBeer
             }
         }
 
-        void XemHoaDon(int id)
+        private void XemHoaDon(int id)
         {
             lsvTableTo.Items.Clear();
             List<MenuDTO> danhSachThongTinHoaDon = MenuDAO.Instance.GetListMenuByTable1(id);
@@ -159,11 +154,12 @@ namespace QuanLyQuanBeer
                     BanDAO.Instance.UpdateStatusTable(_ban.ID);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btSangPhaiAll_Click(object sender, EventArgs e)
         {
             int idBanPhai = BanDAO.Instance.GetIdBanByTen(cbxBanPhai.Text);
@@ -214,7 +210,6 @@ namespace QuanLyQuanBeer
             }
         }
 
-
         private void btSangTrai1_Click(object sender, EventArgs e)
         {
             int idBanPhai = BanDAO.Instance.GetIdBanByTen(cbxBanPhai.Text);
@@ -237,7 +232,7 @@ namespace QuanLyQuanBeer
                                 int idSanPham = SanPhamDAO.Instance.GetIDByTenSP(tenMon);
                                 ThongTinHoaDonDTO thongtin = ThongTinHoaDonDAO.Instance.GETDTO(idSanPham, idHoaDonPhai);
                                 int x = thongtin.SoLuong;
-                                ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID,idBanPhai);
+                                ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID, idBanPhai);
                                 BanDAO.Instance.UpdateTrangThaiBan(_ban.ID);
                             }
                         }
@@ -260,7 +255,7 @@ namespace QuanLyQuanBeer
                             int idSanPham = SanPhamDAO.Instance.GetIDByTenSP(tenMon);
                             ThongTinHoaDonDTO thongtin = ThongTinHoaDonDAO.Instance.GETDTO(idSanPham, idHoaDonPhai);
                             int x = thongtin.SoLuong;
-                            ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID,idBanPhai);
+                            ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID, idBanPhai);
                         }
                     }
                     else
@@ -301,7 +296,7 @@ namespace QuanLyQuanBeer
                             int idSanPham = SanPhamDAO.Instance.GetIDByTenSP(tenMon);
                             ThongTinHoaDonDTO thongtin = ThongTinHoaDonDAO.Instance.GETDTO(idSanPham, idHoaDonPhai);
                             int x = thongtin.SoLuong;
-                            ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID,idBanPhai);
+                            ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID, idBanPhai);
                             BanDAO.Instance.UpdateTrangThaiBan(idHoaDonTrai);
                         }
                         HoaDonDAO.Instance.DeleteBillTrong(idHoaDonPhai);
@@ -319,7 +314,7 @@ namespace QuanLyQuanBeer
                         int idSanPham = SanPhamDAO.Instance.GetIDByTenSP(tenMon);
                         ThongTinHoaDonDTO thongtin = ThongTinHoaDonDAO.Instance.GETDTO(idSanPham, idHoaDonPhai);
                         int x = thongtin.SoLuong;
-                        ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID, idBanPhai );
+                        ThongTinHoaDonDAO.Instance.ChuyenNMon(idHoaDonPhai, idSanPham, _ban.ID, idBanPhai);
                     }
                     HoaDonDAO.Instance.DeleteBillTrong(idHoaDonPhai);
                     BanDAO.Instance.UpdateStatusTable(idBanPhai);

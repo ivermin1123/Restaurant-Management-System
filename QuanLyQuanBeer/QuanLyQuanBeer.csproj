@@ -102,12 +102,6 @@
     <Compile Include="Form\fChuyenBan.Designer.cs">
       <DependentUpon>fChuyenBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\fThemMonNgoai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,9 +320,6 @@
     </Compile>
     <EmbeddedResource Include="Form\fChuyenBan.resx">
       <DependentUpon>fChuyenBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fThemMonNgoai.resx">
       <DependentUpon>fThemMonNgoai.cs</DependentUpon>

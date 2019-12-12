@@ -19,7 +19,7 @@ namespace QuanLyQuanBeer
         private string _Voucher;
         private string _KhuyenMai;
 
-        public fThuTien(string tongTien, int idBan, string NhanVien, string ThanhTien, int idHoaDon, DateTime? GioVao, string VAT, string TenBan, string ThanhToan,string Voucher,string KhuyenMai)
+        public fThuTien(string tongTien, int idBan, string NhanVien, string ThanhTien, int idHoaDon, DateTime? GioVao, string VAT, string TenBan, string ThanhToan, string Voucher, string KhuyenMai)
         {
             InitializeComponent();
             _tongTien = tongTien;
@@ -36,7 +36,7 @@ namespace QuanLyQuanBeer
             GoiYTien();
         }
 
-        void GoiYTien()
+        private void GoiYTien()
         {
             txbTienThu.Text = _tongTien;
             CultureInfo culture = new CultureInfo("en-US");
@@ -88,6 +88,7 @@ namespace QuanLyQuanBeer
                 btGoiY6.Text = String.Format(culture, "{0:N0}", y + 200000); // 900.000
             }
         }
+
         private void BtThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -105,6 +106,7 @@ namespace QuanLyQuanBeer
             txbTienKhachDua.Text = String.Format(culture, "{0:N0}", value);
             txbTienKhachDua.Select(txbTienKhachDua.Text.Length, 0);
         }
+
         private void Bt500_Click(object sender, EventArgs e)
         {
             if (txbTienKhachDua.Text == string.Empty)
@@ -195,7 +197,7 @@ namespace QuanLyQuanBeer
             HienthiTienVN();
         }
 
-        void LoadTien()
+        private void LoadTien()
         {
             //decimal TienThuDoi = decimal.Parse(txbTienTraLai.Text); // 344.800
             //decimal TienThuCheck = (TienThuDoi % 10000); // 4800
@@ -258,7 +260,6 @@ namespace QuanLyQuanBeer
                     panel16.Visible = false;
             }
         }
-
 
         private void TxbTienKhachDua_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -333,7 +334,7 @@ namespace QuanLyQuanBeer
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -375,7 +376,7 @@ namespace QuanLyQuanBeer
                     TienThua1 = 0.ToString();
                 DateTime? GioRa = DateTime.Now;
                 rptHoaDon rptHoaDon = new rptHoaDon(_idBan);
-                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _tongTien, TienKhachDua, TienTraLai, GioRa,_Voucher,_KhuyenMai);
+                rptHoaDon.XuatHoaDon(_idHoaDon, _TenBan, _nhanVien, _ThanhTien, _GioVao, _VAT, _tongTien, TienKhachDua, TienTraLai, GioRa, _Voucher, _KhuyenMai);
                 int idBill = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(_idBan);
                 if (idBill != -1)
                 {
@@ -383,7 +384,7 @@ namespace QuanLyQuanBeer
                     if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho Bàn {0}" +
                         "\nTổng tiền = {1:0,0} VND", _idBan, tongtien), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        HoaDonDAO.Instance.CheckOut(idBill, tongtien, decimal.Parse(TienThua1), _nhanVien, Khuyenmai,VAT);
+                        HoaDonDAO.Instance.CheckOut(idBill, tongtien, decimal.Parse(TienThua1), _nhanVien, Khuyenmai, VAT);
                         BanDAO.Instance.UpdateStatusTable(_idBan);
                         this.Close();
                         rptHoaDon.ShowDialog();

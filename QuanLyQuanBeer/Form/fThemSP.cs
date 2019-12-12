@@ -12,14 +12,14 @@ namespace QuanLyQuanBeer
 {
     public partial class fThemSP : Form
     {
-       // BindingSource listSP = new BindingSource();
+        // BindingSource listSP = new BindingSource();
         public fThemSP()
         {
             InitializeComponent();
             LoadAccount();
         }
 
-        void LoadAccount()
+        private void LoadAccount()
         {
             //listSP.DataSource = SanPhamDAO.Instance.GetListSP();
             List<LoaiSanPhamDTO> danhSachLoaiSP = LoaiSanPhamDAO.Instance.GetListLoaiSP();
@@ -38,7 +38,6 @@ namespace QuanLyQuanBeer
 
         private void BtThem_Click(object sender, EventArgs e)
         {
-
             if (txbTenSP1.Text == string.Empty || txbGia.Text == string.Empty || cbxLoaiSP.Text == string.Empty || txbDonVi.Text == string.Empty)
                 MessageBox.Show("Bạn phải nhập đủ thông tin!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
@@ -73,7 +72,6 @@ namespace QuanLyQuanBeer
                     }
                 }
             }
-
         }
 
         private void BtThoat_Click(object sender, EventArgs e)

@@ -7,14 +7,15 @@ namespace QuanLyQuanBeer
 {
     public partial class USCSanPham : UserControl
     {
-        BindingSource listSP = new BindingSource();
+        private BindingSource listSP = new BindingSource();
+
         public USCSanPham()
         {
             InitializeComponent();
             LoadAccount();
         }
 
-        void LoadAccount()
+        private void LoadAccount()
         {
             dtgvSanPham.DataSource = listSP;
             listSP.DataSource = SanPhamDAO.Instance.GetListSP();
@@ -32,7 +33,6 @@ namespace QuanLyQuanBeer
             dtgvSanPham.Columns[5].FillWeight = 70;
             dtgvSanPham.Columns[6].HeaderText = "Hình ảnh";
         }
-
 
         private void BtThemSP_Click(object sender, EventArgs e)
         {
@@ -76,13 +76,17 @@ namespace QuanLyQuanBeer
                     MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();
                 }
+                else if( hinhAnh == "Khongcohinhanh.jpg")
+                {
+                    MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadAccount();
+                }
                 else
                 {
                     File.Delete(@"..//..//..//Pic Food/" + hinhAnh);
                     MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();
                 }
-                
             }
             else
                 MessageBox.Show("Xóa không thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);

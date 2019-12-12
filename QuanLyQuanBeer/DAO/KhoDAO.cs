@@ -1,9 +1,5 @@
 ﻿using QuanLyQuanBeer.ADO;
-using QuanLyQuanBeer.DTO;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace QuanLyQuanBeer.DAO
 {
@@ -17,13 +13,14 @@ namespace QuanLyQuanBeer.DAO
             private set { KhoDAO.instance = value; }
         }
 
-        private KhoDAO() { }
+        private KhoDAO()
+        {
+        }
 
         public DataTable GetListKho()
         {
             string query = "USP_GetDsKho";
-            return  DataProvider.Instance.ExecuteQuery(query);
+            return DataProvider.Instance.ExecuteQuery(query);
         }
-
     }
 }

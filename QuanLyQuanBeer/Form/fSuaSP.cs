@@ -19,7 +19,7 @@ namespace QuanLyQuanBeer
         private string _loaiSP;
         private string _tenAnh;
 
-        public fSuaSP(string tenSP, double gia, int idLoai, int maSP, string donVi, string danhMuc, string loaiSP,string tenAnh)
+        public fSuaSP(string tenSP, double gia, int idLoai, int maSP, string donVi, string danhMuc, string loaiSP, string tenAnh)
         {
             InitializeComponent();
             _tenSP = tenSP; _gia = gia; _idLoai = idLoai; _maSP = maSP; _donVi = donVi; _danhMuc = danhMuc; _loaiSP = loaiSP; _tenAnh = tenAnh;
@@ -29,10 +29,9 @@ namespace QuanLyQuanBeer
             txbLoaiSP.Text = _loaiSP;
             txbDanhMuc.Text = _danhMuc;
             if (_tenAnh == string.Empty)
-               _tenAnh = "Khongcohinhanh.jpg";
+                _tenAnh = "Khongcohinhanh.jpg";
             ptbHienThiAnh.Image = Image.FromFile(@"..//..//..//Pic Food/" + _tenAnh);
         }
-
 
         private void btThoat_Click(object sender, EventArgs e)
         {

@@ -14,11 +14,13 @@ namespace QuanLyQuanBeer.DAO
             private set { ThongTinHoaDonDAO.instance = value; }
         }
 
-        private ThongTinHoaDonDAO() { }
-
-        public ThongTinHoaDonDTO GETDTO(int tenKM,int idHoaDon)
+        private ThongTinHoaDonDAO()
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From ThongTinHoaDon WHERE idSanPham ="+tenKM+" AND idHoaDon ="+idHoaDon );
+        }
+
+        public ThongTinHoaDonDTO GETDTO(int tenKM, int idHoaDon)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From ThongTinHoaDon WHERE idSanPham =" + tenKM + " AND idHoaDon =" + idHoaDon);
             if (data.Rows.Count > 0)
             {
                 ThongTinHoaDonDTO km = new ThongTinHoaDonDTO(data.Rows[0]);
@@ -26,6 +28,7 @@ namespace QuanLyQuanBeer.DAO
             }
             return null;
         }
+
         public void InsertBillInfo(int idHoaDon, int idSanPham, int SoLuong)
         {
             string query = ("EXEC USP_InsertBillInfo @idHoaDon , @idSanPham , @SoLuong ");
@@ -44,11 +47,10 @@ namespace QuanLyQuanBeer.DAO
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { SoLuong, idHoaDon, idSanPham });
         }
 
-        public bool ChuyenNMon(int idHoaDon,int idSanPham, int idTableTo,int idTableFrom)
+        public bool ChuyenNMon(int idHoaDon, int idSanPham, int idTableTo, int idTableFrom)
         {
             string query = "ChuyenNMon @idHoaDon , @idSanPham , @idTableTo , @idTableFrom ";
             return DataProvider.Instance.ExecuteNonQuery(query, new object[] { idHoaDon, idSanPham, idTableTo, idTableFrom }) > 0;
         }
-
     }
 }

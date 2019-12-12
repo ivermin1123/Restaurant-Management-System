@@ -9,6 +9,7 @@ namespace QuanLyQuanBeer
     public partial class rptInTam : Form
     {
         private int _idBan;
+
         public rptInTam(int idBan)
         {
             InitializeComponent();
@@ -17,7 +18,6 @@ namespace QuanLyQuanBeer
 
         private void RptInTam_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 

@@ -1,13 +1,6 @@
 ﻿using QuanLyQuanBeer.DAO;
 using QuanLyQuanBeer.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -15,6 +8,7 @@ namespace QuanLyQuanBeer
     public partial class fSuaVoucher : Form
     {
         private string _maVC;
+
         public fSuaVoucher(string maVC)
         {
             InitializeComponent();
@@ -22,7 +16,7 @@ namespace QuanLyQuanBeer
             LoadVC();
         }
 
-        void LoadVC()
+        private void LoadVC()
         {
             VoucherDTO vc = VoucherDAO.Instance.GETDTOVoucher(_maVC);
             txbVoucher.Text = _maVC;
@@ -43,14 +37,13 @@ namespace QuanLyQuanBeer
             int giamGia = int.Parse(txbGiamGiaPT.Text);
             double giamTien = double.Parse(txbGiamGiaTM.Text);
             DateTime hSD = dtpkHSD.Value;
-            if (VoucherDAO.Instance.SuaVoucher(_maVC,tenVC,giamGia,giamTien,hSD))
+            if (VoucherDAO.Instance.SuaVoucher(_maVC, tenVC, giamGia, giamTien, hSD))
             {
-                MessageBox.Show("Cập nhật thành công","Cập nhật Voucher",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Cập nhật thành công", "Cập nhật Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
                 MessageBox.Show("Cập nhật không thành công", "Cập nhật Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
     }
 }

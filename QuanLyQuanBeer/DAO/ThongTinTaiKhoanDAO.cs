@@ -15,7 +15,9 @@ namespace QuanLyQuanBeer.DAO
             private set { ThongTinTaiKhoanDAO.instance = value; }
         }
 
-        private ThongTinTaiKhoanDAO() { }
+        private ThongTinTaiKhoanDAO()
+        {
+        }
 
         public string layGioiTinh(string tenDN)
         {
@@ -58,6 +60,7 @@ namespace QuanLyQuanBeer.DAO
         {
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.ThongTinTaiKhoan");
         }
+
         public bool capNhat(string hoTen, int sDT, string diaChi, int cMND, int tuoi, string gioiTinh, string tenDN)
         {
             string query = "UPDATE dbo.ThongTinTaiKhoan SET HoTen= N'" + hoTen + "' , SoDienThoai = " + sDT + ", DiaChi= N'" + diaChi + "' , CMND= " + cMND + ", Tuoi=" + tuoi + " , GioiTinh= N'" + gioiTinh + "' WHERE TenDangNhap= '" + tenDN + "' ";

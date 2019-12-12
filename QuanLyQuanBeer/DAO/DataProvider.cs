@@ -14,11 +14,13 @@ namespace QuanLyQuanBeer.ADO
             private set { DataProvider.instance = value; }
         }
 
-        private DataProvider() { }
+        private DataProvider()
+        {
+        }
 
         private string connectionSTR = @"Data Source=.;Initial Catalog=QuanLyQuanBeer;Integrated Security=True";
 
-        //trả về table 
+        //trả về table
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -52,6 +54,7 @@ namespace QuanLyQuanBeer.ADO
 
             return data;
         }
+
         //insert, del, update
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {

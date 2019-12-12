@@ -1,13 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using QuanLyQuanBeer.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -15,6 +9,7 @@ namespace QuanLyQuanBeer
     public partial class rptBC : Form
     {
         private int _idBan;
+
         public rptBC(int idBan)
         {
             InitializeComponent();
@@ -23,7 +18,6 @@ namespace QuanLyQuanBeer
 
         private void rptBC_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
         }
 

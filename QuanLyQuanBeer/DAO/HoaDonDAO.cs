@@ -1,7 +1,6 @@
 ﻿using QuanLyQuanBeer.ADO;
 using QuanLyQuanBeer.DTO;
 using System;
-using System.Collections.Generic;
 using System.Data;
 
 namespace QuanLyQuanBeer.DAO
@@ -9,12 +8,16 @@ namespace QuanLyQuanBeer.DAO
     public class HoaDonDAO
     {
         private static HoaDonDAO instance;
+
         public static HoaDonDAO Instance
         {
             get { if (instance == null) instance = new HoaDonDAO(); return instance; }
             private set { HoaDonDAO.instance = value; }
         }
-        private HoaDonDAO() { }
+
+        private HoaDonDAO()
+        {
+        }
 
         public void InsertBill(int idBan, double tongCong)
         {
@@ -24,7 +27,7 @@ namespace QuanLyQuanBeer.DAO
 
         public HoaDonDTO GetDTOHoaDon(int idHD)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From HoaDon WHERE id = "+idHD);
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From HoaDon WHERE id = " + idHD);
             if (data.Rows.Count > 0)
             {
                 HoaDonDTO hd = new HoaDonDTO(data.Rows[0]);
@@ -33,21 +36,22 @@ namespace QuanLyQuanBeer.DAO
             return null;
         }
 
-        public void CheckOut(int id, double TongCong, decimal TienThua, string NhanVien,double KhuyenMai,double VAT)
+        public void CheckOut(int id, double TongCong, decimal TienThua, string NhanVien, double KhuyenMai, double VAT)
         {
             string query = "UPDATE dbo.HoaDon SET ThoiGianRa = GETDATE(), TrangThai = N'Đã thanh toán', TongCong = " + TongCong + ", TienThua = " + TienThua + " , NhanVien = N'" + NhanVien + "', KhuyenMai = " + KhuyenMai + ",VAT = " + VAT + " WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
-        public bool ApDungVoucher(string maVC,int id)
+
+        public bool ApDungVoucher(string maVC, int id)
         {
-            string query = "UPDATE dbo.HoaDon SET Voucher ='"+ maVC + "' WHERE id = " + id+"AND TrangThai = N'Chưa thanh toán'";
+            string query = "UPDATE dbo.HoaDon SET Voucher ='" + maVC + "' WHERE id = " + id + "AND TrangThai = N'Chưa thanh toán'";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
         public bool DeleteBillTrong(int idHoaDon)
         {
-            string query = "DELETE dbo.HoaDon WHERE ID ="+idHoaDon;
+            string query = "DELETE dbo.HoaDon WHERE ID =" + idHoaDon;
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

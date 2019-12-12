@@ -8,18 +8,23 @@ namespace QuanLyQuanBeer.DAO
     public class LoaiSanPhamDAO
     {
         private static LoaiSanPhamDAO instance;
+
         public static LoaiSanPhamDAO Instance
         {
             get { if (instance == null) instance = new LoaiSanPhamDAO(); return instance; }
             private set { LoaiSanPhamDAO.instance = value; }
         }
-        private LoaiSanPhamDAO() { }
+
+        private LoaiSanPhamDAO()
+        {
+        }
 
         public bool xoaLSP(string ten)
         {
             string query = "DELETE dbo.LoaiSanPham WHERE tenLoaiSanPham = N'" + ten + "'";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
+
         public string layDanhMuc(string tenLSP)
         {
             string query = "Select * From LoaiSanPham where TenLoaiSanPham = N'" + tenLSP + "' ";
@@ -31,7 +36,6 @@ namespace QuanLyQuanBeer.DAO
             }
             return string.Empty;
         }
-
 
         public bool ThemLSP(string tenLoaiSanPham, string danhMuc)
         {

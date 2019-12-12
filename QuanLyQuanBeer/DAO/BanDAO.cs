@@ -13,12 +13,16 @@ namespace QuanLyQuanBeer.DAO
         {
             get { if (instance == null) instance = new BanDAO(); return BanDAO.instance; }
             private set { BanDAO.instance = value; }
-
         }
+
         // Khai báo kích thước cho Button Bàn
         public static int TableWidth = 120;
+
         public static int TableHeight = 80;
-        private BanDAO() { }
+
+        private BanDAO()
+        {
+        }
 
         public bool XoaBan(string tenBan)
         {
@@ -44,6 +48,7 @@ namespace QuanLyQuanBeer.DAO
             string query = "themBan N'" + tenBan + "' ";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
+
         public int GetIdBanByTen(string tenBan)
         {
             string query = "SELECT * FROM dbo.Ban WHERE TenBan = N'" + tenBan + "'";
@@ -60,7 +65,7 @@ namespace QuanLyQuanBeer.DAO
         {
             // Lấy tên bàn
             // VD: SELECT * FROM dbo.Ban WHERE TenBan = N'Bàn 01' => Nếu có trả về "Bàn 1" không có trả về "".
-            string query = "SELECT * FROM dbo.Ban WHERE id="+id;
+            string query = "SELECT * FROM dbo.Ban WHERE id=" + id;
             DataTable table = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in table.Rows)
             {

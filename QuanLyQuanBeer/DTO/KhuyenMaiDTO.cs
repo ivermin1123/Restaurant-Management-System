@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DTO
 {
@@ -21,6 +17,7 @@ namespace QuanLyQuanBeer.DTO
             this.IdSanPham = idSanPham;
             this.IdLoaiKM = idLoaiKM;
         }
+
         public KhuyenMaiDTO(DataRow row)
         {
             this.Id = (int)row["id"];
@@ -41,7 +38,6 @@ namespace QuanLyQuanBeer.DTO
                 row["idLoaiKM"] = 0;
             this.IdLoaiKM = (int)row["idLoaiKM"];
         }
-
 
         private int id;
         private string tenKM;

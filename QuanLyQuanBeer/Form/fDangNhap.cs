@@ -12,7 +12,7 @@ namespace QuanLyQuanBeer
             InitializeComponent();
         }
 
-        bool DangNhap(string TenDangNhap, string MatKhau)
+        private bool DangNhap(string TenDangNhap, string MatKhau)
         {
             return TaiKhoanDAO.Instance.DangNhap(TenDangNhap, MatKhau);
         }
@@ -51,7 +51,6 @@ namespace QuanLyQuanBeer
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void btThoat_Click(object sender, EventArgs e)

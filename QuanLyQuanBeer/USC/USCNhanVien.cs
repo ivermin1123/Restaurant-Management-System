@@ -6,7 +6,8 @@ namespace QuanLyQuanBeer.USC
 {
     public partial class USCNhanVien : UserControl
     {
-        BindingSource listNhanVien = new BindingSource();
+        private BindingSource listNhanVien = new BindingSource();
+
         public USCNhanVien()
         {
             InitializeComponent();
@@ -14,7 +15,7 @@ namespace QuanLyQuanBeer.USC
             binding();
         }
 
-        void LoadAccount()
+        private void LoadAccount()
         {
             dtgvNhanVien.DataSource = listNhanVien;
             listNhanVien.DataSource = ThongTinTaiKhoanDAO.Instance.GetListNhanVien1();
@@ -34,7 +35,7 @@ namespace QuanLyQuanBeer.USC
             dtgvNhanVien.Columns[7].HeaderText = "Tên đăng nhập";
         }
 
-        void binding()
+        private void binding()
         {
             txbIDNhanVien.DataBindings.Add("Text", dtgvNhanVien.DataSource, "id", true, DataSourceUpdateMode.Never);
             txbTenDN.DataBindings.Add("Text", dtgvNhanVien.DataSource, "TenDangNhap", true, DataSourceUpdateMode.Never);
@@ -97,7 +98,6 @@ namespace QuanLyQuanBeer.USC
 
         private void BtSuaTK_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtLamMoi_Click(object sender, EventArgs e)

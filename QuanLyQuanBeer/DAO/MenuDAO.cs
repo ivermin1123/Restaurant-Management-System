@@ -8,12 +8,16 @@ namespace QuanLyQuanBeer.DAO
     public class MenuDAO
     {
         private static MenuDAO instance;
+
         public static MenuDAO Instance
         {
             get { if (instance == null) instance = new MenuDAO(); return instance; }
             private set { instance = value; }
         }
-        private MenuDAO() { }
+
+        private MenuDAO()
+        {
+        }
 
         public List<MenuDTO> GetListMenuByTable1(int id)
         {

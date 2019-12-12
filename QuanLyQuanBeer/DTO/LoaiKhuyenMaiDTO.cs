@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace QuanLyQuanBeer.DTO
 {
     public class LoaiKhuyenMaiDTO
     {
-        public LoaiKhuyenMaiDTO(int id,string tenLoaiKM)
+        public LoaiKhuyenMaiDTO(int id, string tenLoaiKM)
         {
             this.Id = id;
             this.TenLoaiKM = tenLoaiKM;
@@ -18,8 +13,9 @@ namespace QuanLyQuanBeer.DTO
         public LoaiKhuyenMaiDTO(DataRow row)
         {
             this.Id = (int)row["id"];
-            this.TenLoaiKM =  row["tenLoaiKM"].ToString();
+            this.TenLoaiKM = row["tenLoaiKM"].ToString();
         }
+
         private int id;
         private string tenLoaiKM;
 

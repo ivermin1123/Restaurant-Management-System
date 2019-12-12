@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyQuanBeer.DTO
 {
     public class VoucherDTO
     {
-        public VoucherDTO(string id, string tenVoucher, int giamGia, double giamTien, DateTime hanSuDung,string trangThai)
+        public VoucherDTO(string id, string tenVoucher, int giamGia, double giamTien, DateTime hanSuDung, string trangThai)
         {
             this.Id = id;
             this.TenVoucher = tenVoucher;
@@ -18,6 +14,7 @@ namespace QuanLyQuanBeer.DTO
             this.HanSuDung = hanSuDung;
             this.TrangThai = trangThai;
         }
+
         public VoucherDTO(DataRow row)
         {
             this.Id = row["id"].ToString();

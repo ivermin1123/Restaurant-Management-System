@@ -9,6 +9,7 @@ namespace QuanLyQuanBeer
     public partial class rptHoaDon : Form
     {
         private int _idBan;
+
         public rptHoaDon(int idBan)
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace QuanLyQuanBeer
             this.reportViewer1.RefreshReport();
         }
 
-        public void XuatHoaDon(int maHD, string tenban, string NhanVien, string ThanhTien, DateTime? GioVao, string VAT, string ThanhToan, string TienKhachDua, string TienThua, DateTime? GioRa,string Voucher,string KhuyenMai)
+        public void XuatHoaDon(int maHD, string tenban, string NhanVien, string ThanhTien, DateTime? GioVao, string VAT, string ThanhToan, string TienKhachDua, string TienThua, DateTime? GioRa, string Voucher, string KhuyenMai)
         {
             DataTable dt = new DataTable();
             dt = MenuDAO.Instance.GetListSP1(_idBan);

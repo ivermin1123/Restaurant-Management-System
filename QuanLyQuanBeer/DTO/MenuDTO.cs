@@ -21,6 +21,7 @@ namespace QuanLyQuanBeer.DTO
             this.ThanhTien = (double)(row["thanhTien"]);
             this.DonVi = row["donVi"].ToString();
         }
+
         private string tenSanPham;
         private int soLuong;
         private double gia;
