@@ -35,6 +35,13 @@ namespace QuanLyQuanBeer.DAO
             return data;
         }
 
+        public DataTable GetListSP2(int idBan)
+        {
+            string query = ("USP_InBill1 @idBan =" + idBan);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
         public List<MenuDTO> GetListMenuByTable(int id)
         {
             List<MenuDTO> danhSachMenu = new List<MenuDTO>();

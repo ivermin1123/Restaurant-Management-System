@@ -65,6 +65,7 @@
             this.pn1 = new System.Windows.Forms.Panel();
             this.btBaoCao = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnNoiDung = new System.Windows.Forms.Panel();
+            this.uscBaoCaoTK1 = new QuanLyQuanBeer.USCBaoCaoTK();
             this.uscKhuyenMai2 = new QuanLyQuanBeer.USC.USCKhuyenMai();
             this.uscVoucher1 = new QuanLyQuanBeer.USC.USCVoucher();
             this.uscLoaiKM = new QuanLyQuanBeer.USC.USCLoaiKM();
@@ -724,7 +725,7 @@
             this.btBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btBaoCao.BorderRadius = 0;
-            this.btBaoCao.ButtonText = "       Báo cáo";
+            this.btBaoCao.ButtonText = "       Thống kê";
             this.btBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btBaoCao.DisabledColor = System.Drawing.Color.Gray;
             this.btBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
@@ -748,7 +749,7 @@
             this.btBaoCao.selected = false;
             this.btBaoCao.Size = new System.Drawing.Size(270, 48);
             this.btBaoCao.TabIndex = 0;
-            this.btBaoCao.Text = "       Báo cáo";
+            this.btBaoCao.Text = "       Thống kê";
             this.btBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btBaoCao.Textcolor = System.Drawing.Color.White;
             this.btBaoCao.TextFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -756,6 +757,7 @@
             // 
             // pnNoiDung
             // 
+            this.pnNoiDung.Controls.Add(this.uscBaoCaoTK1);
             this.pnNoiDung.Controls.Add(this.uscKhuyenMai2);
             this.pnNoiDung.Controls.Add(this.uscVoucher1);
             this.pnNoiDung.Controls.Add(this.uscLoaiKM);
@@ -770,6 +772,15 @@
             this.pnNoiDung.Name = "pnNoiDung";
             this.pnNoiDung.Size = new System.Drawing.Size(958, 607);
             this.pnNoiDung.TabIndex = 2;
+            // 
+            // uscBaoCaoTK1
+            // 
+            this.uscBaoCaoTK1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscBaoCaoTK1.Location = new System.Drawing.Point(0, 0);
+            this.uscBaoCaoTK1.Name = "uscBaoCaoTK1";
+            this.uscBaoCaoTK1.Size = new System.Drawing.Size(958, 607);
+            this.uscBaoCaoTK1.TabIndex = 10;
+            this.uscBaoCaoTK1.Visible = false;
             // 
             // uscKhuyenMai2
             // 
@@ -932,5 +943,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btVoucher;
         private USC.USCVoucher uscVoucher1;
         private USC.USCKhuyenMai uscKhuyenMai2;
+        private USCBaoCaoTK uscBaoCaoTK1;
     }
 }

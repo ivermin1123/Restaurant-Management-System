@@ -84,11 +84,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BanDAO.cs" />
+    <Compile Include="DAO\GetHoaDonDAO.cs" />
     <Compile Include="DAO\KhoDAO.cs" />
     <Compile Include="DAO\KhuyenMaiDAO.cs" />
     <Compile Include="DAO\LoaiKhoDAO.cs" />
     <Compile Include="DAO\LoaiKhuyenMaiDAO.cs" />
     <Compile Include="DAO\VoucherDAO.cs" />
+    <Compile Include="DTO\GetHoaDonDTO.cs" />
     <Compile Include="DTO\KhoDTO.cs" />
     <Compile Include="DTO\KhuyenMaiDTO.cs" />
     <Compile Include="DTO\LoaiKhoDTO.cs" />
@@ -195,7 +197,19 @@
     <Compile Include="Form\rptInTam.Designer.cs">
       <DependentUpon>rptInTam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\rptBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\rptBC.Designer.cs">
+      <DependentUpon>rptBC.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="USC\USCBaoCaoTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USC\USCBaoCaoTK.Designer.cs">
+      <DependentUpon>USCBaoCaoTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="USC\USCKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -349,6 +363,10 @@
     <EmbeddedResource Include="Form\fSuaVoucher.resx">
       <DependentUpon>fSuaVoucher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptBC.rdlc" />
+    <EmbeddedResource Include="Form\rptBC.resx">
+      <DependentUpon>rptBC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -360,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\rptInTam.resx">
       <DependentUpon>rptInTam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USC\USCBaoCaoTK.resx">
+      <DependentUpon>USCBaoCaoTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCKho.resx">
       <DependentUpon>USCKho.cs</DependentUpon>

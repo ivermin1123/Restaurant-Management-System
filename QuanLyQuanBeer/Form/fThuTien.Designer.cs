@@ -842,10 +842,10 @@
             // 
             this.txbTienKhachDua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(238)))), ((int)(((byte)(254)))));
             this.txbTienKhachDua.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txbTienKhachDua.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTienKhachDua.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTienKhachDua.Location = new System.Drawing.Point(11, 21);
             this.txbTienKhachDua.Name = "txbTienKhachDua";
-            this.txbTienKhachDua.Size = new System.Drawing.Size(289, 33);
+            this.txbTienKhachDua.Size = new System.Drawing.Size(289, 35);
             this.txbTienKhachDua.TabIndex = 1;
             this.txbTienKhachDua.Text = "0";
             this.txbTienKhachDua.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

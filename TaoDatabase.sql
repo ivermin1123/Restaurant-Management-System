@@ -165,7 +165,7 @@ GO
 
 CREATE TABLE ThongTinHoaDon
 (
-	id INT IDENTITY(1,1) PRIMARY KEY,
+	id INT IDENTITY(1000,1) PRIMARY KEY,
 	idHoaDon INT not null,	
 	idSanPham INT not null, 
 	SoLuong INT not null DEFAULT 0 
@@ -480,4 +480,45 @@ GO
 --SELECT * FROM KhuyenMai
 -- SELECT * FROM LoaiKhuyenMai
 --Select * From KhuyenMai WHERE TenKM = 
--- SELECT * FROM Voucher
+
+Create Proc USP_DeleteSP
+@idHoaDon INT, @idSanPham INT
+AS
+BEGIN
+	DELETE dbo.ThongTinHoaDon Where idHoaDon = @idHoaDon AND idSanPham = @idSanPham
+END
+GO
+
+Create Proc ChuyenNMon
+@idHoaDon INT,@idSanPham INT,@idTableTo INT,@idTableFrom INT
+AS
+BEGIN
+	SELECT * 
+	INTO TEMP
+	FROM ThongTinHoaDon
+	WHERE idHoaDon = @idHoaDon and idSanPham = @idSanPham;
+
+	declare @idBillTo int
+	declare @voucher Varchar(100)
+
+	SELECT @voucher = Voucher from HoaDon Where idBan = @idTableFrom and TrangThai = N'Chưa thanh toán'
+
+	SELECT @idBillTo = id from HoaDon Where idBan = @idTableTo and TrangThai = N'Chưa thanh toán'
+
+	if (@idBillTo is null)
+	begin
+		INSERT INTO HoaDon(ThoiGianVao,idBan,TrangThai,TongCong)
+		VALUES(GetDate(),@idTableTo,N'Chưa thanh toán',0)
+		SELECT @idBillTo = Max(id) FROM HoaDon WHERE idBan = @idTableTo and TrangThai = N'Chưa thanh toán'
+	end
+	if (@voucher is not null)
+	begin
+		UPDATE HoaDon SET Voucher = @voucher Where id =@idBillTo
+	end
+
+	UPDATE ThongTinHoaDon SET idHoaDon = @idBillTo WHERE ID IN (SELECT ID from TEMP)
+	
+	DROP table dbo.TEMP
+END
+GO
+

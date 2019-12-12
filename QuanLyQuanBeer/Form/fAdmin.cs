@@ -27,11 +27,13 @@ namespace QuanLyQuanBeer
                 btBan.Enabled = false;
                 btKho.Enabled = true;
                 btLoaiSP.Enabled = false;
+                btVoucher.Enabled = false;
             }
         }
 
         private void BtBaoCao_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = true;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -55,6 +57,7 @@ namespace QuanLyQuanBeer
 
         private void BtTaiKhoan_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -78,6 +81,7 @@ namespace QuanLyQuanBeer
 
         private void BtSanPham_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -101,6 +105,7 @@ namespace QuanLyQuanBeer
 
         private void BtDanhMuc_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -124,6 +129,7 @@ namespace QuanLyQuanBeer
 
         private void BtNhanVien_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -147,6 +153,7 @@ namespace QuanLyQuanBeer
 
         private void BtThietLapHeThong_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -170,6 +177,7 @@ namespace QuanLyQuanBeer
 
         private void BtHelp_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -240,6 +248,7 @@ namespace QuanLyQuanBeer
 
         private void btLoaiKM_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = true;
@@ -263,6 +272,7 @@ namespace QuanLyQuanBeer
 
         private void btKM_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = false;
             uscKhuyenMai2.Visible = true;
             uscLoaiKM.Visible = false;
@@ -286,6 +296,7 @@ namespace QuanLyQuanBeer
 
         private void btVoucher_Click(object sender, EventArgs e)
         {
+            uscBaoCaoTK1.Visible = false;
             uscVoucher1.Visible = true;
             uscKhuyenMai2.Visible = false;
             uscLoaiKM.Visible = false;
@@ -306,5 +317,6 @@ namespace QuanLyQuanBeer
             pn9.Visible = false;
             pn10.Visible = true;
         }
+
     }
 }

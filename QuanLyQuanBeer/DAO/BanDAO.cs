@@ -44,6 +44,31 @@ namespace QuanLyQuanBeer.DAO
             string query = "themBan N'" + tenBan + "' ";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
+        public int GetIdBanByTen(string tenBan)
+        {
+            string query = "SELECT * FROM dbo.Ban WHERE TenBan = N'" + tenBan + "'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                BanDTO ban = new BanDTO(item);
+                return ban.ID;
+            }
+            return -1;
+        }
+
+        public string GetTenBanByID(int id)
+        {
+            // Lấy tên bàn
+            // VD: SELECT * FROM dbo.Ban WHERE TenBan = N'Bàn 01' => Nếu có trả về "Bàn 1" không có trả về "".
+            string query = "SELECT * FROM dbo.Ban WHERE id="+id;
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in table.Rows)
+            {
+                BanDTO ban = new BanDTO(item);
+                return ban.TenBan;
+            }
+            return string.Empty;
+        }
 
         public string GetTenBan(string tenBan)
         {

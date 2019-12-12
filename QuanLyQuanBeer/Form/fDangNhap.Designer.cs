@@ -65,11 +65,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(363, 273);
+            this.label2.Location = new System.Drawing.Point(425, 271);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 17);
+            this.label2.Size = new System.Drawing.Size(149, 17);
             this.label2.TabIndex = 43;
-            this.label2.Text = "QuanLyQuanBeer v1.1.1.1.1.0.0.9";
+            this.label2.Text = "QuanLyQuanBeer v1.1";
             // 
             // btThoat
             // 

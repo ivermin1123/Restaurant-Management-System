@@ -502,23 +502,181 @@ namespace QuanLyQuanBeer
 
         #region Events
 
-        private void CkbxGTGT_OnChange(object sender, EventArgs e)
+        private void BtInTamTinh_Click(object sender, EventArgs e)
         {
-            double gTGT;
-            if (ckbxGTGT.Checked != true)
+            try
             {
-                txbGTGT.Text = string.Empty;
-                double TongThanhToan = thanhTien1 + 0;
-                txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-                LoadTien();
+                BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+                string ThanhTien = txbThanhTien.Text;
+                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                string TenDN = TaiKhoanHienTai.TenDangNhap;
+                string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
+                DateTime? GioVao = HoaDonDAO.Instance.GetGioVaoByID(ban.ID);
+                string VAT;
+                if (ckbxGTGT.Checked == true)
+                    VAT = txbGTGT.Text;
+                else
+                    VAT = "0";
+                string ThanhToan = txbTongThanhToan.Text;
+                rptInTam rptInTam = new rptInTam(ban.ID);
+                rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao, VAT, ThanhToan);
+                rptInTam.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtLamMoi_Click_1(object sender, EventArgs e)
+        {
+            if (!(dtgvHoaDon.Tag is BanDTO ban))
+            {
+                MessageBox.Show("Hãy chọn bàn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+            if (ban.ID != -1)
+            {
+                fChuyenBan f = new fChuyenBan(TaiKhoanHienTai, ban);
+                f.ShowDialog();
+                LoadTable();
+                XemHoaDon(ban.ID);
             }
             else
             {
-                gTGT = thanhTien1 * 10 / 100;
-                txbGTGT.Text = String.Format("{0:0,0}", gTGT);
-                double TongThanhToan = thanhTien1 + gTGT;
-                txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
-                LoadTien();
+                MessageBox.Show("", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            BtOrderPlus_Click(sender, e);
+        }
+
+        private void btApDungVoucher_Click(object sender, EventArgs e)
+        {
+            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+            string maVC = txbMaVoucher.Text;
+            List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
+            double thanhTien = double.Parse(txbThanhTien.Text);
+            double giamGia = 0;
+            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+            try
+            {
+                if (VoucherDAO.Instance.CheckMaVC(maVC))
+                {
+                    foreach (VoucherDTO item in list)
+                    {
+                        if (item.TrangThai == "Đã sử dụng")
+                            MessageBox.Show("Voucher này đã được sử dụng !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                        {
+                            if (item.HanSuDung < DateTime.Now)
+                            {
+                                MessageBox.Show("Voucher này đã hết hạn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                if (HoaDonDAO.Instance.GetVoucherNeuCo(ban.ID) != string.Empty)
+                                {
+                                    MessageBox.Show("Bàn này đã áp dụng một Voucher khác !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    if (MessageBox.Show("Bạn có muốn áp dụng Voucher \nGiảm giá " + item.GiamGia + "% Hóa đơn và " + item.GiamTien + " VND", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                                    {
+                                        if (HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon))
+                                        {
+                                            VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC);
+                                            MessageBox.Show("Áp dụng thành công", "Áp dụng Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
+                                            txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
+                                        }
+                                        else
+                                            txbVoucher.Text = 0.ToString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("Không tồn tại Mã Voucher này !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txbMaVoucher_TextChanged(object sender, EventArgs e)
+        {
+            LoadVoucher();
+        }
+
+        private void txbVoucher_TextChanged(object sender, EventArgs e)
+        {
+            LoadTien();
+        }
+
+        private void btTaoVouher_Click(object sender, EventArgs e)
+        {
+            pnMenu.Visible = false;
+            if (TaiKhoanHienTai.LoaiTaiKhoan != "Quản lý")
+            {
+                MessageBox.Show("Để tạo Voucher bạn phải là quản lý chứ không phải 1 thằng nhân viên quèn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                fTaoVoucher f = new fTaoVoucher();
+                f.ShowDialog();
+            }
+        }
+
+        private void btTaoVoucherSLLon_Click(object sender, EventArgs e)
+        {
+            pnMenu.Visible = false;
+            if (TaiKhoanHienTai.LoaiTaiKhoan != "Quản lý")
+            {
+                MessageBox.Show("Để tạo Voucher bạn phải là quản lý chứ không phải 1 thằng nhân viên quèn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                fTaoVoucherSLLon f = new fTaoVoucherSLLon();
+                f.ShowDialog();
+            }
+        }
+
+        private void txbKM_TextChanged(object sender, EventArgs e)
+        {
+            LoadTien();
+        }
+
+        private void CkbxGTGT_OnChange(object sender, EventArgs e)
+        {
+            try
+            {
+                double gTGT;
+                if (ckbxGTGT.Checked != true)
+                {
+                    txbGTGT.Text = string.Empty;
+                    double TongThanhToan = thanhTien1 + 0;
+                    txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
+                    LoadTien();
+                }
+                else
+                {
+                    gTGT = thanhTien1 * 10 / 100;
+                    txbGTGT.Text = String.Format("{0:0,0}", gTGT);
+                    double TongThanhToan = thanhTien1 + gTGT;
+                    txbTongThanhToan.Text = String.Format("{0:0,0}", TongThanhToan);
+                    LoadTien();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void BtSearch_Click_1(object sender, EventArgs e)
@@ -648,16 +806,24 @@ namespace QuanLyQuanBeer
         }
         private void DtgvHoaDon_KeyDown(object sender, KeyEventArgs e)
         {
-            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            if (e.KeyCode == Keys.Delete)
+            try
             {
-                int selectedrowindex = dtgvHoaDon.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtgvHoaDon.Rows[selectedrowindex];
-                string b = Convert.ToString(selectedRow.Cells["TenSanPham"].Value);
-                int idSP = SanPhamDAO.Instance.GetIDByTenSP(b);
-                ThongTinHoaDonDAO.Instance.DeleteSP(idHoaDon, idSP);
-                XemHoaDon(ban.ID);
+                BanDTO ban = dtgvHoaDon.Tag as BanDTO;
+                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
+                if (e.KeyCode == Keys.Delete)
+                {
+                    int selectedrowindex = dtgvHoaDon.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dtgvHoaDon.Rows[selectedrowindex];
+                    string b = Convert.ToString(selectedRow.Cells["TenSanPham"].Value);
+                    int idSP = SanPhamDAO.Instance.GetIDByTenSP(b);
+                    ThongTinHoaDonDAO.Instance.DeleteSP(idHoaDon, idSP);
+                    XemHoaDon(ban.ID);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -811,134 +977,7 @@ namespace QuanLyQuanBeer
 
 
 
-        private void BtInTamTinh_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-                string ThanhTien = txbThanhTien.Text;
-                int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-                string TenDN = TaiKhoanHienTai.TenDangNhap;
-                string NhanVien = ThongTinTaiKhoanDAO.Instance.GetTenBangTenDN(TenDN);
-                DateTime? GioVao = HoaDonDAO.Instance.GetGioVaoByID(ban.ID);
-                string VAT;
-                if (ckbxGTGT.Checked == true)
-                    VAT = txbGTGT.Text;
-                else
-                    VAT = "0";
-                string ThanhToan = txbTongThanhToan.Text;
-                rptInTam rptInTam = new rptInTam(ban.ID);
-                rptInTam.XuatHoaDon(idHoaDon, ban.TenBan, NhanVien, ThanhTien, GioVao, VAT, ThanhToan);
-                rptInTam.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void BtLamMoi_Click_1(object sender, EventArgs e)
-        {
-            LoadTable();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            BtOrderPlus_Click(sender, e);
-        }
-
-        private void btApDungVoucher_Click(object sender, EventArgs e)
-        {
-            BanDTO ban = dtgvHoaDon.Tag as BanDTO;
-            string maVC = txbMaVoucher.Text;
-            List<VoucherDTO> list = VoucherDAO.Instance.LayThongTinVoucher(maVC);
-            double thanhTien = double.Parse(txbThanhTien.Text);
-            double giamGia = 0;
-            int idHoaDon = HoaDonDAO.Instance.LayIDHoaDonChuaThanhToanBangIDBan(ban.ID);
-            if (VoucherDAO.Instance.CheckMaVC(maVC))
-            {
-                foreach (VoucherDTO item in list)
-                {
-                    if (item.TrangThai == "Đã sử dụng")
-                        MessageBox.Show("Voucher này đã được sử dụng !!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    else
-                    {
-                        if (item.HanSuDung < DateTime.Now)
-                        {
-                            MessageBox.Show("Voucher này đã hết hạn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            if (HoaDonDAO.Instance.GetVoucherNeuCo(ban.ID) != string.Empty)
-                            {
-                                MessageBox.Show("Bàn này đã áp dụng một Voucher khác !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                if (MessageBox.Show("Bạn có muốn áp dụng Voucher \nGiảm giá " + item.GiamGia + "% Hóa đơn và " + item.GiamTien + " VND", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-                                {
-                                    if (HoaDonDAO.Instance.ApDungVoucher(maVC, idHoaDon))
-                                    {
-                                        VoucherDAO.Instance.CapNhatTrangThaiVoucher(maVC);
-                                        MessageBox.Show("Áp dụng thành công", "Áp dụng Voucher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        giamGia = ((item.GiamGia) * thanhTien / 100) + item.GiamTien;
-                                        txbVoucher.Text = String.Format("{0:0,0}", -giamGia);
-                                    }
-                                    else
-                                        txbVoucher.Text = 0.ToString();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            else
-                MessageBox.Show("Không tồn tại Mã Voucher này !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-        private void txbMaVoucher_TextChanged(object sender, EventArgs e)
-        {
-            LoadVoucher();
-        }
-
-        private void txbVoucher_TextChanged(object sender, EventArgs e)
-        {
-            LoadTien();
-        }
-
-        private void btTaoVouher_Click(object sender, EventArgs e)
-        {
-            pnMenu.Visible = false;
-            if (TaiKhoanHienTai.LoaiTaiKhoan != "Quản lý")
-            {
-                MessageBox.Show("Để tạo Voucher bạn phải là quản lý chứ không phải 1 thằng nhân viên quèn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                fTaoVoucher f = new fTaoVoucher();
-                f.ShowDialog();
-            }
-        }
-
-        private void btTaoVoucherSLLon_Click(object sender, EventArgs e)
-        {
-            pnMenu.Visible = false;
-            if (TaiKhoanHienTai.LoaiTaiKhoan != "Quản lý")
-            {
-                MessageBox.Show("Để tạo Voucher bạn phải là quản lý chứ không phải 1 thằng nhân viên quèn !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                fTaoVoucherSLLon f = new fTaoVoucherSLLon();
-                f.ShowDialog();
-            }
-        }
-
-        private void txbKM_TextChanged(object sender, EventArgs e)
-        {
-            LoadTien();
-        }
+        
 
     }
 }
