@@ -94,7 +94,7 @@ CREATE TABLE SanPham
 	DonVi NVARCHAR(100) not null,
 	idLoai INT not null,
 	Gia FLOAT not null,
-	HinhAnh varchar(100) null
+	HinhAnh varchar(100) DEFAULT 'Khongcohinhanh.jpg'
 
 	FOREIGN KEY (idLoai) REFERENCES dbo.LoaiSanPham(id)
 	ON DELETE CASCADE
@@ -152,8 +152,10 @@ CREATE TABLE HoaDon
 	ThoiGianVao DateTime not null,
 	ThoiGianRa DateTime NULL,	
 	idBan INT not NULl,
-	TongCong FLOAT NULL,
-	TienThua FLOAT NULL,
+	TongCong FLOAT DEFAULT 0,
+	TienThua FLOAT DEFAULT 0,
+	KhuyenMai FLOAT DEFAULT 0,
+	VAT FLOAT DEFAULT 0,
 	NhanVien NVARCHAR(200) NULl,
 	Voucher VARCHAR(100) NULl,
 	TrangThai NVARCHAR(100) not NULL
@@ -196,8 +198,8 @@ Create TABLE KhuyenMai
 	TenKM NVARCHAR(100) NOT NULL,
 	GiamGia INT NOT NULL,
 	GiamTien Float NOT NULL,
-	ToiDa Float NULL,
-	DieuKien Float NULL,
+	ToiDa Float DEFAULT 0,
+	DieuKien Float DEFAULT 0,
 	idSanPham INT NULL,
 	idLoaiKM INT NOT NULL,
 	TrangThai NVARCHAR(100) NOT NULL
@@ -365,6 +367,16 @@ BEGIN
 END
 GO
 
+CREATE PROC dbo.USP_InBill1
+@idBan INT
+AS
+BEGIN
+	SELECT ROW_NUMBER() OVER (ORDER BY TenSanPham) AS [STT] ,f.TenSanPham ,bi.SoLuong,f.Gia ,f.Gia*bi.SoLuong AS ThanhTien
+	FROM dbo.ThongTinHoaDon AS bi ,dbo.HoaDon AS b,dbo.SanPham AS f 
+	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Đã thanh toán' AND b.idBan = @idBan
+END
+GO
+
 
 
 CREATE PROC XoaTK
@@ -476,11 +488,6 @@ begin
 end
 GO
 
---SELECT * FROM  dbo.HoaDon WHERE idBan = 1 AND TrangThai = N'Chưa thanh toán'
---SELECT * FROM KhuyenMai
--- SELECT * FROM LoaiKhuyenMai
---Select * From KhuyenMai WHERE TenKM = 
-
 Create Proc USP_DeleteSP
 @idHoaDon INT, @idSanPham INT
 AS
@@ -522,3 +529,17 @@ BEGIN
 END
 GO
 
+alter Proc USP_BCTK
+@fromDate DateTime,@toDate DateTime
+as
+begin
+	select hd.id,b.TenBan,hd.TongCong,NhanVien 
+	from HoaDon hd,Ban b
+	WHERE hd.idBan = b.id  AND ThoiGianRa BETWEEN @fromDate and @toDate and hd.TrangThai = N'Đã thanh toán'
+end
+GO
+
+--SELECT * FROM  dbo.HoaDon WHERE idBan = 1 AND TrangThai = N'Chưa thanh toán'
+--SELECT * FROM KhuyenMai
+-- SELECT * FROM LoaiKhuyenMai
+--Select * From KhuyenMai WHERE TenKM = 
