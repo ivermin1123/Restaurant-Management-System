@@ -19,6 +19,17 @@ namespace QuanLyQuanBeer.DAO
         {
         }
 
+        public ThongTinTaiKhoanDTO GETDTOTTTK(string tenDN)
+        {
+            string query = "Select * From ThongTinTaiKhoan where TenDangNhap = N'" + tenDN + "' ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count > 0)
+            {
+                ThongTinTaiKhoanDTO km = new ThongTinTaiKhoanDTO(data.Rows[0]);
+                return km;
+            }
+            return null;
+        }
         public string layGioiTinh(string tenDN)
         {
             string query = "Select * From ThongTinTaiKhoan where TenDangNhap = N'" + tenDN + "' ";

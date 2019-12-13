@@ -96,6 +96,12 @@
     <Compile Include="DTO\LoaiKhoDTO.cs" />
     <Compile Include="DTO\LoaiKhuyenMaiDTO.cs" />
     <Compile Include="DTO\VoucherDTO.cs" />
+    <Compile Include="fDoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDoiMK.Designer.cs">
+      <DependentUpon>fDoiMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\fChuyenBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     </Compile>
     <Compile Include="Form\fSuaVoucher.Designer.cs">
       <DependentUpon>fSuaVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\fThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\fThongTinCaNhan.Designer.cs">
+      <DependentUpon>fThongTinCaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyQuanBeerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -318,6 +330,9 @@
     <Compile Include="USC\USCVoucher.Designer.cs">
       <DependentUpon>USCVoucher.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fDoiMK.resx">
+      <DependentUpon>fDoiMK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\fChuyenBan.resx">
       <DependentUpon>fChuyenBan.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fSuaVoucher.resx">
       <DependentUpon>fSuaVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\fThongTinCaNhan.resx">
+      <DependentUpon>fThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptBC.rdlc" />
     <EmbeddedResource Include="Form\rptBC.resx">

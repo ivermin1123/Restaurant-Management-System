@@ -112,6 +112,7 @@
             this.panel35 = new System.Windows.Forms.Panel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btTTCN = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel38 = new System.Windows.Forms.Panel();
             this.btTaoVoucherSLLon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btTaoVouher = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -1379,14 +1380,54 @@
             this.pnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnMenu.BackColor = System.Drawing.Color.White;
             this.pnMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnMenu.Controls.Add(this.btTTCN);
             this.pnMenu.Controls.Add(this.panel38);
             this.pnMenu.Controls.Add(this.btTaoVoucherSLLon);
             this.pnMenu.Controls.Add(this.btTaoVouher);
             this.pnMenu.Location = new System.Drawing.Point(1153, 51);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(209, 94);
+            this.pnMenu.Size = new System.Drawing.Size(209, 140);
             this.pnMenu.TabIndex = 6;
             this.pnMenu.Visible = false;
+            // 
+            // btTTCN
+            // 
+            this.btTTCN.Active = false;
+            this.btTTCN.Activecolor = System.Drawing.Color.White;
+            this.btTTCN.BackColor = System.Drawing.Color.White;
+            this.btTTCN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btTTCN.BorderRadius = 0;
+            this.btTTCN.ButtonText = "   Thông tin cá nhân";
+            this.btTTCN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btTTCN.DisabledColor = System.Drawing.Color.Gray;
+            this.btTTCN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btTTCN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTTCN.Iconcolor = System.Drawing.Color.Transparent;
+            this.btTTCN.Iconimage = ((System.Drawing.Image)(resources.GetObject("btTTCN.Iconimage")));
+            this.btTTCN.Iconimage_right = null;
+            this.btTTCN.Iconimage_right_Selected = null;
+            this.btTTCN.Iconimage_Selected = null;
+            this.btTTCN.IconMarginLeft = 0;
+            this.btTTCN.IconMarginRight = 0;
+            this.btTTCN.IconRightVisible = true;
+            this.btTTCN.IconRightZoom = 0D;
+            this.btTTCN.IconVisible = true;
+            this.btTTCN.IconZoom = 55D;
+            this.btTTCN.IsTab = false;
+            this.btTTCN.Location = new System.Drawing.Point(0, 89);
+            this.btTTCN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btTTCN.Name = "btTTCN";
+            this.btTTCN.Normalcolor = System.Drawing.Color.White;
+            this.btTTCN.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btTTCN.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btTTCN.selected = false;
+            this.btTTCN.Size = new System.Drawing.Size(207, 42);
+            this.btTTCN.TabIndex = 28;
+            this.btTTCN.Text = "   Thông tin cá nhân";
+            this.btTTCN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTTCN.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btTTCN.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTTCN.Click += new System.EventHandler(this.btTTCN_Click);
             // 
             // panel38
             // 
@@ -2381,9 +2422,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 710);
+            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnNewOrder);
             this.Controls.Add(this.pnTinhTien);
-            this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnChaoMung);
             this.Controls.Add(this.pnDatCho);
             this.Controls.Add(this.pnDsHD);
@@ -2596,5 +2637,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label26;
+        private Bunifu.Framework.UI.BunifuFlatButton btTTCN;
     }
 }

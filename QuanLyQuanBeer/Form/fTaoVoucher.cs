@@ -108,5 +108,10 @@ namespace QuanLyQuanBeer
         {
             this.Close();
         }
+
+        private void btCoppy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txbVoucher.Text);
+        }
     }
 }

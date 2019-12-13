@@ -81,6 +81,12 @@ namespace QuanLyQuanBeer.DAO
             return result > 0;
         }
 
+        public bool DoiMK(string tenDangNhap, string mkMoi)
+        {
+            string query = "UPDATE dbo.TaiKhoan SET MatKhau = '" + mkMoi + "' WHERE TenDangNhap = '" + tenDangNhap + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
         public bool datLaiMK(string ten)
         {
             string query = "UPDATE dbo.TaiKhoan SET MatKhau = '1' WHERE TenDangNhap = '" + ten + "'";

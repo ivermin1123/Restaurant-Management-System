@@ -988,6 +988,14 @@ namespace QuanLyQuanBeer
             LoadTable();
         }
 
+        private void btTTCN_Click(object sender, EventArgs e)
+        {
+            pnMenu.Visible = false;
+            fThongTinCaNhan f = new fThongTinCaNhan(TaiKhoanHienTai.TenDangNhap);
+            f.ShowDialog();
+        }
         #endregion Events
+
+
     }
 }
