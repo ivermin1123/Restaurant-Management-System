@@ -53,6 +53,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\download\Bunifu-UI-WinForms-1.11.5.1_ShareAppsCrack.com\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
@@ -96,10 +99,10 @@
     <Compile Include="DTO\LoaiKhoDTO.cs" />
     <Compile Include="DTO\LoaiKhuyenMaiDTO.cs" />
     <Compile Include="DTO\VoucherDTO.cs" />
-    <Compile Include="fDoiMK.cs">
+    <Compile Include="Form\fDoiMK.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fDoiMK.Designer.cs">
+    <Compile Include="Form\fDoiMK.Designer.cs">
       <DependentUpon>fDoiMK.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\fChuyenBan.cs">
@@ -330,7 +333,7 @@
     <Compile Include="USC\USCVoucher.Designer.cs">
       <DependentUpon>USCVoucher.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fDoiMK.resx">
+    <EmbeddedResource Include="Form\fDoiMK.resx">
       <DependentUpon>fDoiMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\fChuyenBan.resx">
@@ -493,6 +496,8 @@
     <None Include="Resources\xoa.png" />
     <None Include="Resources\OK.jpg" />
     <None Include="Resources\OK1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
