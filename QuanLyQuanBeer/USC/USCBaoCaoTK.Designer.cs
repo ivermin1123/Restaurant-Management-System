@@ -42,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpkFromDay = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -115,12 +114,11 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btLayDuLieu);
             this.panel5.Controls.Add(this.dtpkToDay);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.dtpkFromDay);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.comboBox1);
+            this.panel5.Controls.Add(this.btLayDuLieu);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
@@ -131,7 +129,7 @@
             // 
             this.btLayDuLieu.Active = false;
             this.btLayDuLieu.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
-            this.btLayDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLayDuLieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btLayDuLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btLayDuLieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btLayDuLieu.BorderRadius = 0;
@@ -150,7 +148,7 @@
             this.btLayDuLieu.IconVisible = true;
             this.btLayDuLieu.IconZoom = 55D;
             this.btLayDuLieu.IsTab = false;
-            this.btLayDuLieu.Location = new System.Drawing.Point(683, 6);
+            this.btLayDuLieu.Location = new System.Drawing.Point(480, 6);
             this.btLayDuLieu.Name = "btLayDuLieu";
             this.btLayDuLieu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btLayDuLieu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(76)))), ((int)(((byte)(123)))));
@@ -169,7 +167,7 @@
             this.dtpkToDay.CustomFormat = "dd/MM/yyyy";
             this.dtpkToDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkToDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkToDay.Location = new System.Drawing.Point(495, 12);
+            this.dtpkToDay.Location = new System.Drawing.Point(315, 12);
             this.dtpkToDay.Name = "dtpkToDay";
             this.dtpkToDay.Size = new System.Drawing.Size(123, 29);
             this.dtpkToDay.TabIndex = 2;
@@ -178,7 +176,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(401, 15);
+            this.label3.Location = new System.Drawing.Point(221, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 1;
@@ -189,7 +187,7 @@
             this.dtpkFromDay.CustomFormat = "dd/MM/yyyy";
             this.dtpkFromDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkFromDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkFromDay.Location = new System.Drawing.Point(261, 12);
+            this.dtpkFromDay.Location = new System.Drawing.Point(81, 12);
             this.dtpkFromDay.Name = "dtpkFromDay";
             this.dtpkFromDay.Size = new System.Drawing.Size(123, 29);
             this.dtpkFromDay.TabIndex = 2;
@@ -198,20 +196,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(187, 15);
+            this.label2.Location = new System.Drawing.Point(7, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Từ ngày:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 29);
-            this.comboBox1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -276,7 +265,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpkFromDay;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private Bunifu.Framework.UI.BunifuFlatButton btLayDuLieu;
         private System.Windows.Forms.ListView lsvBC;
         private System.Windows.Forms.ColumnHeader columnHeader1;

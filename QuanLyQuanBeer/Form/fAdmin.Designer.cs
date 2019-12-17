@@ -39,7 +39,6 @@
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.btMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btRestore = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.btResize = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -81,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btResize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnMenu.SuspendLayout();
@@ -99,7 +97,6 @@
             this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.btMinimize);
             this.panel1.Controls.Add(this.btRestore);
-            this.panel1.Controls.Add(this.btUser);
             this.panel1.Controls.Add(this.btResize);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -217,19 +214,6 @@
             this.btRestore.Visible = false;
             this.btRestore.Zoom = 10;
             this.btRestore.Click += new System.EventHandler(this.BtRestore_Click);
-            // 
-            // btUser
-            // 
-            this.btUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btUser.Image = ((System.Drawing.Image)(resources.GetObject("btUser.Image")));
-            this.btUser.ImageActive = null;
-            this.btUser.Location = new System.Drawing.Point(1011, 8);
-            this.btUser.Name = "btUser";
-            this.btUser.Size = new System.Drawing.Size(49, 44);
-            this.btUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btUser.TabIndex = 9;
-            this.btUser.TabStop = false;
-            this.btUser.Zoom = 10;
             // 
             // btResize
             // 
@@ -887,7 +871,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btRestore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btResize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnMenu.ResumeLayout(false);
@@ -904,7 +887,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btResize;
         private System.Windows.Forms.Panel pnMenu;
         private System.Windows.Forms.Panel pnNoiDung;
-        private Bunifu.Framework.UI.BunifuImageButton btUser;
         private System.Windows.Forms.Panel pn1;
         private Bunifu.Framework.UI.BunifuFlatButton btBaoCao;
         private System.Windows.Forms.Panel pn2;

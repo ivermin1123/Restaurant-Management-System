@@ -994,8 +994,7 @@ namespace QuanLyQuanBeer
             fThongTinCaNhan f = new fThongTinCaNhan(TaiKhoanHienTai.TenDangNhap);
             f.ShowDialog();
         }
+
         #endregion Events
-
-
     }
 }

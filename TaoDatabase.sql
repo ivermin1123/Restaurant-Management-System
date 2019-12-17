@@ -257,6 +257,15 @@ begin
 end
 GO
 
+create PROC themKho
+@tenSP nvarchar(100),@SL int,@gia float,@DVT nvarchar(100)
+AS
+BEGIN
+	INSERT INTO dbo.Kho(TenHang,SL,Gia,DVT)
+	VALUES(@tenSP, @SL,@gia,@DVT )
+END
+GO
+
 CREATE PROC themLoaiSanPham
 @tenLoaiSanPham nvarchar(100),@danhMuc nvarchar(100)
 AS

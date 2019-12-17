@@ -15,31 +15,52 @@ namespace QuanLyQuanBeer
 
         private void btLayDuLieu_Click(object sender, EventArgs e)
         {
-            lsvBC.Items.Clear();
-            DateTime fromDay = dtpkFromDay.Value;
-            DateTime toDay = dtpkToDay.Value;
-            List<GetHoaDonDTO> listHD = GetHoaDonDAO.Instance.LayDsHoaDonByDate(fromDay, toDay);
-            foreach (GetHoaDonDTO item in listHD)
+            try
             {
-                ListViewItem lsvItem = new ListViewItem(item.ID.ToString());
-                lsvItem.SubItems.Add(item.TenBan.ToString());
-                lsvItem.SubItems.Add(item.TongCong.ToString());
-                lsvItem.SubItems.Add(item.NhanVien.ToString());
-                lsvBC.Items.Add(lsvItem);
+                lsvBC.Items.Clear();
+                DateTime fromDay = dtpkFromDay.Value;
+                DateTime toDay = dtpkToDay.Value;
+                List<GetHoaDonDTO> listHD = GetHoaDonDAO.Instance.LayDsHoaDonByDate(fromDay, toDay);
+                if (listHD.Count <= 0)
+                {
+                    MessageBox.Show("Không có dữ liệu trong thời gian này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    foreach (GetHoaDonDTO item in listHD)
+                    {
+                        ListViewItem lsvItem = new ListViewItem(item.ID.ToString());
+                        lsvItem.SubItems.Add(item.TenBan.ToString());
+                        lsvItem.SubItems.Add(item.TongCong.ToString());
+                        lsvItem.SubItems.Add(item.NhanVien.ToString());
+                        lsvBC.Items.Add(lsvItem);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void lsvBC_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (lsvBC.SelectedItems.Count > 0)
+            try
             {
-                ListViewItem temp = lsvBC.SelectedItems[0];
-                int idHoaDon = int.Parse(temp.Text);
-                HoaDonDTO hd = HoaDonDAO.Instance.GetDTOHoaDon(idHoaDon);
-                string TenBan = BanDAO.Instance.GetTenBanByID(hd.IdBan);
-                rptBC rptBC = new rptBC(hd.IdBan);
-                rptBC.XuatHoaDon(idHoaDon, TenBan, hd.NhanVien, hd.ThoiGianVao, hd.ThoiGianRa);
-                rptBC.ShowDialog();
+                if (lsvBC.SelectedItems.Count > 0)
+                {
+                    ListViewItem temp = lsvBC.SelectedItems[0];
+                    int idHoaDon = int.Parse(temp.Text);
+                    HoaDonDTO hd = HoaDonDAO.Instance.GetDTOHoaDon(idHoaDon);
+                    string TenBan = BanDAO.Instance.GetTenBanByID(hd.IdBan);
+                    rptBC rptBC = new rptBC(hd.IdBan);
+                    rptBC.XuatHoaDon(idHoaDon, TenBan, hd.NhanVien, hd.ThoiGianVao, hd.ThoiGianRa);
+                    rptBC.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

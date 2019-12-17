@@ -30,6 +30,7 @@ namespace QuanLyQuanBeer.DAO
             }
             return null;
         }
+
         public string layGioiTinh(string tenDN)
         {
             string query = "Select * From ThongTinTaiKhoan where TenDangNhap = N'" + tenDN + "' ";

@@ -87,6 +87,7 @@ namespace QuanLyQuanBeer.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
         public bool datLaiMK(string ten)
         {
             string query = "UPDATE dbo.TaiKhoan SET MatKhau = '1' WHERE TenDangNhap = '" + ten + "'";

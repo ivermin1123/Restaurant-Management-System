@@ -76,7 +76,7 @@ namespace QuanLyQuanBeer
                     MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();
                 }
-                else if( hinhAnh == "Khongcohinhanh.jpg")
+                else if (hinhAnh == "Khongcohinhanh.jpg")
                 {
                     MessageBox.Show("Xóa thành công!", "Xóa sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadAccount();

@@ -1,13 +1,6 @@
 ﻿using QuanLyQuanBeer.DAO;
 using QuanLyQuanBeer.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyQuanBeer
@@ -15,6 +8,7 @@ namespace QuanLyQuanBeer
     public partial class fThongTinCaNhan : Form
     {
         private string _tenDN;
+
         public fThongTinCaNhan(string tenDN)
         {
             InitializeComponent();
@@ -22,7 +16,7 @@ namespace QuanLyQuanBeer
             LoadTT(_tenDN);
         }
 
-        void LoadTT(string tenDN)
+        private void LoadTT(string tenDN)
         {
             ThongTinTaiKhoanDTO tt = ThongTinTaiKhoanDAO.Instance.GETDTOTTTK(tenDN);
             txbCMND.Text = tt.CMND.ToString();
