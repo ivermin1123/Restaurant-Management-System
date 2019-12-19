@@ -24,7 +24,7 @@ namespace QuanLyQuanBeer
         public void XuatHoaDon(int maHD, string tenban, string NhanVien, DateTime? GioVao, DateTime? GioRa)
         {
             DataTable dt = new DataTable();
-            dt = MenuDAO.Instance.GetListSP2(_idBan);
+            dt = MenuDAO.Instance.GetListSP2(maHD);
             this.reportViewer1.LocalReport.ReportPath = @"../../rptBC.rdlc";
             ReportParameter[] param = new ReportParameter[5];
             param[0] = new ReportParameter("Ban", tenban);

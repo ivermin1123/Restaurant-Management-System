@@ -33,9 +33,9 @@ CREATE TABLE ThongTinTaiKhoan
 (
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	HoTen NVARCHAR(100) not null,
-	SoDienThoai INT not null,
+	SoDienThoai VARCHAR(100) not null,
 	DiaChi NVARCHAR(100) not null,
-	CMND INT not null,
+	CMND VARCHAR(100) not null,
 	Tuoi INT not null,
 	GioiTinh NVARCHAR(100) NOT NULL,
 	TenDangNhap varchar(100) NOT NULL,
@@ -48,9 +48,9 @@ GO
 SET IDENTITY_INSERT dbo.ThongTinTaiKhoan ON
 INSERT dbo.ThongTinTaiKhoan(id,HoTen,SoDienThoai,DiaChi,CMND,Tuoi, GioiTinh, TenDangNhap)
 VALUES
-(1 ,N'Lê Quốc Hoàng',123456798, N'Quận 9',251120114,20, 'Nam', 'admin'),
-(2 ,N'Việt Phi',123456798, N'Quận 9',251120116,20, 'Nam', 'manager'),
-(3 ,N'Cao Ngọc Nguyên',123456798, N'Quận 10',251120115,20, 'Nam', 'staff')
+(1 ,N'Lê Quốc Hoàng','123456798', N'Quận 9','251120114',20, 'Nam', 'admin'),
+(2 ,N'Việt Phi','123456798', N'Quận 9','251120116',20, 'Nam', 'manager'),
+(3 ,N'Cao Ngọc Nguyên','123456798', N'Quận 10','251120115',20, 'Nam', 'staff')
 GO
 SET IDENTITY_INSERT dbo.ThongTinTaiKhoan OFF
 
@@ -226,7 +226,7 @@ END
 GO
 
 create PROC themThongTinTk
-@tenDangNhap varchar(100), @hoTen nvarchar(100), @diaChi nvarchar(100), @cMND INT, @sDT INT, @tuoi INT, @gioiTinh nvarchar(100)
+@tenDangNhap varchar(100), @hoTen nvarchar(100), @diaChi nvarchar(100), @cMND VARCHAR(100), @sDT VARCHAR(100), @tuoi INT, @gioiTinh nvarchar(100)
 AS
 BEGIN
 	INSERT INTO dbo.ThongTinTaiKhoan(HoTen, SoDienThoai, DiaChi, CMND, Tuoi, GioiTinh, TenDangNhap)
@@ -376,13 +376,13 @@ BEGIN
 END
 GO
 
-CREATE PROC dbo.USP_InBill1
-@idBan INT
+Create PROC dbo.USP_InBill1
+@idHoaDon INT
 AS
 BEGIN
 	SELECT ROW_NUMBER() OVER (ORDER BY TenSanPham) AS [STT] ,f.TenSanPham ,bi.SoLuong,f.Gia ,f.Gia*bi.SoLuong AS ThanhTien
 	FROM dbo.ThongTinHoaDon AS bi ,dbo.HoaDon AS b,dbo.SanPham AS f 
-	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Đã thanh toán' AND b.idBan = @idBan
+	WHERE bi.idHoaDon = b.id AND bi.idSanPham = f.id AND b.TrangThai=N'Đã thanh toán' AND bi.idHoaDon = @idHoaDon
 END
 GO
 
@@ -538,7 +538,7 @@ BEGIN
 END
 GO
 
-alter Proc USP_BCTK
+Create Proc USP_BCTK
 @fromDate DateTime,@toDate DateTime
 as
 begin

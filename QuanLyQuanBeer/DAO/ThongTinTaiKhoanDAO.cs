@@ -80,7 +80,7 @@ namespace QuanLyQuanBeer.DAO
             return result > 0;
         }
 
-        public bool them(string hoTen, long sDT, string diaChi, long cMND, int tuoi, string gioiTinh, string tenDN)
+        public bool them(string hoTen, string sDT, string diaChi, string cMND, int tuoi, string gioiTinh, string tenDN)
         {
             string query = "Exec themThongTinTk  @hoTen= N'" + hoTen + "' , @sDT = " + sDT + ", @diaChi= N'" + diaChi + "' , @cMND= " + cMND + ", @tuoi=" + tuoi + " , @gioiTinh= N'" + gioiTinh + "' , @tenDangNhap= '" + tenDN + "' ";
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;

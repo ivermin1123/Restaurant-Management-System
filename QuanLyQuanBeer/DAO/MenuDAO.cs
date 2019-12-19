@@ -39,9 +39,9 @@ namespace QuanLyQuanBeer.DAO
             return data;
         }
 
-        public DataTable GetListSP2(int idBan)
+        public DataTable GetListSP2(int idHoaDon)
         {
-            string query = ("USP_InBill1 @idBan =" + idBan);
+            string query = ("USP_InBill1 @idHoaDon=" + idHoaDon);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
