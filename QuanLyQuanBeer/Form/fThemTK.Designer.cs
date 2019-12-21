@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemTK));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btThoat = new System.Windows.Forms.Button();
@@ -43,11 +44,10 @@
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
-            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.panel2.SuspendLayout();
             this.grbLoaiTK.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +60,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(435, 48);
             this.panel1.TabIndex = 0;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(404, 7);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // label1
             // 
@@ -222,20 +236,6 @@
             this.lbTenTK.TabIndex = 44;
             this.lbTenTK.Text = "Tên tài khoản:";
             // 
-            // btExit
-            // 
-            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
-            this.btExit.ImageActive = null;
-            this.btExit.Location = new System.Drawing.Point(404, 7);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(28, 34);
-            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btExit.TabIndex = 8;
-            this.btExit.TabStop = false;
-            this.btExit.Zoom = 10;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
             // fThemTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,17 +244,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fThemTK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemTK";
             this.Enter += new System.EventHandler(this.BtThem_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.grbLoaiTK.ResumeLayout(false);
             this.grbLoaiTK.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }

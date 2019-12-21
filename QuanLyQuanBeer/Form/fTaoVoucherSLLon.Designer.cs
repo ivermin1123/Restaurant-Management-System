@@ -365,6 +365,7 @@
             this.ClientSize = new System.Drawing.Size(566, 398);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fTaoVoucherSLLon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTaoVoucherSLLon";

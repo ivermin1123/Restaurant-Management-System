@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fTaoVoucher));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btCoppy = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lbhehe1 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btCoppy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -66,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(651, 355);
+            this.panel1.Size = new System.Drawing.Size(651, 354);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -93,12 +93,28 @@
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(0, 48);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(649, 305);
+            this.panel3.Size = new System.Drawing.Size(649, 304);
             this.panel3.TabIndex = 6;
+            // 
+            // btCoppy
+            // 
+            this.btCoppy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btCoppy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.btCoppy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.btCoppy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCoppy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCoppy.ForeColor = System.Drawing.Color.White;
+            this.btCoppy.Location = new System.Drawing.Point(519, 311);
+            this.btCoppy.Name = "btCoppy";
+            this.btCoppy.Size = new System.Drawing.Size(104, 33);
+            this.btCoppy.TabIndex = 102;
+            this.btCoppy.Text = "&Coppy";
+            this.btCoppy.UseVisualStyleBackColor = false;
+            this.btCoppy.Click += new System.EventHandler(this.btCoppy_Click);
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(504, 13);
@@ -109,7 +125,7 @@
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(504, 75);
@@ -334,29 +350,14 @@
             this.label1.Text = "TẠO VOUCHER";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btCoppy
-            // 
-            this.btCoppy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btCoppy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btCoppy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.btCoppy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCoppy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCoppy.ForeColor = System.Drawing.Color.White;
-            this.btCoppy.Location = new System.Drawing.Point(506, 311);
-            this.btCoppy.Name = "btCoppy";
-            this.btCoppy.Size = new System.Drawing.Size(104, 33);
-            this.btCoppy.TabIndex = 102;
-            this.btCoppy.Text = "&Coppy";
-            this.btCoppy.UseVisualStyleBackColor = false;
-            this.btCoppy.Click += new System.EventHandler(this.btCoppy_Click);
-            // 
             // fTaoVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 355);
+            this.ClientSize = new System.Drawing.Size(651, 354);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fTaoVoucher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fTaoVoucher";

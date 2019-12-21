@@ -42,7 +42,7 @@ namespace QuanLyQuanBeer
                 MessageBox.Show("Bạn cần phải giảm giá % hoặc tiền mặt \n Đâu thể tạo một Voucher mà không giảm gì phải không ^^!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                this.Size = new Size(547, 433);
+                this.Size = new Size(651, 433);
                 if (txbVoucher.Text != string.Empty)
                     MessageBox.Show("Voucher đã được tạo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else

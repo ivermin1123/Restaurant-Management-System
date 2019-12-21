@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fChuyenBan));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lsvTableTo = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvTableFrom = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,6 +48,7 @@
             this.cbxBanPhai = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txbBanTrai = new System.Windows.Forms.TextBox();
             this.txbMaHDTrai = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelLoaiSP = new System.Windows.Forms.Label();
@@ -52,13 +59,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.lsvTableTo = new System.Windows.Forms.ListView();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txbBanTrai = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,6 +88,50 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1050, 590);
             this.panel1.TabIndex = 0;
+            // 
+            // lsvTableTo
+            // 
+            this.lsvTableTo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader10});
+            this.lsvTableTo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsvTableTo.FullRowSelect = true;
+            this.lsvTableTo.GridLines = true;
+            this.lsvTableTo.HideSelection = false;
+            this.lsvTableTo.Location = new System.Drawing.Point(560, 174);
+            this.lsvTableTo.Name = "lsvTableTo";
+            this.lsvTableTo.Size = new System.Drawing.Size(475, 401);
+            this.lsvTableTo.TabIndex = 16;
+            this.lsvTableTo.UseCompatibleStateImageBehavior = false;
+            this.lsvTableTo.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tên món";
+            this.columnHeader5.Width = 159;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "SL";
+            this.columnHeader6.Width = 41;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Đơn giá";
+            this.columnHeader7.Width = 86;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Đơn vị";
+            this.columnHeader8.Width = 68;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Thành tiền";
+            this.columnHeader10.Width = 113;
             // 
             // lsvTableFrom
             // 
@@ -196,6 +240,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(462, 87);
             this.panel3.TabIndex = 15;
+            // 
+            // txbBanTrai
+            // 
+            this.txbBanTrai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBanTrai.Location = new System.Drawing.Point(134, 48);
+            this.txbBanTrai.MaxLength = 2;
+            this.txbBanTrai.Name = "txbBanTrai";
+            this.txbBanTrai.Size = new System.Drawing.Size(298, 29);
+            this.txbBanTrai.TabIndex = 71;
+            this.txbBanTrai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbMaHDTrai
             // 
@@ -325,60 +379,6 @@
             this.label1.Text = "CHUYỂN BÀN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lsvTableTo
-            // 
-            this.lsvTableTo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader10});
-            this.lsvTableTo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lsvTableTo.FullRowSelect = true;
-            this.lsvTableTo.GridLines = true;
-            this.lsvTableTo.HideSelection = false;
-            this.lsvTableTo.Location = new System.Drawing.Point(560, 174);
-            this.lsvTableTo.Name = "lsvTableTo";
-            this.lsvTableTo.Size = new System.Drawing.Size(475, 401);
-            this.lsvTableTo.TabIndex = 16;
-            this.lsvTableTo.UseCompatibleStateImageBehavior = false;
-            this.lsvTableTo.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Tên món";
-            this.columnHeader5.Width = 159;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "SL";
-            this.columnHeader6.Width = 41;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Đơn giá";
-            this.columnHeader7.Width = 86;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Đơn vị";
-            this.columnHeader8.Width = 68;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Thành tiền";
-            this.columnHeader10.Width = 113;
-            // 
-            // txbBanTrai
-            // 
-            this.txbBanTrai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBanTrai.Location = new System.Drawing.Point(134, 48);
-            this.txbBanTrai.MaxLength = 2;
-            this.txbBanTrai.Name = "txbBanTrai";
-            this.txbBanTrai.Size = new System.Drawing.Size(298, 29);
-            this.txbBanTrai.TabIndex = 71;
-            this.txbBanTrai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // fChuyenBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +386,7 @@
             this.ClientSize = new System.Drawing.Size(1050, 590);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fChuyenBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fChuyenBan";

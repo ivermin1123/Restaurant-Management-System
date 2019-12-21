@@ -307,12 +307,6 @@
     <Compile Include="USC\USCLoaiSanPham.Designer.cs">
       <DependentUpon>USCLoaiSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="USC\USCManHinhChaoMung.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="USC\USCManHinhChaoMung.Designer.cs">
-      <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="USC\USCNhanVien.cs">
@@ -432,9 +426,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USC\USCLoaiSanPham.resx">
       <DependentUpon>USCLoaiSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="USC\USCManHinhChaoMung.resx">
-      <DependentUpon>USCManHinhChaoMung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

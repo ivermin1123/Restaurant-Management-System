@@ -23,22 +23,22 @@ namespace QuanLyQuanBeer.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public bool ThemSP(string tenSP, int SL,double gia,string DVT)
+        public bool ThemSP(string tenSP, int SL, double gia, string DVT)
         {
             string query = "themKho @tenSP , @SL , @gia , @DVT";
-            return DataProvider.Instance.ExecuteNonQuery(query,new object[] { tenSP, SL, gia,DVT}) > 0;
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenSP, SL, gia, DVT }) > 0;
         }
 
         public bool CapNhatKho(string tenSP, int SL, double gia, string DVT, int id)
         {
-            string query = "UPDATE dbo.Kho SET TenHang = N'"+tenSP+"' , DVT = N'"+DVT +"' , SL = "+SL+ " , Gia = " + gia + "  WHERE idHang = " + id + " ";
+            string query = "UPDATE dbo.Kho SET TenHang = N'" + tenSP + "' , DVT = N'" + DVT + "' , SL = " + SL + " , Gia = " + gia + "  WHERE idHang = " + id + " ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
         public bool XoaKho(int id)
         {
-            string query = "DELETE dbo.Kho WHERE idHang ="+ id;
+            string query = "DELETE dbo.Kho WHERE idHang =" + id;
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
     }

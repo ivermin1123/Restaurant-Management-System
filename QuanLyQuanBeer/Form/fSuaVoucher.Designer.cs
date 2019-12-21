@@ -47,9 +47,9 @@
             this.txbGiamGiaPT = new System.Windows.Forms.TextBox();
             this.lbTenTK = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txbVoucher = new System.Windows.Forms.TextBox();
             this.lbhehe = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
             this.panel3.SuspendLayout();
@@ -276,17 +276,6 @@
             this.panel3.Size = new System.Drawing.Size(545, 359);
             this.panel3.TabIndex = 6;
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(547, 409);
-            this.panel1.TabIndex = 1;
-            // 
             // txbVoucher
             // 
             this.txbVoucher.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -310,6 +299,17 @@
             this.lbhehe.TabIndex = 82;
             this.lbhehe.Text = "Mã Voucher:";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(547, 409);
+            this.panel1.TabIndex = 1;
+            // 
             // fSuaVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +317,7 @@
             this.ClientSize = new System.Drawing.Size(547, 409);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fSuaVoucher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSuaVoucher";

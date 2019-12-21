@@ -26,6 +26,7 @@ namespace QuanLyQuanBeer.USC
             dtgvKho.Columns[3].HeaderText = "SL";
             dtgvKho.Columns[4].HeaderText = "Giá";
         }
+
         private void binding()
         {
             txbMaLSP.DataBindings.Add("Text", dtgvKho.DataSource, "idHang", true, DataSourceUpdateMode.Never);
@@ -56,7 +57,7 @@ namespace QuanLyQuanBeer.USC
                         MessageBox.Show("Thêm không thành công!", "Thêm kho", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -108,7 +109,7 @@ namespace QuanLyQuanBeer.USC
                 else
                     MessageBox.Show("Xóa không thành công!", "Xóa loại sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

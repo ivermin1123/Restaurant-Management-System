@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemMonNgoai));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btThoat = new System.Windows.Forms.Button();
             this.labelVND = new System.Windows.Forms.Label();
@@ -45,10 +46,9 @@
             this.txbTenMon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btThem = new System.Windows.Forms.Button();
-            this.btExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btExit)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -74,6 +74,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(462, 48);
             this.panel1.TabIndex = 4;
+            // 
+            // btExit
+            // 
+            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
+            this.btExit.ImageActive = null;
+            this.btExit.Location = new System.Drawing.Point(431, 3);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(28, 34);
+            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btExit.TabIndex = 8;
+            this.btExit.TabStop = false;
+            this.btExit.Zoom = 10;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
             // 
             // panel2
             // 
@@ -233,20 +247,6 @@
             this.btThem.UseVisualStyleBackColor = false;
             this.btThem.Click += new System.EventHandler(this.BtThem_Click);
             // 
-            // btExit
-            // 
-            this.btExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btExit.Image = ((System.Drawing.Image)(resources.GetObject("btExit.Image")));
-            this.btExit.ImageActive = null;
-            this.btExit.Location = new System.Drawing.Point(431, 3);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(28, 34);
-            this.btExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btExit.TabIndex = 8;
-            this.btExit.TabStop = false;
-            this.btExit.Zoom = 10;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
             // fThemMonNgoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,14 +255,15 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fThemMonNgoai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fThemMonNgoai";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btExit)).EndInit();
             this.ResumeLayout(false);
 
         }

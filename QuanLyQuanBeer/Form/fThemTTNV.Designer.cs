@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fThemTTNV));
             this.labelThongTinNhanVien = new System.Windows.Forms.Label();
             this.txbTenDN = new System.Windows.Forms.TextBox();
             this.lbTenDN = new System.Windows.Forms.Label();
@@ -284,6 +285,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelThongTinCaNhan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fThemTTNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fThemTTNV";

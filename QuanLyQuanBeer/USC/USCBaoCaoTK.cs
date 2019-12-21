@@ -37,7 +37,7 @@ namespace QuanLyQuanBeer
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

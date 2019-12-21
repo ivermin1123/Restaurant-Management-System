@@ -94,7 +94,6 @@
             this.btQuayLai = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btThuTien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btInTamTinh = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btTachHD = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel33 = new System.Windows.Forms.Panel();
             this.lbMaHD_Ban = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -978,7 +977,6 @@
             this.panel31.Controls.Add(this.btQuayLai);
             this.panel31.Controls.Add(this.btThuTien);
             this.panel31.Controls.Add(this.btInTamTinh);
-            this.panel31.Controls.Add(this.btTachHD);
             this.panel31.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel31.Location = new System.Drawing.Point(0, 592);
             this.panel31.Name = "panel31";
@@ -1094,41 +1092,6 @@
             this.btInTamTinh.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.btInTamTinh.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInTamTinh.Click += new System.EventHandler(this.BtInTamTinh_Click);
-            // 
-            // btTachHD
-            // 
-            this.btTachHD.Active = false;
-            this.btTachHD.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btTachHD.BackColor = System.Drawing.Color.White;
-            this.btTachHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btTachHD.BorderRadius = 0;
-            this.btTachHD.ButtonText = "TÁCH HĐ";
-            this.btTachHD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTachHD.DisabledColor = System.Drawing.Color.Gray;
-            this.btTachHD.Iconcolor = System.Drawing.Color.Transparent;
-            this.btTachHD.Iconimage = null;
-            this.btTachHD.Iconimage_right = null;
-            this.btTachHD.Iconimage_right_Selected = null;
-            this.btTachHD.Iconimage_Selected = null;
-            this.btTachHD.IconMarginLeft = 0;
-            this.btTachHD.IconMarginRight = 0;
-            this.btTachHD.IconRightVisible = true;
-            this.btTachHD.IconRightZoom = 0D;
-            this.btTachHD.IconVisible = false;
-            this.btTachHD.IconZoom = 50D;
-            this.btTachHD.IsTab = false;
-            this.btTachHD.Location = new System.Drawing.Point(379, 5);
-            this.btTachHD.Name = "btTachHD";
-            this.btTachHD.Normalcolor = System.Drawing.Color.White;
-            this.btTachHD.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btTachHD.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btTachHD.selected = false;
-            this.btTachHD.Size = new System.Drawing.Size(102, 48);
-            this.btTachHD.TabIndex = 1;
-            this.btTachHD.Text = "TÁCH HĐ";
-            this.btTachHD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btTachHD.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.btTachHD.TextFont = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // panel33
             // 
@@ -2422,9 +2385,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 710);
+            this.Controls.Add(this.pnTinhTien);
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.pnNewOrder);
-            this.Controls.Add(this.pnTinhTien);
             this.Controls.Add(this.pnChaoMung);
             this.Controls.Add(this.pnDatCho);
             this.Controls.Add(this.pnDsHD);
@@ -2573,7 +2536,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btQuayLai;
         private Bunifu.Framework.UI.BunifuFlatButton btThuTien;
         private Bunifu.Framework.UI.BunifuFlatButton btInTamTinh;
-        private Bunifu.Framework.UI.BunifuFlatButton btTachHD;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Label lbMaHD_Ban;
         private System.Windows.Forms.Panel panel16;

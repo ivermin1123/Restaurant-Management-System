@@ -441,6 +441,7 @@ BEGIN
 
 	DECLARE @isExitsBillInfo INT
 	DECLARE @foodCount INT = 1
+	--DECLARE @SumSL INT = 0
 
 	SELECT @isExitsBillInfo = id,@foodCount = b.SoLuong 
 	FROM dbo.ThongTinHoaDon AS b 
@@ -450,19 +451,25 @@ BEGIN
 		BEGIN
 			DECLARE @newCount INT = @foodCount + @SoLuong
 			IF (@newCount > 0)
-				UPDATE dbo.ThongTinHoaDon SET SoLuong = @foodCount + @SoLuong WHERE idSanPham = @idSanPham
+				UPDATE dbo.ThongTinHoaDon SET SoLuong = @newCount WHERE idSanPham = @idSanPham
 			ELSE
 				DELETE dbo.ThongTinHoaDon WHERE idHoaDon = @idHoaDon AND idSanPham = @idSanPham
-	END
+		END
 	ELSE 
 		BEGIN
-			INSERT INTO dbo.ThongTinHoaDon
-				(idHoaDon,idSanPham,SoLuong )
-			VALUES
-				( @idHoaDon,  @idSanPham,  @SoLuong)
+			DECLARE @Count INT = @SoLuong
+			IF (@Count > 0)
+				BEGIN
+					INSERT INTO dbo.ThongTinHoaDon
+						(idHoaDon,idSanPham,SoLuong )
+					VALUES
+						( @idHoaDon,  @idSanPham,  @SoLuong)
+				END
 		END
 END
 GO
+
+exec USP_InsertBillInfo @idHoaDon = 102,@idSanPham= 9 , @SoLuong= -1
 
 CREATE FUNCTION fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
 GO
